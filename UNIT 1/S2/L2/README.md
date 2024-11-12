@@ -20,6 +20,17 @@ Benvenuti nel repository dedicato agli esercizi di programmazione in linguaggio 
 
 ## 🚀 Compilazione ed Esecuzione su Linux
 
+### 🛠️ Requisiti
+
+- **Compilatore GCC**: installato seguendo il docente da istruzioni:
+
+  ```bash
+  sudo apt update
+  sudo apt install gcc
+  ```
+
+---
+
 ### Compilazione
 
 Per compilare i file `.c`, basta utilizzare `gcc`, il compilatore GNU per C, come segue:
@@ -42,25 +53,16 @@ Una volta compilati, i programmi possono essere eseguiti con:
 
 ---
 
-## 📂 Struttura del Repository
+## 📂 Struttura 
 
 ```plaintext
 .
+├── bin                  # Cartella binaries compilati
+├── file di prova        # Cartella esercitazioni della teoria con docente
+├── README.md            # Documentazione del progetto
 ├── moltiplicazione.c    # Codice sorgente per la moltiplicazione
-├── media.c              # Codice sorgente per la media aritmetica
-└── README.md            # Documentazione del progetto
+└── media.c              # Codice sorgente per la media aritmetica
 ```
-
----
-
-## 🛠️ Requisiti
-
-- **Compilatore GCC**: installato seguendo il docente da istruzioni:
-
-  ```bash
-  sudo apt update
-  sudo apt install gcc
-  ```
 
 ---
 
