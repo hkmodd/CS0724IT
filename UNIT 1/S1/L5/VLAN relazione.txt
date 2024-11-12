@@ -1,0 +1,152 @@
+ /$$    /$$ /$$        /$$$$$$  /$$   /$$
+| $$   | $$| $$       /$$__  $$| $$$ | $$
+| $$   | $$| $$      | $$  \ $$| $$$$| $$
+|  $$ / $$/| $$      | $$$$$$$$| $$ $$ $$
+ \  $$ $$/ | $$      | $$__  $$| $$  $$$$
+  \  $$$/  | $$      | $$  | $$| $$\  $$$
+   \  $/   | $$$$$$$$| $$  | $$| $$ \  $$
+    \_/    |________/|__/  |__/|__/  \__/
+
+
+Motivazioni per cui si è scelto di ricorrere alle VLAN nell'esercitazione di oggi:
+
+Essendo questo setup composto da 1 switch e 16 hosts ho utilizzato la VLAN per dividere la rete, ottimizzando il processo di segmentazione. 
+Le VLAN separano il dominio di broadcast, quindi ciascuna VLAN avrà il proprio indirizzo di broadcast (ad esempio, 
+ogni VLAN avrà un segmento IP come 192.168.1.0/24 e 192.168.2.0/24). 
+Dunque anche se gli host condividono lo stesso switch, le VLAN impediscono che il traffico broadcast si diffonda da una all’altra.
+
+
+
+/        |                          /  |                /  |/  | /    \ 
+$$$$$$$$/         ______   __    __ $$/  _______    ____$$ |$$/ /$$$$  |
+$$ |__           /      \ /  |  /  |/  |/       \  /    $$ |/  |$$  $$ |
+$$    |         /$$$$$$  |$$ |  $$ |$$ |$$$$$$$  |/$$$$$$$ |$$ |   /$$/ 
+$$$$$/          $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |$$ |  $$ |$$ |  /$$/  
+$$ |_____       $$ \__$$ |$$ \__$$ |$$ |$$ |  $$ |$$ \__$$ |$$ |  $$/   
+$$       |      $$    $$ |$$    $$/ $$ |$$ |  $$ |$$    $$ |$$ |  /  |  
+$$$$$$$$/        $$$$$$$ | $$$$$$/  $$/ $$/   $$/  $$$$$$$/ $$/   $$/   
+                      $$ |                                              
+                      $$ |                                              
+                      $$/                                               
+Ma visto che sono convinto che 5 righe non bastino a motivarne l'utilizzo, fornisco qua una mia panoramica completa rielaborata:
+
+Segmentare la rete è una tecnica fondamentale per ottimizzare le prestazioni, migliorare la sicurezza e semplificare la gestione delle risorse di rete. 
+Le VLAN sono reti logiche indipendenti, configurate a livello switch, che consentono di suddividere una rete fisica in più segmenti separati senza 
+richiedere cablaggi fisici aggiuntivi, 
+separando il traffico di rete così che i dispositivi appartenenti ad una VLAN non possano comunicare direttamente con quelli di un'altra. 
+(a meno che non vengano utilizzati dispositivi di routing)
+
+
+
+ __     __                       __                                    __ 
+/  |   /  |                     /  |                                  /  |
+$$ |   $$ | ______   _______   _$$ |_     ______    ______    ______  $$/ 
+$$ |   $$ |/      \ /       \ / $$   |   /      \  /      \  /      \ /  |
+$$  \ /$$/ $$$$$$  |$$$$$$$  |$$$$$$/    $$$$$$  |/$$$$$$  |/$$$$$$  |$$ |
+ $$  /$$/  /    $$ |$$ |  $$ |  $$ | __  /    $$ |$$ |  $$ |$$ |  $$ |$$ |
+  $$ $$/  /$$$$$$$ |$$ |  $$ |  $$ |/  |/$$$$$$$ |$$ \__$$ |$$ \__$$ |$$ |
+   $$$/   $$    $$ |$$ |  $$ |  $$  $$/ $$    $$ |$$    $$ |$$    $$ |$$ |
+    $/     $$$$$$$/ $$/   $$/    $$$$/   $$$$$$$/  $$$$$$$ | $$$$$$$ |$$/ 
+                                                  /  \__$$ |/  \__$$ |    
+                                                  $$    $$/ $$    $$/     
+                                                   $$$$$$/   $$$$$$/      
+
+Vantaggi dell’Utilizzo delle VLAN Rispetto ai Gateway e Subnet Mask? 
+
+1) Gestione del Traffico e Sicurezza
+Un cambio di gateway per segmentare una rete, non impedisce che i dispositivi appartenenti alla stessa rete fisica possano comunicare tra loro 
+senza alcun filtro. 
+Il traffico tra dispositivi appartenenti a diverse reti all'interno della stessa subnet fisica può essere facilmente intercettato, aumentando i 
+rischi di attacchi come lo sniffing o l'injecting.
+Mediante VLAN, invece, il traffico viene completamente separato a livello di switch, rendendo molto più difficile per un attaccante accedere ai 
+dati in transito. 
+Ogni VLAN agisce come una rete separata, e quindi i dispositivi su una VLAN non possono comunicare con quelli di un'altra VLAN senza un dispositivo 
+di routing che
+consenta questa comunicazione in modo controllato.
+
+2) Isolamento dei Domini di Broadcast
+
+In una rete tradizionale, tutti i dispositivi in una stessa subnet possono inviare e ricevere pacchetti di broadcast. Questo tipo di traffico può 
+diventare problematico
+in reti di grandi dimensioni, poiché i pacchetti di broadcast vengono propagati a tutti i dispositivi della rete, aumentando il carico sui 
+dispositivi di rete e riducendo
+l'efficienza della rete stessa.
+Le VLAN offrono una rapida soluzione a questo problema, poiché creano domini di broadcast separati per ognuna di esse. Ciò significa che i 
+pacchetti di broadcast vengono
+limitati ai membri della stessa VLAN, riducendo il carico complessivo e migliorando le prestazioni della rete.
+
+3) Semplicità e Scalabilità
+
+La configurazione di VLAN permette una gestione più semplice e scalabile rispetto a quella basata sul cambiamento di gateway. Se utilizzassimo
+il metodo dei gateway 
+differenziati, ogni volta che dobbiamo aggiungere nuovi segmenti alla rete, dovremmo configurare manualmente nuovi gateway per ogni subnet. 
+Ciò può diventare un problema
+difficile da gestire in ambienti di rete in continua crescita.
+Con le VLAN invece l’aggiunta di nuovi segmenti alla rete è molto più semplice. Basta configurare un nuovo gruppo di porte dello switch come 
+membro di una nuova VLAN e,
+se necessario, un nuovo router per consentire la comunicazione tra VLAN differenti.
+
+
+
+/       \ /  | /      \  /      \                                                           
+$$$$$$$  |$$/ /$$$$$$  |/$$$$$$  |______    ______    ______   _______   ________   ______  
+$$ |  $$ |/  |$$ |_ $$/ $$ |_ $$//      \  /      \  /      \ /       \ /        | /      \ 
+$$ |  $$ |$$ |$$   |    $$   |  /$$$$$$  |/$$$$$$  |/$$$$$$  |$$$$$$$  |$$$$$$$$/ /$$$$$$  |
+$$ |  $$ |$$ |$$$$/     $$$$/   $$    $$ |$$ |  $$/ $$    $$ |$$ |  $$ |  /  $$/  $$    $$ |
+$$ |__$$ |$$ |$$ |      $$ |    $$$$$$$$/ $$ |      $$$$$$$$/ $$ |  $$ | /$$$$/__ $$$$$$$$/ 
+$$    $$/ $$ |$$ |      $$ |    $$       |$$ |      $$       |$$ |  $$ |/$$      |$$       |
+$$$$$$$/  $$/ $$/       $$/      $$$$$$$/ $$/        $$$$$$$/ $$/   $$/ $$$$$$$$/  $$$$$$$/ 
+                                                                 
+
+Differenze tra VLAN, Subnet Mask e Gateway
+
+- Uso delle Subnet Mask
+La subnet mask è utilizzata per determinare quale parte dell'indirizzo IP rappresenta la rete e quale parte rappresenta l'host. 
+Modificando la subnet mask, 
+possiamo suddividere una rete in più subnet. Tuttavia, anche se una subnet consente di separare i dispositivi in gruppi più piccoli, 
+essa non fornisce un isolamento
+completo del traffico, in quanto i dispositivi all’interno della stessa subnet possono ancora comunicare direttamente tra loro, anche 
+se non dovrebbero farlo.
+Con le VLAN, invece, il traffico è separato fisicamente a livello di switch, senza necessità di modificare la subnet mask. Ogni VLAN 
+può avere una propria subnet, ma la VLAN stessa isola il traffico da altre VLAN, migliorando la sicurezza e la gestione.
+
+- Uso del Gateway per la Segmentazione
+Il gateway è un dispositivo che consente ai dispositivi di una rete di comunicare con altre reti, come ad esempio internet. In una rete tradizionale,
+i dispositivi appartenenti a subnet differenti devono utilizzare gateway per raggiungere altre reti. Tuttavia, come detto prima, l’utilizzo di gateway
+differenti per segmentare una rete non impedisce la comunicazione tra dispositivi appartenenti alla stessa subnet fisica, creando quindi vulnerabilità.
+L’uso delle VLAN, d’altro canto, consente di evitare questo problema, separando completamente il traffico a livello di switch. Se vogliamo che i dispositivi
+appartenenti a VLAN differenti possano comunque comunicare tra loro, possiamo utilizzare un router o uno switch Layer 3, che gestirà il traffico tra le VLAN in modo controllato.
+
+- Prestazioni e Overhead nelle Reti
+Le VLAN possono migliorare le prestazioni di rete, in quanto riducono il traffico di broadcast e prevengono la congestione della rete. 
+Poiché il traffico di broadcast viene limitato a ciascun dominio di broadcast VLAN, ogni dispositivo ha meno probabilità di essere sopraffatto 
+da pacchetti inutili.
+Al contrario, quando si utilizza una segmentazione basata su gateway e subnet mask, non vi è un controllo altrettanto preciso sul traffico di
+broadcast. In una rete con più gateway, ogni subnet potrebbe essere ancora soggetta a trasmissioni di broadcast che, a lungo andare, potrebbero 
+ridurre le prestazioni generali della rete.
+
+- Impatto dell'Overhead
+Le VLAN hanno anche un impatto sull’overhead di rete, ma tale impatto è generalmente più basso rispetto a quello di altre soluzioni di segmentazione.
+L’overhead di una VLAN è principalmente legato al tag VLAN aggiunto ai frame Ethernet, ma questo è minore rispetto al traffico extra che si genererebbe configurando 
+gateway differenti o gestendo subnet complesse.
+
+
+
+  ______                                 __                      __                               
+ /      \                               /  |                    /  |                              
+/$$$$$$  |  ______   _______    _______ $$ | __    __   _______ $$/   ______   _______    ______  
+$$ |  $$/  /      \ /       \  /       |$$ |/  |  /  | /       |/  | /      \ /       \  /      \ 
+$$ |      /$$$$$$  |$$$$$$$  |/$$$$$$$/ $$ |$$ |  $$ |/$$$$$$$/ $$ |/$$$$$$  |$$$$$$$  |/$$$$$$  |
+$$ |   __ $$ |  $$ |$$ |  $$ |$$ |      $$ |$$ |  $$ |$$      \ $$ |$$ |  $$ |$$ |  $$ |$$    $$ |
+$$ \__/  |$$ \__$$ |$$ |  $$ |$$ \_____ $$ |$$ \__$$ | $$$$$$  |$$ |$$ \__$$ |$$ |  $$ |$$$$$$$$/ 
+$$    $$/ $$    $$/ $$ |  $$ |$$       |$$ |$$    $$/ /     $$/ $$ |$$    $$/ $$ |  $$ |$$       |
+ $$$$$$/   $$$$$$/  $$/   $$/  $$$$$$$/ $$/  $$$$$$/  $$$$$$$/  $$/  $$$$$$/  $$/   $$/  $$$$$$$/ 
+
+
+In sintesi, l'uso delle VLAN in una configurazione di rete è altamente vantaggioso rispetto all’adozione di gateway differenti o alla sola configurazione 
+delle subnet mask. Le VLAN offrono maggiore sicurezza, prestazioni migliori, una gestione più semplice e un’architettura di rete più scalabile. Separando 
+logicamente il traffico di rete, riducono la probabilità di comunicazione non autorizzata e offrono un controllo più fine sul flusso dei dati. Inoltre, la 
+flessibilità nella configurazione e gestione delle VLAN consente una crescita della rete più fluida, rispondendo alle necessità dinamiche di un ambiente aziendale moderno.
+
+Seppur i gateway e le subnet mask abbiano il loro posto nella progettazione delle reti, le VLAN forniscono un approccio più robusto, che si adatta meglio 
+alle esigenze di segmentazione avanzate e alla gestione complessa delle reti moderne.

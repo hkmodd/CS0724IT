@@ -1,0 +1,15 @@
+/$$$$$$$            /$$                     /$$                              
+| $$__  $$          | $$                    |__/                              
+| $$  \ $$  /$$$$$$ | $$  /$$$$$$  /$$$$$$$$ /$$  /$$$$$$  /$$$$$$$   /$$$$$$ 
+| $$$$$$$/ /$$__  $$| $$ |____  $$|____ /$$/| $$ /$$__  $$| $$__  $$ /$$__  $$
+| $$__  $$| $$$$$$$$| $$  /$$$$$$$   /$$$$/ | $$| $$  \ $$| $$  \ $$| $$$$$$$$
+| $$  \ $$| $$_____/| $$ /$$__  $$  /$$__/  | $$| $$  | $$| $$  | $$| $$_____/
+| $$  | $$|  $$$$$$$| $$|  $$$$$$$ /$$$$$$$$| $$|  $$$$$$/| $$  | $$|  $$$$$$$
+|__/  |__/ \_______/|__/ \_______/|________/|__/ \______/ |__/  |__/ \_______/
+
+Quando Laptop0 riconosce che l'IP destinatario è esterno alla sua rete inoltra il pacchetto al router (passando dallo Switch nel nostro caso)
+il quale esamina la destinazione del pacchetto e consulta  la tabella di routing, indirizzando il pacchetto alla rete di destinazione. 
+Quando un pacchetto passa da una rete a un'altra diversa, il router si occupa anche di aggiornare l'indirizzo MAC di destinazione nel frame di livello 2, 
+permettendo così alle due reti di comunicare. Ogni volta che il pacchetto viene inoltrato tramite router a un'altra rete,
+il router sostituisce il MAC di destinazione con il MAC del dispositivo successivo nel percorso. 
+Tutto questo per assicurarsi che ad ogni "salto" l'indirizzo MAC sia corretto, per il trasferimento dell'informazione.

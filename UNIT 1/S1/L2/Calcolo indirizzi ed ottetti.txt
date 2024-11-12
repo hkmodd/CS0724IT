@@ -1,0 +1,66 @@
+ _______                       __      __                    
+|       \                     |  \    |  \                   
+| $$$$$$$\  ______   ______  _| $$_    \$$  _______  ______  
+| $$__/ $$ /      \ |      \|   $$ \  |  \ /       \|      \ 
+| $$    $$|  $$$$$$\ \$$$$$$\\$$$$$$  | $$|  $$$$$$$ \$$$$$$\
+| $$$$$$$ | $$   \$$/      $$ | $$ __ | $$| $$      /      $$
+| $$      | $$     |  $$$$$$$ | $$|  \| $$| $$_____|  $$$$$$$
+| $$      | $$      \$$    $$  \$$  $$| $$ \$$     \\$$    $$
+ \$$       \$$       \$$$$$$$   \$$$$  \$$  \$$$$$$$ \$$$$$$$
+                                                             
+                                                             
+                                                             
+  ______     __          __  __         ______               
+ /      \  _/  \        /  \|  \       /      \              
+|  $$$$$$\|   $$       /  $$| $$      |  $$$$$$\             
+| $$___\$$ \$$$$      /  $$ | $$       \$$__| $$             
+ \$$    \   | $$     /  $$  | $$       /      $$             
+ _\$$$$$$\  | $$    /  $$   | $$      |  $$$$$$              
+|  \__| $$ _| $$_  /  $$    | $$_____ | $$_____              
+ \$$    $$|   $$ \|  $$     | $$     \| $$     \             
+  \$$$$$$  \$$$$$$ \$$       \$$$$$$$$ \$$$$$$$$             
+
+● 128.1.6.5/12 
+IP Network: 128.0.0.0
+IP Gateway “convenzionale”: 128.0.0.1
+IP Broadcast: 128.15.255.255
+Quantità di ottetti per gli host: 3 (i primi 12 bit sono per la network, i restanti 20 per gli host)
+Quantità e specificazione degli ottetti per la network: 1.5 (il primo ottetto e parte del secondo)
+
+● 200.1.2.3/24
+IP Network: 200.1.2.0
+IP Gateway “convenzionale”: 200.1.2.1
+IP Broadcast: 200.1.2.255
+Quantità di ottetti per gli host: 1 (i primi 24 bit sono per la network, i restanti 8 per gli host)
+Quantità e specificazione degli ottetti per la network: 3 (i primi tre ottetti)
+
+● 192.192.1.1/22
+IP Network: 192.192.0.0
+IP Gateway “convenzionale”: 192.192.0.1
+IP Broadcast: 192.192.3.255
+Quantità di ottetti per gli host: 1.5 (i primi 22 bit sono per la network, i restanti 10 per gli host)
+Quantità e specificazione degli ottetti per la network: 2.5 (i primi due ottetti e parte del terzo)
+
+● 126.5.4.3/9 
+IP Network: 126.0.0.0
+IP Gateway “convenzionale”: 126.0.0.1
+IP Broadcast: 126.127.255.255
+Quantità di ottetti per gli host: 3.5 (i primi 9 bit sono per la network, i restanti 23 per gli host)
+Quantità e specificazione degli ottetti per la network: 1.125 (il primo ottetto e parte del secondo)
+
+● 200.1.9.8/24 
+IP Network: 200.1.9.0
+IP Gateway “convenzionale”: 200.1.9.1
+IP Broadcast: 200.1.9.255
+Quantità di ottetti per gli host: 1 (i primi 24 bit sono per la network, i restanti 8 per gli host)
+Quantità e specificazione degli ottetti per la network: 3 (i primi tre ottetti)
+
+● 172.16.0.4/16
+IP Network: 172.16.0.0
+IP Gateway “convenzionale”: 172.16.0.1
+IP Broadcast: 172.16.255.255
+Quantità di ottetti per gli host: 2 (i primi 16 bit sono per la network, i restanti 16 per gli host)
+Quantità e specificazione degli ottetti per la network: 2 (i primi due ottetti)
+
+
+
