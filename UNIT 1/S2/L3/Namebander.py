@@ -27,9 +27,12 @@ nome_animale = input_animale("\nPerfetto! Ora, qual è il nome del tuo adorato a
 
 # Animazione di caricamento
 print("\nGenerazione del nome della band in corso...")
-for i in range(0, 101, 10):
-    time.sleep(0.14)
-    print(f"Caricamento: [{i}%]", end="\r")
+barra_lunghezza = 30
+for i in range(barra_lunghezza + 1):
+    time.sleep(0.1)
+    barra = '[' + '#' * i + ' ' * (barra_lunghezza - i) + ']'
+    percentuale = int((i / barra_lunghezza) * 100)
+    print(f"\r{barra} {percentuale}%", end="", flush=True)
 
 # Delay prima della stampa finale del risultato
 time.sleep(1)
@@ -38,5 +41,5 @@ time.sleep(1)
 nome_band = citta_origine + " " + nome_animale
 
 # Stampa del risultato
-print("\nFantastico!")
+print("\n\nFantastico!")
 print("Il nome della tua band sarà:", nome_band)
