@@ -34,7 +34,7 @@ L'esercizio di oggi riguarda Python: Qui troverete un semplice programma: un gen
   python3 --version
   ```
 
-### 📦 Esecuzione
+### 🏎️  Esecuzione
 
 Per eseguire il programma, usa il seguente comando da terminale:
 
