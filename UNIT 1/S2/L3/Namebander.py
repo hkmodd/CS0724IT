@@ -1,7 +1,7 @@
-# Saluto iniziale
+# Start
 print("\nCiao! Benvenuto su Namebander! 🎸")
 
-# Funzione per verificare se l'input della città contiene numeri
+# Funzione per verificare se l'input dell'utente per città contiene numeri
 def input_citta(testo):
     while True:
         valore = input(testo)
@@ -10,7 +10,7 @@ def input_citta(testo):
         else:
             return valore
 
-# Funzione per verificare se l'input del nome dell'animale domestico contiene numeri
+# Funzione per verificare se l'input dell'utente per animali contiene numeri
 def input_animale(testo):
     while True:
         valore = input(testo)
@@ -23,7 +23,7 @@ def input_animale(testo):
 citta_origine = input_citta("\nPrima di tutto, dimmi, da quale città vieni? ")
 nome_animale = input_animale("\nPerfetto! Ora, qual è il nome del tuo adorato animale domestico? ")
 
-# Generazione del nome della band
+# Combinazione dei due nomi per formare il risultato
 nome_band = citta_origine + " " + nome_animale
 
 # Stampa del risultato
