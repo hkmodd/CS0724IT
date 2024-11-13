@@ -1,3 +1,5 @@
+import time
+
 # Start
 print("\nCiao! Benvenuto su Namebander! 🎸")
 
@@ -23,10 +25,18 @@ def input_animale(testo):
 citta_origine = input_citta("\nPrima di tutto, dimmi, da quale città vieni? ")
 nome_animale = input_animale("\nPerfetto! Ora, qual è il nome del tuo adorato animale domestico? ")
 
+# Animazione di caricamento
+print("\nGenerazione del nome della band in corso...")
+for i in range(0, 101, 10):
+    time.sleep(0.14)
+    print(f"Caricamento: [{i}%]", end="\r")
+
+# Delay prima della stampa finale del risultato
+time.sleep(1)
+
 # Combinazione dei due nomi per formare il risultato
 nome_band = citta_origine + " " + nome_animale
 
 # Stampa del risultato
 print("\nFantastico!")
 print("Il nome della tua band sarà:", nome_band)
-
