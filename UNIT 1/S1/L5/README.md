@@ -1,4 +1,4 @@
-# Progetto S1/L5 ✉️
+# 📐 Progetto S1/L5 📐
 # Configurazione delle VLAN in Rete
 
 Questo documento descrive due configurazioni di rete che utilizzano VLAN (Virtual Local Area Network) per segmentare e gestire la comunicazione tra dispositivi. Gli screenshot forniscono una panoramica delle impostazioni e delle differenze tra i due scenari.

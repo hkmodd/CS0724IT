@@ -4,6 +4,19 @@ Benvenuti nel repository dedicato agli esercizi di programmazione in linguaggio 
 
 ---
 
+## 📂 Struttura 
+
+```plaintext
+.
+├── bin                  # Cartella binaries compilati
+├── file di prova        # Cartella esercitazioni della teoria con docente
+├── README.md            # Documentazione del progetto
+├── moltiplicazione.c    # Codice sorgente per la moltiplicazione
+└── media.c              # Codice sorgente per la media aritmetica
+```
+
+---
+
 ## 📋 Descrizione degli Esercizi
 
 ### 1️⃣ Moltiplicazione tra Due Numeri
@@ -20,7 +33,16 @@ Benvenuti nel repository dedicato agli esercizi di programmazione in linguaggio 
 
 ## 🚀 Compilazione ed Esecuzione su Linux
 
-### Compilazione
+### 🛠️ Requisiti
+
+- **Compilatore GCC**: installato seguendo il docente da istruzioni:
+
+  ```bash
+  sudo apt update
+  sudo apt install gcc
+  ```
+
+### 📦 Compilazione
 
 Per compilare i file `.c`, basta utilizzare `gcc`, il compilatore GNU per C, come segue:
 
@@ -29,7 +51,7 @@ gcc moltiplicazione.c -o moltiplicazione
 gcc media.c -o media
 ```
 
-### Esecuzione
+### 🏎️ Esecuzione
 
 Una volta compilati, i programmi possono essere eseguiti con:
 
@@ -39,28 +61,6 @@ Una volta compilati, i programmi possono essere eseguiti con:
 ```
 
 > **Nota**: Su sistemi Linux, non è necessario aggiungere un'estensione (come `.exe`) agli eseguibili. Per convenzione, i file eseguibili su Linux possono essere eseguiti direttamente senza un'estensione, utilizzando `./nomefile`.
-
----
-
-## 📂 Struttura del Repository
-
-```plaintext
-.
-├── moltiplicazione.c    # Codice sorgente per la moltiplicazione
-├── media.c              # Codice sorgente per la media aritmetica
-└── README.md            # Documentazione del progetto
-```
-
----
-
-## 🛠️ Requisiti
-
-- **Compilatore GCC**: installato seguendo il docente da istruzioni:
-
-  ```bash
-  sudo apt update
-  sudo apt install gcc
-  ```
 
 ---
 
