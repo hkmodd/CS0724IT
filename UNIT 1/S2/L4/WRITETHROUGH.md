@@ -1,6 +1,6 @@
-# Geompy 📐 - Calcolatore di Perimetri Geometrici
+# Perimepy 📐 - Calcolatore di Perimetri Geometrici
 
-Benvenuto su **Geompy**, un semplice programma interattivo in Python che ti permette di calcolare il perimetro di diverse figure geometriche. In questa documentazione troverai una spiegazione dettagliata di ogni parte del codice per comprendere appieno il funzionamento del programma.
+Benvenuto su **Perimepy**, un semplice programma interattivo in Python che ti permette di calcolare il perimetro di diverse figure geometriche. In questa documentazione troverai una spiegazione dettagliata di ogni parte del codice per comprendere appieno il funzionamento del programma.
 
 ## Indice
 
@@ -8,7 +8,6 @@ Benvenuto su **Geompy**, un semplice programma interattivo in Python che ti perm
 2. [Funzionalità del Programma](#funzionalità-del-programma)
 3. [Installazione e Requisiti](#installazione-e-requisiti)
 4. [Struttura del Codice](#struttura-del-codice)
-   - [Importazioni e Librerie](#importazioni-e-librerie)
    - [Funzione Principale](#funzione-principale)
    - [Richiesta di Input all'Utente](#richiesta-di-input-allutente)
    - [Calcolo del Perimetro](#calcolo-del-perimetro)
@@ -19,7 +18,7 @@ Benvenuto su **Geompy**, un semplice programma interattivo in Python che ti perm
 
 ## Introduzione
 
-**Geompy** è un programma che utilizza l'input dell'utente per calcolare il perimetro di tre figure geometriche: il **quadrato**, il **cerchio** e il **rettangolo**. È pensato per essere intuitivo e interattivo, ideale per chi sta imparando Python e vuole esercitarsi con la gestione dell'input utente e le funzioni matematiche di base.
+**Perimepy** è un programma che utilizza l'input dell'utente per calcolare il perimetro di tre figure geometriche: il **quadrato**, il **cerchio** e il **rettangolo**. È pensato per essere intuitivo e interattivo, ideale per chi sta imparando Python e vuole esercitarsi con la gestione dell'input utente e le funzioni matematiche di base.
 
 ## Funzionalità del Programma
 
@@ -37,13 +36,6 @@ Nessuna installazione di pacchetti aggiuntivi è necessaria; il programma utiliz
 
 ## Struttura del Codice
 
-### Importazioni e Librerie
-
-```python
-import time
-```
-- **`import time`**: La libreria `time` è utilizzata per creare ritardi, migliorando l'esperienza utente durante il processo di calcolo del perimetro.
-
 ### Funzione Principale
 
 ```python
@@ -55,7 +47,8 @@ def calcola_perimetro():
         print("\nErrore: Numero non valido. Riprova.")
         return calcola_perimetro()
 ```
-- La funzione principale **`calcola_perimetro()`** inizia chiedendo all'utente quale figura geometrica vuole calcolare. Se l'input non è valido, il programma lo informa e ripete la richiesta.
+
+La funzione principale **`calcola_perimetro()`** inizia chiedendo all'utente quale figura geometrica vuole calcolare. Se l'input non è valido, il programma lo informa e ripete la richiesta.
 
 ### Richiesta di Input all'Utente
 
@@ -71,7 +64,8 @@ def calcola_perimetro():
                 # Se l'utente inserisce un valore non numerico, ripetiamo la richiesta
                 print("\nCos'è? Un'equazione? Riprova inserendo un numero.")
 ```
-- La funzione interna **`richiedi_valore()`** permette di gestire l'input dell'utente, assicurandosi che venga fornito un valore numerico valido. Se l'utente inserisce un valore non valido, viene richiesto di riprovare.
+
+La funzione interna **`richiedi_valore()`** permette di gestire l'input dell'utente, assicurandosi che venga fornito un valore numerico valido. Se l'utente inserisce un valore non valido, viene richiesto di riprovare.
 
 ### Calcolo del Perimetro
 
@@ -93,8 +87,8 @@ def calcola_perimetro():
 # Chiamata alla funzione per iniziare il calcolo
 calcola_perimetro()
 ```
-- In base alla scelta dell'utente, il programma calcola il perimetro del quadrato, del cerchio o del rettangolo.
-- Il risultato viene poi visualizzato sullo schermo.
+
+In base alla scelta dell'utente, il programma calcola il perimetro del quadrato, del cerchio o del rettangolo. Il risultato viene poi visualizzato sullo schermo.
 
 ## Esecuzione del Programma
 
@@ -109,5 +103,4 @@ Questo programma è stato progettato per dimostrare come si possano costruire se
 
 ---
 
-Con questa documentazione speriamo che **Geompy** sia chiaro e facile da usare. Buon calcolo dei perimetri!
-
+Con questa documentazione aggiornata, **Geompy** dovrebbe essere chiaro e facile da usare. Buon calcolo dei perimetri!

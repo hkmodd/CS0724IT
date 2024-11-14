@@ -3,7 +3,7 @@
 # e successivamente calcola il perimetro in base ai dati forniti dall'utente.
 def calcola_perimetro():
     # Chiediamo all'utente quale figura vuole calcolare
-    scelta = input("\nBenvenuto in Geompy!\n\n📐 Scegli una figura geometrica per calcolare il perimetro:\n1. Quadrato\n2. Cerchio\n3. Rettangolo\n\nInserisci il numero della figura che desideri (1-3): ")
+    scelta = input("\nBenvenuto in Perimepy!\n\n📐 Scegli una figura geometrica per calcolare il perimetro:\n1. Quadrato\n2. Cerchio\n3. Rettangolo\n\nInserisci il numero della figura che desideri (1-3): ")
     if scelta not in ["1", "2", "3"]:
         # Se la scelta non è valida, avvisiamo l'utente e richiamiamo la funzione per riprovare
         print("\nErrore: Numero non valido. Riprova.")
