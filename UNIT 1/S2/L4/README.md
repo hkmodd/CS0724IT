@@ -1,4 +1,4 @@
-# Consegna S - Calcolatore di Perimetri Geometrici
+# Consegna S2/L4 ✉️ - Calcolatore di Perimetri Geometrici
 
 ## Descrizione del Progetto
 
