@@ -41,18 +41,18 @@ Grazie alla sua natura visiva e astratta, Piet può essere utilizzato per offusc
 
 ### 🔧 3.2 Esempio Pratico: Esecuzione di un Programma Piet con Python
 
-Per dimostrare come Piet possa essere integrato in un contesto di cybersecurity, presenteremo un esempio in cui un’immagine Piet esegue una semplice operazione, come una somma. L'immagine viene interpretata tramite Python, mostrando come decodificare ed eseguire il codice Piet.
+Per dimostrare come Piet possa essere integrato in un contesto di cybersecurity, presenteremo un esempio in cui un’immagine Piet esegue il messaggio "Hello, World!". L'immagine viene interpretata tramite Python, mostrando come decodificare ed eseguire il codice Piet.
 
 #### Codice Python per l'Esecuzione del Programma Piet
 
-Di seguito è riportato un esempio di codice Python che carica e interpreta un’immagine Piet usando una libreria di interpretazione (assicurarsi di avere una libreria compatibile installata, come `piet_interpreter`):
+Di seguito è riportato un esempio di codice Python che carica e interpreta l'immagine Piet `Hello_World.png`, utilizzando la libreria di interpretazione `piet_interpreter`.
 
 ```python
 from piet_interpreter import PietInterpreter
 from PIL import Image
 
 # Carica l'immagine Piet
-img_path = "esempio_piet.png"  # Immagine che contiene il codice Piet
+img_path = "Hello_World.png"  # Assicurati che il file esista nella directory
 image = Image.open(img_path)
 
 # Inizializza l'interprete
@@ -65,7 +65,7 @@ output = interpreter.run()
 print("Risultato del programma Piet:", output)
 ```
 
-L'immagine `esempio_piet.png` potrebbe sembrare un’opera astratta, ma in realtà esegue una somma come `5 + 3`. Questo rende Piet estremamente interessante per offuscare operazioni in modo che solo un interprete Piet possa decodificarle.
+L'immagine Hello_World.png dovrebbe restituire il messaggio "Hello, World!". Assicurati che l'immagine si trovi nella stessa directory dello script.
 
 ### 🕵️‍♂️ 3.3 Utilizzo di Piet nelle CTF (Capture the Flag)
 Piet è ideale anche per creare sfide di tipo **Capture the Flag (CTF)**. Un esempio di CTF potrebbe essere un'immagine Piet che contiene una "flag" nascosta; i partecipanti devono interpretare il codice per rivelare la flag, aggiungendo un livello di sfida e pensiero creativo.
