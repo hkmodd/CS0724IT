@@ -4,7 +4,7 @@ print("Inizio del programma...\n")  # Stampa per indicare che il programma è in
 
 def assistente_virtuale(comando):
     comando = comando.lower().strip()  # Eliminare eventuali spazi extra
-    if comando == "qual è la data di oggi?":
+    if comando == "che giorno è?":
         oggi = datetime.date.today()
         risposta = "La data di oggi è " + oggi.strftime("%d/%m/%Y") + "\n"
     elif comando == "che ore sono?":
