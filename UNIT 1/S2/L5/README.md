@@ -1,6 +1,6 @@
-# Consegna S2/L5 - Assistente Virtuale - Python Project
+# 📐 Progetto S2/L5 📐
+#  Assistente Virtuale - Python Project
 
-## Descrizione
 L'Assistente Virtuale è un programma Python progettato per rispondere a domande comuni come la data odierna, l'orario corrente, e altre interazioni di base. Il progetto sfrutta la libreria `datetime` per calcoli temporali e utilizza un sistema di fuzzy matching per interpretare l'input dell'utente, rendendo il programma flessibile anche in presenza di varianti lessicali.
 
 ## Funzionalità
