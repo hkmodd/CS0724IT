@@ -1,6 +1,6 @@
-# Consegna S2/L5 - Assistente Virtuale - Python Project
+# 📐 Progetto S2/L5 📐
+#  Assistente Virtuale - Python Project
 
-## Descrizione
 L'Assistente Virtuale è un programma Python progettato per rispondere a domande comuni come la data odierna, l'orario corrente, e altre interazioni di base. Il progetto sfrutta la libreria `datetime` per calcoli temporali e utilizza un sistema di fuzzy matching per interpretare l'input dell'utente, rendendo il programma flessibile anche in presenza di varianti lessicali.
 
 ## Funzionalità
@@ -17,11 +17,9 @@ L'Assistente Virtuale è un programma Python progettato per rispondere a domande
 
 ## Requisiti
 - Python 3.x
-- Librerie standard (`datetime`, `difflib`)
 
 ## Esecuzione
 1. Assicurarsi di avere Python 3.x installato.
-2. Salvare il codice in un file, ad esempio `AssistenteVirtuale.py`.
-3. Avviare il programma tramite terminale:
+2. Avviare il programma tramite terminale:
    ```bash
-   python AssistenteVirtuale.py
+   python assistvirt.py
