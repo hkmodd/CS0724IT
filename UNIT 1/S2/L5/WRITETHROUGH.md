@@ -1,9 +1,6 @@
 
 ---
 
-### **WRITETHROUGH.md**
-
-```markdown
 # Analisi Critica e Processo di Correzione
 
 ## Scopo dell'Esercizio
@@ -36,10 +33,10 @@ Allenare l'osservazione critica e la capacità di debugging. L'obiettivo era tra
 4. **Struttura modulare**:
    - Diviso il codice in funzioni ben definite (`interpreta_input`, `assistente_virtuale`, `main`) per favorire la leggibilità e la manutenzione.
 
-## Ulteriori Miglioramenti
-- Potenziare il sistema di matching con algoritmi di NLP per una maggiore accuratezza.
-- Aggiungere funzionalità di logging per monitorare gli errori e le richieste non comprese.
+## Ulteriori Miglioramenti possibili
 - Sviluppare una GUI semplice per migliorare l'usabilità.
+- Aggiungere funzionalità di logging per monitorare gli errori e le richieste non comprese.
+
 
 ## Considerazioni Finali
 Questo progetto ha dimostrato l'importanza di analizzare criticamente il codice sorgente per rilevare non solo errori evidenti ma anche limitazioni nella logica implementativa. L'approccio iterativo ha portato a un prodotto finito robusto e modulare.
