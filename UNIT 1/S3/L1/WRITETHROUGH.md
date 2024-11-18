@@ -1,139 +1,159 @@
 
-# GraphGUI 📊 - Analisi di Sistemi Operativi: Mono-tasking, Multi-tasking e Time-sharing
+# GraphGUI 📊 - Analisi Tecnica e Funzionale
 
-Benvenuto su **GraphGUI**, un'applicazione interattiva sviluppata in Python per rappresentare graficamente le differenze tra i tre principali modelli di gestione dei processi nei sistemi operativi: **Mono-tasking**, **Multi-tasking** e **Time-sharing**. Questa documentazione offre una spiegazione dettagliata di ogni componente del programma, fornendo una guida chiara per comprenderne il funzionamento.
+**GraphGUI** è un'applicazione interattiva in Python progettata per analizzare e visualizzare i modelli di gestione dei processi nei sistemi operativi: **Mono-tasking**, **Multi-tasking** e **Time-sharing**. Questa documentazione esamina ogni sezione del codice per spiegare il funzionamento del programma.
 
 ---
 
 ## Indice
 
 1. [Introduzione](#introduzione)
-2. [Funzionalità del Programma](#funzionalità-del-programma)
-3. [Installazione e Requisiti](#installazione-e-requisiti)
-4. [Struttura del Codice](#struttura-del-codice)
-   - [Importazioni e Librerie](#importazioni-e-librerie)
-   - [Generazione dei Grafici](#generazione-dei-grafici)
-   - [Animazione per il Time-sharing](#animazione-per-il-time-sharing)
-   - [Interfaccia Grafica (GUI)](#interfaccia-grafica-gui)
-   - [Fallback alla Modalità Console](#fallback-alla-modalità-console)
-5. [Esecuzione del Programma](#esecuzione-del-programma)
-6. [Note Finali](#note-finali)
+2. [Importazioni e Librerie](#importazioni-e-librerie)
+3. [Dati per i Grafici](#dati-per-i-grafici)
+4. [Generazione dei Grafici](#generazione-dei-grafici)
+   - [Grafici Statici](#grafici-statici)
+   - [Grafico Animato per Time-sharing](#grafico-animato-per-time-sharing)
+5. [Classe App per la GUI](#classe-app-per-la-gui)
+   - [Metodo `show_graph`](#metodo-show_graph)
+   - [Gestione dei Pulsanti](#gestione-dei-pulsanti)
+6. [Esecuzione del Programma](#esecuzione-del-programma)
 
 ---
 
 ## Introduzione
 
-**GraphGUI** è un'applicazione progettata per analizzare i modelli di gestione dei processi utilizzando grafici e animazioni. L'obiettivo è quello di rappresentare visivamente le differenze tra **Mono-tasking**, **Multi-tasking** e **Time-sharing**, facilitando la comprensione dei loro vantaggi e svantaggi.
+GraphGUI è stato creato per aiutare a comprendere visivamente i modelli di gestione dei processi nei sistemi operativi:
+- **Mono-tasking**: Esecuzione sequenziale dei processi.
+- **Multi-tasking**: Sovrapposizione e gestione efficiente dei processi.
+- **Time-sharing**: Assegnazione di quanti fissi per l'esecuzione ciclica dei processi.
+
+Il programma utilizza grafici statici e un'animazione per il modello Time-sharing, offrendo una GUI interattiva per navigare tra i grafici.
 
 ---
 
-## Funzionalità del Programma
-
-- 📊 Generazione di grafici statici per Mono-tasking e Multi-tasking.
-- 🔄 Animazione del modello Time-sharing.
-- 🖥️ Interfaccia grafica interattiva per visualizzare i risultati.
-- 🛠️ Fallback automatico alla modalità console per sistemi senza supporto GUI.
-
----
-
-## Installazione e Requisiti
-
-### Requisiti
-
-- **Python 3.10 o superiore**.
-- Librerie necessarie:
-  - 📚 `matplotlib`
-  - 📚 `tkinter`
-  - 📚 `pillow` (per salvare le animazioni GIF)
-
-### Installazione
-
-1. Clonare o scaricare il progetto.
-2. Installare le dipendenze richieste:
-   ```bash
-   pip install matplotlib pillow
-   ```
-
----
-
-## Struttura del Codice
-
-### Importazioni e Librerie
+## Importazioni e Librerie
 
 ```python
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
 import tkinter as tk
 from tkinter import ttk
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 ```
 
-- **`matplotlib`**: Utilizzato per creare i grafici statici e animati.
-- **`tkinter`**: Fornisce l'interfaccia grafica per visualizzare i grafici.
-- **`pillow`**: Consente di salvare le animazioni come GIF.
+### Funzione delle librerie:
+- **`tkinter`**: Gestisce la GUI del programma.
+- **`matplotlib`**: Genera grafici statici e animati.
+- **`pillow`**: Salva le animazioni in formato GIF.
 
 ---
 
-### Generazione dei Grafici
+## Dati per i Grafici
 
-#### Mono-tasking e Multi-tasking
+I dati per i processi sono definiti come liste di dizionari, che specificano:
+- **Tempo di inizio** (`start`).
+- **Tempo di utilizzo CPU** (`cpu`).
+- **Tempo di attesa** (`wait`).
 
-I grafici per Mono-tasking e Multi-tasking sono generati utilizzando barre orizzontali:
+Esempio:
+```python
+mono_tasking_data = [
+    {'start': 0, 'cpu': 3, 'wait': 2},
+    {'start': 5, 'cpu': 2, 'wait': 1},
+    {'start': 8, 'cpu': 1, 'wait': 0},
+    {'start': 9, 'cpu': 4, 'wait': 1}
+]
+```
+
+Il modello Time-sharing utilizza una struttura diversa, specificando i tempi di esecuzione per ogni processo:
+```python
+time_sharing_data = [
+    {'process': 'P1', 'start_times': [0, 4, 8]},
+    {'process': 'P2', 'start_times': [1, 5, 9]},
+    {'process': 'P3', 'start_times': [2, 6]},
+    {'process': 'P4', 'start_times': [3, 7, 10]}
+]
+```
+
+---
+
+## Generazione dei Grafici
+
+### Grafici Statici
+
+I grafici statici rappresentano i modelli Mono-tasking e Multi-tasking. La funzione `crea_grafico_statico` utilizza barre orizzontali per visualizzare:
 - **Giallo**: Tempo di utilizzo CPU.
 - **Verde**: Tempo di attesa.
 
 ```python
 def crea_grafico_statico(dati, titolo):
     fig, ax = plt.subplots(figsize=(8, 4))
-    y_pos = range(len(dati))
-    bar_height = 0.4
-    ...
+    for i, processo in enumerate(dati):
+        ax.barh(i, processo['cpu'], left=processo['start'], color='yellow', ...)
+        if processo['wait'] > 0:
+            ax.barh(i, processo['wait'], left=processo['start'] + processo['cpu'], color='green', ...)
     return fig
 ```
 
----
+### Grafico Animato per Time-sharing
 
-### Animazione per il Time-sharing
-
-Il modello Time-sharing è rappresentato con un'animazione che mostra l'alternanza tra i processi:
+La funzione `crea_grafico_time_sharing_animato` genera un'animazione per mostrare come i processi si alternano in base al quantum. L'animazione viene salvata come GIF utilizzando `pillow`.
 
 ```python
 def crea_grafico_time_sharing_animato(dati, titolo, nome_file_gif):
-    fig, ax = plt.subplots(figsize=(8, 4))
-    def update(frame):
-        ...
+    ani = FuncAnimation(fig, update, frames=16, repeat=False)
     ani.save(nome_file_gif, writer='pillow')
     return fig
 ```
 
 ---
 
-### Interfaccia Grafica (GUI)
+## Classe App per la GUI
 
-La GUI consente di navigare tra i grafici utilizzando pulsanti **Avanti** e **Termina**. Ogni grafico è accompagnato da una descrizione esplicativa.
+La classe `App` gestisce l'interfaccia grafica, consentendo di navigare tra i grafici tramite pulsanti.
 
----
+### Metodo `__init__`
 
-### Fallback alla Modalità Console
+Definisce la struttura della GUI:
+- **`descriptions`**: Spiega ogni modello di gestione dei processi.
+- **`figures`**: Contiene i grafici generati.
+- **`current_index`**: Indica il grafico corrente.
 
-Se la GUI non è supportata, i grafici vengono salvati automaticamente nella directory corrente:
+### Metodo `show_graph`
 
-- `mono_tasking_corrected.png`
-- `multi_tasking_corrected.png`
-- `time_sharing_corrected.gif`
+Gestisce la visualizzazione del grafico corrente, aggiornando:
+- **Canvas**: Per disegnare il grafico.
+- **Label**: Per visualizzare la descrizione.
+- **Pulsanti**: Per avanzare o terminare.
+
+```python
+def show_graph(self):
+    fig = self.figures[self.current_index]
+    self.canvas = FigureCanvasTkAgg(fig, master=self.frame)
+    self.canvas.draw()
+```
+
+### Gestione dei Pulsanti
+
+I pulsanti "Avanti" e "Termina" vengono aggiornati dinamicamente:
+- **Avanti**: Mostra il grafico successivo.
+- **Termina**: Chiude la finestra.
 
 ---
 
 ## Esecuzione del Programma
 
-1. Avviare lo script:
-   ```bash
-   python3 GraphGUI.py
-   ```
-2. Visualizzare i grafici nella GUI o accedere ai file generati in modalità console.
+Il programma viene avviato creando un'istanza della classe `App`:
+```python
+root = tk.Tk()
+app = App(root)
+root.mainloop()
+```
+
+Se la GUI non è supportata, i grafici vengono salvati automaticamente nella directory corrente.
 
 ---
 
-## Note Finali
+## Conclusione
 
-**GraphGUI** dimostra come i concetti complessi della gestione dei processi possano essere resi accessibili e interattivi tramite visualizzazioni dinamiche. È uno strumento utile per lo studio e l'insegnamento dei sistemi operativi.
-
+GraphGUI offre un'analisi visiva dei modelli di gestione dei processi, combinando grafici statici, animazioni e una GUI intuitiva. È un potente strumento per lo studio e la comprensione dei sistemi operativi.
