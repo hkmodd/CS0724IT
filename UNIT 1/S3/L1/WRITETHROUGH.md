@@ -1,6 +1,5 @@
 
-# GraphGUI 📊 - Analisi Tecnica e Funzionale
-
+# GraphGUI 📊
 **GraphGUI** è un'applicazione interattiva in Python progettata per analizzare e visualizzare i modelli di gestione dei processi nei sistemi operativi: **Mono-tasking**, **Multi-tasking** e **Time-sharing**. Questa documentazione esamina ogni sezione del codice per spiegare il funzionamento del programma.
 
 ---
