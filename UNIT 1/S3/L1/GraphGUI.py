@@ -16,9 +16,9 @@ mono_tasking_data = [
 ]
 multi_tasking_data = [
     {'start': 0, 'cpu': 3, 'wait': 2},
-    {'start': 2, 'cpu': 2, 'wait': 1},
-    {'start': 4, 'cpu': 1, 'wait': 0},
-    {'start': 5, 'cpu': 4, 'wait': 1}
+    {'start': 3, 'cpu': 2, 'wait': 1},
+    {'start': 5, 'cpu': 1, 'wait': 0},
+    {'start': 6, 'cpu': 4, 'wait': 1}
 ]
 time_sharing_data = [
     {'process': 'P1', 'start_times': [0, 4, 8]},
@@ -34,7 +34,9 @@ def crea_grafico_statico(dati, titolo):
     bar_height = 0.4
 
     for i, processo in enumerate(dati):
+        # Grafico CPU
         ax.barh(i, processo['cpu'], left=processo['start'], color='yellow', edgecolor='black', height=bar_height, label='CPU' if i == 0 else "")
+        # Grafico Attesa
         if processo['wait'] > 0:
             ax.barh(i, processo['wait'], left=processo['start'] + processo['cpu'], color='green', edgecolor='black', height=bar_height, label='Attesa' if i == 0 else "")
 
@@ -128,6 +130,7 @@ class App:
         self.show_graph()
 
 # Avvio dell'app GUI
-root = tk.Tk()
-app = App(root)
-root.mainloop()
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = App(root)
+    root.mainloop()
