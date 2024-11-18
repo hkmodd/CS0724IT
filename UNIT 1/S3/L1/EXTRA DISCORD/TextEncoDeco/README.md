@@ -1,4 +1,4 @@
-# Extra Missione: Gli Alchimisti della Steganografia 🕵️‍♂️
+# TextEncoDeco - Python 🕵️‍♂️
 
 Benvenuti nella guida completa alla steganografia testuale con cifrazione mediante password! Questo progetto è stato ideato e sviluppato da me con l'obiettivo di nascondere informazioni in testi apparentemente innocui, utilizzando una tecnica semplice ma efficace. 💡
 
