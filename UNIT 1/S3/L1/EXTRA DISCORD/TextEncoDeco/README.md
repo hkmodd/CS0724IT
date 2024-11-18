@@ -1,6 +1,6 @@
-# Extra Missione: Gli Alchimisti della Steganografia 🕵️‍♂️
+# TextEncoDeco - Python 🕵️‍♂️
 
-Benvenuti nella guida completa alla steganografia testuale con cifrazione mediante password! Questo progetto è stato ideato e sviluppato da **Sebastiano Gelmetti** con l'obiettivo di nascondere informazioni in testi apparentemente innocui, utilizzando una tecnica semplice ma efficace. 💡
+Benvenuti nella guida completa alla steganografia testuale con cifrazione mediante password! Questo progetto è stato ideato e sviluppato da me con l'obiettivo di nascondere informazioni in testi apparentemente innocui, utilizzando una tecnica semplice ma efficace. 💡
 
 ---
 
@@ -69,7 +69,6 @@ La password è un ulteriore livello di sicurezza: senza di essa, anche avendo il
 
 ## ⚙️ Requisiti tecnici
 - **Python 3.x**: Assicurarsi di avere Python installato sul sistema.
-- Librerie richieste (se necessario): `pip install -r requirements.txt` (non incluso ma può essere creato).
 
 ---
 
