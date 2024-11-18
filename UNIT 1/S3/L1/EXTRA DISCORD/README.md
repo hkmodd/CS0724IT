@@ -1,26 +1,4 @@
 # 💻 Gli Alchimisti della Steganografia
-
-Benvenuti, **cavalieri del sapere**! 🌟 Dopo aver superato le prime sfide, è tempo di esplorare l'antica arte della **steganografia**. Questo repository vi guiderà attraverso le tecniche fondamentali per nascondere messaggi all'interno di immagini, audio e testi, con esempi pratici in Python.
-
----
-
-## 📖 Indice
-
-- [Introduzione](#introduzione)
-- [Prerequisiti](#prerequisiti)
-- [Steganografia nelle Immagini](#steganografia-nelle-immagini)
-  - [encode_lsb.py](#encode_lsbpy)
-  - [decode_lsb.py](#decode_lsbpy)
-- [Steganografia nei File Audio](#steganografia-nei-file-audio)
-  - [encode_audio.py](#encode_audiopy)
-  - [decode_audio.py](#decode_audiopy)
-- [Steganografia nel Testo](#steganografia-nel-testo)
-  - [encode_text.py](#encode_textpy)
-  - [decode_text.py](#decode_textpy)
-- [Considerazioni Etiche](#considerazioni-etiche)
-- [Conclusione](#conclusione)
-- [Riferimenti](#riferimenti)
-
 ---
 
 ## Introduzione
@@ -251,14 +229,6 @@ def decode_text(stego_text):
 
 ---
 
-## Conclusione
-
-Congratulazioni, **cavalieri**! 🛡️ Avete esplorato le profondità della steganografia, apprendendo come nascondere e rivelare messaggi segreti attraverso diversi media. Che queste conoscenze vi guidino nel vostro percorso nel mondo della **cybersecurity**.
-
-**Che l'intuizione sia la vostra bussola e il sapere la vostra armatura!** 🗡️
-
----
-
 ## Riferimenti
 
 1. **"Cryptography and Network Security"** - William Stallings 📚
@@ -266,33 +236,3 @@ Congratulazioni, **cavalieri**! 🛡️ Avete esplorato le profondità della ste
 3. **Wave Module Documentation** - [Wave Module](https://docs.python.org/3/library/wave.html)
 4. **Steghide** - [Steghide Project](http://steghide.sourceforge.net/)
 5. **OpenPuff** - [OpenPuff Steganography](https://embeddedsw.net/OpenPuff_Steganography_Home.html)
-
----
-
-# 📁 File del Progetto
-
-## encode_lsb.py
-
-[Visualizza il codice](#encode_lsbpy)
-
-## decode_lsb.py
-
-[Visualizza il codice](#decode_lsbpy)
-
-## encode_audio.py
-
-[Visualizza il codice](#encode_audiopy)
-
-## decode_audio.py
-
-[Visualizza il codice](#decode_audiopy)
-
-## encode_text.py
-
-[Visualizza il codice](#encode_textpy)
-
-## decode_text.py
-
-[Visualizza il codice](#decode_textpy)
-
----
