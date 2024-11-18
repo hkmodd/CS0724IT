@@ -1,4 +1,4 @@
-# Pratica S3/L1 ✉️ - Sistemi Operativi: Grafici di Mono-tasking, Multi-tasking e Time-sharing
+# Consegna S3/L1 ✉️ - Sistemi Operativi: Grafici di Mono-tasking, Multi-tasking e Time-sharing
 
 Questo progetto è stato sviluppato per rappresentare graficamente i tre principali modelli di gestione dei processi nei sistemi operativi: **Mono-tasking**, **Multi-tasking** e **Time-sharing**. I grafici sono stati creati utilizzando Python e possono essere visualizzati tramite una GUI interattiva o salvati come immagini e GIF.
 
