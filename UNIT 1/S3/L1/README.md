@@ -1,4 +1,4 @@
-# Esercizio S3/L1 - Sistemi Operativi
+# Esercizio S3/L1 ✉️ - Sistemi Operativi
 
 ## Descrizione del progetto
 
