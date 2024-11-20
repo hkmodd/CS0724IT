@@ -97,7 +97,7 @@ def main():
     root.geometry("400x300")
 
     # Stile moderno
-    tk.Label(root, text="Crypto Tool 2024", font=("Helvetica", 16, "bold")).pack(pady=10)
+    tk.Label(root, text="FBI is coming for you", font=("Helvetica", 16, "bold")).pack(pady=10)
 
     tk.Button(root, text="Cifra un messaggio", command=encrypt_gui, width=25, height=2, bg="#4CAF50", fg="white").pack(pady=5)
     tk.Button(root, text="Decifra un messaggio", command=decrypt_gui, width=25, height=2, bg="#2196F3", fg="white").pack(pady=5)
