@@ -27,7 +27,7 @@ Per decifrare, il programma:
 
 1. **Esegui il programma**:
    ```bash
-   python nome_del_file.py
+   python PraticaS1L3.py
    ```
 
 2. **Scegli un'opzione**:
