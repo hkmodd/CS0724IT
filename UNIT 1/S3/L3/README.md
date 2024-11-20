@@ -6,7 +6,7 @@ Benvenuto nel **cifratore un tanto al chilo**! 🥳 Questo programma permette di
 
 ✨ **Funzionalità principali:**
 1. **Criptare** un messaggio specificando uno shift scelto da te.
-2. **Decriptare** un messaggio già cifrato utilizzando un attacco brute force che prova tutti gli shift possibili.
+2. **Decriptare** un messaggio già cifrato utilizzando un attacco brute force che prova tutti gli shift possibili, con alfabeto ITALIANO (21 lettere).
 
 ---
 
@@ -16,19 +16,18 @@ L'esercizio richiesto era:
 > Dato un messaggio cifrato cercare di trovare il testo in chiaro:  
 > Messaggio cifrato: "HSNFRGH"  
 
-Il messaggio più probabile si trova usando **Shift 3** ed è **EPKCODE**.
+Il messaggio più probabile si trova usando **Shift 3** ed è **EPICODE**.
 
 ---
 
 ## ⚙️ Come funziona?
 
 ### 🔒 **Crittografia**
-Il Cifrario di Cesare sposta ogni lettera del messaggio originale (testo in chiaro) di un numero fisso di posizioni nell'alfabeto. Ad esempio:
-- Se il testo in chiaro è `CIAO` e lo shift è `3`, il messaggio cifrato sarà `FLDR`.
+Il Cifrario di Cesare sposta ogni lettera del messaggio originale (testo in chiaro) di un numero fisso di posizioni nell'alfabeto.
 
 ### 🔑 **Decrittografia**
 Per decifrare, il programma:
-1. **Tenta tutti gli shift possibili** (da 1 a 25).
+1. **Tenta tutti gli shift possibili**
 2. Mostra il risultato per ogni shift in modo da poter identificare il testo originale.
 
 ---
@@ -62,7 +61,7 @@ Per decifrare, il programma:
 - **`main()`**:
   Gestisce l'interazione con l'utente e l'esecuzione delle operazioni.
 
-### 🛠️ Tecnologie usate
+### 🛠️ Strumenti usati
 - **Python 3**: Linguaggio di programmazione.
 - **Stringhe**: Per manipolare i caratteri e gestire gli shift nell'alfabeto.
 
@@ -71,35 +70,3 @@ Per decifrare, il programma:
 - Gli spazi e i caratteri speciali vengono ignorati.
 
 ---
-
-## 📈 Esempi d'uso
-
-### 🔒 Criptare
-```
-Scegli un'operazione:
-1: Criptare un messaggio
-2: Decriptare un messaggio
-Inserisci 1 o 2: 1
-
-Inserisci il messaggio da criptare (solo lettere altrimenti ti cancello il sistema): CIAO
-Inserisci lo shift (1-25): 3
-
-Messaggio criptato: FLDR
-```
-
-### 🔓 Decriptare
-```
-Scegli un'operazione:
-1: Criptare un messaggio
-2: Decriptare un messaggio
-Inserisci 1 o 2: 2
-
-Inserisci il messaggio cifrato (solo lettere, non farmi incazzare): FLDR
-
-Sto decifrando il messaggio...
-Shift 1: EKCQ
-Shift 2: DJBP
-Shift 3: CIAO
-Shift 4: BHZN
-...
-```
