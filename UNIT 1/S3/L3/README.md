@@ -1,5 +1,5 @@
 
-# 🛡️ Cifrario di Cesare: Cripta e Decripta Messaggi 🕵️‍♂️
+# Consegna S3/L3 ✉️ - 🛡️ Cifrario di Cesare: Cripta e Decripta Messaggi 🕵️‍♂️
 
 ## 📜 Descrizione
 Benvenuto nel **cifratore un tanto al chilo**! 🥳 Questo programma permette di **criptare** o **decriptare** un messaggio utilizzando il famoso **Cifrario di Cesare**, un metodo di crittografia semplice ma efficace.
@@ -37,7 +37,7 @@ Per decifrare, il programma:
 
 1. **Esegui il programma**:
    ```bash
-   python nome_del_file.py
+   python PraticaS1L3.py
    ```
 
 2. **Scegli un'opzione**:
@@ -104,4 +104,7 @@ Shift 4: BHZN
 ...
 ```
 
+<<<<<<< HEAD
 ---
+=======
+>>>>>>> 83f3da46ac56671aa8cf03eb14b7dc574893bf8b
