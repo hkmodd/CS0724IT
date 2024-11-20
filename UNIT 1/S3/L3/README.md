@@ -10,6 +10,16 @@ Benvenuto nel **cifratore un tanto al chilo**! 🥳 Questo programma permette di
 
 ---
 
+### 📝 Esercizio richiesto
+L'esercizio richiesto era:
+
+> Dato un messaggio cifrato cercare di trovare il testo in chiaro:  
+> Messaggio cifrato: "HSNFRGH"  
+
+Il messaggio più probabile si trova usando **Shift 3** ed è **EPKCODE**.
+
+---
+
 ## ⚙️ Come funziona?
 
 ### 🔒 **Crittografia**
@@ -95,8 +105,3 @@ Shift 4: BHZN
 ```
 
 ---
-
-## 🤓 Autore
-**Nome del programma:** Cifrario di Cesare  
-**Versione:** 1.0  
-**Creato da:** 🧑‍💻 *Un programmatore sarcastico con amore per la crittografia!*
