@@ -103,8 +103,3 @@ Shift 3: CIAO
 Shift 4: BHZN
 ...
 ```
-
-<<<<<<< HEAD
----
-=======
->>>>>>> 83f3da46ac56671aa8cf03eb14b7dc574893bf8b
