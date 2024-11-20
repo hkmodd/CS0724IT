@@ -1,5 +1,5 @@
 
-# 🛡️ Cifrario di Cesare: Cripta e Decripta Messaggi 🕵️‍♂️
+# Consegna S3/L3 ✉️ - 🛡️ Cifrario di Cesare: Cripta e Decripta Messaggi 🕵️‍♂️
 
 ## 📜 Descrizione
 Benvenuto nel **cifratore un tanto al chilo**! 🥳 Questo programma permette di **criptare** o **decriptare** un messaggio utilizzando il famoso **Cifrario di Cesare**, un metodo di crittografia semplice ma efficace.
@@ -94,9 +94,3 @@ Shift 4: BHZN
 ...
 ```
 
----
-
-## 🤓 Autore
-**Nome del programma:** Cifrario di Cesare  
-**Versione:** 1.0  
-**Creato da:** 🧑‍💻 *Un programmatore sarcastico con amore per la crittografia!*
