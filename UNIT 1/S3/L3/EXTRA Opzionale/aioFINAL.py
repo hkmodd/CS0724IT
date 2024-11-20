@@ -52,6 +52,16 @@ def verify_signature(public_key, message, signature):
     except Exception:
         return False
 
+# Copia nella clipboard
+def copy_to_clipboard(text):
+    root = tk.Tk()
+    root.withdraw()  # Nascondi la finestra principale
+    root.clipboard_clear()
+    root.clipboard_append(text)
+    root.update()
+    root.destroy()
+    messagebox.showinfo("Copia nella Clipboard", "Risultato copiato nella clipboard!")
+
 # Funzioni GUI
 def encrypt_gui():
     public_key = load_public_key()
@@ -59,7 +69,8 @@ def encrypt_gui():
     if message:
         encrypted = encrypt_message(public_key, message)
         encrypted_base64 = base64.b64encode(encrypted).decode('utf-8')
-        messagebox.showinfo("Messaggio Cifrato", f"Cifrato (Base64): {encrypted_base64}")
+        if messagebox.askyesno("Messaggio Cifrato", f"Cifrato (Base64): {encrypted_base64}\n\nVuoi copiare nella clipboard?"):
+            copy_to_clipboard(encrypted_base64)
 
 def decrypt_gui():
     private_key = load_private_key()
@@ -67,7 +78,9 @@ def decrypt_gui():
     if encrypted_message:
         try:
             decrypted = decrypt_message(private_key, base64.b64decode(encrypted_message))
-            messagebox.showinfo("Messaggio Decriptato", f"Decriptato: {decrypted.decode('utf-8')}")
+            decrypted_text = decrypted.decode('utf-8')
+            if messagebox.askyesno("Messaggio Decriptato", f"Decriptato: {decrypted_text}\n\nVuoi copiare nella clipboard?"):
+                copy_to_clipboard(decrypted_text)
         except Exception:
             messagebox.showerror("Errore", "Decriptazione fallita. Verifica il messaggio cifrato.")
 
@@ -77,7 +90,8 @@ def sign_gui():
     if message:
         signature = sign_message(private_key, message)
         signature_base64 = base64.b64encode(signature).decode('utf-8')
-        messagebox.showinfo("Firma", f"Firma generata (Base64): {signature_base64}")
+        if messagebox.askyesno("Firma", f"Firma generata (Base64): {signature_base64}\n\nVuoi copiare nella clipboard?"):
+            copy_to_clipboard(signature_base64)
 
 def verify_gui():
     public_key = load_public_key()
