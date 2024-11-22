@@ -107,3 +107,24 @@ Abbiamo sviluppato un'applicazione in Python che rileva e decodifica dati codifi
 
 L'applicativo offre una base solida per rilevare e trattare dati offuscati in modo efficiente, supportando l'analisi di payload sospetti in ambito Cybersecurity.
 
+
+
+---
+
+## 🔚 Conclusione
+
+Abbiamo esplorato il mondo delle codifiche, dai formati binario-carattere come **Base64** e **Base58**, alle codifiche dei caratteri come **UTF-8** e **ASCII**, fino ad analizzare le vulnerabilità legate a una gestione errata di queste tecniche. 
+
+### 💡 Lezioni Apprese
+1. **Comprensione Profonda**: Le codifiche sono fondamentali per rappresentare e trasmettere dati in modo efficiente e sicuro.
+2. **Cybersecurity**: La corretta gestione delle codifiche è essenziale per prevenire exploit come SQL injection, XSS, e attacchi di evasione.
+3. **Strumenti Utili**: L'applicativo sviluppato dimostra come sia possibile rilevare e trattare dati offuscati per migliorare la sicurezza.
+
+### 🚀 Passi Successivi
+Questa base può essere estesa:
+- Implementando codifiche e decodifiche avanzate.
+- Integrare sistemi di rilevamento per attacchi real-time.
+- Approfondire l'interazione tra codifiche e protocolli di rete.
+
+Capire e dominare le codifiche non è solo una competenza tecnica: è una chiave per proteggere e ottimizzare il mondo digitale.
+
