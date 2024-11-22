@@ -70,3 +70,40 @@ Capire le codifiche è come avere una chiave universale per il mondo digitale. �
 - Creare uno strumento per rilevare e decodificare dati offuscati.
 
 Pronto a esplorare? 🌌
+
+
+---
+
+## 4️⃣ Analisi delle Vulnerabilità Legate a Codifiche Errate
+
+### 🔍 Pericoli Comuni
+Le codifiche errate possono creare vulnerabilità critiche nei sistemi:
+1. **Doppia Codifica**: Manipolazioni intenzionali che confondono i sistemi di rilevamento.
+2. **Codifiche Miscelate**: Utilizzate per eludere i sistemi di validazione.
+3. **Mancata Sanitizzazione**: Input non trattati correttamente che portano a comportamenti indesiderati.
+
+### 🛡️ Strategia di Difesa
+- Convalida e normalizzazione degli input.
+- Uso di librerie affidabili per il trattamento delle codifiche.
+- Monitoraggio attivo dei log per rilevare schemi sospetti.
+
+---
+
+## 5️⃣ Applicativo: Decodificatore per Dati Offuscati
+
+Abbiamo sviluppato un'applicazione in Python che rileva e decodifica dati codificati in vari formati. 
+
+### ✨ Caratteristiche
+- Supporto a codifiche comuni: **Base64**, **Base58**, **Hexadecimal**, e **URL-encoded**.
+- Identificazione automatica della codifica.
+- Decodifica sicura con gestione degli errori.
+
+### 📊 Esempio di Risultati
+| Input                | Detected Encoding | Decoded Data  | Description        |
+|----------------------|-------------------|---------------|--------------------|
+| SGVsbG8gd29ybGQ=     | Base64            | Hello world   | Test Base64        |
+| 48656c6c6f20776f726c64 | Hexadecimal       | Hello world   | Test Hexadecimal   |
+| JUMzJUEwbGFtbyUyMG1vbmRv | Base64            | %C3%A0lamo%20mondo | Test URL-encoded |
+
+L'applicativo offre una base solida per rilevare e trattare dati offuscati in modo efficiente, supportando l'analisi di payload sospetti in ambito Cybersecurity.
+
