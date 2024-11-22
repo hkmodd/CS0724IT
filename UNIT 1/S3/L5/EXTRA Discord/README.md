@@ -150,12 +150,5 @@ Abbiamo esteso le funzionalità del nostro decodificatore aggiungendo una GUI (I
 2. Inserisci i dati nella casella di testo.
 3. Premi il pulsante **Analizza**.
 4. Consulta i risultati nella tabella visualizzata.
-
-### 💡 Estensioni Future
-- Supporto a codifiche più avanzate come **Base85**.
-- Esportazione dei risultati in file (CSV, JSON).
-- Rilevamento di dati codificati multistrato o misti.
-
 ---
 
-Grazie per aver scelto il nostro strumento!
