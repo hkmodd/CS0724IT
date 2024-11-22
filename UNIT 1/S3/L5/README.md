@@ -69,6 +69,30 @@ Il firewall è configurato con regole ACL specifiche per consentire:
 
 ---
 
+## **Q&A**
+### 1. **Perché non è stato usato un router?**
+
+- Il firewall 5506-X può svolgere sia il ruolo di dispositivo di sicurezza che di router, riducendo la complessità e i costi. In questa rete semplice, un router separato sarebbe ridondante.
+
+### 2. **Come può il firewall instradare il traffico verso Internet?**
+
+- Grazie alle sue funzionalità di routing:
+ 1. L'interfaccia esterna (WAN) è configurata con l'IP pubblico o un IP fornito dal provider.
+ 2. L'interfaccia interna (LAN) serve la rete privata.
+ 3. Una default route (0.0.0.0) indirizza il traffico verso il gateway dell'ISP.
+
+### 3. **Come i dispositivi interni accedono a Internet?**
+
+I dispositivi interni utilizzano il firewall come gateway predefinito.
+Il firewall applica il NAT per tradurre gli indirizzi privati in un unico indirizzo pubblico.
+
+### 4. **Come si garantisce la sicurezza senza un router?**
+
+Il firewall implementa regole di sicurezza avanzate per filtrare il traffico e impedire accessi non autorizzati.
+Può anche gestire VPN, IDS/IPS e altre funzioni per migliorare la protezione della rete.
+
+---
+
 ## **Conclusioni**
 Questa topologia offre una combinazione ottimale di sicurezza, scalabilità e controllo del traffico. La segmentazione tramite VLAN e DMZ, unita alla protezione fornita dal firewall, garantisce:
 - **Protezione contro le minacce** sia interne che esterne.
