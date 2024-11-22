@@ -22,7 +22,7 @@ La rete interna include:
 
 La scelta di segmentare i PC in VLAN separate è stata guidata dalla necessità di **ridurre la superficie di attacco** interna e **migliorare la gestione del traffico di rete**:
 - 🛡️ **Isolamento dei dispositivi**: I PC non possono comunicare direttamente tra loro, il che impedisce la propagazione di attacchi come worm o malware.
-- 🚦 **Controllo del traffico**: Tutto il traffico tra VLAN è instradato e controllato dal firewall, offrendo una maggiore visibilità e la possibilità di applicare politiche di sicurezza granulari.
+- 🚦 **Controllo del traffico**: Tutto il traffico tra VLAN è instradato e controllato dal firewall, offrendo una maggiore visibilità e la possibilità di applicare politiche di sicurezza specifiche.
 
 Il NAS è invece nella VLAN predefinita, accessibile a tutti i PC tramite regole ACL. Questo approccio garantisce una **collaborazione sicura**, permettendo l'accesso solo al traffico autorizzato.
 
