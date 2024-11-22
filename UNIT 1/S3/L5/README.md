@@ -1,4 +1,5 @@
 
+# 📐 Progetto S3/L5 📐
 # 🛡️ Progetto di Segmentazione della Rete: Relazione Tecnica e Motivazioni
 
 ## **Introduzione**
@@ -6,6 +7,8 @@ Questo progetto è stato realizzato per implementare una rete segmentata che gar
 - Una rete interna con PC isolati in VLAN separate e un NAS condiviso.
 - Una **DMZ (Demilitarized Zone)** con un server HTTP e un server SMTP.
 - Una connessione verso Internet protetta da un firewall centrale.
+
+![DMZ & Firewall](./Screenshot.png "DMZ & Firewall")
 
 L’obiettivo principale era creare una rete sicura, con una chiara segmentazione e controllo del traffico, proteggendo al contempo le risorse interne e garantendo un accesso sicuro ai servizi esposti al pubblico.
 
@@ -76,9 +79,4 @@ La progettazione di una rete non è solo una questione tecnica, ma un atto di re
 
 ---
 
-### **Screenshot della Configurazione**
-Per una panoramica visiva della configurazione, fai riferimento agli screenshot allegati. 🚀
 
----
-
-Se hai ulteriori domande o desideri espandere il progetto, non esitare a contattare il team!
