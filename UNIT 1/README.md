@@ -1,5 +1,6 @@
-# UNIT 1
+# ||| UNIT 1 |||
+---
 
-**Periodo:** Dal 4 al 29 Novembre 2024
+### 4 Novembre 2024 - 29 Novembre 2024
 
 ---
