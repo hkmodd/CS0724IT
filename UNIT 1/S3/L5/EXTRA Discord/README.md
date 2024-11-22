@@ -128,3 +128,34 @@ Questa base può essere estesa:
 
 Capire e dominare le codifiche non è solo una competenza tecnica: è una chiave per proteggere e ottimizzare il mondo digitale.
 
+
+
+---
+
+## 🖥️ Interfaccia Grafica del Decodificatore
+
+### 📝 Descrizione
+Abbiamo esteso le funzionalità del nostro decodificatore aggiungendo una GUI (Interfaccia Grafica) basata su **Tkinter**. Questo miglioramento rende l'applicativo più accessibile e user-friendly.
+
+### 🔑 Funzionalità della GUI
+- **Casella di input**: Permette di inserire i dati codificati.
+- **Pulsante Analizza**: Avvia il processo di rilevamento e decodifica.
+- **Tabella dei risultati**: Mostra il tipo di codifica rilevata e il contenuto decodificato.
+
+### 📦 Come Usare
+1. Esegui il file Python con:
+   ```bash
+   python detect_decode_gui.py
+   ```
+2. Inserisci i dati nella casella di testo.
+3. Premi il pulsante **Analizza**.
+4. Consulta i risultati nella tabella visualizzata.
+
+### 💡 Estensioni Future
+- Supporto a codifiche più avanzate come **Base85**.
+- Esportazione dei risultati in file (CSV, JSON).
+- Rilevamento di dati codificati multistrato o misti.
+
+---
+
+Grazie per aver scelto il nostro strumento!
