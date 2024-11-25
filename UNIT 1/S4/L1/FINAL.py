@@ -9,7 +9,13 @@ import pty
 import os
 import re
 import requests
-
+import csv
+from tkinter import filedialog
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from concurrent.futures import ThreadPoolExecutor
+import shutil
+import textwrap
 
 class SplashScreen(tk.Toplevel):
     def __init__(self, master, logo_path, on_complete):
@@ -45,12 +51,11 @@ class SplashScreen(tk.Toplevel):
             self.destroy()
             self.on_complete()
 
-
 class PortScannerListenerApp:
     def __init__(self, master):
         self.master = master
         self.master.title("PortWatch - Scanner e Listener con Shell")
-        self.master.geometry("900x900")
+        self.master.geometry("1200x700")
 
         self.listener_socket = None
         self.client_socket = None
@@ -64,11 +69,28 @@ class PortScannerListenerApp:
         self.results = {}
         self.open_ports = []
 
+        self.http_results = []
+
+        self.lock = threading.Lock()
+
         self.create_widgets()
 
     def create_widgets(self):
-        self.scanner_frame = ttk.LabelFrame(self.master, text="Port Scanner")
-        self.scanner_frame.pack(fill="x", padx=10, pady=5)
+        self.main_frame = ttk.Frame(self.master)
+        self.main_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+        self.left_frame = ttk.Frame(self.main_frame)
+        self.left_frame.grid(row=0, column=0, sticky="nsew", padx=5, pady=5)
+        self.right_frame = ttk.Frame(self.main_frame)
+        self.right_frame.grid(row=0, column=1, sticky="nsew", padx=5, pady=5)
+
+        self.main_frame.columnconfigure(0, weight=1)
+        self.main_frame.columnconfigure(1, weight=1)
+        self.main_frame.rowconfigure(0, weight=1)
+
+        # Scanner Frame
+        self.scanner_frame = ttk.LabelFrame(self.left_frame, text="Port Scanner")
+        self.scanner_frame.pack(fill="x", padx=5, pady=5)
 
         self.ip_label = ttk.Label(self.scanner_frame, text="Indirizzo IP:")
         self.ip_label.pack(side="left", padx=5)
@@ -80,17 +102,21 @@ class PortScannerListenerApp:
         self.scan_button = ttk.Button(self.scanner_frame, text="Avvia Scansione", command=self.start_scan)
         self.scan_button.pack(side="left", padx=5)
 
-        self.stop_scan_button = ttk.Button(self.scanner_frame, text="STOP Scansione", command=self.stop_scan)
+        self.stop_scan_button = ttk.Button(self.scanner_frame, text="STOP Scansione", command=self.stop_scan, state="disabled")
         self.stop_scan_button.pack(side="left", padx=5)
 
-        self.result_table = ttk.Treeview(self.master, columns=("Porta", "Stato", "Protocollo"), show="headings")
+        self.result_table = ttk.Treeview(self.left_frame, columns=("Porta", "Stato", "Protocollo"), show="headings")
         self.result_table.heading("Porta", text="Porta")
         self.result_table.heading("Stato", text="Stato")
         self.result_table.heading("Protocollo", text="Protocollo")
-        self.result_table.pack(fill="both", expand=True, padx=10, pady=5)
+        self.result_table.pack(fill="both", expand=True, padx=5, pady=5)
 
-        self.listener_frame = ttk.LabelFrame(self.master, text="Gestione Listener")
-        self.listener_frame.pack(fill="x", padx=10, pady=5)
+        self.export_button = ttk.Button(self.left_frame, text="Esporta Report", command=self.export_report)
+        self.export_button.pack(pady=5)
+
+        # Listener Frame
+        self.listener_frame = ttk.LabelFrame(self.right_frame, text="Gestione Listener")
+        self.listener_frame.pack(fill="x", padx=5, pady=5)
 
         self.port_label = ttk.Label(self.listener_frame, text="Porta Listener:")
         self.port_label.pack(side="left", padx=5)
@@ -102,11 +128,12 @@ class PortScannerListenerApp:
         self.start_button = ttk.Button(self.listener_frame, text="Avvia Listener", command=self.start_listener)
         self.start_button.pack(side="left", padx=5)
 
-        self.stop_button = ttk.Button(self.listener_frame, text="Ferma Listener", command=self.stop_listener)
+        self.stop_button = ttk.Button(self.listener_frame, text="Ferma Listener", command=self.stop_listener, state="disabled")
         self.stop_button.pack(side="left", padx=5)
 
-        self.shell_frame = ttk.LabelFrame(self.master, text="Shell Interattiva")
-        self.shell_frame.pack(fill="both", expand=True, padx=10, pady=5)
+        # Shell Frame
+        self.shell_frame = ttk.LabelFrame(self.right_frame, text="Shell Interattiva")
+        self.shell_frame.pack(fill="both", expand=True, padx=5, pady=5)
 
         self.shell_output = scrolledtext.ScrolledText(self.shell_frame, width=80, height=15, state="disabled")
         self.shell_output.pack(pady=5)
@@ -114,11 +141,15 @@ class PortScannerListenerApp:
         self.command_entry = ttk.Entry(self.shell_frame, width=80)
         self.command_entry.pack(side="left", padx=5)
 
-        self.send_button = ttk.Button(self.shell_frame, text="Invia", command=self.send_command)
+        self.send_button = ttk.Button(self.shell_frame, text="Invia", command=self.send_command, state="disabled")
         self.send_button.pack(side="left", padx=5)
 
-        self.http_frame = ttk.LabelFrame(self.master, text="HTTP Tester")
-        self.http_frame.pack(fill="x", padx=10, pady=5)
+        self.clear_shell_button = ttk.Button(self.shell_frame, text="Cancella Output Shell", command=self.clear_shell_output)
+        self.clear_shell_button.pack(side="left", padx=5)
+
+        # HTTP Frame
+        self.http_frame = ttk.LabelFrame(self.left_frame, text="HTTP Tester")
+        self.http_frame.pack(fill="x", padx=5, pady=5)
 
         self.http_method_label = ttk.Label(self.http_frame, text="Metodo HTTP:")
         self.http_method_label.pack(side="left", padx=5)
@@ -136,17 +167,21 @@ class PortScannerListenerApp:
         self.http_send_button = ttk.Button(self.http_frame, text="Invia Richiesta", command=self.send_http_request)
         self.http_send_button.pack(side="left", padx=5)
 
-        self.http_response_frame = ttk.LabelFrame(self.master, text="Risposta HTTP")
-        self.http_response_frame.pack(fill="both", expand=True, padx=10, pady=5)
+        self.http_response_frame = ttk.LabelFrame(self.left_frame, text="Risposta HTTP")
+        self.http_response_frame.pack(fill="both", expand=True, padx=5, pady=5)
 
         self.http_response_output = scrolledtext.ScrolledText(self.http_response_frame, width=80, height=10, state="disabled")
         self.http_response_output.pack(pady=5)
 
-        self.log_frame = ttk.LabelFrame(self.master, text="Log")
-        self.log_frame.pack(fill="both", expand=True, padx=10, pady=5)
+        # Log Frame
+        self.log_frame = ttk.LabelFrame(self.right_frame, text="Log")
+        self.log_frame.pack(fill="both", expand=True, padx=5, pady=5)
 
         self.log_area = scrolledtext.ScrolledText(self.log_frame, width=80, height=10, state="disabled")
         self.log_area.pack(pady=5)
+
+        self.clear_log_button = ttk.Button(self.log_frame, text="Cancella Log", command=self.clear_log)
+        self.clear_log_button.pack(pady=5)
 
     def log(self, message):
         self.log_area.config(state="normal")
@@ -160,6 +195,8 @@ class PortScannerListenerApp:
         self.open_ports = []
         self.results = {}
         self.scanning = True
+        self.scan_button.config(state="disabled")
+        self.stop_scan_button.config(state="normal")
 
         for port in range(1, 1025):
             self.port_queue.put(port)
@@ -168,22 +205,21 @@ class PortScannerListenerApp:
 
     def stop_scan(self):
         self.scanning = False
+        self.scan_button.config(state="normal")
+        self.stop_scan_button.config(state="disabled")
         self.log("Scansione fermata.")
 
     def perform_scan(self, target_ip):
-        threads = []
-        for _ in range(100):
-            thread = threading.Thread(target=self.scan_worker, args=(target_ip,))
-            threads.append(thread)
-            thread.start()
-
-        for thread in threads:
-            thread.join()
+        with ThreadPoolExecutor(max_workers=50) as executor:
+            while not self.port_queue.empty() and self.scanning:
+                executor.submit(self.scan_worker, target_ip)
 
         self.log("Scansione completata.")
+        self.scan_button.config(state="normal")
+        self.stop_scan_button.config(state="disabled")
 
     def scan_worker(self, target_ip):
-        while not self.port_queue.empty() and self.scanning:
+        if not self.port_queue.empty() and self.scanning:
             port = self.port_queue.get()
             self.scan_port(target_ip, port, protocol="TCP")
             self.scan_port(target_ip, port, protocol="UDP")
@@ -205,15 +241,16 @@ class PortScannerListenerApp:
                         self.add_result(port, "OPEN", protocol)
                     except socket.timeout:
                         pass
-        except Exception:
-            pass
+        except Exception as e:
+            self.log(f"Errore durante la scansione della porta {port}: {e}")
 
     def add_result(self, port, state, protocol):
-        if port not in self.results:
-            self.results[port] = {"stato": state, "protocollo": protocol}
-            self.result_table.insert("", "end", values=(port, state, protocol))
-            if state == "OPEN":
-                self.open_ports.append(port)
+        with self.lock:
+            if port not in self.results:
+                self.results[port] = {"stato": state, "protocollo": protocol}
+                self.result_table.insert("", "end", values=(port, state, protocol))
+                if state == "OPEN":
+                    self.open_ports.append(port)
 
     def start_listener(self):
         if self.listener_thread and self.listener_thread.is_alive():
@@ -225,10 +262,14 @@ class PortScannerListenerApp:
         self.running = True
         self.listener_thread.start()
         self.log(f"Listener avviato sulla porta {port}.")
+        self.start_button.config(state="disabled")
+        self.stop_button.config(state="normal")
+        self.send_button.config(state="normal")
 
     def run_listener(self, port):
         try:
             self.listener_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            self.listener_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             self.listener_socket.bind(("0.0.0.0", port))
             self.listener_socket.listen(1)
             self.log("In attesa di connessioni...")
@@ -256,6 +297,9 @@ class PortScannerListenerApp:
         if self.shell_fd:
             os.close(self.shell_fd)
         self.log("Listener fermato.")
+        self.start_button.config(state="normal")
+        self.stop_button.config(state="disabled")
+        self.send_button.config(state="disabled")
 
     def send_command(self):
         if not self.client_socket:
@@ -311,16 +355,23 @@ class PortScannerListenerApp:
         url = self.http_url_entry.get()
         try:
             if method == "GET":
-                response = requests.get(url)
+                response = requests.get(url, timeout=5)
             elif method == "POST":
-                response = requests.post(url)
+                response = requests.post(url, timeout=5)
             elif method == "PUT":
-                response = requests.put(url)
+                response = requests.put(url, timeout=5)
             elif method == "DELETE":
-                response = requests.delete(url)
+                response = requests.delete(url, timeout=5)
             else:
                 self.log("Metodo HTTP non supportato.")
                 return
+
+            self.http_results.append({
+                "method": method,
+                "url": url,
+                "status_code": response.status_code,
+                "response": response.text
+            })
 
             self.http_response_output.config(state="normal")
             self.http_response_output.delete(1.0, tk.END)
@@ -328,9 +379,77 @@ class PortScannerListenerApp:
             self.http_response_output.insert(tk.END, response.text)
             self.http_response_output.config(state="disabled")
 
-        except Exception as e:
+        except requests.RequestException as e:
             self.log(f"Errore nella richiesta HTTP: {e}")
 
+    def export_report(self):
+        file_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv"), ("PDF files", "*.pdf"), ("All files", "*.*")])
+        if not file_path:
+            return
+
+        try:
+            if file_path.lower().endswith(".csv"):
+                # Esportazione CSV
+                with open(file_path, mode="w", newline="") as file:
+                    writer = csv.writer(file)
+                    writer.writerow(["Porta", "Stato", "Protocollo"])
+                    for port, result in self.results.items():
+                        writer.writerow([port, result["stato"], result["protocollo"]])
+
+                    writer.writerow([])
+                    writer.writerow(["Metodo HTTP", "URL", "Status Code", "Risposta"])
+                    for http_result in self.http_results:
+                        writer.writerow([http_result["method"], http_result["url"], http_result["status_code"], http_result["response"]])
+
+                self.log(f"Report CSV esportato con successo in: {file_path}")
+
+            elif file_path.lower().endswith(".pdf"):
+                # Esportazione PDF
+                c = canvas.Canvas(file_path, pagesize=letter)
+                c.setFont("Helvetica", 12)
+                c.drawString(100, 750, "Port Scanner Report")
+                c.drawString(100, 735, "=================")
+                y = 720
+                for port, result in self.results.items():
+                    c.drawString(100, y, f"Porta: {port}, Stato: {result['stato']}, Protocollo: {result['protocollo']}")
+                    y -= 15
+                    if y < 50:
+                        c.showPage()
+                        y = 750
+
+                y -= 30
+                c.drawString(100, y, "HTTP Requests Report")
+                c.drawString(100, y - 15, "=================")
+                y -= 30
+                for http_result in self.http_results:
+                    c.drawString(100, y, f"Metodo: {http_result['method']}, URL: {http_result['url']}, Status: {http_result['status_code']}")
+                    y -= 15
+                    response_lines = textwrap.wrap(http_result['response'], width=80)
+                    for line in response_lines:
+                        c.drawString(120, y, line)
+                        y -= 15
+                        if y < 50:
+                            c.showPage()
+                            y = 750
+
+                c.save()
+                self.log(f"Report PDF esportato con successo in: {file_path}")
+
+            else:
+                self.log("Errore: formato di file non supportato.")
+
+        except Exception as e:
+            self.log(f"Errore nell'esportazione del report: {e}")
+
+    def clear_log(self):
+        self.log_area.config(state="normal")
+        self.log_area.delete(1.0, tk.END)
+        self.log_area.config(state="disabled")
+
+    def clear_shell_output(self):
+        self.shell_output.config(state="normal")
+        self.shell_output.delete(1.0, tk.END)
+        self.shell_output.config(state="disabled")
 
 def main():
     root = tk.Tk()
@@ -342,7 +461,6 @@ def main():
 
     splash = SplashScreen(root, logo_path="logo.png", on_complete=show_main_app)
     root.mainloop()
-
 
 if __name__ == "__main__":
     main()
