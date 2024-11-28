@@ -1,108 +1,129 @@
-# S4 Build Week 1: REPORT OPERATIVO
+# S4 Build Week 1: REPORT OPERATIVO – CYBERCERBERUS
 
 **Periodo:** 25/11/2024 - 29/11/2024  
 **Team:** **CyberCerberus**  
 
 ## **Introduzione**
-Il team **CyberCerberus**, composto da:  
+Benvenuti al report finale della **Build Week** del team **CyberCerberus**. Durante questa settimana, abbiamo affrontato la sfida di progettare un’infrastruttura IT scalabile, sicura e funzionale per l’azienda **Theta**, combinando simulazioni di rete avanzate, sviluppo software e analisi di sicurezza.  
+
+**Composizione del team:**  
+- **Federica Cardinali** – *Team Leader*  
 - **Rinat Rustamov**  
 - **Sebastiano Gelmetti**  
 - **Luca Nietrzeba**  
 - **Manuel Izzo**  
 - **Francesco Rossi**  
-- **Federica Cardinali** – *Team Leader*  
 - **Alessandro Ragnino**  
 - **Andrea Calcagno**  
 - **Antonio Podda**  
 
-ha lavorato con l'obiettivo di creare un’infrastruttura di rete sicura e procedere con l'analisi e il miglioramento della sicurezza.  
-La **Team Leader**, Federica Cardinali, ha coordinato l’attività del gruppo, garantendo coesione e una corretta suddivisione dei compiti.  
+### **Obiettivo principale del progetto**
+Progettare un’infrastruttura IT in grado di supportare:  
+- **6 piani di uffici** con un totale di 120 dispositivi.  
+- **Un Web server dedicato**.  
+- **Un NAS per la condivisione dati**.  
+- **Un Firewall perimetrale** e **3 sistemi IDS/IPS** per la prevenzione delle intrusioni.  
+- Analisi e mitigazione delle vulnerabilità rilevate nella rete e nei sistemi.  
 
-**Organizzazione del lavoro:**  
-Il team si è diviso in due sottogruppi operativi per massimizzare l’efficienza:  
-- **Gruppo 1:** Sebastiano Gelmetti, Luca Nietrzeba, Alessandro Ragnino, Antonio Podda.  
-  *Obiettivo*: sviluppare un programma Python per la scansione delle porte e l’analisi delle risposte HTTP del Web Server, documentando i risultati.  
-- **Gruppo 2:** Manuel Izzo, Francesco Rossi, Andrea Calcagno, Rinat Rustamov.  
-  *Obiettivo*: simulare una rete virtuale con Cisco Packet Tracer, ricercare hardware reale per l’implementazione e creare un contratto personalizzato per il cliente **Theta**.
-
----
-
-## **Giorno 1 – Lunedì 25/11/2024**
-### **Attività svolte:**
-**Gruppo 1:**  
-- Raccolta della documentazione relativa ai moduli Python utili al progetto.  
-- Analisi dei requisiti del progetto e definizione della struttura iniziale del codice.  
-
-**Gruppo 2:**  
-- Inizio della simulazione della rete virtuale con Cisco Packet Tracer.  
-- Raccolta delle specifiche hardware utili per la rete reale.  
-- Verifica delle configurazioni di base della rete.  
-
-### **Obiettivi raggiunti:**  
-- Assegnazione dei ruoli e strutturazione iniziale del progetto.  
-- Avvio delle attività e raccolta delle informazioni preliminari.  
+La nostra metodologia ha incluso la suddivisione in due gruppi operativi per garantire efficienza:  
+- **Gruppo 1:** Sviluppo di un software in Python per il port scanning, le analisi HTTP e la generazione di report.  
+- **Gruppo 2:** Simulazione della rete con Cisco Packet Tracer, ricerca hardware e stesura del contratto per Theta.
 
 ---
 
-## **Giorno 2 – Martedì 26/11/2024**
-### **Attività svolte:**
-**Gruppo 1:**  
-- Revisione e selezione dei moduli Python per il programma.  
-- Implementazione della base del codice Python secondo le direttive dell’azienda Theta.  
+## **Cronologia delle Attività**
 
-**Gruppo 2:**  
-- Suddivisione delle attività:
-  - **Rinat Rustamov:** avanzamento nella simulazione di rete con Cisco Packet Tracer.  
-  - **Francesco Rossi, Andrea Calcagno, Manuel Izzo:** ricerca dettagliata dei componenti hardware necessari.  
+### **Giorno 1 – Lunedì 25/11/2024**
+**Attività svolte:**  
+- **Gruppo 1:**  
+  - Analisi dei requisiti del progetto e raccolta della documentazione sui moduli Python utili.  
+  - Definizione della struttura iniziale del programma.  
+- **Gruppo 2:**  
+  - Configurazione preliminare della rete in Cisco Packet Tracer.  
+  - Raccolta dati sull’hardware per una futura implementazione reale.  
 
-### **Obiettivi raggiunti:**  
-- Creazione della struttura iniziale del codice Python e identificazione dei moduli utili.  
-- Bozza della configurazione di rete e specifiche preliminari dell’hardware richiesto.  
-
----
-
-## **Giorno 3 – Mercoledì 27/11/2024**
-### **Attività svolte:**
-**Gruppo 1:**  
-- Finalizzazione del programma Python *“All-In-One”*.  
-- Implementazione delle regole Firewall richieste da Theta.  
-- Test approfonditi:  
-  - Scansioni delle porte prima e dopo l’attivazione delle regole di sicurezza.  
-  - Analisi delle risposte HTTP sul Web Server.  
-
-**Gruppo 2:**  
-- Finalizzazione della ricerca hardware con specifiche dettagliate (modelli, quantità e costi).  
-- Redazione del contratto e preventivo per il cliente, supervisionati dalla Team Leader.  
-
-### **Obiettivi raggiunti:**  
-- Programma Python completato, testato e documentato.  
-- Lista hardware dettagliata pronta per approvazione.  
-- Contratto e preventivo completi.  
+**Obiettivi raggiunti:**  
+- Suddivisione chiara dei ruoli.  
+- Avvio delle attività operative.  
 
 ---
 
-## **Giorno 4 – Giovedì 28/11/2024**
-### **Attività svolte:**
-1. **Revisione finale:**  
-   - Perfezionamento della documentazione finale per l’azienda Theta.  
-   - Completamento dei test sull’infrastruttura e il programma Python.  
-2. **Analisi dei file sospetti:**  
-   - Identificazione di pattern JavaScript pericolosi (e.g., `FUNCTION`, `FROMCHARCODE`, `EVAL`).  
-   - Risoluzione di un "indovinello" fornito dall’azienda per verificare la sicurezza.  
+### **Giorno 2 – Martedì 26/11/2024**
+**Attività svolte:**  
+- **Gruppo 1:**  
+  - Implementazione iniziale del codice Python per il port scanning e analisi HTTP.  
+  - Revisione collettiva della struttura del programma.  
+- **Gruppo 2:**  
+  - Progresso nella configurazione della rete simulata.  
+  - Ricerca di switch, router, NAS e IDS/IPS adatti ai requisiti di Theta.  
 
-### **Obiettivi raggiunti:**  
+**Obiettivi raggiunti:**  
+- Creazione della base del software e identificazione dei moduli Python necessari.  
+- Configurazione iniziale della rete e lista preliminare dei componenti hardware.  
+
+---
+
+### **Giorno 3 – Mercoledì 27/11/2024**
+**Attività svolte:**  
+- **Gruppo 1:**  
+  - Completamento del programma Python “All-In-One”, integrando il port scanner e il sistema di analisi HTTP.  
+  - Test pre e post-configurazione Firewall per analizzare l’impatto delle regole.  
+- **Gruppo 2:**  
+  - Finalizzazione della lista hardware con modelli, costi e specifiche dettagliate.  
+  - Stesura del contratto e del preventivo.  
+
+**Obiettivi raggiunti:**  
+- Programma Python completamente funzionante, testato e documentato.  
+- Preventivo e lista hardware pronti per l'approvazione da parte di Theta.  
+
+---
+
+### **Giorno 4 – Giovedì 28/11/2024**
+**Attività svolte:**  
+- **Revisione e perfezionamento:**  
+  - Ottimizzazione della documentazione tecnica e completamento dei test finali.  
+- **Analisi avanzata:**  
+  - Identificazione di pattern malevoli in file JavaScript, inclusi elementi di steganografia.  
+  - Implementazione di regole Firewall selettive con Squid Proxy e SquidGuard per bloccare accessi specifici senza interrompere servizi critici.  
+
+**Obiettivi raggiunti:**  
 - Documentazione finale pronta per la consegna.  
-- Analisi dei file sospetti completata, con identificazione delle vulnerabilità.  
-- Conferma dell'efficacia del programma Python e della simulazione di rete.  
+- Analisi delle vulnerabilità e proposte di mitigazione dettagliate.  
+
+---
+
+## **Risultati Ottenuti**
+### **Software sviluppato dal Gruppo 1:**
+1. **Port Scanner:**  
+   - Analisi dettagliata delle porte aperte, identificando criticità su servizi come Telnet e FTP.  
+   - Generazione di report in formato CSV per un’analisi completa.  
+2. **Analisi HTTP:**  
+   - Verifica del comportamento delle pagine web tramite richieste GET, POST, PUT e DELETE.  
+   - Identificazione di vulnerabilità, come risposte anomale sulla pagina /phpMyAdmin.  
+3. **Sistema di logging e report:**  
+   - Registrazione dettagliata delle richieste e creazione di report personalizzati per il cliente.  
+
+### **Infrastruttura simulata dal Gruppo 2:**
+1. **Simulazione di rete su Cisco Packet Tracer:**  
+   - Configurazione di una rete distribuita su 6 piani con 120 dispositivi.  
+   - Test di resilienza e verifica dell’interazione tra router, switch, NAS e IDS/IPS.  
+2. **Firewall avanzato:**  
+   - Blocco selettivo degli URL tramite Squid Proxy e SquidGuard, garantendo l’operatività dei servizi essenziali.  
+3. **Ricerca hardware:**  
+   - Lista dettagliata di router, switch e IDS/IPS per l'implementazione reale, con costi e specifiche tecniche.
 
 ---
 
 ## **Conclusioni**
-Il team **CyberCerberus** ha lavorato con efficienza, coesione e adattabilità, raggiungendo i seguenti risultati:  
-- **Programma Python** completato, testato e documentato.  
-- **Simulazione di rete** con Cisco Packet Tracer completata.  
-- **Lista hardware** dettagliata con specifiche tecniche e costi.  
-- **Documentazione contrattuale** pronta per revisione.  
+Il progetto **CyberCerberus** ha dimostrato che la collaborazione e la sinergia tra i membri del team sono fondamentali per affrontare sfide complesse. Abbiamo consegnato soluzioni tecniche robuste, tra cui:  
+- **Software Python** per il monitoraggio e la sicurezza della rete.  
+- **Simulazione di rete completa**, pronta per essere implementata.  
+- **Preventivo realistico** con scelte tecnologiche sostenibili.  
 
-**Federica Cardinali**  
-*Team Leader, Build Week 1*
+### **Prospettive future**
+Il progetto rappresenta una base solida per l’implementazione reale. Il prossimo passo sarà supportare il cliente nella configurazione hardware e nella manutenzione dell’infrastruttura, garantendo che resti sicura, scalabile ed efficiente nel tempo.
+
+Grazie per l’attenzione.  
+
+**Sebastiano Gelmetti**  
+*Software Engineer, Exploit tester, CyberCerberus*
