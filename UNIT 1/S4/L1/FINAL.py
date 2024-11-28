@@ -118,6 +118,13 @@ class PortScannerListenerApp:
         self.listener_frame = ttk.LabelFrame(self.right_frame, text="Gestione Listener")
         self.listener_frame.pack(fill="x", padx=5, pady=5)
 
+        self.listener_ip_label = ttk.Label(self.listener_frame, text="Indirizzo IP Listener:")
+        self.listener_ip_label.pack(side="left", padx=5)
+
+        self.listener_ip_entry = ttk.Entry(self.listener_frame, width=15)
+        self.listener_ip_entry.insert(0, "0.0.0.0")
+        self.listener_ip_entry.pack(side="left", padx=5)
+
         self.port_label = ttk.Label(self.listener_frame, text="Porta Listener:")
         self.port_label.pack(side="left", padx=5)
 
@@ -257,20 +264,21 @@ class PortScannerListenerApp:
             self.log("Listener già avviato.")
             return
 
+        ip_address = self.listener_ip_entry.get()
         port = int(self.port_entry.get())
-        self.listener_thread = threading.Thread(target=self.run_listener, args=(port,), daemon=True)
+        self.listener_thread = threading.Thread(target=self.run_listener, args=(ip_address, port), daemon=True)
         self.running = True
         self.listener_thread.start()
-        self.log(f"Listener avviato sulla porta {port}.")
+        self.log(f"Listener avviato su {ip_address}:{port}.")
         self.start_button.config(state="disabled")
         self.stop_button.config(state="normal")
         self.send_button.config(state="normal")
 
-    def run_listener(self, port):
+    def run_listener(self, ip_address, port):
         try:
             self.listener_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.listener_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            self.listener_socket.bind(("0.0.0.0", port))
+            self.listener_socket.bind((ip_address, port))
             self.listener_socket.listen(1)
             self.log("In attesa di connessioni...")
 
@@ -464,3 +472,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
