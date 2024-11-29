@@ -161,7 +161,7 @@ class PortScannerListenerApp:
         self.http_method_label = ttk.Label(self.http_frame, text="Metodo HTTP:")
         self.http_method_label.pack(side="left", padx=5)
 
-        self.http_method_combobox = ttk.Combobox(self.http_frame, values=["GET", "POST", "PUT", "DELETE"], width=10)
+        self.http_method_combobox = ttk.Combobox(self.http_frame, values=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"], width=10)
         self.http_method_combobox.current(0)
         self.http_method_combobox.pack(side="left", padx=5)
 
@@ -362,25 +362,28 @@ class PortScannerListenerApp:
         method = self.http_method_combobox.get()
         url = self.http_url_entry.get()
         try:
-            if method == "GET":
-                response = requests.get(url, timeout=5)
-            elif method == "POST":
-                response = requests.post(url, timeout=5)
-            elif method == "PUT":
-                response = requests.put(url, timeout=5)
-            elif method == "DELETE":
-                response = requests.delete(url, timeout=5)
+            method_map= {
+                "GET": requests.get,
+                "POST": requests.post,
+                "PUT": requests.put,
+                "DELETE": requests.delete,
+                "PATCH": requests.patch,
+                "OPTIONS": requests.options,
+                "HEAD": requests.head
+            }
+            if method in method_map:
+                response = method_map[method](url, timeout=5)
             else:
                 self.log("Metodo HTTP non supportato.")
                 return
-
+            
             self.http_results.append({
                 "method": method,
                 "url": url,
                 "status_code": response.status_code,
                 "response": response.text
             })
-
+            
             self.http_response_output.config(state="normal")
             self.http_response_output.delete(1.0, tk.END)
             self.http_response_output.insert(tk.END, f"Status Code: {response.status_code}\n")
