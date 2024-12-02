@@ -2,7 +2,7 @@
 
 ## 🎯 **Target:** `concadorohotel.it`
 
-Questo progetto mira a simulare una fase di **raccolta di informazioni pubbliche (OSINT)** su un target specifico, sfruttando strumenti come **Google** e **Maltego**. Di seguito, vengono presentati i passaggi seguiti, i risultati ottenuti e l'analisi dettagliata delle informazioni raccolte.
+L'esercizio di oggi mira a simulare una fase di **raccolta di informazioni pubbliche (OSINT)** su un target specifico, sfruttando strumenti come **Google** e **Maltego**. Di seguito, vengono presentati i passaggi seguiti, i risultati ottenuti e l'analisi dettagliata delle informazioni raccolte.
 
 ---
 
