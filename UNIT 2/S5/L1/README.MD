@@ -98,14 +98,3 @@ L'attività di **Information Gathering** ha prodotto i seguenti risultati:
 
 > **📌 Nota Bene**: Tutte le informazioni raccolte sono pubblicamente accessibili.
 ---
-
-# 🛠️ **Passaggi Effettuati**
-1. **🔍 Raccolta Dati con Google**:
-   - Sfruttate query mirate per raccogliere dati pubblici.
-2. **🧩 Analisi con Maltego**:
-   - Creazione di un grafo per evidenziare relazioni tra le entità.
-   - Applicazione di trasformazioni per ampliare l'analisi.
-3. **📖 Report Finale**:
-   - Strutturazione e spiegazione delle informazioni raccolte.
-
----
