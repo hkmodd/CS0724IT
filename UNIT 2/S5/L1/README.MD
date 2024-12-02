@@ -27,12 +27,10 @@ Utilizzando la query `"@concadorohotel.it"`, è stato identificato il seguente i
 ### 2.4. Presenza sui Social Media
 Utilizzando la query `"concadorohotel" site:instagram.com`, ho inoltre identificato l'account Instagram ufficiale dell'attività:
 
-- **[@concadorohotel](https://www.instagram.com/concadorohotel/)**
+- **[@concadorohotel](https://www.instagram.com/hotel_ristorante_conca_doro/)**
 
-È stata rilevata anche la presenza di un altro account Instagram associabile:
+È stata rilevata anche la presenza di un altro account Instagram associabile: si riferisce però a una struttura diversa situata a Positano.
 
-- **[@hotelconcadoropositano](https://www.instagram.com/hotelconcadoropositano/)**: Si riferisce però a una struttura diversa situata a Positano.
-
-> **Nota**: La distinzione tra le due strutture omonime è cruciale per evitare confusione, dato che il target è quello situato a Garda.
+> **La distinzione tra le due strutture omonime è cruciale per evitare confusione, dato che il target è quello situato a Garda.**
 
 ---
