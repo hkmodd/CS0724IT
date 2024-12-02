@@ -24,7 +24,13 @@ Utilizzando la query `"@concadorohotel.it"`, è stato identificato il seguente i
 
 - **info@concadorohotel.it**: Email pubblica utilizzata per comunicazioni e prenotazioni.
 
-### 2.4. Presenza sui Social Media
+### 2.4. Contatti
+Utilizzando la query `site:concadorohotel.it contatti`, sono state identificate le seguenti informazioni:
+Indirizzo: Lungolago Europa 2 Garda (VR) - 37016
+Tel: +39 0457255275
+Email: info@concadorohotel.it
+
+### 2.5. Presenza sui Social Media
 Utilizzando la query `"concadorohotel" site:instagram.com`, ho inoltre identificato l'account Instagram ufficiale dell'attività:
 
 - **[@concadorohotel](https://www.instagram.com/hotel_ristorante_conca_doro/)**
