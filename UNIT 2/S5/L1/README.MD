@@ -96,8 +96,7 @@ L'attività di **Information Gathering** ha prodotto i seguenti risultati:
 - Il profilo Instagram ufficiale è attivo e ben curato.
 - Alcuni domini secondari identificati richiedono ulteriori analisi per determinarne la rilevanza.
 
-> **📌 Nota Bene**: Tutte le informazioni raccolte sono pubblicamente accessibili e frutto di ricerche OSINT.
-
+> **📌 Nota Bene**: Tutte le informazioni raccolte sono pubblicamente accessibili.
 ---
 
 # 🛠️ **Passaggi Effettuati**
