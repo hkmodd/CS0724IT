@@ -6,7 +6,7 @@ Questo progetto mira a simulare una fase di **raccolta di informazioni pubbliche
 
 ---
 
-## 🔍 **1. Raccolta delle Informazioni con Google**
+# 🔍 **1. Raccolta delle Informazioni con Google**
 
 ### 📑 1.1. Pagine Indicizzate del Sito
 Utilizzando la query `site:concadorohotel.it`, sono state individuate le seguenti pagine principali:
@@ -46,7 +46,7 @@ Con la query `"concadorohotel" site:instagram.com`, è stato trovato il profilo 
 
 ---
 
-## 🧩 **2. Analisi con Maltego**
+# 🧩 **2. Analisi con Maltego**
 
 ### 🖼️ 2.1. Creazione della Mappa del Grafo
 In Maltego, è stato costruito un grafo basato sulle seguenti entità iniziali:
@@ -100,13 +100,13 @@ L'attività di **Information Gathering** ha prodotto i seguenti risultati:
 
 ---
 
-## 📂 **Passaggi Effettuati**
+## 🛠️ **Passaggi Effettuati**
 1. **🔍 Raccolta Dati con Google**:
    - Sfruttate query mirate per raccogliere dati pubblici.
 2. **🧩 Analisi con Maltego**:
    - Creazione di un grafo per evidenziare relazioni tra le entità.
    - Applicazione di trasformazioni per ampliare l'analisi.
 3. **📖 Report Finale**:
-   - Strutturazione delle informazioni raccolte in un formato chiaro e comprensibile.
+   - Strutturazione e spiegazione delle informazioni raccolte.
 
 ---
