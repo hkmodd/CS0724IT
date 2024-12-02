@@ -87,7 +87,7 @@ L'analisi ha portato all'identificazione di:
 
 ---
 
-## 📊 **3. Conclusioni**
+# 📊 **3. Conclusioni**
 
 L'attività di **Information Gathering** ha prodotto i seguenti risultati:
 - Il dominio `concadorohotel.it` è gestito dai server DNS di **Aruba** (`ns.abdns.biz` e `ns.abdns.info`).
@@ -100,7 +100,7 @@ L'attività di **Information Gathering** ha prodotto i seguenti risultati:
 
 ---
 
-## 🛠️ **Passaggi Effettuati**
+# 🛠️ **Passaggi Effettuati**
 1. **🔍 Raccolta Dati con Google**:
    - Sfruttate query mirate per raccogliere dati pubblici.
 2. **🧩 Analisi con Maltego**:
