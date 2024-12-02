@@ -84,7 +84,8 @@ L'analisi ha portato all'identificazione di:
 
 ### 2.4. Screenshot del Grafo
 Di seguito lo screenshot del grafo aggiornato:
-*(Inserire screenshot del grafo aggiornato qui)*
+
+![Alt text](./ScreenshotGraph.png "Graph tree concadorohotel.it")
 
 ---
 
