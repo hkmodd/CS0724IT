@@ -25,7 +25,7 @@ Utilizzando la query `"@concadorohotel.it"`, è stato identificato il seguente i
 - **info@concadorohotel.it**: Email pubblica utilizzata per comunicazioni e prenotazioni.
 
 #### 2.4. Contatti
-Utilizzando la query `site:concadorohotel.it contatti`, sono state identificate le seguenti informazioni:
+Utilizzando la query `"contatti" site:concadorohotel.it`, sono state identificate le seguenti informazioni:
 
 - **Indirizzo**: Lungolago Europa 2, Garda (VR) - 37016  
 - **Telefono**: +39 0457255275  
