@@ -1,6 +1,6 @@
 # 🛠️ Consegna S5/L1: Information Gathering
 
-## 🎯 **Target:** `concadorohotel.it`
+## 🎯 **Target da me selezionato:** `concadorohotel.it`
 
 L'esercizio di oggi mira a simulare una fase di **raccolta di informazioni pubbliche (OSINT)** su un target specifico, sfruttando strumenti come **Google** e **Maltego**. Di seguito, vengono presentati i passaggi seguiti, i risultati ottenuti e l'analisi dettagliata delle informazioni raccolte.
 
