@@ -47,6 +47,26 @@ Questo documento fornisce i risultati dettagliati delle scansioni effettuate sul
   - Porta 8009: Apache JServ (Protocollo v1.3)
   - Porta 8180: Tomcat/Coyote JSP Engine 1.1
  
-  ![Alt text](./VersionDetection.png "VersionDetection")
+![Alt text](./VersionDetection.png "VersionDetection")
+
+---
+
+## Confronto tra Scansione SYN e Scansione TCP Connect
+
+### Differenze rilevate in questo caso specifico
+Non sono state rilevate differenze significative tra la scansione SYN e la scansione TCP Connect. Entrambe riportano lo stesso numero di porte aperte e servizi in ascolto. Questo comportamento è dovuto a:
+
+1. **Configurazione del target (Metasploitable)**:
+   - Metasploitable è una macchina volutamente vulnerabile, configurata per rispondere in modo uniforme a entrambe le tipologie di scansione.
+
+2. **Assenza di protezioni avanzate**:
+   - Non sono presenti firewall o sistemi di difesa che possano influenzare il comportamento di una delle due scansioni.
+
+3. **Risposte coerenti del sistema**:
+   - Il sistema operativo e i servizi in ascolto non discriminano tra le due modalità di scansione, rispondendo sempre in maniera uniforme.
+
+### Quando potrebbero emergere differenze?
+- **Firewall o IDS/IPS attivi**: Sistemi di difesa potrebbero filtrare o bloccare pacchetti di una delle due scansioni.
+- **Ambienti reali**: In un'infrastruttura complessa, le scansioni TCP Connect potrebbero essere più lente e rumorose, causando rilevazioni da parte dei sistemi di sicurezza.
 
 ---
