@@ -1,5 +1,5 @@
 # 📝 Consegna S5/L2
-# 🛠️ Report Scansioni Nmap
+## 🛠️ Report Scansioni Nmap
 
 Questo documento fornisce i risultati dettagliati delle scansioni effettuate sul target **Metasploitable** (IP: 192.168.60.2). Sono state eseguite le seguenti tipologie di scansioni:
 
@@ -15,7 +15,7 @@ Questo documento fornisce i risultati dettagliati delle scansioni effettuate sul
   
 ---
 
-# 📊 Risultati delle Scansioni:
+## 📊 Risultati delle Scansioni:
 
 ## 1. 🖥️ Fingerprinting del Sistema Operativo
 - **Sistema Operativo**: Linux 2.6.X
