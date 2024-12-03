@@ -1,0 +1,4 @@
+# Nmap 7.94SVN scan initiated Tue Dec  3 16:53:33 2024 as: /usr/lib/nmap/nmap --privileged -A --script=default,vuln,smb-enum-shares,http-enum --script-timeout 30s --max-retries 3 -oA report 192.168.50.3
+Host: 192.168.50.3 ()	Status: Up
+Host: 192.168.50.3 ()	Ports: 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds//Windows XP microsoft-ds/	Ignored State: closed (997)	OS: Microsoft Windows XP SP2 or SP3	Seq Index: 265	IP ID Seq: Incremental
+# Nmap done at Tue Dec  3 16:54:07 2024 -- 1 IP address (1 host up) scanned in 34.53 seconds
