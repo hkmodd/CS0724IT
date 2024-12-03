@@ -13,6 +13,8 @@ Questo documento fornisce i risultati dettagliati delle scansioni effettuate sul
 ### Informazioni Generali:
 - **Indirizzo IP**: 192.168.60.2
 
+![OS Fingerprint](./OS fingerprinting.png "OS fingerprint")
+
 ### Risultati delle Scansioni:
 
 #### 1. Fingerprinting del Sistema Operativo
