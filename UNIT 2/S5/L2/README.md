@@ -21,21 +21,21 @@ Questo documento fornisce i risultati dettagliati delle scansioni effettuate sui
 ## 1. 🖥️ Fingerprinting del Sistema Operativo
 - **Sistema Operativo**: Linux 2.6.X
 
-![Alt text](./Screenshots/OSFingerprinting.png "Optional Title")
+![Alt text](./Screenshots/OSFingerprinting.png "OS Fingerprinting")
 
 ---
 
 ## 2. 🔍 Scansione SYN
 - **Porte Aperte**: 21, 22, 23, 25, 53, 80, 111, 139, 445, 512, 513, 514, 1099, 1524, 2049, 2121, 3306, 5432, 5900, 6000, 6667, 8009, 8180
 
-![Alt text](./Screenshots/SYSScan.png "SYSScan")
+![Alt text](./Screenshots/SYSScan.png "Scansione SYS")
 
 ---
 
 ## 3. 🔗 Scansione TCP Connect
 - **Porte Aperte**: 21, 22, 23, 25, 53, 80, 111, 139, 445, 512, 513, 514, 1099, 1524, 2049, 2121, 3306, 5432, 5900, 6000, 6667, 8009, 8180
 
-![Alt text](./Screenshots/TCPScan.png "TCPScan")
+![Alt text](./Screenshots/TCPScan.png "Scansione TCP")
 
 ---
 
@@ -76,7 +76,7 @@ Non sono state rilevate differenze significative tra la scansione SYN e la scans
   - Porta 8009: Apache JServ (Protocollo v1.3)
   - Porta 8180: Tomcat/Coyote JSP Engine 1.1
  
-![Alt text](./Screenshots/VersionDetection.png "VersionDetection")
+![Alt text](./Screenshots/VersionDetection.png "Service Version Detection")
 
 ---
 
@@ -88,7 +88,7 @@ Non sono state rilevate differenze significative tra la scansione SYN e la scans
 ### 1. Fingerprinting del Sistema Operativo
 - **Sistema Operativo**: Microsoft Windows XP SP2 o SP3
 
-![Alt text](./Screenshots/WindowsOSFingerprinting.png "Windows OS Fingerprinting")
+![Alt text](./Screenshots/WindowsOSFingerprinting.png "Windows XP OS Fingerprinting")
 
 ### 2. Risultati della Scansione TCP
 - **Porte Aperte**:
