@@ -102,8 +102,35 @@ Non sono state rilevate differenze significative tra la scansione SYN e la scans
 - La disattivazione del firewall ha consentito la comunicazione completa, permettendo sia il ping che le scansioni Nmap.
 - Le porte aperte identificate (135, 139, 445) rappresentano potenziali punti di vulnerabilità.
 
-### Considerazioni
-Disattivando il firewall su Windows XP, Kali è riuscita a completare il ping e tutte le scansioni.
-Tuttavia, questo approccio è utile solo in ambienti controllati e non rappresenta una situazione realistica per testare la sicurezza di un sistema.
+---
+
+## 📝 Procedura e generazione report dettagliati
+
+### Passaggi effettuati per i target Windows XP (192.168.50.3) e Metasploitable (192.168.60.2):
+
+Per ottenere report dettagliati e completi, è stato utilizzato il seguente comando Nmap:
+
+```bash
+nmap -A --script=default,vuln,smb-enum-shares,http-enum --script-timeout 30s --max-retries 3 -oA report <target> && xsltproc report.xml -o report.html
+```
+
+### Spiegazione del comando:
+1. **`-A`**: Attiva funzionalità avanzate di Nmap come rilevamento del sistema operativo, version detection, e traceroute.
+2. **`--script=default,vuln,smb-enum-shares,http-enum`**: Utilizza script per rilevare vulnerabilità, servizi SMB e HTTP.
+3. **`--script-timeout 30s`**: Imposta un timeout massimo di 30 secondi per ogni script, evitando blocchi.
+4. **`--max-retries 3`**: Limita i tentativi per la scansione delle porte, migliorando i tempi di esecuzione.
+5. **`-oA report`**: Salva i risultati della scansione in tre formati: `.nmap`, `.xml` e `.gnmap`.
+6. **`xsltproc report.xml -o report.html`**: Converte il report XML generato in formato HTML, leggibile via browser.
+
+### Risultati:
+- **Target Windows XP (192.168.50.3)**:
+  - Il report HTML è stato generato senza problemi e ha identificato i servizi esposti (135: msrpc, 139: netbios-ssn, 445: microsoft-ds). 
+  - È stato necessario disattivare il firewall di Windows XP per consentire l'accesso completo alle informazioni.
+
+- **Target Metasploitable (192.168.60.2)**:
+  - Il report HTML ha dettagliato le porte aperte, i servizi in ascolto e le vulnerabilità individuate, senza necessità di modifiche alla configurazione del sistema.
+
+### Conclusioni:
+L'uso di script e parametri avanzati ha permesso di ottenere una visione chiara delle vulnerabilità presenti nei due target. La generazione automatica del report in HTML fornisce un output leggibile e facilmente analizzabile.
 
 ---
