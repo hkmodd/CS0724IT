@@ -13,18 +13,22 @@ Questo documento fornisce i risultati dettagliati delle scansioni effettuate sul
 ### Informazioni Generali:
 - **Indirizzo IP**: 192.168.60.2
 
-![Alt text](./OSFingerprinting.png "Optional Title")
-
 ### Risultati delle Scansioni:
 
 #### 1. Fingerprinting del Sistema Operativo
 - **Sistema Operativo**: Linux 2.6.X
 
+![Alt text](./OSFingerprinting.png "Optional Title")
+
 #### 2. Scansione SYN
 - **Porte Aperte**: 21, 22, 23, 25, 53, 80, 111, 139, 445, 512, 513, 514, 1099, 1524, 2049, 2121, 3306, 5432, 5900, 6000, 6667, 8009, 8180
 
+![Alt text](./SYSScan.png "SYSScan")
+
 #### 3. Scansione TCP Connect
 - **Porte Aperte**: 21, 22, 23, 25, 53, 80, 111, 139, 445, 512, 513, 514, 1099, 1524, 2049, 2121, 3306, 5432, 5900, 6000, 6667, 8009, 8180
+
+![Alt text](./TCPScan.png "TCPScan")
 
 #### 4. Rilevamento delle Versioni dei Servizi
 - **Servizi e Versioni**:
@@ -42,5 +46,7 @@ Questo documento fornisce i risultati dettagliati delle scansioni effettuate sul
   - Porta 6667: UnrealIRCd
   - Porta 8009: Apache JServ (Protocollo v1.3)
   - Porta 8180: Tomcat/Coyote JSP Engine 1.1
+ 
+  ![Alt text](./VersionDetection.png "VersionDetection")
 
 ---
