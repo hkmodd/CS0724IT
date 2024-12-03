@@ -13,7 +13,7 @@ Questo documento fornisce i risultati dettagliati delle scansioni effettuate sul
 ### Informazioni Generali:
 - **Indirizzo IP**: 192.168.60.2
 
-![Alt text](./OSFingerprinting.png.png "Optional Title")
+![Alt text](./OSFingerprinting.png "Optional Title")
 
 ### Risultati delle Scansioni:
 
