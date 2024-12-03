@@ -15,23 +15,23 @@ Questo documento fornisce i risultati dettagliati delle scansioni effettuate sul
   
 ---
 
-### Risultati delle Scansioni:
+# Risultati delle Scansioni:
 
-#### 1. Fingerprinting del Sistema Operativo
+## 1. Fingerprinting del Sistema Operativo
 - **Sistema Operativo**: Linux 2.6.X
 
 ![Alt text](./OSFingerprinting.png "Optional Title")
 
 ---
 
-#### 2. Scansione SYN
+## 2. Scansione SYN
 - **Porte Aperte**: 21, 22, 23, 25, 53, 80, 111, 139, 445, 512, 513, 514, 1099, 1524, 2049, 2121, 3306, 5432, 5900, 6000, 6667, 8009, 8180
 
 ![Alt text](./SYSScan.png "SYSScan")
 
 ---
 
-#### 3. Scansione TCP Connect
+## 3. Scansione TCP Connect
 - **Porte Aperte**: 21, 22, 23, 25, 53, 80, 111, 139, 445, 512, 513, 514, 1099, 1524, 2049, 2121, 3306, 5432, 5900, 6000, 6667, 8009, 8180
 
 ![Alt text](./TCPScan.png "TCPScan")
@@ -58,7 +58,7 @@ Non sono state rilevate differenze significative tra la scansione SYN e la scans
 
 ---
 
-#### 4. Rilevamento delle Versioni dei Servizi
+## 4. Rilevamento delle Versioni dei Servizi
 - **Servizi e Versioni**:
   - Porta 21: vsftpd 2.3.4
   - Porta 22: OpenSSH 4.7p1 (Debian 8ubuntu1)
