@@ -66,4 +66,4 @@
 ---
 
 ### Conclusioni
-Gli switch `-g`, `-f`, e `-D` offrono opzioni avanzate per migliorare l'efficacia e l'anonimato delle scansioni Nmap, mentre l'uso combinato delle porte con `-p` consente un maggiore controllo sulle scansioni. Tuttavia, l'uso di queste funzionalità in ambienti reali deve essere sempre conforme a normative legali ed etiche.
+Gli switch `-g`, `-f`, e `-D` offrono opzioni avanzate per migliorare l'efficacia e l'anonimato delle scansioni Nmap, mentre l'uso combinato delle porte con `-p` consente un maggiore controllo sulle scansioni.
