@@ -2,7 +2,7 @@
 
 ### Documentazione sugli switch avanzati di Nmap
 
-#### 1. **Switch `-g`**
+### 1. **Switch `-g`**
 - Lo switch `-g <porta>` permette di impostare manualmente il numero di porta sorgente utilizzato da Nmap per inviare i pacchetti. 
 - **Scopo**:
   - Questo può essere utile per aggirare firewall che filtrano in base alla porta sorgente.
@@ -12,7 +12,7 @@
     ```
     - Utilizza la porta sorgente 80 per inviare i pacchetti, camuffando il traffico come se provenisse da un server web.
 
-#### 2. **Switch `-f`**
+### 2. **Switch `-f`**
 - Lo switch `-f` frammenta i pacchetti generati da Nmap in segmenti più piccoli.
 - **Scopo**:
   - È utile per bypassare firewall che si basano su una semplice ispezione dei pacchetti.
