@@ -38,9 +38,9 @@ Questo documento fornisce i risultati dettagliati delle scansioni effettuate sul
 
 ---
 
-## 🔎 Confronto tra Scansione SYN e Scansione TCP Connect
+### 🔎 Confronto tra Scansione SYN e Scansione TCP Connect
 
-### 🔔 Differenze rilevate in questo caso specifico
+#### 🔔 Differenze rilevate in questo caso specifico
 Non sono state rilevate differenze significative tra la scansione SYN e la scansione TCP Connect. Entrambe riportano lo stesso numero di porte aperte e servizi in ascolto. Questo comportamento è dovuto a:
 
 1. **🛠️ Configurazione del target (Metasploitable)**:
@@ -52,7 +52,7 @@ Non sono state rilevate differenze significative tra la scansione SYN e la scans
 3. **🔄 Risposte coerenti del sistema**:
    - Il sistema operativo e i servizi in ascolto non discriminano tra le due modalità di scansione, rispondendo sempre in maniera uniforme.
 
-### 💡 Quando potrebbero emergere differenze?
+#### 💡 Quando potrebbero emergere differenze?
 - **🛡️ Firewall o IDS/IPS attivi**: Sistemi di difesa potrebbero filtrare o bloccare pacchetti di una delle due scansioni.
 - **🌐 Ambienti reali**: In un'infrastruttura complessa, le scansioni TCP Connect potrebbero essere più lente e rumorose, causando rilevazioni da parte dei sistemi di sicurezza.
 
