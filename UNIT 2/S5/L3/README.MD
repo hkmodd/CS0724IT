@@ -82,9 +82,11 @@ Non ha senso quindi correggere le vulnerabilità identificate su questa macchina
 ---
 
 ## Raccomandazioni Generali  
-🔒 Aggiornare pacchetti e software vulnerabili nei sistemi reali.  
-🛑 Disabilitare protocolli e servizi non essenziali.  
-🔐 Implementare crittografia moderna per SSL/TLS.
+🔒 **Aggiornare pacchetti e software vulnerabili nei sistemi reali**: mantenere sempre aggiornati i servizi e applicare le patch di sicurezza fornite dai vendor.  
+🛑 **Disabilitare protocolli e servizi non essenziali**: ridurre la superficie di attacco eliminando funzionalità non necessarie.  
+🔐 **Implementare crittografia moderna per SSL/TLS**: garantire che solo protocolli sicuri (come TLS 1.2 o 1.3) siano abilitati.  
+🛡️ **Integrare regole di firewall più severe**: configurare il firewall per limitare l'accesso alle porte e ai servizi vulnerabili solo a IP autorizzati. Questo approccio riduce la possibilità di sfruttare le vulnerabilità da parte di attaccanti esterni.  
+⚙️ **Segmentare la rete**: isolare i sistemi vulnerabili o di test in una VLAN dedicata per limitare i danni in caso di compromissione.  
 
 ---
 
