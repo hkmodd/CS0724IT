@@ -1,12 +1,14 @@
-# Consegna S5/L3 - Vulnerability Scanning con Nessus 🚀
+# 📝 Consegna S5/L3
+# Vulnerability Scanning mediante Nessus 🚀
 
 ## Obiettivo
-L’obiettivo di questo esercizio era mettere alla prova le mie competenze eseguendo una scansione delle vulnerabilità con Nessus sulla macchina virtuale **Metasploitable**. Il risultato? Identificare le vulnerabilità presenti, analizzarne i dettagli e riflettere sulle loro implicazioni per la sicurezza. Un esercizio pratico per passare dalla teoria all’azione! 🛡️
+L’obiettivo di questo esercizio era mettermi alla prova installando ed eseguendo Nessus sulla VM Kali per lanciare una scansione delle vulnerabilità sulla macchina virtuale **Metasploitable**. 
+Il risultato? Identificare le vulnerabilità presenti, analizzarne i dettagli e riflettere sulle loro implicazioni per la sicurezza. 🛡️
 
 ---
 
 ## Configurazione della Rete
-📍 **Ambiente configurato con cura per la simulazione**:  
+📍 **Ambiente configurato per la simulazione**:  
 - **Macchine virtuali**:
   - **Kali Linux**: `192.168.50.2`
   - **Metasploitable**: `192.168.60.2`  
