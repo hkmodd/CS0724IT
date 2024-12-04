@@ -36,33 +36,60 @@ L’obiettivo di questo esercizio era mettere alla prova le mie competenze esegu
   - 🟢 **Low**: 6  
   - 📄 **Info**: 63  
 
----
-
 ## Analisi del Report Dettagliato
-Dai risultati della scansione, ho estrapolato le seguenti vulnerabilità critiche e di alto rischio:
+
+Dai risultati della scansione, sono state identificate diverse vulnerabilità critiche e ad alto rischio che evidenziano le potenziali debolezze del sistema:
+
+---
 
 ### **Vulnerabilità Critiche**
-1. **Bind Shell Backdoor Detection**
-   - **Porta**: TCP/1524
-   - **Descrizione**: Una backdoor che consente connessioni senza autenticazione.
-   - **Soluzione simulata**: Verifica dei processi sospetti e reinstallazione del sistema se compromesso.
 
-2. **Debian OpenSSH/OpenSSL Weakness**
-   - **Porta**: TCP/22 (SSH)
-   - **Descrizione**: Generazione di chiavi deboli su sistemi Debian vulnerabili.
-   - **Soluzione simulata**: Rigenerare tutte le chiavi crittografiche e aggiornare OpenSSL.
+1. **Apache Tomcat AJP Connector Request Injection (Ghostcat)**
+   - **Porta:** TCP/8009
+   - **Descrizione:** Una vulnerabilità nel connettore AJP di Apache Tomcat consente agli attaccanti di accedere a file arbitrari sul server o di eseguire codice arbitrario.
+   - **Soluzione simulata:** Disabilitare il connettore AJP o configurarlo per accettare richieste solo da indirizzi IP fidati.
 
-3. **SSL Version 2 and 3 Detection**
-   - **Porte**: TCP/25 (SMTP)
-   - **Descrizione**: Uso di protocolli deprecati che espongono a vulnerabilità crittografiche.
-   - **Soluzione simulata**: Disabilitare SSLv2/SSLv3 e abilitare TLS 1.2 o superiore.
+2. **Debian OpenSSH/OpenSSL Package Random Number Generator Weakness**
+   - **Porta:** TCP/22 (SSH)
+   - **Descrizione:** Un difetto nel generatore di numeri casuali di OpenSSL su alcune versioni di Debian rende le chiavi crittografiche deboli e facilmente prevedibili.
+   - **Soluzione simulata:** Rigenerare tutte le chiavi SSH e SSL e aggiornare OpenSSL.
 
-4. **Samba Badlock Vulnerability**
-   - **Porta**: TCP/445
-   - **Descrizione**: Problema di negoziazione dell'autenticazione su Samba, che consente attacchi MITM.
-   - **Soluzione simulata**: Aggiornare Samba alla versione corretta.
+3. **SSL Version 2 and 3 Protocol Detection**
+   - **Porta:** TCP/25 (SMTP)
+   - **Descrizione:** SSLv2 e SSLv3 sono protocolli deprecati con vulnerabilità note, come attacchi di tipo Man-in-the-Middle.
+   - **Soluzione simulata:** Disabilitare SSLv2 e SSLv3, abilitando solo TLS 1.2 o versioni successive.
+
+4. **VNC Server 'password' Password**
+   - **Porta:** TCP/5900
+   - **Descrizione:** Il server VNC utilizza una password debole o predefinita, consentendo accessi non autorizzati.
+   - **Soluzione simulata:** Configurare una password sicura e abilitare l'autenticazione a due fattori.
 
 ---
+
+### **Vulnerabilità di Alto Rischio**
+
+1. **Samba Badlock Vulnerability**
+   - **Porta:** TCP/445 (SMB)
+   - **Descrizione:** Una debolezza nei protocolli SAM e LSAD consente attacchi di tipo Man-in-the-Middle che possono compromettere dati sensibili.
+   - **Soluzione simulata:** Aggiornare Samba alla versione 4.4.2 o successive.
+
+2. **SSL Medium Strength Cipher Suites Supported (SWEET32)**
+   - **Porta:** TCP/443 (HTTPS)
+   - **Descrizione:** L'uso di cifrature di media forza, come 3DES, può esporre il sistema ad attacchi crittografici.
+   - **Soluzione simulata:** Disabilitare le cifrature 3DES e configurare il server per utilizzare solo algoritmi di crittografia moderni.
+
+3. **NFS Shares World Readable**
+   - **Porta:** TCP/2049
+   - **Descrizione:** Condivisioni NFS configurate in modo insicuro permettono l'accesso a file sensibili da parte di utenti non autorizzati.
+   - **Soluzione simulata:** Limitare l'accesso NFS a host fidati e configurare i permessi di accesso correttamente.
+
+4. **Telnet Server Detection**
+   - **Porta:** TCP/23
+   - **Descrizione:** Il server Telnet consente connessioni non crittografate, esponendo credenziali e dati a intercettazioni.
+   - **Soluzione simulata:** Disabilitare Telnet e utilizzare SSH per le connessioni remote.
+
+---
+
 
 ## Raccomandazioni Generali  
 🔒 **Aggiornare pacchetti e software vulnerabili nei sistemi reali**: mantenere sempre aggiornati i servizi e applicare le patch di sicurezza fornite dai vendor.  
