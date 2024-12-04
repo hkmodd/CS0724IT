@@ -1,63 +1,77 @@
-# Consegna S5/L3 - Vulnerability Scanning con Nessus
+# Consegna S5/L3 - Vulnerability Scanning con Nessus 🚀
 
 ## Obiettivo
-L'obiettivo di questo esercizio è stato eseguire una scansione delle vulnerabilità utilizzando Nessus sulla macchina virtuale Metasploitable, identificando le vulnerabilità presenti e analizzando i risultati per comprendere le loro implicazioni.
+L’obiettivo di questo esercizio era mettere alla prova le mie competenze eseguendo una scansione delle vulnerabilità con Nessus sulla macchina virtuale **Metasploitable**. Il risultato? Identificare le vulnerabilità presenti, analizzarne i dettagli e riflettere sulle loro implicazioni per la sicurezza. Un esercizio pratico per passare dalla teoria all’azione! 🛡️
+
+---
 
 ## Configurazione della Rete
+📍 **Ambiente configurato con cura per la simulazione**:  
 - **Macchine virtuali**:
-  - Kali Linux: `192.168.50.2`
-  - Metasploitable: `192.168.60.2`
-- **Firewall**: Le due macchine comunicano tramite PfSense.
-- **Target della scansione**: `192.168.60.2`
+  - **Kali Linux**: `192.168.50.2`
+  - **Metasploitable**: `192.168.60.2`  
+- **Firewall in mezzo**: PfSense per garantire la comunicazione sicura tra le due macchine.  
+- **Target della scansione**: L’indirizzo della macchina vulnerabile, `192.168.60.2`.
+
+---
 
 ## Passaggi Eseguiti
 
-### 1. Installazione di Nessus
-- Scaricato e installato Nessus Essentials su Kali Linux.
-- Avviato il servizio Nessus e configurato tramite interfaccia web su `https://127.0.0.1:8834`.
+### 1️⃣ Installazione di Nessus
+- Scaricato e installato **Nessus Essentials** su Kali Linux.  
+- Configurato il servizio tramite l’interfaccia web su `https://127.0.0.1:8834` (il mio punto di controllo per questa missione 🖥️).  
 
-### 2. Configurazione della Scansione
-- Tipo di scansione: **Basic Network Scan**.
-- **Target IP**: `192.168.60.2`.
-- **Range di porte**: Solo porte comuni (21, 22, 23, 25, 80, 110, 139, 443, 445, 3389).
-- Configurazione avviata tramite interfaccia Nessus.
+### 2️⃣ Configurazione della Scansione
+- **Tipo di scansione**: Una Basic Network Scan.  
+- **Target**: `192.168.60.2`, con un focus su porte comunemente utilizzate (21, 22, 23, 25, 80, ecc.).  
+- L’interfaccia di Nessus ha reso il setup intuitivo, permettendomi di lanciare subito l’analisi.  
 
-### 3. Esecuzione della Scansione
-- La scansione è durata circa 10 minuti e ha generato un report dettagliato contenente 108 vulnerabilità rilevate, suddivise per gravità:
-  - **Critical**: 9
-  - **High**: 7
-  - **Medium**: 23
-  - **Low**: 6
-  - **Info**: 63
+### 3️⃣ Esecuzione della Scansione
+- La scansione ha impiegato circa **10 minuti** per completarsi.  
+- Il risultato? **108 vulnerabilità rilevate**, distribuite così:  
+  - 🔴 **Critical**: 9  
+  - 🟠 **High**: 7  
+  - 🟡 **Medium**: 23  
+  - 🟢 **Low**: 6  
+  - 📄 **Info**: 63  
 
-### 4. Analisi del Report
-- Esaminati i dettagli delle vulnerabilità critiche e alte. Alcune delle vulnerabilità principali identificate:
-  - **Ghostcat (Apache Tomcat AJP Connector Request Injection)** - CVSS: 9.8
-  - **Bind Shell Backdoor Detection** - CVSS: 9.8
-  - **SSL Version 2 and 3 Protocol Detection** - CVSS: 9.8
-  - **Debian OpenSSH/OpenSSL Package Weakness** - CVSS: 10.0
+### 4️⃣ Analisi del Report
+Ho esaminato nel dettaglio le vulnerabilità critiche e alte. Tra le principali spiccano:  
+- **Ghostcat**: Una vulnerabilità nel connettore AJP di Apache Tomcat (CVSS 9.8).  
+- **Bind Shell Backdoor**: Una backdoor attiva rilevata sulla macchina (CVSS 9.8).  
+- **SSL Version 2 e 3 Detection**: Protocollo obsoleto e insicuro (CVSS 9.8).  
+- **Debian OpenSSH/OpenSSL Weakness**: Chiavi crittografiche deboli (CVSS 10.0).
+
+---
 
 ## Risultati e Mitigazioni
-### Vulnerabilità Critiche Analizzate:
-1. **Ghostcat**:
-   - **Descrizione**: Vulnerabilità nel connettore AJP di Apache Tomcat che consente l'accesso non autorizzato.
-   - **Mitigazione**: Aggiornamento di Apache Tomcat e disabilitazione del connettore AJP, se non necessario.
 
-2. **SSL Version 2 and 3 Protocol Detection**:
-   - **Descrizione**: Protocollo SSL obsoleto e insicuro.
-   - **Mitigazione**: Disabilitare SSLv2 e SSLv3, abilitando solo TLS 1.2 e successivi.
+### Vulnerabilità Critiche Analizzate  
+1️⃣ **Ghostcat**  
+- **Cosa fa**: Permette accessi non autorizzati tramite il connettore AJP.  
+- **Soluzione**: Aggiornare Apache Tomcat e disabilitare il connettore AJP, se non necessario.  
 
-3. **Bind Shell Backdoor**:
-   - **Descrizione**: Backdoor rilevata tramite una shell bind.
-   - **Mitigazione**: Esaminare i processi sospetti e rimuovere la backdoor.
+2️⃣ **SSL Version 2 e 3 Detection**  
+- **Cosa fa**: Espone il sistema a possibili attacchi sfruttando protocolli non sicuri.  
+- **Soluzione**: Disabilitare SSLv2 e SSLv3, mantenendo attivi solo TLS 1.2 e successivi.  
 
-### Raccomandazioni Generali
-- Aggiornare i pacchetti vulnerabili.
-- Disabilitare protocolli e servizi non necessari.
-- Implementare crittografia moderna per le connessioni SSL/TLS.
+3️⃣ **Bind Shell Backdoor**  
+- **Cosa fa**: Consente a un attaccante di avere accesso remoto tramite una shell bind.  
+- **Soluzione**: Analizzare i processi sospetti e rimuovere la backdoor.  
+
+---
+
+## Raccomandazioni Generali  
+🔒 Aggiornare pacchetti e software vulnerabili.  
+🛑 Disabilitare protocolli e servizi non essenziali.  
+🔐 Implementare crittografia moderna per SSL/TLS.
+
+---
 
 ## Conclusioni
-La scansione ha evidenziato diverse vulnerabilità critiche che richiedono interventi urgenti. Questo esercizio è stato utile per familiarizzare con lo strumento Nessus e comprendere come identificare e analizzare le vulnerabilità nei sistemi.
+Questa esperienza mi ha permesso di esplorare le potenzialità di Nessus e di approfondire le modalità per identificare e gestire vulnerabilità critiche. Ho trovato il processo stimolante e utile per comprendere come affrontare i problemi di sicurezza nel mondo reale. 📊
 
-## Report
-Il report dettagliato della scansione è stato esportato in formato PDF per documentazione e revisione futura.
+## Documentazione
+Il report dettagliato della scansione è stato salvato in formato PDF per una futura consultazione.  
+
+👉 **Il prossimo step? Approfondire l’implementazione delle mitigazioni e affinare le strategie di scansione.** 💡
