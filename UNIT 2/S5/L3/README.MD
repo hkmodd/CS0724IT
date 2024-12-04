@@ -91,7 +91,7 @@ Non ha senso quindi correggere le vulnerabilità identificate su questa macchina
 ---
 
 ## Conclusioni
-Questo esercizio mi ha permesso di esplorare le potenzialità di Nessus e di approfondire la gestione delle vulnerabilità. Metasploitable ha fornito un ambiente sicuro per testare e imparar.  📊
+Questo esercizio mi ha permesso di esplorare le potenzialità di Nessus e di approfondire la gestione delle vulnerabilità. Metasploitable ha fornito un ambiente sicuro per testare e imparare.  📊
 
 ---
 
