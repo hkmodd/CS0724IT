@@ -76,4 +76,3 @@ Questa esperienza mi ha permesso di esplorare le potenzialità di Nessus e di ap
 ## Documentazione
 Il report dettagliato della scansione è stato salvato in formato PDF per una futura consultazione.  
 
-👉 **Il prossimo step? Approfondire l’implementazione delle mitigazioni e affinare le strategie di scansione.** 💡
