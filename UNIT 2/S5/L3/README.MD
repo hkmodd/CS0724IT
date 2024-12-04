@@ -62,8 +62,8 @@ Ho esaminato nel dettaglio le vulnerabilità critiche e alte. Tra le principali 
 ---
 
 ## Nota Importante ⚠️  
-**Metasploitable è progettata per essere vulnerabile.**  
-Non ha senso correggere le vulnerabilità identificate su questa macchina, perché il suo scopo principale è fungere da ambiente di pratica per la sicurezza informatica. Tuttavia, comprendere i dettagli e le possibili mitigazioni è essenziale per applicare queste conoscenze a sistemi reali.
+**Sappiamo bene che Metasploitable è progettata per essere vulnerabile.**  
+Non ha senso quindi correggere le vulnerabilità identificate su questa macchina, perché il suo scopo principale è fungere da ambiente di pratica per la sicurezza informatica. Tuttavia, comprendere i dettagli e le possibili mitigazioni è essenziale per applicare queste conoscenze a sistemi reali.
 
 ---
 
