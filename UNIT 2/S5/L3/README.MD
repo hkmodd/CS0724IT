@@ -30,15 +30,15 @@ L’obiettivo di questo esercizio era mettere alla prova le mie competenze esegu
 ### 3️⃣ Esecuzione della Scansione
 - La scansione ha impiegato circa **10 minuti** per completarsi.  
 - Il risultato? **108 vulnerabilità rilevate**, distribuite così:  
-  - 🔴 **Critical**: 9  
-  - 🟠 **High**: 7  
-  - 🟡 **Medium**: 23  
-  - 🟢 **Low**: 6  
-  - 📄 **Info**: 63  
+  - 🔴 **Critical**: 7  
+  - 🟠 **High**: 6  
+  - 🟡 **Medium**: 17  
+  - 🟢 **Low**: 5  
+  - 📄 **Info**: 73  
 
 ## Analisi del Report Dettagliato
 
-Dai risultati della scansione, sono state identificate diverse vulnerabilità critiche e ad alto rischio che evidenziano le potenziali debolezze del sistema:
+Dai risultati invece della scansione avanzata Metasploitable, sono state identificate diverse principali vulnerabilità critiche e ad alto rischio che evidenziano le potenziali debolezze del sistema:
 
 ---
 
