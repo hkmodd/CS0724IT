@@ -1,63 +1,99 @@
-# Consegna S5/L3 - Vulnerability Scanning con Nessus
+# 📝 Consegna S5/L3
+# 🛡️ Vulnerability Scanning mediante Nessus 
 
 ## Obiettivo
-L'obiettivo di questo esercizio è stato eseguire una scansione delle vulnerabilità utilizzando Nessus sulla macchina virtuale Metasploitable, identificando le vulnerabilità presenti e analizzando i risultati per comprendere le loro implicazioni.
+L’obiettivo di questo esercizio era mettere alla prova le mie competenze eseguendo una scansione delle vulnerabilità con Nessus sulla macchina virtuale **Metasploitable**. Il risultato? Identificare le vulnerabilità presenti, analizzarne i dettagli e riflettere sulle loro implicazioni per la sicurezza. Un esercizio pratico per passare dalla teoria all’azione! 🛡️
+
+---
 
 ## Configurazione della Rete
+📍 **Ambiente configurato con cura per la simulazione**:  
 - **Macchine virtuali**:
-  - Kali Linux: `192.168.50.2`
-  - Metasploitable: `192.168.60.2`
-- **Firewall**: Le due macchine comunicano tramite PfSense.
-- **Target della scansione**: `192.168.60.2`
+  - **Kali Linux**: `192.168.50.2`
+  - **Metasploitable**: `192.168.60.2`  
+- **Firewall in mezzo**: PfSense per garantire la comunicazione sicura tra le due macchine.  
+- **Target della scansione**: L’indirizzo della macchina vulnerabile, `192.168.60.2`.
+
+---
 
 ## Passaggi Eseguiti
 
-### 1. Installazione di Nessus
-- Scaricato e installato Nessus Essentials su Kali Linux.
-- Avviato il servizio Nessus e configurato tramite interfaccia web su `https://127.0.0.1:8834`.
+### 1️⃣ Installazione di Nessus
+- Scaricato e installato **Nessus Essentials** su Kali Linux.  
+- Configurato il servizio tramite l’interfaccia web su `https://127.0.0.1:8834` (il mio punto di controllo per questa missione 🖥️).  
 
-### 2. Configurazione della Scansione
-- Tipo di scansione: **Basic Network Scan**.
-- **Target IP**: `192.168.60.2`.
-- **Range di porte**: Solo porte comuni (21, 22, 23, 25, 80, 110, 139, 443, 445, 3389).
-- Configurazione avviata tramite interfaccia Nessus.
+### 2️⃣ Configurazione della Scansione
+- **Tipo di scansione**: Una Basic Network Scan.  
+- **Target**: `192.168.60.2`, con un focus su porte comunemente utilizzate (21, 22, 23, 25, 80, ecc.).  
+- L’interfaccia di Nessus ha reso il setup intuitivo, permettendomi di lanciare subito l’analisi.  
 
-### 3. Esecuzione della Scansione
-- La scansione è durata circa 10 minuti e ha generato un report dettagliato contenente 108 vulnerabilità rilevate, suddivise per gravità:
-  - **Critical**: 9
-  - **High**: 7
-  - **Medium**: 23
-  - **Low**: 6
-  - **Info**: 63
+### 3️⃣ Esecuzione della Scansione
+- La scansione ha impiegato circa **10 minuti** per completarsi.  
+- Il risultato? **108 vulnerabilità rilevate**, distribuite così:  
+  - 🔴 **Critical**: 9  
+  - 🟠 **High**: 7  
+  - 🟡 **Medium**: 23  
+  - 🟢 **Low**: 6  
+  - 📄 **Info**: 63  
 
-### 4. Analisi del Report
-- Esaminati i dettagli delle vulnerabilità critiche e alte. Alcune delle vulnerabilità principali identificate:
-  - **Ghostcat (Apache Tomcat AJP Connector Request Injection)** - CVSS: 9.8
-  - **Bind Shell Backdoor Detection** - CVSS: 9.8
-  - **SSL Version 2 and 3 Protocol Detection** - CVSS: 9.8
-  - **Debian OpenSSH/OpenSSL Package Weakness** - CVSS: 10.0
+### 4️⃣ Analisi del Report
+Ho esaminato nel dettaglio le vulnerabilità critiche e alte. Tra le principali spiccano:  
+
+#### **Ghostcat**  
+- **Cosa fa**: Questa vulnerabilità nel connettore AJP di Apache Tomcat consente l’accesso non autorizzato a risorse interne.  
+- **Dettaglio**: Può essere sfruttata per caricare file arbitrari o ottenere accesso remoto.  
+- **CVSS**: 9.8  
+
+#### **Bind Shell Backdoor**  
+- **Cosa fa**: La presenza di una backdoor consente agli attaccanti di connettersi direttamente alla macchina target senza alcuna autenticazione.  
+- **Dettaglio**: Si tratta di un tipo comune di exploit presente in macchine volutamente vulnerabili.  
+- **CVSS**: 9.8  
+
+#### **SSL Version 2 e 3 Detection**  
+- **Cosa fa**: L’uso di SSLv2 e SSLv3, protocolli deprecati, espone la macchina a vulnerabilità note, inclusi attacchi Man-in-the-Middle.  
+- **Dettaglio**: Questi protocolli non supportano moderni standard di sicurezza come Forward Secrecy.  
+- **CVSS**: 9.8  
+
+#### **Debian OpenSSH/OpenSSL Weakness**  
+- **Cosa fa**: Generazione di chiavi crittografiche deboli che possono essere facilmente compromesse.  
+- **Dettaglio**: Questo problema era comune nelle vecchie versioni di Debian.  
+- **CVSS**: 10.0  
+
+---
+
+## Nota Importante ⚠️  
+**Sappiamo bene che Metasploitable è progettata per essere vulnerabile.**  
+Non ha senso quindi correggere le vulnerabilità identificate su questa macchina, perché il suo scopo principale è fungere da ambiente di pratica per la sicurezza informatica. Tuttavia, comprendere i dettagli e le possibili mitigazioni è essenziale per applicare queste conoscenze a sistemi reali.
+
+---
 
 ## Risultati e Mitigazioni
-### Vulnerabilità Critiche Analizzate:
-1. **Ghostcat**:
-   - **Descrizione**: Vulnerabilità nel connettore AJP di Apache Tomcat che consente l'accesso non autorizzato.
-   - **Mitigazione**: Aggiornamento di Apache Tomcat e disabilitazione del connettore AJP, se non necessario.
 
-2. **SSL Version 2 and 3 Protocol Detection**:
-   - **Descrizione**: Protocollo SSL obsoleto e insicuro.
-   - **Mitigazione**: Disabilitare SSLv2 e SSLv3, abilitando solo TLS 1.2 e successivi.
+### Vulnerabilità Critiche Analizzate  
+1️⃣ **Ghostcat**  
+- **Soluzione simulata**: Aggiornare Apache Tomcat e disabilitare il connettore AJP, se non necessario.  
 
-3. **Bind Shell Backdoor**:
-   - **Descrizione**: Backdoor rilevata tramite una shell bind.
-   - **Mitigazione**: Esaminare i processi sospetti e rimuovere la backdoor.
+2️⃣ **SSL Version 2 e 3 Detection**  
+- **Soluzione simulata**: Disabilitare SSLv2 e SSLv3, abilitando solo TLS 1.2 e successivi.  
 
-### Raccomandazioni Generali
-- Aggiornare i pacchetti vulnerabili.
-- Disabilitare protocolli e servizi non necessari.
-- Implementare crittografia moderna per le connessioni SSL/TLS.
+3️⃣ **Bind Shell Backdoor**  
+- **Soluzione simulata**: Analizzare i processi sospetti e rimuovere la backdoor.  
+
+---
+
+## Raccomandazioni Generali  
+🔒 **Aggiornare pacchetti e software vulnerabili nei sistemi reali**: mantenere sempre aggiornati i servizi e applicare le patch di sicurezza fornite dai vendor.  
+🛑 **Disabilitare protocolli e servizi non essenziali**: ridurre la superficie di attacco eliminando funzionalità non necessarie.  
+🔐 **Implementare crittografia moderna per SSL/TLS**: garantire che solo protocolli sicuri (come TLS 1.2 o 1.3) siano abilitati.  
+🛡️ **Integrare regole di firewall più severe**: configurare il firewall per limitare l'accesso alle porte e ai servizi vulnerabili solo a IP autorizzati. Questo approccio riduce la possibilità di sfruttare le vulnerabilità da parte di attaccanti esterni.  
+⚙️ **Segmentare la rete**: isolare i sistemi vulnerabili o di test in una VLAN dedicata per limitare i danni in caso di compromissione.  
+
+---
 
 ## Conclusioni
-La scansione ha evidenziato diverse vulnerabilità critiche che richiedono interventi urgenti. Questo esercizio è stato utile per familiarizzare con lo strumento Nessus e comprendere come identificare e analizzare le vulnerabilità nei sistemi.
+Questo esercizio mi ha permesso di esplorare le potenzialità di Nessus e di approfondire la gestione delle vulnerabilità. Metasploitable ha fornito un ambiente sicuro per testare e imparare.  📊
 
-## Report
-Il report dettagliato della scansione è stato esportato in formato PDF per documentazione e revisione futura.
+---
+
+## Documentazione
+Il report dettagliato della scansione è stato salvato in formato PDF per una futura consultazione.  
