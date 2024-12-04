@@ -36,28 +36,40 @@ L’obiettivo di questo esercizio era mettere alla prova le mie competenze esegu
   - 🟢 **Low**: 6  
   - 📄 **Info**: 63  
 
-### 4️⃣ Analisi del Report
-Ho esaminato nel dettaglio le vulnerabilità critiche e alte. Tra le principali spiccano:  
+---
 
-#### **Ghostcat**  
-- **Cosa fa**: Questa vulnerabilità nel connettore AJP di Apache Tomcat consente l’accesso non autorizzato a risorse interne.  
-- **Dettaglio**: Può essere sfruttata per caricare file arbitrari o ottenere accesso remoto.  
-- **CVSS**: 9.8  
+## Analisi del Report Dettagliato
+Dai risultati della scansione, ho estrapolato le seguenti vulnerabilità critiche e di alto rischio:
 
-#### **Bind Shell Backdoor**  
-- **Cosa fa**: La presenza di una backdoor consente agli attaccanti di connettersi direttamente alla macchina target senza alcuna autenticazione.  
-- **Dettaglio**: Si tratta di un tipo comune di exploit presente in macchine volutamente vulnerabili.  
-- **CVSS**: 9.8  
+### **Vulnerabilità Critiche**
+1. **Bind Shell Backdoor Detection**
+   - **Porta**: TCP/1524
+   - **Descrizione**: Una backdoor che consente connessioni senza autenticazione.
+   - **Soluzione simulata**: Verifica dei processi sospetti e reinstallazione del sistema se compromesso.
 
-#### **SSL Version 2 e 3 Detection**  
-- **Cosa fa**: L’uso di SSLv2 e SSLv3, protocolli deprecati, espone la macchina a vulnerabilità note, inclusi attacchi Man-in-the-Middle.  
-- **Dettaglio**: Questi protocolli non supportano moderni standard di sicurezza come Forward Secrecy.  
-- **CVSS**: 9.8  
+2. **Debian OpenSSH/OpenSSL Weakness**
+   - **Porta**: TCP/22 (SSH)
+   - **Descrizione**: Generazione di chiavi deboli su sistemi Debian vulnerabili.
+   - **Soluzione simulata**: Rigenerare tutte le chiavi crittografiche e aggiornare OpenSSL.
 
-#### **Debian OpenSSH/OpenSSL Weakness**  
-- **Cosa fa**: Generazione di chiavi crittografiche deboli che possono essere facilmente compromesse.  
-- **Dettaglio**: Questo problema era comune nelle vecchie versioni di Debian.  
-- **CVSS**: 10.0  
+3. **SSL Version 2 and 3 Detection**
+   - **Porte**: TCP/25 (SMTP)
+   - **Descrizione**: Uso di protocolli deprecati che espongono a vulnerabilità crittografiche.
+   - **Soluzione simulata**: Disabilitare SSLv2/SSLv3 e abilitare TLS 1.2 o superiore.
+
+4. **Samba Badlock Vulnerability**
+   - **Porta**: TCP/445
+   - **Descrizione**: Problema di negoziazione dell'autenticazione su Samba, che consente attacchi MITM.
+   - **Soluzione simulata**: Aggiornare Samba alla versione corretta.
+
+---
+
+## Raccomandazioni Generali  
+🔒 **Aggiornare pacchetti e software vulnerabili nei sistemi reali**: mantenere sempre aggiornati i servizi e applicare le patch di sicurezza fornite dai vendor.  
+🛑 **Disabilitare protocolli e servizi non essenziali**: ridurre la superficie di attacco eliminando funzionalità non necessarie.  
+🔐 **Implementare crittografia moderna per SSL/TLS**: garantire che solo protocolli sicuri (come TLS 1.2 o 1.3) siano abilitati.  
+🛡️ **Integrare regole di firewall più severe**: configurare il firewall per limitare l'accesso alle porte e ai servizi vulnerabili solo a IP autorizzati.  
+⚙️ **Segmentare la rete**: isolare i sistemi vulnerabili o di test in una VLAN dedicata per limitare i danni in caso di compromissione.  
 
 ---
 
@@ -67,31 +79,8 @@ Non ha senso quindi correggere le vulnerabilità identificate su questa macchina
 
 ---
 
-## Risultati e Mitigazioni
-
-### Vulnerabilità Critiche Analizzate  
-1️⃣ **Ghostcat**  
-- **Soluzione simulata**: Aggiornare Apache Tomcat e disabilitare il connettore AJP, se non necessario.  
-
-2️⃣ **SSL Version 2 e 3 Detection**  
-- **Soluzione simulata**: Disabilitare SSLv2 e SSLv3, abilitando solo TLS 1.2 e successivi.  
-
-3️⃣ **Bind Shell Backdoor**  
-- **Soluzione simulata**: Analizzare i processi sospetti e rimuovere la backdoor.  
-
----
-
-## Raccomandazioni Generali  
-🔒 **Aggiornare pacchetti e software vulnerabili nei sistemi reali**: mantenere sempre aggiornati i servizi e applicare le patch di sicurezza fornite dai vendor.  
-🛑 **Disabilitare protocolli e servizi non essenziali**: ridurre la superficie di attacco eliminando funzionalità non necessarie.  
-🔐 **Implementare crittografia moderna per SSL/TLS**: garantire che solo protocolli sicuri (come TLS 1.2 o 1.3) siano abilitati.  
-🛡️ **Integrare regole di firewall più severe**: configurare il firewall per limitare l'accesso alle porte e ai servizi vulnerabili solo a IP autorizzati. Questo approccio riduce la possibilità di sfruttare le vulnerabilità da parte di attaccanti esterni.  
-⚙️ **Segmentare la rete**: isolare i sistemi vulnerabili o di test in una VLAN dedicata per limitare i danni in caso di compromissione.  
-
----
-
 ## Conclusioni
-Questo esercizio mi ha permesso di esplorare le potenzialità di Nessus e di approfondire la gestione delle vulnerabilità. Metasploitable ha fornito un ambiente sicuro per testare e imparare.  📊
+Questo esercizio mi ha permesso di esplorare le potenzialità di Nessus e di approfondire la gestione delle vulnerabilità. Metasploitable ha fornito un ambiente sicuro per testare e imparare. 📊
 
 ---
 
