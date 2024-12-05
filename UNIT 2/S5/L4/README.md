@@ -94,14 +94,6 @@ ChatGPT, potresti fornire una lista di CVE relative a [nome del software o siste
 
 ---
 
-## Come usare questo repository
-
-1. **Esplora i prompt**: I prompt forniti possono essere riutilizzati o adattati per analisi future.
-2. **Consulta i risultati**: Le risposte e gli esempi documentati offrono una base solida per approfondire il tema della sicurezza informatica.
-3. **Aggiungi contributi**: Sei libero di aggiungere nuove vulnerabilità o tecniche di difesa aggiornate.
-
----
-
 ## Note Finali
 
 Il lavoro documentato in questo repository rappresenta una base solida per comprendere le tecniche di attacco e difesa nella sicurezza informatica. Ogni esercizio è stato completato con un focus particolare sulla qualità e l'efficacia dei prompt utilizzati.
