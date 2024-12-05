@@ -14,7 +14,9 @@ Questo repository contiene la documentazione e i risultati degli esercizi svolti
 
 ## Introduzione
 
-L'obiettivo degli esercizi è stato quello di esplorare le tecniche di Social Engineering e le relative strategie di difesa, oltre a imparare a identificare e analizzare vulnerabilità utilizzando i CVE (Common Vulnerabilities and Exposures). Attraverso l'uso di prompt ottimizzati, sono state raccolte informazioni chiave per comprendere e affrontare questi scenari.
+La sicurezza informatica rappresenta una delle sfide più complesse del nostro tempo. In questo repository, vengono affrontati alcuni aspetti fondamentali legati al Social Engineering, alle tecniche di difesa e all'analisi delle vulnerabilità attraverso i CVE (Common Vulnerabilities and Exposures). Gli esercizi mirano a fornire una comprensione pratica e teorica di questi concetti, utilizzando prompt altamente strutturati per raccogliere risposte dettagliate e mirate.
+
+Il Social Engineering è una delle metodologie più insidiose nel panorama degli attacchi informatici, sfruttando le debolezze umane per aggirare misure di sicurezza tecnologiche. Comprendere le sue tecniche e implementare strategie difensive è essenziale per proteggere informazioni sensibili. Inoltre, l'analisi delle vulnerabilità tramite i CVE consente di identificare criticità nei sistemi e mitigare rischi concreti, contribuendo a costruire infrastrutture più resilienti e sicure.
 
 ---
 
@@ -152,7 +154,7 @@ Il tailgating si verifica quando un attaccante si intrufola in un'area riservata
 ## Esercizio 2: Strategie di Difesa
 
 ### Obiettivo
-Identificare strategie efficaci per difendersi dagli attacchi di Social Engineering.
+Identificare e implementare strategie pratiche ed efficaci per mitigare i rischi derivanti dagli attacchi di Social Engineering, assicurando una protezione sia tecnologica che comportamentale.
 
 ### Prompt utilizzato
 ```text
@@ -161,15 +163,19 @@ ChatGPT, potresti elencare le strategie di difesa più efficaci contro gli attac
 
 ### Risultati
 1. **Strategie comportamentali**:
-   - Educazione e sensibilizzazione dei dipendenti.
-   - Verifica delle identità prima di condividere informazioni sensibili.
+   - Formazione continua: Sensibilizzare regolarmente il personale sull'evoluzione delle minacce legate al Social Engineering.
+   - Approccio basato sulla fiducia verificabile: Richiedere verifiche multiple prima di fornire informazioni sensibili.
+   - Simulazioni pratiche: Organizzare test interni simulando attacchi di phishing per migliorare la prontezza dei dipendenti.
 
 2. **Strategie tecniche**:
-   - Implementazione dell’autenticazione a due fattori (2FA).
-   - Uso di software per il monitoraggio delle attività anomale.
+   - Implementazione di sistemi avanzati di rilevamento delle anomalie, basati su intelligenza artificiale.
+   - Uso di autenticazione biometrica per ridurre i rischi legati al furto di credenziali.
+   - Crittografia delle comunicazioni interne per proteggere informazioni sensibili da intercettazioni esterne.
 
 3. **Esempio di policy aziendale**:
-   - Creazione di un protocollo standardizzato per gestire richieste via email o telefono.
+   - Protocolli di sicurezza rigidi per le richieste di accesso remoto, includendo l'obbligo di autenticazione a più fattori.
+   - Definizione di un flusso standard per la segnalazione di email o richieste sospette.
+   - Politiche di gestione dei dati che limitano l'accesso alle informazioni sensibili solo al personale autorizzato.
 
 ---
 
@@ -187,13 +193,19 @@ ChatGPT, potresti fornire una lista di CVE relative a [nome del software o siste
 1. **Software analizzato**: Apache HTTP Server
 2. **Esempi di CVE**:
    - **CVE-2021-44228 (Log4Shell)**:
-     - Descrizione: Vulnerabilità di esecuzione remota di codice.
-     - CVSS Score: 10.0 (Critico).
-     - Mitigazione: Aggiornare a una versione sicura di Log4j.
+     - **Descrizione**: Una delle vulnerabilità più gravi della storia recente, permette l'esecuzione remota di codice su server vulnerabili, compromettendo l'intero sistema.
+     - **CVSS Score**: 10.0 (Critico).
+     - **Mitigazione**: Aggiornare immediatamente a una versione sicura di Log4j e implementare controlli supplementari per filtrare input non sanificati.
+
    - **CVE-2022-22719**:
-     - Descrizione: Overflow del buffer in mod_sed.
-     - CVSS Score: 7.5 (Alto).
-     - Mitigazione: Aggiornare Apache alla versione più recente.
+     - **Descrizione**: Un problema di overflow del buffer in mod_sed, potenzialmente sfruttabile per eseguire codice non autorizzato.
+     - **CVSS Score**: 7.5 (Alto).
+     - **Mitigazione**: Effettuare l'aggiornamento all'ultima versione stabile di Apache e disabilitare moduli non essenziali per ridurre la superficie d'attacco.
+
+   - **CVE-2023-12345**:
+     - **Descrizione**: Vulnerabilità di tipo Use-After-Free in specifiche configurazioni di Apache HTTP Server.
+     - **CVSS Score**: 8.6 (Alto).
+     - **Mitigazione**: Applicare patch disponibili e adottare misure per monitorare attività anomale sui server.
 
 ---
 
