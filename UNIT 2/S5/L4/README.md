@@ -179,31 +179,49 @@ Esplorare le vulnerabilità note relative a software o sistemi operativi specifi
 
 ### 💡 Prompt utilizzato
 ```text
-ChatGPT, potresti fornire una lista di CVE relative a [nome del software o sistema operativo]? Per ogni CVE, includi una breve descrizione della vulnerabilità, il livello di criticità (es. CVSS score) e i metodi di mitigazione consigliati.
+ChatGPT, potresti fornire una lista di CVE relative a IE di Windows 7? Per ogni CVE, includi una breve descrizione della vulnerabilità, il livello di criticità (es. CVSS score) e i metodi di mitigazione consigliati.
 ```
 
 ### 📊 Risultati
-1. **Software analizzato**: Apache HTTP Server
+1. **Software analizzato**: Internet Explorer (preinstallato su Windows 7)
+
 2. **Esempi di CVE**:
-   - **CVE-2021-44228 (Log4Shell)**:
-     - **Descrizione**: Una delle vulnerabilità più gravi della storia recente, permette l'esecuzione remota di codice su server vulnerabili, compromettendo l'intero sistema.
-     - **CVSS Score**: 10.0 (Critico).
-     - **Mitigazione**: Aggiornare immediatamente a una versione sicura di Log4j e implementare controlli supplementari per filtrare input non sanificati.
 
-   - **CVE-2022-22719**:
-     - **Descrizione**: Un problema di overflow del buffer in mod_sed, potenzialmente sfruttabile per eseguire codice non autorizzato.
-     - **CVSS Score**: 7.5 (Alto).
-     - **Mitigazione**: Effettuare l'aggiornamento all'ultima versione stabile di Apache e disabilitare moduli non essenziali per ridurre la superficie d'attacco.
+   - **🛑 CVE-2017-8750**  
+     - **Descrizione**: Vulnerabilità di corruzione della memoria che consente l'esecuzione di codice arbitrario nel contesto dell'utente corrente.  
+     - **CVSS Score**: 7.6 (Alto)  
+     - **Mitigazione**: Applicare le patch di sicurezza fornite da Microsoft e limitare i privilegi dell'utente per ridurre l'impatto di potenziali exploit.  
 
-   - **CVE-2023-12345**:
-     - **Descrizione**: Vulnerabilità di tipo Use-After-Free in specifiche configurazioni di Apache HTTP Server.
-     - **CVSS Score**: 8.6 (Alto).
-     - **Mitigazione**: Applicare patch disponibili e adottare misure per monitorare attività anomale sui server.
+   - **⚠️ CVE-2017-8749**  
+     - **Descrizione**: Problema di corruzione della memoria che permette l'esecuzione di codice arbitrario nel contesto dell'utente corrente.  
+     - **CVSS Score**: 7.6 (Alto)  
+     - **Mitigazione**: Installare gli aggiornamenti di sicurezza rilasciati da Microsoft e considerare l'utilizzo di browser alternativi più sicuri.  
+
+   - **🌐 CVE-2017-8618**  
+     - **Descrizione**: Vulnerabilità nel motore di scripting che potrebbe consentire l'esecuzione di codice arbitrario se un utente visita una pagina web appositamente predisposta.  
+     - **CVSS Score**: 7.6 (Alto)  
+     - **Mitigazione**: Aggiornare il browser con le ultime patch di sicurezza e disabilitare script non necessari.  
+
+   - **🔍 CVE-2017-8529**  
+     - **Descrizione**: Vulnerabilità che consente a un attaccante di rilevare file specifici sul computer dell'utente attraverso una gestione impropria degli oggetti in memoria.  
+     - **CVSS Score**: 4.3 (Medio)  
+     - **Mitigazione**: Applicare gli aggiornamenti di sicurezza e utilizzare strumenti di sicurezza per monitorare attività sospette.  
+
+   - **🔒 CVE-2017-11790**  
+     - **Descrizione**: Vulnerabilità che potrebbe consentire a un attaccante di ottenere informazioni per compromettere ulteriormente il sistema dell'utente.  
+     - **CVSS Score**: 4.0 (Medio)  
+     - **Mitigazione**: Installare le patch di sicurezza e limitare l'esecuzione di script non attendibili.  
 
 ---
 
+### ⚠️ Nota
 
-## 📝 Note Finali
+L'utilizzo di versioni obsolete di browser, come Internet Explorer su Windows 7, comporta un rischio significativo di esposizione a vulnerabilità critiche. Si consiglia vivamente di aggiornare a sistemi operativi e browser più recenti per garantire una maggiore sicurezza.  
+Ogni vulnerabilità documentata in questo esercizio sottolinea l'importanza di mantenere aggiornati software e sistemi operativi per prevenire exploit dannosi.
+
+---
+
+## 📝 Conclusioni
 
 Il lavoro documentato in questo repository rappresenta una base solida per comprendere le tecniche di attacco e difesa nella sicurezza informatica. Ogni esercizio è stato completato con un focus particolare sulla qualità e l'efficacia dei prompt utilizzati.
 
