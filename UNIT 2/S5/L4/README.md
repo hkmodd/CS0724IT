@@ -1,4 +1,4 @@
-
+# Consegna S5/L4
 # Social Engineering & Cybersecurity Exercises
 
 Questo repository contiene la documentazione e i risultati degli esercizi svolti relativi al Social Engineering, alle tecniche di difesa e all'esplorazione delle vulnerabilità CVE. Ogni attività è stata completata utilizzando prompt ben strutturati per garantire risposte dettagliate e mirate.
