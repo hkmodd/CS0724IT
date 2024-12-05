@@ -3,16 +3,6 @@
 
 Questo repository contiene la documentazione e i risultati degli esercizi svolti relativi al Social Engineering, alle tecniche di difesa e all'esplorazione delle vulnerabilità CVE. Ogni attività è stata completata utilizzando prompt ben strutturati per garantire risposte dettagliate e mirate.
 
-## Contenuti
-
-- [Introduzione](#introduzione)
-- [Esercizio 1: Social Engineering](#esercizio-1-social-engineering)
-- [Esercizio 2: Strategie di Difesa](#esercizio-2-strategie-di-difesa)
-- [Esercizio Bonus: Esplorazione dei CVE](#esercizio-bonus-esplorazione-dei-cve)
-
----
-
-
 # 🌟 Introduzione
 
 La sicurezza informatica rappresenta una delle sfide più complesse del nostro tempo. In questo repository, vengono affrontati alcuni aspetti fondamentali legati al Social Engineering, alle tecniche di difesa e all'analisi delle vulnerabilità attraverso i CVE (Common Vulnerabilities and Exposures). Gli esercizi mirano a fornire una comprensione pratica e teorica di questi concetti, utilizzando prompt altamente strutturati per raccogliere risposte dettagliate e mirate.
@@ -20,8 +10,6 @@ La sicurezza informatica rappresenta una delle sfide più complesse del nostro t
 Il Social Engineering è una delle metodologie più insidiose nel panorama degli attacchi informatici, sfruttando le debolezze umane per aggirare misure di sicurezza tecnologiche. Comprendere le sue tecniche e implementare strategie difensive è essenziale per proteggere informazioni sensibili. Inoltre, l'analisi delle vulnerabilità tramite i CVE consente di identificare criticità nei sistemi e mitigare rischi concreti, contribuendo a costruire infrastrutture più resilienti e sicure.
 
 ---
-
-
 
 # 🕵️‍♂️ Esercizio 1: Social Engineering
 
