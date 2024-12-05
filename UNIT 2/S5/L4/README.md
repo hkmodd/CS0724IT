@@ -1,6 +1,6 @@
-# 📝 <h1 align="center">ConsegnaS5/L4</h1>
+# 📝 Consegna S5/L4
+# <h1 align="center">🕵️‍♂️ Social Engineering e Tecniche di difesa 🛡️</h1>
 
-# 🕵️‍♂️ Social Engineering e Tecniche di difesa 🛡️
 
 Questo repository contiene la documentazione e i risultati degli esercizi svolti relativi al Social Engineering, alle tecniche di difesa e all'esplorazione delle vulnerabilità CVE. Ogni attività è stata completata utilizzando prompt ben strutturati per garantire risposte dettagliate e mirate.
 
@@ -12,7 +12,7 @@ Il Social Engineering è una delle metodologie più insidiose nel panorama degli
 
 ---
 
-# 🕵️‍♂️ Esercizio 1: Social Engineering
+# <h1 align="center">🕵️‍♂️ Esercizio 1: Social Engineering</h1>
 
 ## 🎯 Obiettivo
 Esplorare le tecniche di Social Engineering e imparare come difendersi da attacchi di questo tipo.
@@ -145,7 +145,7 @@ Il tailgating si verifica quando un attaccante si intrufola in un'area riservata
 
 
 
-# 🛡️ Esercizio 2: Strategie di Difesa
+# <h1 align="center">🛡️ Esercizio 2: Strategie di Difesa</h1>
 
 ### 🎯 Obiettivo
 Identificare e implementare strategie pratiche ed efficaci per mitigare i rischi derivanti dagli attacchi di Social Engineering, combinando misure tecnologiche avanzate e buone pratiche comportamentali.
@@ -212,7 +212,7 @@ Queste strategie combinano approcci tecnici e comportamentali per mitigare in mo
 ---
 
 
-# 🛠️ Esercizio Bonus: Esplorazione dei CVE
+# <h1 align="center">🛠️ Esercizio Bonus: Esplorazione dei CVE</h1>
 
 ## 🎯 Obiettivo
 Esplorare le vulnerabilità note relative a software o sistemi operativi specifici.
@@ -254,18 +254,11 @@ ChatGPT, potresti fornire una lista di CVE relative a IE di Windows 7? Per ogni 
 
 ---
 
-## ⚠️ Nota
-
-L'utilizzo di versioni obsolete di browser, come Internet Explorer su Windows 7, comporta un rischio significativo di esposizione a vulnerabilità critiche. Si consiglia vivamente di aggiornare a sistemi operativi e browser più recenti per garantire una maggiore sicurezza.  
-Ogni vulnerabilità documentata in questo esercizio sottolinea l'importanza di mantenere aggiornati software e sistemi operativi per prevenire exploit dannosi.
-
----
-
-# 📝 Conclusioni
+# <h1 align="center">📝 Conclusioni</h1>
 
 Il lavoro documentato in questo repository rappresenta una base solida per comprendere le tecniche di attacco e difesa nella sicurezza informatica. Ogni esercizio è stato completato con un focus particolare sulla qualità e l'efficacia dei prompt utilizzati.
-
-Se hai suggerimenti o vuoi contribuire, sentiti libero di creare una pull request o di aprire una issue.
+L'utilizzo di versioni obsolete di browser, come Internet Explorer su Windows 7, comporta un rischio significativo di esposizione a vulnerabilità critiche. Si consiglia vivamente di aggiornare a sistemi operativi e browser più recenti per garantire una maggiore sicurezza.  
+Ogni vulnerabilità documentata in questo esercizio sottolinea l'importanza di mantenere aggiornati software e sistemi operativi per prevenire exploit dannosi.
 
 ---
 
