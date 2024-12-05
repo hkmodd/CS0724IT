@@ -9,7 +9,6 @@ Questo repository contiene la documentazione e i risultati degli esercizi svolti
 - [Esercizio 1: Social Engineering](#esercizio-1-social-engineering)
 - [Esercizio 2: Strategie di Difesa](#esercizio-2-strategie-di-difesa)
 - [Esercizio Bonus: Esplorazione dei CVE](#esercizio-bonus-esplorazione-dei-cve)
-- [Come usare questo repository](#come-usare-questo-repository)
 
 ---
 
