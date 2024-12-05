@@ -143,10 +143,11 @@ Il tailgating si verifica quando un attaccante si intrufola in un'area riservata
 ---
 
 
-## 🛡️ Esercizio 2: Strategie di Difesa
+
+# 🛡️ Esercizio 2: Strategie di Difesa
 
 ### 🎯 Obiettivo
-Identificare e implementare strategie pratiche ed efficaci per mitigare i rischi derivanti dagli attacchi di Social Engineering, assicurando una protezione sia tecnologica che comportamentale.
+Identificare e implementare strategie pratiche ed efficaci per mitigare i rischi derivanti dagli attacchi di Social Engineering, combinando misure tecnologiche avanzate e buone pratiche comportamentali.
 
 ### 💡 Prompt utilizzato
 ```text
@@ -154,35 +155,73 @@ ChatGPT, potresti elencare le strategie di difesa più efficaci contro gli attac
 ```
 
 ### 📊 Risultati
-1. **Strategie comportamentali**:
-   - Formazione continua: Sensibilizzare regolarmente il personale sull'evoluzione delle minacce legate al Social Engineering.
-   - Approccio basato sulla fiducia verificabile: Richiedere verifiche multiple prima di fornire informazioni sensibili.
-   - Simulazioni pratiche: Organizzare test interni simulando attacchi di phishing per migliorare la prontezza dei dipendenti.
 
-2. **Strategie tecniche**:
-   - Implementazione di sistemi avanzati di rilevamento delle anomalie, basati su intelligenza artificiale.
-   - Uso di autenticazione biometrica per ridurre i rischi legati al furto di credenziali.
-   - Crittografia delle comunicazioni interne per proteggere informazioni sensibili da intercettazioni esterne.
+#### **1. Strategie Comportamentali**
+Le strategie comportamentali sono fondamentali per creare una cultura aziendale basata sulla consapevolezza della sicurezza. Alcuni approcci chiave includono:
 
-3. **Esempio di policy aziendale**:
-   - Protocolli di sicurezza rigidi per le richieste di accesso remoto, includendo l'obbligo di autenticazione a più fattori.
-   - Definizione di un flusso standard per la segnalazione di email o richieste sospette.
-   - Politiche di gestione dei dati che limitano l'accesso alle informazioni sensibili solo al personale autorizzato.
+- **📚 Formazione continua**:  
+  Organizzare corsi periodici per il personale, focalizzati sul riconoscimento di segnali di allarme come email sospette, richieste urgenti non verificate o comportamenti insoliti.  
+  > *Esempio pratico*: Workshop mensili con simulazioni di attacchi di phishing per identificare eventuali lacune nella prontezza dei dipendenti.
+
+- **🔍 Fiducia verificabile**:  
+  Promuovere una politica in cui ogni richiesta di informazioni sensibili venga verificata tramite canali separati e ufficiali, evitando di fidarsi ciecamente di email o telefonate.  
+  > *Best practice*: Implementare checklist per verificare ogni richiesta fuori dall'ordinario.
+
+- **🎭 Simulazioni realistiche**:  
+  Eseguire test interni che simulino scenari di Social Engineering come phishing, pretexting o baiting, valutando le reazioni del personale.  
+  > *Risultato atteso*: Miglioramento del tempo di risposta e aumento della sensibilità alle minacce.
+
+---
+
+#### **2. Strategie Tecniche**
+L'integrazione di soluzioni tecnologiche all'avanguardia è essenziale per rafforzare la sicurezza contro attacchi di Social Engineering:
+
+- **🤖 Sistemi di rilevamento basati su AI**:  
+  Utilizzare piattaforme di intelligenza artificiale per monitorare e analizzare attività sospette in tempo reale.  
+  > *Esempio*: Implementazione di sistemi che bloccano email di phishing grazie all'analisi semantica.
+
+- **🔑 Autenticazione biometrica**:  
+  Sostituire o affiancare le password con metodi biometrici come impronte digitali o riconoscimento facciale per ridurre i rischi di furto di credenziali.  
+  > *Pro*: Aumenta significativamente la sicurezza senza complicare l'accesso per l'utente.
+
+- **🛡️ Crittografia end-to-end**:  
+  Garantire che tutte le comunicazioni interne siano criptate per impedire che informazioni sensibili vengano intercettate.  
+  > *Esempio*: Utilizzo di strumenti di messaggistica aziendale sicura come Signal o Microsoft Teams.
+
+---
+
+#### **3. Policy Aziendali Esemplari**
+Le politiche aziendali ben strutturate sono la base per standardizzare comportamenti sicuri e limitare il rischio:
+
+- **📝 Protocolli di accesso remoto**:  
+  Definire regole rigide per il lavoro a distanza, richiedendo autenticazione a più fattori (MFA) e connessioni VPN sicure.  
+  > *Esempio*: Obbligo di utilizzo di dispositivi aziendali con configurazioni preimpostate per il telelavoro.
+
+- **📩 Gestione delle email sospette**:  
+  Creare un flusso chiaro per segnalare email sospette, con un team dedicato alla revisione tempestiva e alla sensibilizzazione dei dipendenti.  
+  > *Strumenti utili*: Plugin di segnalazione diretta nelle caselle email aziendali.
+
+- **🔒 Controllo degli accessi ai dati**:  
+  Limitare l'accesso alle informazioni sensibili solo a personale strettamente autorizzato, con audit regolari per verificare conformità.  
+  > *Esempio pratico*: Utilizzo di software di gestione delle identità (IAM) per tracciare e limitare le autorizzazioni.
+
+
+Queste strategie combinano approcci tecnici e comportamentali per mitigare in modo efficace i rischi derivanti dagli attacchi di Social Engineering, costruendo un ambiente aziendale resiliente alle minacce.
 
 ---
 
 
-## 🛠️ Esercizio Bonus: Esplorazione dei CVE
+# 🛠️ Esercizio Bonus: Esplorazione dei CVE
 
-### 🎯 Obiettivo
+## 🎯 Obiettivo
 Esplorare le vulnerabilità note relative a software o sistemi operativi specifici.
 
-### 💡 Prompt utilizzato
+## 💡 Prompt utilizzato
 ```text
 ChatGPT, potresti fornire una lista di CVE relative a IE di Windows 7? Per ogni CVE, includi una breve descrizione della vulnerabilità, il livello di criticità (es. CVSS score) e i metodi di mitigazione consigliati.
 ```
 
-### 📊 Risultati
+## 📊 Risultati
 1. **Software analizzato**: Internet Explorer (preinstallato su Windows 7)
 
 2. **Esempi di CVE**:
@@ -214,14 +253,14 @@ ChatGPT, potresti fornire una lista di CVE relative a IE di Windows 7? Per ogni 
 
 ---
 
-### ⚠️ Nota
+## ⚠️ Nota
 
 L'utilizzo di versioni obsolete di browser, come Internet Explorer su Windows 7, comporta un rischio significativo di esposizione a vulnerabilità critiche. Si consiglia vivamente di aggiornare a sistemi operativi e browser più recenti per garantire una maggiore sicurezza.  
 Ogni vulnerabilità documentata in questo esercizio sottolinea l'importanza di mantenere aggiornati software e sistemi operativi per prevenire exploit dannosi.
 
 ---
 
-## 📝 Conclusioni
+# 📝 Conclusioni
 
 Il lavoro documentato in questo repository rappresenta una base solida per comprendere le tecniche di attacco e difesa nella sicurezza informatica. Ogni esercizio è stato completato con un focus particolare sulla qualità e l'efficacia dei prompt utilizzati.
 
