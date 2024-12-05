@@ -126,8 +126,19 @@ Il tailgating si verifica quando un attaccante si intrufola in un'area riservata
 ---
 
 
+# <h1 align="center">🛡️ Esercizio 2: Strategie di Difesa</h1>
 
-# 🛡️ Come Mitigare Questi Attacchi
+### 🎯 Obiettivo
+Identificare e implementare strategie pratiche ed efficaci per mitigare i rischi derivanti dagli attacchi di Social Engineering, combinando misure tecnologiche avanzate e buone pratiche comportamentali.
+
+### 💡 Prompt utilizzato
+```text
+ChatGPT, potresti elencare le strategie di difesa più efficaci contro gli attacchi di Social Engineering? Includi consigli tecnici e comportamentali, esempi di policy aziendali utili e strumenti tecnologici che possono essere implementati.
+```
+
+## 📊 Risultati
+
+### 🛡️ Come Mitigare Questi Attacchi
 
 1. **📘 Formazione e sensibilizzazione:**  
    - Educare regolarmente il personale sulle tecniche di Social Engineering e sui segnali di allarme.
@@ -143,19 +154,6 @@ Il tailgating si verifica quando un attaccante si intrufola in un'area riservata
    - Monitorare accessi fisici e digitali.
 ---
 
-
-
-# <h1 align="center">🛡️ Esercizio 2: Strategie di Difesa</h1>
-
-### 🎯 Obiettivo
-Identificare e implementare strategie pratiche ed efficaci per mitigare i rischi derivanti dagli attacchi di Social Engineering, combinando misure tecnologiche avanzate e buone pratiche comportamentali.
-
-### 💡 Prompt utilizzato
-```text
-ChatGPT, potresti elencare le strategie di difesa più efficaci contro gli attacchi di Social Engineering? Includi consigli tecnici e comportamentali, esempi di policy aziendali utili e strumenti tecnologici che possono essere implementati.
-```
-
-### 📊 Risultati
 
 #### **1. Strategie Comportamentali**
 Le strategie comportamentali sono fondamentali per creare una cultura aziendale basata sulla consapevolezza della sicurezza. Alcuni approcci chiave includono:
@@ -210,7 +208,6 @@ Le politiche aziendali ben strutturate sono la base per standardizzare comportam
 Queste strategie combinano approcci tecnici e comportamentali per mitigare in modo efficace i rischi derivanti dagli attacchi di Social Engineering, costruendo un ambiente aziendale resiliente alle minacce.
 
 ---
-
 
 # <h1 align="center">🛠️ Esercizio Bonus: Esplorazione dei CVE</h1>
 
