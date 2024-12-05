@@ -1,4 +1,4 @@
-# Consegna S5/L4
+# 📂 Consegna S5/L4
 # Social Engineering & Cybersecurity Exercises
 
 Questo repository contiene la documentazione e i risultati degli esercizi svolti relativi al Social Engineering, alle tecniche di difesa e all'esplorazione delle vulnerabilità CVE. Ogni attività è stata completata utilizzando prompt ben strutturati per garantire risposte dettagliate e mirate.
@@ -12,7 +12,8 @@ Questo repository contiene la documentazione e i risultati degli esercizi svolti
 
 ---
 
-## Introduzione
+
+# 🌟 Introduzione
 
 La sicurezza informatica rappresenta una delle sfide più complesse del nostro tempo. In questo repository, vengono affrontati alcuni aspetti fondamentali legati al Social Engineering, alle tecniche di difesa e all'analisi delle vulnerabilità attraverso i CVE (Common Vulnerabilities and Exposures). Gli esercizi mirano a fornire una comprensione pratica e teorica di questi concetti, utilizzando prompt altamente strutturati per raccogliere risposte dettagliate e mirate.
 
@@ -21,19 +22,20 @@ Il Social Engineering è una delle metodologie più insidiose nel panorama degli
 ---
 
 
-## Esercizio 1: Social Engineering
 
-### Obiettivo
+# 🕵️‍♂️ Esercizio 1: Social Engineering
+
+## 🎯 Obiettivo
 Esplorare le tecniche di Social Engineering e imparare come difendersi da attacchi di questo tipo.
 
-### Prompt utilizzato
+## 💡 Prompt utilizzato
 ```text
 ChatGPT, potresti fornire una definizione dettagliata di Social Engineering e analizzare le tecniche più comuni utilizzate dagli attaccanti? Fornisci almeno tre esempi di attacchi reali documentati, spiegando il contesto e l'impatto di ciascuno.
 ```
 
-### Risultati
+## 📊 Risultati
 
-#### **Phishing**
+### **Phishing**
 **Descrizione:**  
 Il phishing è un attacco in cui gli aggressori inviano comunicazioni (spesso email, messaggi SMS o attraverso social media) che sembrano provenire da una fonte legittima per indurre la vittima a fornire informazioni sensibili come credenziali di accesso, dati bancari o informazioni personali.
 
@@ -59,7 +61,8 @@ Il phishing è un attacco in cui gli aggressori inviano comunicazioni (spesso em
 
 ---
 
-#### **Baiting**
+
+### **Baiting**
 **Descrizione:**  
 Il baiting sfrutta la curiosità delle vittime, inducendole a interagire con dispositivi o file compromessi.
 
@@ -84,7 +87,8 @@ Il baiting sfrutta la curiosità delle vittime, inducendole a interagire con dis
 
 ---
 
-#### **Pretexting**
+
+### **Pretexting**
 **Descrizione:**  
 Nel pretexting, gli attaccanti creano un contesto credibile (o "pretesto") per ottenere informazioni sensibili dalla vittima.
 
@@ -109,7 +113,8 @@ Nel pretexting, gli attaccanti creano un contesto credibile (o "pretesto") per o
 
 ---
 
-#### **Tailgating**
+
+### **Tailgating**
 **Descrizione:**  
 Il tailgating si verifica quando un attaccante si intrufola in un'area riservata seguendo una persona autorizzata.
 
@@ -134,7 +139,8 @@ Il tailgating si verifica quando un attaccante si intrufola in un'area riservata
 
 ---
 
-### Come Mitigare Questi Attacchi
+
+# Come Mitigare Questi Attacchi
 
 1. **Formazione e sensibilizzazione:**  
    - Educare regolarmente il personale sulle tecniche di Social Engineering e sui segnali di allarme.
@@ -148,20 +154,20 @@ Il tailgating si verifica quando un attaccante si intrufola in un'area riservata
 4. **Monitoraggio e tecnologia:**  
    - Utilizzare software avanzati per rilevare anomalie e tentativi di phishing.  
    - Monitorare accessi fisici e digitali.
-   - 
 ---
 
-## Esercizio 2: Strategie di Difesa
 
-### Obiettivo
+## 🛡️ Esercizio 2: Strategie di Difesa
+
+### 🎯 Obiettivo
 Identificare e implementare strategie pratiche ed efficaci per mitigare i rischi derivanti dagli attacchi di Social Engineering, assicurando una protezione sia tecnologica che comportamentale.
 
-### Prompt utilizzato
+### 💡 Prompt utilizzato
 ```text
 ChatGPT, potresti elencare le strategie di difesa più efficaci contro gli attacchi di Social Engineering? Includi consigli tecnici e comportamentali, esempi di policy aziendali utili e strumenti tecnologici che possono essere implementati.
 ```
 
-### Risultati
+### 📊 Risultati
 1. **Strategie comportamentali**:
    - Formazione continua: Sensibilizzare regolarmente il personale sull'evoluzione delle minacce legate al Social Engineering.
    - Approccio basato sulla fiducia verificabile: Richiedere verifiche multiple prima di fornire informazioni sensibili.
@@ -179,17 +185,18 @@ ChatGPT, potresti elencare le strategie di difesa più efficaci contro gli attac
 
 ---
 
-## Esercizio Bonus: Esplorazione dei CVE
 
-### Obiettivo
+## 🛠️ Esercizio Bonus: Esplorazione dei CVE
+
+### 🎯 Obiettivo
 Esplorare le vulnerabilità note relative a software o sistemi operativi specifici.
 
-### Prompt utilizzato
+### 💡 Prompt utilizzato
 ```text
 ChatGPT, potresti fornire una lista di CVE relative a [nome del software o sistema operativo]? Per ogni CVE, includi una breve descrizione della vulnerabilità, il livello di criticità (es. CVSS score) e i metodi di mitigazione consigliati.
 ```
 
-### Risultati
+### 📊 Risultati
 1. **Software analizzato**: Apache HTTP Server
 2. **Esempi di CVE**:
    - **CVE-2021-44228 (Log4Shell)**:
@@ -209,7 +216,8 @@ ChatGPT, potresti fornire una lista di CVE relative a [nome del software o siste
 
 ---
 
-## Note Finali
+
+## 📝 Note Finali
 
 Il lavoro documentato in questo repository rappresenta una base solida per comprendere le tecniche di attacco e difesa nella sicurezza informatica. Ogni esercizio è stato completato con un focus particolare sulla qualità e l'efficacia dei prompt utilizzati.
 
@@ -217,9 +225,11 @@ Se hai suggerimenti o vuoi contribuire, sentiti libero di creare una pull reques
 
 ---
 
-## Autore
+
+## 👤 Autore
 
 Sebastiano
 
 ---
+
 
