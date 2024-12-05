@@ -23,7 +23,7 @@ ChatGPT, potresti fornire una definizione dettagliata di Social Engineering e an
 
 ## 📊 Risultati
 
-### **Phishing**
+### **🐟 Phishing**
 **Descrizione:**  
 Il phishing è un attacco in cui gli aggressori inviano comunicazioni (spesso email, messaggi SMS o attraverso social media) che sembrano provenire da una fonte legittima per indurre la vittima a fornire informazioni sensibili come credenziali di accesso, dati bancari o informazioni personali.
 
@@ -50,7 +50,7 @@ Il phishing è un attacco in cui gli aggressori inviano comunicazioni (spesso em
 ---
 
 
-### **Baiting**
+### **🎣 Baiting**
 **Descrizione:**  
 Il baiting sfrutta la curiosità delle vittime, inducendole a interagire con dispositivi o file compromessi.
 
@@ -76,7 +76,7 @@ Il baiting sfrutta la curiosità delle vittime, inducendole a interagire con dis
 ---
 
 
-### **Pretexting**
+### **🎭 Pretexting**
 **Descrizione:**  
 Nel pretexting, gli attaccanti creano un contesto credibile (o "pretesto") per ottenere informazioni sensibili dalla vittima.
 
@@ -102,7 +102,7 @@ Nel pretexting, gli attaccanti creano un contesto credibile (o "pretesto") per o
 ---
 
 
-### **Tailgating**
+### **🏃‍♂️ Tailgating**
 **Descrizione:**  
 Il tailgating si verifica quando un attaccante si intrufola in un'area riservata seguendo una persona autorizzata.
 
@@ -128,18 +128,18 @@ Il tailgating si verifica quando un attaccante si intrufola in un'area riservata
 ---
 
 
-# Come Mitigare Questi Attacchi
+# 🛡️ Come Mitigare Questi Attacchi
 
-1. **Formazione e sensibilizzazione:**  
+1. **📘 Formazione e sensibilizzazione:**  
    - Educare regolarmente il personale sulle tecniche di Social Engineering e sui segnali di allarme.
 
-2. **Autenticazione e verifica:**  
+2. **🔐 Autenticazione e verifica:**  
    - Implementare l'autenticazione a due fattori e verificare sempre l'identità di chiunque richieda informazioni o accesso.
 
-3. **Policy aziendali:**  
+3. **📑 Policy aziendali:**  
    - Creare e far rispettare policy chiare su email, dispositivi USB e accesso fisico.
 
-4. **Monitoraggio e tecnologia:**  
+4. **🖥️ Monitoraggio e tecnologia:**  
    - Utilizzare software avanzati per rilevare anomalie e tentativi di phishing.  
    - Monitorare accessi fisici e digitali.
 ---
