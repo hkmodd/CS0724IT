@@ -19,6 +19,7 @@ L'obiettivo degli esercizi è stato quello di esplorare le tecniche di Social En
 
 ---
 
+
 ## Esercizio 1: Social Engineering
 
 ### Obiettivo
@@ -30,20 +31,123 @@ ChatGPT, potresti fornire una definizione dettagliata di Social Engineering e an
 ```
 
 ### Risultati
-1. **Definizione**:
-   Il Social Engineering è un insieme di tecniche utilizzate per manipolare le persone al fine di ottenere informazioni sensibili o accesso a sistemi informatici.
 
-2. **Tecniche comuni**:
-   - Phishing
-   - Baiting
-   - Pretexting
-   - Tailgating
+#### **Phishing**
+**Descrizione:**  
+Il phishing è un attacco in cui gli aggressori inviano comunicazioni (spesso email, messaggi SMS o attraverso social media) che sembrano provenire da una fonte legittima per indurre la vittima a fornire informazioni sensibili come credenziali di accesso, dati bancari o informazioni personali.
 
-3. **Esempi di attacchi reali**:
-   - **Target Corporation (2013)**: Furto di dati tramite phishing ai fornitori.
-   - **Ubiquiti Networks (2015)**: Truffa tramite email compromesse.
-   - **Twitter Hack (2020)**: Attacco coordinato tramite spear phishing.
+**Struttura dell'attacco:**
+1. **Preparazione:**  
+   - L'attaccante crea un'email/messaggio con un layout che imita un'azienda o un'organizzazione legittima, come una banca, un provider di servizi online o un ente governativo.
+   - Inserisce link che reindirizzano a siti web fasulli, molto simili a quelli ufficiali.
 
+2. **Esecuzione:**  
+   - L'email/messaggio contiene un'esca, come un avviso urgente (es. "Il tuo account sarà sospeso se non confermi la tua identità").
+   - La vittima clicca sul link e inserisce i propri dati personali sulla pagina fasulla.
+
+3. **Conclusione:**  
+   - L'attaccante utilizza le informazioni per accedere a sistemi o rubare denaro.
+
+**Esempio pratico:**
+- **Caso PayPal (2014):**  
+  Un'email falsa, apparentemente inviata da PayPal, avvisava gli utenti di "attività sospette" sui loro account. I destinatari erano invitati a cliccare su un link e fornire le loro credenziali. Milioni di utenti caddero nella trappola, causando perdite finanziarie significative.
+- **Come mitigare:**  
+  - Verificare sempre il mittente dell'email.  
+  - Non cliccare su link sospetti; digitare manualmente l'URL dell'organizzazione.  
+  - Implementare un filtro antiphishing nei sistemi di posta elettronica.
+
+---
+
+#### **Baiting**
+**Descrizione:**  
+Il baiting sfrutta la curiosità delle vittime, inducendole a interagire con dispositivi o file compromessi.
+
+**Struttura dell'attacco:**
+1. **Preparazione:**  
+   - L'attaccante lascia un dispositivo (es. una chiavetta USB infetta) in un luogo pubblico.
+   - Il dispositivo ha un'etichetta intrigante, come "Confidenziale" o "Salari aziendali".
+
+2. **Esecuzione:**  
+   - La vittima raccoglie il dispositivo e lo collega al proprio computer per curiosità.
+   - Il dispositivo installa malware che consente agli aggressori di accedere al sistema.
+
+3. **Conclusione:**  
+   - Gli attaccanti accedono ai dati aziendali o controllano il sistema.
+
+**Esempio pratico:**
+- **Caso di un'azienda americana (2016):**  
+  Chiavette USB infette furono lasciate nel parcheggio dell'azienda. Diversi dipendenti le inserirono nei computer aziendali, installando involontariamente malware che rubava dati sensibili.
+- **Come mitigare:**  
+  - Vietare ai dipendenti di collegare dispositivi non autorizzati.  
+  - Implementare software di controllo su porte USB.  
+
+---
+
+#### **Pretexting**
+**Descrizione:**  
+Nel pretexting, gli attaccanti creano un contesto credibile (o "pretesto") per ottenere informazioni sensibili dalla vittima.
+
+**Struttura dell'attacco:**
+1. **Preparazione:**  
+   - L'attaccante raccoglie informazioni sulla vittima (es. nome, posizione lavorativa, relazioni personali).
+   - Costruisce un pretesto, come fingere di essere un tecnico IT o un rappresentante bancario.
+
+2. **Esecuzione:**  
+   - Contatta la vittima via telefono, email o di persona.
+   - Con un approccio amichevole e professionale, induce la vittima a rivelare informazioni sensibili.
+
+3. **Conclusione:**  
+   - Gli attaccanti utilizzano le informazioni per accedere a sistemi o compiere frodi.
+
+**Esempio pratico:**
+- **Caso di Verizon (2016):**  
+  Un attaccante si finse un consulente IT e convinse un dipendente a fornire le credenziali di accesso aziendali. Questo portò a una violazione dei dati di milioni di clienti.
+- **Come mitigare:**  
+  - Educare i dipendenti a verificare sempre l'identità del richiedente.  
+  - Implementare una policy aziendale che vieti di condividere credenziali via telefono o email.
+
+---
+
+#### **Tailgating**
+**Descrizione:**  
+Il tailgating si verifica quando un attaccante si intrufola in un'area riservata seguendo una persona autorizzata.
+
+**Struttura dell'attacco:**
+1. **Preparazione:**  
+   - L'attaccante osserva l'ingresso di un edificio o di un'area protetta.
+   - Identifica una vittima ignara, come un dipendente o un visitatore.
+
+2. **Esecuzione:**  
+   - Si avvicina alla vittima, fingendo di aver dimenticato il badge o di essere un collaboratore esterno.
+   - Segue la vittima attraverso l'accesso, sfruttando la cortesia delle persone.
+
+3. **Conclusione:**  
+   - Una volta dentro, l'attaccante può rubare documenti, accedere a computer o compromettere l'infrastruttura.
+
+**Esempio pratico:**
+- **Caso RSA Security (2011):**  
+  Un attaccante utilizzò il tailgating per accedere fisicamente a un edificio RSA. Questo contribuì al furto di dati crittografici sensibili.
+- **Come mitigare:**  
+  - Installare tornelli o porte con badge magnetici.  
+  - Educare il personale a non lasciare entrare nessuno senza identificazione.
+
+---
+
+### Come Mitigare Questi Attacchi
+
+1. **Formazione e sensibilizzazione:**  
+   - Educare regolarmente il personale sulle tecniche di Social Engineering e sui segnali di allarme.
+
+2. **Autenticazione e verifica:**  
+   - Implementare l'autenticazione a due fattori e verificare sempre l'identità di chiunque richieda informazioni o accesso.
+
+3. **Policy aziendali:**  
+   - Creare e far rispettare policy chiare su email, dispositivi USB e accesso fisico.
+
+4. **Monitoraggio e tecnologia:**  
+   - Utilizzare software avanzati per rilevare anomalie e tentativi di phishing.  
+   - Monitorare accessi fisici e digitali.
+   - 
 ---
 
 ## Esercizio 2: Strategie di Difesa
