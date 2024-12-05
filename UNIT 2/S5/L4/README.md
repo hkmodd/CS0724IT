@@ -28,15 +28,15 @@ ChatGPT, potresti fornire una definizione dettagliata di Social Engineering e an
 Il phishing è un attacco in cui gli aggressori inviano comunicazioni (spesso email, messaggi SMS o attraverso social media) che sembrano provenire da una fonte legittima per indurre la vittima a fornire informazioni sensibili come credenziali di accesso, dati bancari o informazioni personali.
 
 **Struttura dell'attacco:**
-1. **Preparazione:**  
+1. **📧 Preparazione:**  
    - L'attaccante crea un'email/messaggio con un layout che imita un'azienda o un'organizzazione legittima, come una banca, un provider di servizi online o un ente governativo.
    - Inserisce link che reindirizzano a siti web fasulli, molto simili a quelli ufficiali.
 
-2. **Esecuzione:**  
+2. **⚠️ Esecuzione:**  
    - L'email/messaggio contiene un'esca, come un avviso urgente (es. "Il tuo account sarà sospeso se non confermi la tua identità").
    - La vittima clicca sul link e inserisce i propri dati personali sulla pagina fasulla.
 
-3. **Conclusione:**  
+3. **🔑 Conclusione:**  
    - L'attaccante utilizza le informazioni per accedere a sistemi o rubare denaro.
 
 **Esempio pratico:**
@@ -49,21 +49,20 @@ Il phishing è un attacco in cui gli aggressori inviano comunicazioni (spesso em
 
 ---
 
-
 ### **🎣 Baiting**
 **Descrizione:**  
 Il baiting sfrutta la curiosità delle vittime, inducendole a interagire con dispositivi o file compromessi.
 
 **Struttura dell'attacco:**
-1. **Preparazione:**  
+1. **🛠️ Preparazione:**  
    - L'attaccante lascia un dispositivo (es. una chiavetta USB infetta) in un luogo pubblico.
    - Il dispositivo ha un'etichetta intrigante, come "Confidenziale" o "Salari aziendali".
 
-2. **Esecuzione:**  
+2. **🖱️ Esecuzione:**  
    - La vittima raccoglie il dispositivo e lo collega al proprio computer per curiosità.
    - Il dispositivo installa malware che consente agli aggressori di accedere al sistema.
 
-3. **Conclusione:**  
+3. **🕵️‍♂️ Conclusione:**  
    - Gli attaccanti accedono ai dati aziendali o controllano il sistema.
 
 **Esempio pratico:**
@@ -75,21 +74,20 @@ Il baiting sfrutta la curiosità delle vittime, inducendole a interagire con dis
 
 ---
 
-
 ### **🎭 Pretexting**
 **Descrizione:**  
 Nel pretexting, gli attaccanti creano un contesto credibile (o "pretesto") per ottenere informazioni sensibili dalla vittima.
 
 **Struttura dell'attacco:**
-1. **Preparazione:**  
+1. **📋 Preparazione:**  
    - L'attaccante raccoglie informazioni sulla vittima (es. nome, posizione lavorativa, relazioni personali).
    - Costruisce un pretesto, come fingere di essere un tecnico IT o un rappresentante bancario.
 
-2. **Esecuzione:**  
+2. **📞 Esecuzione:**  
    - Contatta la vittima via telefono, email o di persona.
    - Con un approccio amichevole e professionale, induce la vittima a rivelare informazioni sensibili.
 
-3. **Conclusione:**  
+3. **🔓 Conclusione:**  
    - Gli attaccanti utilizzano le informazioni per accedere a sistemi o compiere frodi.
 
 **Esempio pratico:**
@@ -101,21 +99,20 @@ Nel pretexting, gli attaccanti creano un contesto credibile (o "pretesto") per o
 
 ---
 
-
-### **🏃‍♂️ Tailgating**
+### **🚪 Tailgating**
 **Descrizione:**  
 Il tailgating si verifica quando un attaccante si intrufola in un'area riservata seguendo una persona autorizzata.
 
 **Struttura dell'attacco:**
-1. **Preparazione:**  
+1. **📍 Preparazione:**  
    - L'attaccante osserva l'ingresso di un edificio o di un'area protetta.
    - Identifica una vittima ignara, come un dipendente o un visitatore.
 
-2. **Esecuzione:**  
+2. **🚶‍♂️ Esecuzione:**  
    - Si avvicina alla vittima, fingendo di aver dimenticato il badge o di essere un collaboratore esterno.
    - Segue la vittima attraverso l'accesso, sfruttando la cortesia delle persone.
 
-3. **Conclusione:**  
+3. **📂 Conclusione:**  
    - Una volta dentro, l'attaccante può rubare documenti, accedere a computer o compromettere l'infrastruttura.
 
 **Esempio pratico:**
@@ -126,6 +123,7 @@ Il tailgating si verifica quando un attaccante si intrufola in un'area riservata
   - Educare il personale a non lasciare entrare nessuno senza identificazione.
 
 ---
+
 
 
 # 🛡️ Come Mitigare Questi Attacchi
@@ -212,12 +210,4 @@ Il lavoro documentato in questo repository rappresenta una base solida per compr
 Se hai suggerimenti o vuoi contribuire, sentiti libero di creare una pull request o di aprire una issue.
 
 ---
-
-
-## 👤 Autore
-
-Sebastiano
-
----
-
 
