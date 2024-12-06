@@ -1,7 +1,7 @@
 # 🛡️ Honeypots in Cybersecurity
 
 ## **Indice**
-1. [Cos'è una Honeypot in Cybersecurity?](#cos'è-una-honeypot-in-cybersecurity)
+1. [Cos'è una Honeypot in Cybersecurity?](#🔍-cos'è-una-honeypot-in-cybersecurity)
 2. [Tipi di Honeypot](#tipi-di-honeypot)
 3. [Vantaggi nell'Uso delle Honeypot per una Rete Aziendale](#vantaggi-nelluso-delle-honeypot-per-una-rete-aziendale)
 4. [Rischi e Limitazioni nell'Uso delle Honeypot](#rischi-e-limitazioni-nelluso-delle-honeypot)
