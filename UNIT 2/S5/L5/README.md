@@ -51,7 +51,7 @@ Tuttavia, l'utente medio potrebbe **non notare questi segnali**, lasciandosi ing
 ---
 
 ## **🚀 Futura attuazione e testing**
-Per testare la simulazione in un ambiente controllato, si può ricorrere al tool [**GoPhish**](https://github.com/hkmodd/CS0724IT/tree/main/UNIT%202/S5/L5).
+Per testare la simulazione in un ambiente controllato, si può ricorrere al tool [**GoPhish**](https://github.com/gophish/gophish?tab=readme-ov-file).
 
 **📌 Nota Bene:** Questo progetto è puramente a scopo **didattico**. :)
 
