@@ -36,7 +36,7 @@ L'email è progettata per sembrare autentica grazie ai seguenti fattori:
 
 ---
 
-## **🚨 Elementi che potrebbero far scattare il campanello d'allarme**
+## **🚨 Elementi che potrebbero far sorgere sospetti.**
 Nonostante l'email sembri autentica, ci sono alcuni **dettagli sottili** che potrebbero destare sospetti:
 1. **🔍 Assenza di personalizzazione:**
    - Non viene riportato l’indirizzo email del destinatario sotto il titolo "Nuovo accesso rilevato".  
