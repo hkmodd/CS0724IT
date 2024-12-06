@@ -1,7 +1,7 @@
-# 🛡️ Honeypots in Cybersecurity
+# Honeypots in Cybersecurity
 
-## **Indice**
-1. [Cos'è una Honeypot in Cybersecurity?](#🔍-cos'è-una-honeypot-in-cybersecurity)
+## Indice
+1. [Cos'è una Honeypot in Cybersecurity?](#cosè-una-honeypot-in-cybersecurity)
 2. [Tipi di Honeypot](#tipi-di-honeypot)
 3. [Vantaggi nell'Uso delle Honeypot per una Rete Aziendale](#vantaggi-nelluso-delle-honeypot-per-una-rete-aziendale)
 4. [Rischi e Limitazioni nell'Uso delle Honeypot](#rischi-e-limitazioni-nelluso-delle-honeypot)
@@ -11,24 +11,12 @@
 
 ---
 
-## **📋 Introduzione**
-Le **honeypot** sono strumenti avanzati utilizzati in cybersecurity per attrarre e monitorare gli attacchi informatici. L'idea di base è quella di creare un sistema o una rete apparentemente vulnerabile che possa ingannare gli attaccanti, permettendo agli amministratori di raccogliere informazioni cruciali sui loro metodi, tecniche, comportamenti e malware. Questo processo aiuta a rafforzare le difese di sicurezza delle reti aziendali e a ottenere un vantaggio nell'analisi delle minacce.
-
-In questo documento esploreremo:
-- Cos'è una honeypot e come funziona.
-- I principali tipi di honeypot.
-- I vantaggi e i rischi legati al loro utilizzo.
-- Strumenti open-source e commerciali per l'implementazione di honeypot.
-- L'importanza dei log generati dalle honeypot e il loro valore nell'analisi forense.
-
----
-
-## **🔍 Cos'è una Honeypot in Cybersecurity?**
+## Cos'è una Honeypot in Cybersecurity?
 Una **honeypot** è una risorsa di rete o un sistema volutamente configurato per apparire vulnerabile, al fine di attirare attacchi da parte di malintenzionati. L'idea è quella di "catturare" gli aggressori e monitorare le loro attività senza che se ne accorgano, raccogliendo informazioni su come agiscono, quali vulnerabilità sfruttano e quali strumenti utilizzano. Questi dati possono essere utilizzati per migliorare la sicurezza della rete e sviluppare difese più robuste contro minacce simili in futuro.
 
 ---
 
-## **⚙️ Tipi di Honeypot**
+## Tipi di Honeypot
 Esistono diversi tipi di honeypot, ognuno con un livello di interazione e complessità differente:
 
 1. **Honeypot a Bassa Interazione (Low-Interaction Honeypots)**:
@@ -48,7 +36,7 @@ Esistono diversi tipi di honeypot, ognuno con un livello di interazione e comple
 
 ---
 
-## **⚖️ Vantaggi nell'Uso delle Honeypot per una Rete Aziendale**
+## Vantaggi nell'Uso delle Honeypot per una Rete Aziendale
 
 1. **Raccolta di Dati Sugli Attacchi**:
    - Le honeypot offrono la possibilità di raccogliere informazioni dettagliate sugli attacchi, come:
@@ -68,7 +56,7 @@ Esistono diversi tipi di honeypot, ognuno con un livello di interazione e comple
 
 ---
 
-## **⚠️ Rischi e Limitazioni nell'Uso delle Honeypot**
+## Rischi e Limitazioni nell'Uso delle Honeypot
 
 1. **Gestione Complessa**:
    - Le honeypot, in particolare quelle ad alta interazione, richiedono manutenzione costante per evitare che vengano compromesse o sfruttate contro la rete aziendale.
@@ -84,7 +72,7 @@ Esistono diversi tipi di honeypot, ognuno con un livello di interazione e comple
 
 ---
 
-## **🔧 Strumenti di Honeypot (Open-source e Commerciali)**
+## Strumenti di Honeypot (Open-source e Commerciali)
 
 ### 1. **Honeyd** (Open-source)
 - **Scopo e funzionalità principali**: Simula sistemi e dispositivi vulnerabili emulando server con configurazioni vulnerabili. È utile per raccogliere informazioni sugli attacchi a bassa interazione.
@@ -103,7 +91,7 @@ Esistono diversi tipi di honeypot, ognuno con un livello di interazione e comple
 
 ---
 
-## **📜 Esempi di Log Generati dalle Honeypot**
+## Esempi di Log Generati dalle Honeypot
 
 Le honeypot registrano vari tipi di dati utili per analisi e indagini forensi:
 
@@ -121,7 +109,7 @@ Le honeypot registrano vari tipi di dati utili per analisi e indagini forensi:
 
 ---
 
-## **🔬 Valore dei Log per l'Analisi Forense**
+## Valore dei Log per l'Analisi Forense
 
 I log delle honeypot sono fondamentali per l'analisi forense in quanto forniscono:
 
@@ -139,5 +127,4 @@ I log delle honeypot sono fondamentali per l'analisi forense in quanto forniscon
 
 ---
 
-**📌 Nota Bene:** Questo documento è stato redatto per scopi educativi e informativi. L'uso delle honeypot deve essere sempre condotto in un ambiente controllato e sicuro per evitare rischi di sicurezza.
-
+**Nota Bene:** Questo documento è stato redatto per scopi educativi e informativi. L'uso delle honeypot deve essere sempre condotto in un ambiente controllato e sicuro per evitare rischi di sicurezza.
