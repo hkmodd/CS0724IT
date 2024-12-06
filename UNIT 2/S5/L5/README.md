@@ -13,6 +13,8 @@ Questa esercitazione è stata sviluppata per:
 ## **📧 Scenario Creato**
 Abbiamo simulato un'email di notifica di sicurezza da Google, avvisando l'utente di un **accesso non autorizzato** rilevato sul proprio account. 
 
+![Fake Google Email](Screen.png)
+
 ### 📄 **Dettagli dell'email:**
 - **Mittente:** `no-reply@accounts.google.com`
 - **Oggetto:** "🔒 Avviso di sicurezza: Nuovo accesso rilevato sul tuo account Google"
