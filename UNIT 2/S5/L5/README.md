@@ -51,10 +51,7 @@ Tuttavia, l'utente medio potrebbe **non notare questi segnali**, lasciandosi ing
 ---
 
 ## **🚀 Futura attuazione e testing**
-Per testare la simulazione in un ambiente controllato, utilizzeremo il tool **GoPhish**:
-1. **📤 Invio:** L’email sarà inviata a un target simulato.
-2. **📊 Monitoraggio:** Analizzeremo i clic sul link di phishing e le reazioni degli utenti.
-3. **🔧 Valutazione:** Studieremo i dati raccolti per migliorare ulteriormente il design e il contenuto.
+Per testare la simulazione in un ambiente controllato, si può ricorrere al tool **GoPhish**:
 
 **📌 Nota Bene:** Questo progetto è puramente a scopo **didattico**. :)
 
