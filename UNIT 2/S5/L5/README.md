@@ -1,4 +1,5 @@
-# 🛡️ Progetto S5/L5: Simulazione di Phishing su Target Google
+# 📐 Progetto S2/L5 📐
+# 🛡️ Simulazione di Phishing su Target Account Google
 
 ## **📋 Introduzione**
 Il progetto consiste nella creazione di una simulazione di phishing realistico indirizzato agli utenti di Google, un target molto comune data l’ampia diffusione di account Google in tutto il mondo. Utilizzando il contesto di una notifica di sicurezza, abbiamo generato un’email che replica accuratamente il design e il tono delle comunicazioni ufficiali di Google.
