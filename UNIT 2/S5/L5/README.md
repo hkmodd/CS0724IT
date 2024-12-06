@@ -51,7 +51,7 @@ Tuttavia, l'utente medio potrebbe **non notare questi segnali**, lasciandosi ing
 ---
 
 ## **🚀 Futura attuazione e testing**
-Per testare la simulazione in un ambiente controllato, si può ricorrere al tool **GoPhish**:
+Per testare la simulazione in un ambiente controllato, si può ricorrere al tool **GoPhish**.
 
 **📌 Nota Bene:** Questo progetto è puramente a scopo **didattico**. :)
 
