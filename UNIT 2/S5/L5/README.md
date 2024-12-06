@@ -1,16 +1,15 @@
-# 🛡️ Progetto S5/L5: Simulazione di Phishing su Target Google
+# 📐 Progetto S5/L5 📐
+# 🛡️ Simulazione di Phishing su Target Account Google
 
 ## **📋 Introduzione**
 Il progetto consiste nella creazione di una simulazione di phishing realistico indirizzato agli utenti di Google, un target molto comune data l’ampia diffusione di account Google in tutto il mondo. Utilizzando il contesto di una notifica di sicurezza, abbiamo generato un’email che replica accuratamente il design e il tono delle comunicazioni ufficiali di Google.
-
-Questa esercitazione è stata sviluppata per:
-- 🧠 Comprendere le tecniche di **ingegneria sociale**.
-- 🔍 Evidenziare le **vulnerabilità** tipiche degli utenti medi.
 
 ---
 
 ## **📧 Scenario Creato**
 Abbiamo simulato un'email di notifica di sicurezza da Google, avvisando l'utente di un **accesso non autorizzato** rilevato sul proprio account. 
+
+![Fake Google Email](Screen.png)
 
 ### 📄 **Dettagli dell'email:**
 - **Mittente:** `no-reply@accounts.google.com`
@@ -51,6 +50,13 @@ Tuttavia, l'utente medio potrebbe **non notare questi segnali**, lasciandosi ing
 
 ---
 
+## **🚀 Futura attuazione e testing**
+Per testare la simulazione in un ambiente controllato, si può ricorrere al tool **GoPhish**.
+
+**📌 Nota Bene:** Questo progetto è puramente a scopo **didattico**. :)
+
+---
+
 ## **🔍 Conclusioni**
 Il progetto S5/L5 ha dimostrato come un’email di phishing possa essere resa credibile utilizzando:
 - 🎭 Tecniche di **ingegneria sociale**.
@@ -61,15 +67,3 @@ Questa simulazione evidenzia:
 - L'importanza di verificare sempre i dettagli di un'email (es. dominio, personalizzazione) prima di interagire con essa.
 
 ---
-
-## **🚀 Futura attuazione e testing**
-Per testare la simulazione in un ambiente controllato, utilizzeremo il tool **GoPhish**:
-1. **📤 Invio:** L’email sarà inviata a un target simulato.
-2. **📊 Monitoraggio:** Analizzeremo i clic sul link di phishing e le reazioni degli utenti.
-3. **🔧 Valutazione:** Studieremo i dati raccolti per migliorare ulteriormente il design e il contenuto.
-
-L’utilizzo di GoPhish garantirà un ambiente sicuro per la raccolta dei dati, senza compromettere la sicurezza degli utenti reali.
-
----
-
-**📌 Nota Bene:** Questo progetto è a scopo **didattico** e volto a migliorare le competenze di analisi e prevenzione degli attacchi di phishing.
