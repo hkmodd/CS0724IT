@@ -1,5 +1,16 @@
 # 🛡️ Honeypots in Cybersecurity
 
+## **Indice**
+1. [Cos'è una Honeypot in Cybersecurity?](#cos'è-una-honeypot-in-cybersecurity)
+2. [Tipi di Honeypot](#tipi-di-honeypot)
+3. [Vantaggi nell'Uso delle Honeypot per una Rete Aziendale](#vantaggi-nelluso-delle-honeypot-per-una-rete-aziendale)
+4. [Rischi e Limitazioni nell'Uso delle Honeypot](#rischi-e-limitazioni-nelluso-delle-honeypot)
+5. [Strumenti di Honeypot (Open-source e Commerciali)](#strumenti-di-honeypot-open-source-e-commerciali)
+6. [Esempi di Log Generati dalle Honeypot](#esempi-di-log-generati-dalle-honeypot)
+7. [Valore dei Log per l'Analisi Forense](#valore-dei-log-per-lanalisi-forense)
+
+---
+
 ## **📋 Introduzione**
 Le **honeypot** sono strumenti avanzati utilizzati in cybersecurity per attrarre e monitorare gli attacchi informatici. L'idea di base è quella di creare un sistema o una rete apparentemente vulnerabile che possa ingannare gli attaccanti, permettendo agli amministratori di raccogliere informazioni cruciali sui loro metodi, tecniche, comportamenti e malware. Questo processo aiuta a rafforzare le difese di sicurezza delle reti aziendali e a ottenere un vantaggio nell'analisi delle minacce.
 
@@ -13,13 +24,11 @@ In questo documento esploreremo:
 ---
 
 ## **🔍 Cos'è una Honeypot in Cybersecurity?**
-
 Una **honeypot** è una risorsa di rete o un sistema volutamente configurato per apparire vulnerabile, al fine di attirare attacchi da parte di malintenzionati. L'idea è quella di "catturare" gli aggressori e monitorare le loro attività senza che se ne accorgano, raccogliendo informazioni su come agiscono, quali vulnerabilità sfruttano e quali strumenti utilizzano. Questi dati possono essere utilizzati per migliorare la sicurezza della rete e sviluppare difese più robuste contro minacce simili in futuro.
 
 ---
 
 ## **⚙️ Tipi di Honeypot**
-
 Esistono diversi tipi di honeypot, ognuno con un livello di interazione e complessità differente:
 
 1. **Honeypot a Bassa Interazione (Low-Interaction Honeypots)**:
@@ -130,9 +139,5 @@ I log delle honeypot sono fondamentali per l'analisi forense in quanto forniscon
 
 ---
 
-## **🔚 Conclusioni**
-Le honeypot sono strumenti potentissimi per raccogliere dati sugli attacchi e migliorare la sicurezza delle reti aziendali. Utilizzate correttamente, possono fornire un vantaggio decisivo nella protezione dalle minacce informatiche. Sebbene ci siano rischi e limitazioni, i vantaggi superano di gran lunga le problematiche, rendendo le honeypot essenziali per una difesa proattiva e una gestione delle minacce più efficace.
-
----
-
 **📌 Nota Bene:** Questo documento è stato redatto per scopi educativi e informativi. L'uso delle honeypot deve essere sempre condotto in un ambiente controllato e sicuro per evitare rischi di sicurezza.
+
