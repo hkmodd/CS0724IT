@@ -1,4 +1,4 @@
-# 📐 Progetto S%/L5 📐
+# 📐 Progetto S5/L5 📐
 # 🛡️ Simulazione di Phishing su Target Account Google
 
 ## **📋 Introduzione**
