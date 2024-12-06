@@ -50,6 +50,16 @@ Tuttavia, l'utente medio potrebbe **non notare questi segnali**, lasciandosi ing
 
 ---
 
+## **🚀 Futura attuazione e testing**
+Per testare la simulazione in un ambiente controllato, utilizzeremo il tool **GoPhish**:
+1. **📤 Invio:** L’email sarà inviata a un target simulato.
+2. **📊 Monitoraggio:** Analizzeremo i clic sul link di phishing e le reazioni degli utenti.
+3. **🔧 Valutazione:** Studieremo i dati raccolti per migliorare ulteriormente il design e il contenuto.
+
+**📌 Nota Bene:** Questo progetto è puramente a scopo **didattico**. :)
+
+---
+
 ## **🔍 Conclusioni**
 Il progetto S5/L5 ha dimostrato come un’email di phishing possa essere resa credibile utilizzando:
 - 🎭 Tecniche di **ingegneria sociale**.
@@ -60,15 +70,3 @@ Questa simulazione evidenzia:
 - L'importanza di verificare sempre i dettagli di un'email (es. dominio, personalizzazione) prima di interagire con essa.
 
 ---
-
-## **🚀 Futura attuazione e testing**
-Per testare la simulazione in un ambiente controllato, utilizzeremo il tool **GoPhish**:
-1. **📤 Invio:** L’email sarà inviata a un target simulato.
-2. **📊 Monitoraggio:** Analizzeremo i clic sul link di phishing e le reazioni degli utenti.
-3. **🔧 Valutazione:** Studieremo i dati raccolti per migliorare ulteriormente il design e il contenuto.
-
-L’utilizzo di GoPhish garantirà un ambiente sicuro per la raccolta dei dati, senza compromettere la sicurezza degli utenti reali.
-
----
-
-**📌 Nota Bene:** Questo progetto è puramente a scopo **didattico**. :)
