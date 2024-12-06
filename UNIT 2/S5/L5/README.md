@@ -73,4 +73,4 @@ L’utilizzo di GoPhish garantirà un ambiente sicuro per la raccolta dei dati, 
 
 ---
 
-**📌 Nota Bene:** Questo progetto è a scopo **didattico** e volto a migliorare le competenze di analisi e prevenzione degli attacchi di phishing.
+**📌 Nota Bene:** Questo progetto è puramente a scopo **didattico**. :)
