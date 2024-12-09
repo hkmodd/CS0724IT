@@ -47,7 +47,7 @@
 
 ---
 
-### **3️⃣ Intercettazione fase Upload con BurpSuite**
+## **3️⃣ Intercettazione Upload con BurpSuite**
 
 1. **🛠️ Configurazione**:
    - Configurato BurpSuite per intercettare il traffico HTTP durante l'upload della shell `shell.php`.
@@ -124,7 +124,7 @@
 
 ---
 
-### **4️⃣ Intercettazioni comandi Shell con BurpSuite**
+## **4️⃣ Intercettazioni comandi Shell con BurpSuite**
 1. **🛠️ Configurazione**:
    - Configurato BurpSuite per intercettare il traffico HTTP.
 
