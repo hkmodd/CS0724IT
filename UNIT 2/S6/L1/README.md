@@ -1,16 +1,11 @@
 
 # 📝 Consegna S6/L1
-## <h1 align="center">Exploit File Upload | Programmazione Shell PHP per Controllo Remoto su Metasploitable.</h1>
-
----
-
+## <h1 align="center">Exploit File Upload</h1>
 ## **🎯 Obiettivo**: Creare e utilizzare una shell PHP per ottenere il controllo remoto completo della macchina Metasploitable, intercettare poi le richieste mediante BurpSuite, familiarizzare con gli ambienti e i tool.
 
 ---
 
-# **✅ Passaggi eseguiti**
-
-## **1️⃣ Configurazione dell'ambiente**
+## **<h1 align="center">1️⃣ Configurazione dell'ambiente</h1>**
 1. **🌐 Connessione tra Kali e Metasploitable**:
    - Le macchine sono configurate per comunicare tra loro.
    - Test di connettività eseguito con:
@@ -33,7 +28,7 @@
 
 ---
 
-## **2️⃣ Caricamento della Shell**
+## **<h1 align="center">2️⃣ Caricamento della Shell</h1>**
  **📤 Upload della shell su DVWA**:
    - File caricato tramite la sezione **File Upload**.
 ![Upload section](./UploadDVWA.png)
@@ -47,7 +42,7 @@
 
 ---
 
-## **3️⃣ Intercettazione Upload con BurpSuite**
+## **<h1 align="center">3️⃣ Intercettazione Upload con BurpSuite</h1>**
 
 1. **🛠️ Configurazione**:
    - Configurato BurpSuite per intercettare il traffico HTTP durante l'upload della shell `shell.php`.
@@ -82,7 +77,7 @@
 
 ---
 
-## **4️⃣ Utilizzo della Shell**
+## **<h1 align="center">4️⃣ Utilizzo della Shell</h1>**
 1. **⚡ Esecuzione comandi remoti**:
    - Eseguiti comandi come:
      - `ls` - Per elencare file e directory.
@@ -124,7 +119,7 @@
 
 ---
 
-## **4️⃣ Intercettazioni comandi Shell con BurpSuite**
+## **<h1 align="center">4️⃣ Intercettazioni comandi Shell con BurpSuite</h1>**
 1. **🛠️ Configurazione**:
    - Configurato BurpSuite per intercettare il traffico HTTP.
 
@@ -142,7 +137,7 @@
 
 ---
 
-## **5️⃣ Bypass della Sicurezza High su DVWA**
+## <h1 align="center">**5️⃣ Extra: Bypass della Sicurezza High su DVWA**
 
 1. **🔧 Configurazione della Sicurezza High**:
    - La sicurezza della DVWA è stata in seguito configurata su **High**, implementando restrizioni "più rigide" per il caricamento dei file.
