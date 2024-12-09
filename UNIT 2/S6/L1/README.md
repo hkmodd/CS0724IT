@@ -75,7 +75,6 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
    - Eseguiti comandi come:
      - `ls` - Per elencare file e directory.
      - `whoami` - Per identificare l'utente corrente.
-     - `tree -a` - Per visualizzare la struttura completa dei file.
 
 2. **🗂️ Navigazione del file system**:
    - Comandi `cd` per cambiare directory:
