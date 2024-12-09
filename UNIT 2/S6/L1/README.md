@@ -36,14 +36,14 @@
 ### **2️⃣ Caricamento della Shell**
  **📤 Upload della shell su DVWA**:
    - File caricato tramite la sezione **File Upload**.
-   - Test di caricamento riuscito con accesso al file tramite browser:
-     ```
-     http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey
-     ```
 ![Upload section](./UploadDVWA.png)
 
  **🔑 Accesso protetto alla shell**:
    - La chiave `mysecretkey` è obbligatoria per accedere alla shell. Questo garantisce che solo chi conosce la chiave possa utilizzarla.
+   - Test di caricamento riuscito con accesso al file tramite browser:
+     ```
+     http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey
+     ```
 
 ---
 
