@@ -104,7 +104,7 @@
      ```
 ![Shell in azione](./ShellPreview.png)
 
-### 🔧 Come la Shell Fornisce Controllo Completo
+## 🔧 Come la Shell Fornisce Controllo Completo
 1. **Esecuzione Comandi**:
    - Ogni comando viene inviato tramite HTTP POST e processato direttamente dalla macchina Metasploitable usando `shell_exec`. L'output viene restituito come risposta HTTP, visibile nel terminale integrato.
 
