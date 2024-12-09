@@ -113,8 +113,6 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
      Body: cmd=whoami
      ```
 ![Intercettazione BurpSuite](./POST.png)
-     
-   - Analisi dettagliata inclusa con screenshot.
 
 ---
 
