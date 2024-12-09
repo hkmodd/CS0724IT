@@ -28,7 +28,7 @@
 
 ---
 
-### **2️⃣ Caricamento della Shell**
+### **3️⃣ Caricamento della Shell**
 1. **🖋️ Creazione della shell `shell.php`**:
    - La shell PHP include funzionalità avanzate:
      - Esecuzione comandi remoti.
@@ -49,7 +49,7 @@
 
 ---
 
-### **4️⃣ Intercettazione fase Upload con BurpSuite**
+### **3️⃣ Intercettazione fase Upload con BurpSuite**
 
 1. **🛠️ Configurazione**:
    - Configurato BurpSuite per intercettare il traffico HTTP durante l'upload della shell `shell.php`.
@@ -84,7 +84,7 @@
 
 ---
 
-### **3️⃣ Utilizzo della Shell**
+### **4️⃣ Utilizzo della Shell**
 1. **⚡ Esecuzione comandi remoti**:
    - Eseguiti comandi come:
      - `ls` - Per elencare file e directory.
