@@ -1,19 +1,10 @@
 
 # 📝 Consegna S6/L1
-# Progetto: Shell PHP per Controllo Remoto su Metasploitable
+# Exploit File Upload | Programmazione Shell PHP per Controllo Remoto su Metasploitable 
 
 ---
 
 **🎯 Obiettivo**: Creare e utilizzare una shell PHP per ottenere il controllo remoto completo della macchina Metasploitable, intercettare poi le richieste mediante BurpSuite.
-
----
-
-## **📚 Introduzione**
-Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisire il controllo completo di un sistema vulnerabile. La shell caricata consente di:
-- ✅ Eseguire comandi remoti come se si stesse interagendo direttamente dal terminale della macchina.
-- ✅ Navigare liberamente nel file system.
-- ✅ Caricare e scaricare file.
-- ✅ Interagire con strumenti terminali, come editor di testo (`nano`).
 
 ---
 
@@ -25,8 +16,8 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
   - PHP preinstallato su Metasploitable.
   - Browser web su Kali Linux.
   - BurpSuite per analisi delle richieste HTTP.
-- **File richiesto**:
-  - `shell.php` (incluso nel progetto).
+- **Shell**:
+  - `shell.php` 
 
 ---
 
