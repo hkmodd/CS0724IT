@@ -28,7 +28,7 @@
 
 ---
 
-## **<h1 align="center">2️⃣ Caricamento della Shell</h1>**
+## <h1 align="center">2️⃣ Caricamento della Shell</h1>
  **📤 Upload della shell su DVWA**:
    - File caricato tramite la sezione **File Upload**.
 ![Upload section](./UploadDVWA.png)
@@ -42,7 +42,7 @@
 
 ---
 
-## **<h1 align="center">3️⃣ Intercettazione Upload con BurpSuite</h1>**
+## <h1 align="center">3️⃣ Intercettazione Upload con BurpSuite</h1>
 
 1. **🛠️ Configurazione**:
    - Configurato BurpSuite per intercettare il traffico HTTP durante l'upload della shell `shell.php`.
@@ -77,7 +77,7 @@
 
 ---
 
-## **<h1 align="center">4️⃣ Utilizzo della Shell</h1>**
+## <h1 align="center">4️⃣ Utilizzo della Shell</h1>
 1. **⚡ Esecuzione comandi remoti**:
    - Eseguiti comandi come:
      - `ls` - Per elencare file e directory.
@@ -104,7 +104,7 @@
      ```
 ![Shell in azione](./ShellPreview.png)
 
-### **🔧 Come la Shell Fornisce Controllo Completo**
+### 🔧 Come la Shell Fornisce Controllo Completo
 1. **Esecuzione Comandi**:
    - Ogni comando viene inviato tramite HTTP POST e processato direttamente dalla macchina Metasploitable usando `shell_exec`. L'output viene restituito come risposta HTTP, visibile nel terminale integrato.
 
@@ -119,7 +119,7 @@
 
 ---
 
-## **<h1 align="center">4️⃣ Intercettazioni comandi Shell con BurpSuite</h1>**
+## <h1 align="center">4️⃣ Intercettazioni comandi Shell con BurpSuite</h1>
 1. **🛠️ Configurazione**:
    - Configurato BurpSuite per intercettare il traffico HTTP.
 
@@ -137,7 +137,7 @@
 
 ---
 
-## <h1 align="center">**5️⃣ Extra: Bypass della Sicurezza High su DVWA**
+## <h1 align="center">5️⃣ Extra: Bypass della Sicurezza High su DVWA
 
 1. **🔧 Configurazione della Sicurezza High**:
    - La sicurezza della DVWA è stata in seguito configurata su **High**, implementando restrizioni "più rigide" per il caricamento dei file.
