@@ -61,34 +61,6 @@
 
 ---
 
-### **3️⃣ Utilizzo della Shell**
-1. **⚡ Esecuzione comandi remoti**:
-   - Eseguiti comandi come:
-     - `ls` - Per elencare file e directory.
-     - `whoami` - Per identificare l'utente corrente.
-
-2. **🗂️ Navigazione del file system**:
-   - Comandi `cd` per cambiare directory:
-     - Esempio: `cd /var/www/html`
-   - 🔄 Navigazione persistente grazie alla gestione delle sessioni.
-
-3. **🛠️ Interazione con strumenti**:
-   - Eseguito `nano` per modificare file in modalità interattiva:
-     - Esempio: `nano test.txt`
-   - La shell fornisce una vera esperienza terminale.
-
-4. **📁 Caricamento e download file**:
-   - Caricato un file su Metasploitable:
-     ```bash
-     curl -F "file=@example.txt" "http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey"
-     ```
-   - Scaricato un file dalla macchina:
-     ```bash
-     curl "http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey&action=download&file=/etc/passwd" -o passwd.txt
-     ```
-
----
-
 ### **4️⃣ Intercettazione fase Upload con BurpSuite**
 
 1. **🛠️ Configurazione**:
@@ -122,6 +94,37 @@
 4. **📸 Screenshot Intercettazione**:
    ![Intercettazione Upload](./Upload.png)
 
+---
+
+### **3️⃣ Utilizzo della Shell**
+1. **⚡ Esecuzione comandi remoti**:
+   - Eseguiti comandi come:
+     - `ls` - Per elencare file e directory.
+     - `whoami` - Per identificare l'utente corrente.
+
+2. **🗂️ Navigazione del file system**:
+   - Comandi `cd` per cambiare directory:
+     - Esempio: `cd /var/www/html`
+   - 🔄 Navigazione persistente grazie alla gestione delle sessioni.
+
+3. **🛠️ Interazione con strumenti**:
+   - Eseguito `nano` per modificare file in modalità interattiva:
+     - Esempio: `nano test.txt`
+   - La shell fornisce una vera esperienza terminale.
+
+4. **📁 Caricamento e download file**:
+   - Caricato un file su Metasploitable:
+     ```bash
+     curl -F "file=@example.txt" "http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey"
+     ```
+   - Scaricato un file dalla macchina:
+     ```bash
+     curl "http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey&action=download&file=/etc/passwd" -o passwd.txt
+     ```
+### **📸 Shell in azione**
+![Shell in azione](./ShellPreview.png)
+
+---
 
 ### **4️⃣ Intercettazioni comandi Shell con BurpSuite**
 1. **🛠️ Configurazione**:
@@ -155,10 +158,6 @@
    - La shell supporta strumenti terminali (`nano`, `vi`, `tree`, ecc.), fornendo un accesso completo e interattivo.
 
 ---
-
-## **🖼️ Screenshot**
-### **📸 Shell in azione**
-![Shell in azione](./ShellPreview.png)
 
 ### **5️⃣ Bypass della Sicurezza High su DVWA**
 
