@@ -25,18 +25,16 @@
      http://192.168.60.2/dvwa
      ```
    - Il livello di sicurezza è stato impostato inizialmente su **Low** per consentire l'upload della shell.
-
----
-
-### **3️⃣ Caricamento della Shell**
-1. **🖋️ Creazione della shell `shell.php`**:
+3. **🖋️ Creazione della shell `shell.php`**:
    - La shell PHP include funzionalità avanzate:
      - Esecuzione comandi remoti.
      - Navigazione persistente nel file system.
      - Interfaccia interattiva con output dinamico tramite AJAX.
-   - 📜 Codice completo fornito in appendice.
 
-2. **📤 Upload della shell su DVWA**:
+---
+
+### **2️⃣ Caricamento della Shell**
+ **📤 Upload della shell su DVWA**:
    - File caricato tramite la sezione **File Upload**.
    - Test di caricamento riuscito con accesso al file tramite browser:
      ```
@@ -44,7 +42,7 @@
      ```
 ![Upload section](./UploadDVWA.png)
 
-3. **🔑 Accesso protetto alla shell**:
+ **🔑 Accesso protetto alla shell**:
    - La chiave `mysecretkey` è obbligatoria per accedere alla shell. Questo garantisce che solo chi conosce la chiave possa utilizzarla.
 
 ---
@@ -109,7 +107,6 @@
      ```bash
      curl "http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey&action=download&file=/etc/passwd" -o passwd.txt
      ```
-### **📸 Shell in azione**
 ![Shell in azione](./ShellPreview.png)
 
 ## **🔧 Come la Shell Fornisce Controllo Completo**
