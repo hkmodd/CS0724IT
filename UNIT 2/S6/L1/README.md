@@ -1,114 +1,133 @@
+
 # Progetto: Shell PHP per Controllo Remoto su Metasploitable
 
 **Autore**: Sebastiano  
 **Data**: [Inserisci la data]  
-**Obiettivo**: Caricare e utilizzare una shell PHP per ottenere il controllo remoto della macchina Metasploitable, eseguendo comandi come se fossero lanciati direttamente dal terminale interno.
+**Obiettivo**: Creare e utilizzare una shell PHP per ottenere il controllo remoto completo della macchina Metasploitable.
 
 ---
 
 ## **Introduzione**
-Questo progetto consiste nella creazione e implementazione di una shell PHP che consente:
-1. **Controllo completo** della macchina Metasploitable.
-2. **Esecuzione di comandi remoti** in modo interattivo.
-3. **Navigazione del file system**, caricamento e download di file.
-4. **Intercettazione delle richieste HTTP** tramite BurpSuite per analisi e verifica.
+Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisire il controllo completo di un sistema vulnerabile. La shell caricata consente di:
+- Eseguire comandi remoti come se si stesse interagendo direttamente dal terminale della macchina.
+- Navigare liberamente nel file system.
+- Caricare e scaricare file.
+- Interagire con strumenti terminali, come editor di testo (`nano`) o visualizzazioni avanzate (`tree`).
 
 ---
 
 ## **Requisiti**
 - **Macchine Virtuali**:
-  - Kali Linux
-  - Metasploitable
+  - Kali Linux: `192.168.50.2`
+  - Metasploitable: `192.168.60.2`
 - **Strumenti**:
-  - PHP 7.x o superiore (già preinstallato su Metasploitable)
-  - Browser web (Firefox/Chromium su Kali)
-  - BurpSuite Community o Professional Edition
+  - PHP preinstallato su Metasploitable.
+  - Browser web su Kali Linux.
+  - BurpSuite per analisi delle richieste HTTP.
 - **File richiesto**:
-  - `shell.php` (il codice PHP fornito nel progetto)
+  - `shell.php` (incluso nel progetto).
 
 ---
 
 ## **Passaggi eseguiti**
 
 ### **1. Configurazione dell'ambiente**
-1. **Connessione tra le macchine virtuali**:
-   - Kali Linux e Metasploitable sono state configurate sulla stessa rete NAT.
-   - Convalidata la connessione tramite il comando:
+1. **Connessione tra Kali e Metasploitable**:
+   - Le macchine sono configurate per comunicare tra loro.
+   - Test di connettività eseguito con:
      ```bash
-     ping 192.168.1.10
+     ping 192.168.60.2
      ```
-   - Risultato: le macchine si vedono correttamente.
+   - Risultato: connettività confermata.
 
-2. **DVWA su Metasploitable**:
-   - Accesso alla Web Application DVWA tramite:
+2. **Accesso alla DVWA su Metasploitable**:
+   - L'applicazione web vulnerabile è stata raggiunta tramite:
      ```
-     http://192.168.1.10/dvwa
+     http://192.168.60.2/dvwa
      ```
-   - Livello di sicurezza impostato su **Low** per consentire l'upload della shell.
+   - Il livello di sicurezza è stato impostato su **Low** per consentire l'upload della shell.
 
 ---
 
 ### **2. Caricamento della Shell**
-1. Creazione della shell `shell.php`:
-   - Codice PHP personalizzato con funzionalità avanzate:
+1. **Creazione della shell `shell.php`**:
+   - La shell PHP include funzionalità avanzate:
      - Esecuzione comandi remoti.
-     - Navigazione persistente del file system.
-     - Interfaccia interattiva con AJAX per aggiornamenti in tempo reale.
-   - [Inserire il codice completo della shell come esempio].
+     - Navigazione persistente nel file system.
+     - Interfaccia interattiva con output dinamico tramite AJAX.
+   - Codice completo fornito in appendice.
 
-2. Upload della shell tramite DVWA:
-   - Navigato alla sezione **File Upload** su DVWA.
-   - Caricato il file `shell.php`.
+2. **Upload della shell su DVWA**:
+   - File caricato tramite la sezione **File Upload**.
+   - Test di caricamento riuscito con accesso al file tramite browser:
+     ```
+     http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey
+     ```
 
-3. Verifica del caricamento:
-   - Accesso al file caricato tramite browser:
-     ```
-     http://192.168.1.10/dvwa/hackable/uploads/shell.php?key=mysecretkey
-     ```
-   - Test iniziali con comandi semplici (`ls`, `whoami`).
+3. **Accesso protetto alla shell**:
+   - La chiave `mysecretkey` è obbligatoria per accedere alla shell. Questo garantisce che solo chi conosce la chiave possa utilizzarla.
 
 ---
 
-### **3. Intercettazioni con BurpSuite**
-1. **Configurazione del Proxy**:
-   - Configurato BurpSuite come proxy sul browser di Kali:
-     - Proxy: `127.0.0.1:8080`
-     - Abilitato il certificato di Burp nel browser.
+### **3. Utilizzo della Shell**
+1. **Esecuzione comandi remoti**:
+   - Eseguiti comandi come:
+     - `ls` - Per elencare file e directory.
+     - `whoami` - Per identificare l'utente corrente.
+     - `tree -a` - Per visualizzare la struttura completa dei file.
 
-2. **Intercettazione richieste HTTP**:
-   - Catturata la richiesta HTTP inviata durante l'accesso alla shell:
+2. **Navigazione del file system**:
+   - Comandi `cd` per cambiare directory:
+     - Esempio: `cd /var/www/html`
+   - Navigazione persistente grazie alla gestione delle sessioni.
+
+3. **Interazione con strumenti**:
+   - Eseguito `nano` per modificare file in modalità interattiva:
+     - Esempio: `nano test.txt`
+   - La shell fornisce una vera esperienza terminale.
+
+4. **Caricamento e download file**:
+   - Caricato un file su Metasploitable:
+     ```bash
+     curl -F "file=@example.txt" "http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey"
+     ```
+   - Scaricato un file dalla macchina:
+     ```bash
+     curl "http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey&action=download&file=/etc/passwd" -o passwd.txt
+     ```
+
+---
+
+### **4. Intercettazioni con BurpSuite**
+1. **Configurazione**:
+   - Configurato BurpSuite per intercettare il traffico HTTP.
+
+2. **Intercettazione delle richieste HTTP**:
+   - Esempio di richiesta intercettata:
      ```
      GET /dvwa/hackable/uploads/shell.php?key=mysecretkey&action=ls
      ```
-   - Analisi della struttura della richiesta e del response.
-
-3. **Intercettazione dei comandi POST**:
-   - Inviato comando tramite POST (esempio: `whoami`).
-   - Verificato il contenuto del body:
+   - Catturato il comando POST per eseguire `whoami`:
      ```
      POST /dvwa/hackable/uploads/shell.php?key=mysecretkey
      Body: cmd=whoami
      ```
-
-4. **Screenshot BurpSuite**:
-   - Allegati screenshot delle richieste intercettate in **Proxy > HTTP History**.
+   - Analisi dettagliata inclusa con screenshot.
 
 ---
 
-### **4. Risultati**
-1. **Esecuzione comandi remoti**:
-   - Eseguiti comandi come:
-     - `ls` - Per elencare file.
-     - `cd /var/www/html` - Per cambiare directory.
-     - `nano test.txt` - Per modificare file.
-   - Tutti eseguiti con successo tramite la shell PHP.
+## **Come la Shell Fornisce Controllo Completo**
+1. **Esecuzione Comandi**:
+   - Ogni comando viene inviato tramite HTTP POST e processato direttamente dalla macchina Metasploitable usando `shell_exec`. L'output viene restituito come risposta HTTP, visibile nel terminale integrato.
 
-2. **Navigazione completa del file system**:
-   - Navigato tra le directory.
-   - Visualizzati e scaricati file importanti.
+2. **Persistenza delle directory**:
+   - La shell utilizza variabili di sessione per mantenere lo stato della directory corrente, replicando un'esperienza simile al terminale.
 
-3. **Output delle richieste HTTP**:
-   - Verificato che ogni comando viene inviato correttamente e il risultato restituito.
+3. **Interfaccia Interattiva**:
+   - Utilizzando AJAX, l'interfaccia aggiorna dinamicamente il terminale senza necessità di ricaricare la pagina.
+
+4. **Interazione con strumenti avanzati**:
+   - La shell supporta strumenti terminali (`nano`, `vi`, `tree`, ecc.), fornendo un accesso completo e interattivo.
 
 ---
 
@@ -122,19 +141,6 @@ Questo progetto consiste nella creazione e implementazione di una shell PHP che 
 ---
 
 ## **Conclusione**
-La shell PHP caricata su Metasploitable consente un controllo remoto completo della macchina. La combinazione con BurpSuite ha permesso di analizzare e verificare il comportamento delle richieste HTTP. Questo esercizio dimostra l'importanza delle protezioni contro vulnerabilità come file upload non sicuri.
+La shell PHP caricata consente un controllo remoto completo della macchina Metasploitable. L'esperimento dimostra come vulnerabilità come l'upload di file non protetti possano esporre una macchina a rischi significativi. Attraverso questa shell è stato possibile eseguire comandi, navigare nel file system e interagire con strumenti di sistema senza restrizioni.
 
 ---
-
-## **Prossimi Step**
-- Implementare una protezione più avanzata per la chiave segreta.
-- Migliorare l'interfaccia grafica per un terminale ancora più intuitivo.
-- Integrare funzionalità di logging avanzato e gestione file.
-
----
-
-## **Bonus**
-Il progetto include una shell PHP avanzata con:
-- Navigazione persistente.
-- Interfaccia grafica interattiva con AJAX.
-- Funzioni di caricamento e download file.
