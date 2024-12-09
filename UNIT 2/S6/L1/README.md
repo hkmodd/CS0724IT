@@ -8,7 +8,7 @@
 
 ---
 
-# **📂 Passaggi eseguiti**
+# **✅ Passaggi eseguiti**
 
 ## **1️⃣ Configurazione dell'ambiente**
 1. **🌐 Connessione tra Kali e Metasploitable**:
