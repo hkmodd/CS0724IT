@@ -136,7 +136,7 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
 ![Shell in azione](./ShellPreview.png)
 
 ### **📸 Intercettazioni BurpSuite**
-![Intercettazione BurpSuite](./BurpSuite.png)
+![Intercettazione BurpSuite](inserire-percorso-immagine)
 
 ---
 
