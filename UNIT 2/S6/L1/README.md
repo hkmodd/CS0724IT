@@ -1,6 +1,6 @@
 
 # 📝 Consegna S6/L1
-# Exploit File Upload | Programmazione Shell PHP per Controllo Remoto su Metasploitable 
+## Exploit File Upload | Programmazione Shell PHP per Controllo Remoto su Metasploitable 
 
 ---
 
@@ -8,9 +8,9 @@
 
 ---
 
-## **📂 Passaggi eseguiti**
+# **📂 Passaggi eseguiti**
 
-### **1️⃣ Configurazione dell'ambiente**
+## **1️⃣ Configurazione dell'ambiente**
 1. **🌐 Connessione tra Kali e Metasploitable**:
    - Le macchine sono configurate per comunicare tra loro.
    - Test di connettività eseguito con:
@@ -33,7 +33,7 @@
 
 ---
 
-### **2️⃣ Caricamento della Shell**
+## **2️⃣ Caricamento della Shell**
  **📤 Upload della shell su DVWA**:
    - File caricato tramite la sezione **File Upload**.
 ![Upload section](./UploadDVWA.png)
@@ -82,7 +82,7 @@
 
 ---
 
-### **4️⃣ Utilizzo della Shell**
+## **4️⃣ Utilizzo della Shell**
 1. **⚡ Esecuzione comandi remoti**:
    - Eseguiti comandi come:
      - `ls` - Per elencare file e directory.
@@ -109,7 +109,7 @@
      ```
 ![Shell in azione](./ShellPreview.png)
 
-## **🔧 Come la Shell Fornisce Controllo Completo**
+### **🔧 Come la Shell Fornisce Controllo Completo**
 1. **Esecuzione Comandi**:
    - Ogni comando viene inviato tramite HTTP POST e processato direttamente dalla macchina Metasploitable usando `shell_exec`. L'output viene restituito come risposta HTTP, visibile nel terminale integrato.
 
