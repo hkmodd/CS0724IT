@@ -5,7 +5,7 @@
 
 ---
 
-## **<h1 align="center">1️⃣ Configurazione dell'ambiente</h1>**
+## <h1 align="center">1️⃣ Configurazione dell'ambiente</h1>
 1. **🌐 Connessione tra Kali e Metasploitable**:
    - Le macchine sono configurate per comunicare tra loro.
    - Test di connettività eseguito con:
