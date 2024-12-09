@@ -171,8 +171,8 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
    - La richiesta includeva il payload PHP della shell, che è stato elaborato dal server, consentendo così l'accesso remoto.
    - La chiave segreta `mysecretkey` ha fornito un ulteriore livello di autenticazione, assicurando che solo gli utenti autorizzati potessero interagire con la shell.
 
-4. **📸 Screenshot Intercettazione**:
-   - Inserire uno screenshot della schermata di BurpSuite con l'intercettazione della richiesta POST.
+4. **📸 Screenshot fase UPLOAD**:
+
    ![Intercettazione Upload](./Upload.png)
 
 ---
