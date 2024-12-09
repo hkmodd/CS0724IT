@@ -4,20 +4,7 @@
 
 ---
 
-**🎯 Obiettivo**: Creare e utilizzare una shell PHP per ottenere il controllo remoto completo della macchina Metasploitable, intercettare poi le richieste mediante BurpSuite.
-
----
-
-## **⚙️ Requisiti**
-- **Macchine Virtuali**:
-  - Kali Linux: `192.168.50.2`
-  - Metasploitable: `192.168.60.2`
-- **Strumenti**:
-  - PHP preinstallato su Metasploitable.
-  - Browser web su Kali Linux.
-  - BurpSuite per analisi delle richieste HTTP.
-- **Shell**:
-  - `shell.php` 
+**🎯 Obiettivo**: Creare e utilizzare una shell PHP per ottenere il controllo remoto completo della macchina Metasploitable, intercettare poi le richieste mediante BurpSuite, familiarizzare con gli ambienti e i tool.
 
 ---
 
@@ -55,6 +42,7 @@
      ```
      http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey
      ```
+![Upload section](./UploadDVWA.png)
 
 3. **🔑 Accesso protetto alla shell**:
    - La chiave `mysecretkey` è obbligatoria per accedere alla shell. Questo garantisce che solo chi conosce la chiave possa utilizzarla.
@@ -124,6 +112,19 @@
 ### **📸 Shell in azione**
 ![Shell in azione](./ShellPreview.png)
 
+## **🔧 Come la Shell Fornisce Controllo Completo**
+1. **Esecuzione Comandi**:
+   - Ogni comando viene inviato tramite HTTP POST e processato direttamente dalla macchina Metasploitable usando `shell_exec`. L'output viene restituito come risposta HTTP, visibile nel terminale integrato.
+
+2. **Persistenza delle directory**:
+   - La shell utilizza variabili di sessione per mantenere lo stato della directory corrente, replicando un'esperienza simile al terminale.
+
+3. **Interfaccia Interattiva**:
+   - Utilizzando AJAX, l'interfaccia aggiorna dinamicamente il terminale senza necessità di ricaricare la pagina.
+
+4. **Interazione con strumenti avanzati**:
+   - La shell supporta strumenti terminali (`nano`, `vi`, `tree`, ecc.), fornendo un accesso completo e interattivo.
+
 ---
 
 ### **4️⃣ Intercettazioni comandi Shell con BurpSuite**
@@ -144,22 +145,7 @@
 
 ---
 
-## **🔧 Come la Shell Fornisce Controllo Completo**
-1. **Esecuzione Comandi**:
-   - Ogni comando viene inviato tramite HTTP POST e processato direttamente dalla macchina Metasploitable usando `shell_exec`. L'output viene restituito come risposta HTTP, visibile nel terminale integrato.
-
-2. **Persistenza delle directory**:
-   - La shell utilizza variabili di sessione per mantenere lo stato della directory corrente, replicando un'esperienza simile al terminale.
-
-3. **Interfaccia Interattiva**:
-   - Utilizzando AJAX, l'interfaccia aggiorna dinamicamente il terminale senza necessità di ricaricare la pagina.
-
-4. **Interazione con strumenti avanzati**:
-   - La shell supporta strumenti terminali (`nano`, `vi`, `tree`, ecc.), fornendo un accesso completo e interattivo.
-
----
-
-### **5️⃣ Bypass della Sicurezza High su DVWA**
+## **5️⃣ Bypass della Sicurezza High su DVWA**
 
 1. **🔧 Configurazione della Sicurezza High**:
    - La sicurezza della DVWA è stata in seguito configurata su **High**, implementando restrizioni "più rigide" per il caricamento dei file.
@@ -173,17 +159,13 @@
    - Il file è stato caricato tramite la sezione **File Upload**, ed è stato possibile eseguirlo come script PHP nonostante l'estensione `.jpg`.
 
 4. **📸 Screenshot dell'Intercettazione**:
-   - Inserire uno screenshot che mostra l'upload con successo e l'intercettazione dell'azione in BurpSuite.
-
-### **📸 Intercettazioni BurpSuite**
 ![Intercettazione BurpSuite](./BurpSuite.png)
 
 ---
 
-## **📌 Conclusione**
+# **📌 Conclusione**
 La shell PHP caricata consente un controllo remoto completo della macchina Metasploitable. L'esperimento dimostra come vulnerabilità come l'upload di file non protetti possano esporre una macchina a rischi significativi. Attraverso questa shell è stato possibile eseguire comandi, navigare nel file system e interagire con strumenti di sistema senza restrizioni. Ma ci mostra inoltre che con BurpSuite è stato possibile intercettare questa azione di upload, per identificarla e prevenirla.
 
----
 
 
 
