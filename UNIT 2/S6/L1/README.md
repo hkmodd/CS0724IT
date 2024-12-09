@@ -112,6 +112,8 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
      POST /dvwa/hackable/uploads/shell.php?key=mysecretkey
      Body: cmd=whoami
      ```
+![Intercettazione BurpSuite](./POST.png)
+     
    - Analisi dettagliata inclusa con screenshot.
 
 ---
@@ -136,7 +138,7 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
 ![Shell in azione](./ShellPreview.png)
 
 ### **📸 Intercettazioni BurpSuite**
-![Intercettazione BurpSuite](inserire-percorso-immagine)
+![Intercettazione BurpSuite](./BurpSuite.png)
 
 ---
 
