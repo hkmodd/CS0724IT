@@ -1,1 +1,0 @@
-http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey
