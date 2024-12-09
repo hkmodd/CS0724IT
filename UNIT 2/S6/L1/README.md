@@ -98,7 +98,41 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
 
 ---
 
-### **4️⃣ Intercettazioni con BurpSuite**
+### **4️⃣ Intercettazione fase Upload con BurpSuite**
+
+1. **🛠️ Configurazione**:
+   - Configurato BurpSuite per intercettare il traffico HTTP durante l'upload della shell `shell.php`.
+
+2. **🔎 Intercettazione delle richieste HTTP**:
+   - Durante il caricamento della shell tramite la sezione **File Upload** di DVWA, BurpSuite ha intercettato la seguente richiesta POST:
+     ```
+     POST /dvwa/vulnerabilities/upload/ HTTP/1.1
+     Host: 192.168.60.2
+     Content-Length: 3976
+     Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryIYDDPameSV45LPyo
+     ...
+     ------WebKitFormBoundaryIYDDPameSV45LPyo
+     Content-Disposition: form-data; name="uploaded"; filename="shell.php"
+     Content-Type: application/x-php
+     ...
+     ```
+
+   - Dall'intercettazione, è evidente che il file caricato è uno script PHP malevolo, ovvero una shell remota progettata per ottenere il controllo della macchina target. Questo dimostra come un'implementazione scorretta della gestione dei file caricati possa esporre il sistema a gravi rischi di compromissione.
+
+   - La shell, una volta caricata, è stata localizzata nella directory specificata:  
+     ```
+     http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey
+     ```
+
+3. **🔍 Analisi**:
+   - La richiesta includeva il payload PHP della shell, che è stato elaborato dal server, consentendo così l'accesso remoto.
+   - La chiave segreta `mysecretkey` ha fornito un ulteriore livello di autenticazione, assicurando che solo gli utenti autorizzati potessero interagire con la shell.
+
+4. **📸 Screenshot Intercettazione**:
+   ![Intercettazione Upload](./Upload.png)
+
+
+### **4️⃣ Intercettazioni comandi Shell con BurpSuite**
 1. **🛠️ Configurazione**:
    - Configurato BurpSuite per intercettare il traffico HTTP.
 
@@ -141,42 +175,9 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
 ---
 
 ## **📌 Conclusione**
-La shell PHP caricata consente un controllo remoto completo della macchina Metasploitable. L'esperimento dimostra come vulnerabilità come l'upload di file non protetti possano esporre una macchina a rischi significativi. Attraverso questa shell è stato possibile eseguire comandi, navigare nel file system e interagire con strumenti di sistema senza restrizioni.
+La shell PHP caricata consente un controllo remoto completo della macchina Metasploitable. L'esperimento dimostra come vulnerabilità come l'upload di file non protetti possano esporre una macchina a rischi significativi. Attraverso questa shell è stato possibile eseguire comandi, navigare nel file system e interagire con strumenti di sistema senza restrizioni. Ma ci mostra inoltre che con BurpSuite è stato possibile intercettare questa azione di upload, per identificarla e prevenirla.
 
 ---
 
 
 
-### **4️⃣ Intercettazioni con BurpSuite**
-
-1. **🛠️ Configurazione**:
-   - Configurato BurpSuite per intercettare il traffico HTTP durante l'upload della shell `shell.php`.
-
-2. **🔎 Intercettazione delle richieste HTTP**:
-   - Durante il caricamento della shell tramite la sezione **File Upload** di DVWA, BurpSuite ha intercettato la seguente richiesta POST:
-     ```
-     POST /dvwa/vulnerabilities/upload/ HTTP/1.1
-     Host: 192.168.60.2
-     Content-Length: 3976
-     Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryIYDDPameSV45LPyo
-     ...
-     ------WebKitFormBoundaryIYDDPameSV45LPyo
-     Content-Disposition: form-data; name="uploaded"; filename="shell.php"
-     Content-Type: application/x-php
-     ...
-     ```
-
-   - Dall'intercettazione, è evidente che il file caricato è uno script PHP malevolo, ovvero una shell remota progettata per ottenere il controllo della macchina target. Questo dimostra come un'implementazione scorretta della gestione dei file caricati possa esporre il sistema a gravi rischi di compromissione.
-
-   - La shell, una volta caricata, è stata localizzata nella directory specificata:  
-     ```
-     http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey
-     ```
-
-3. **🔍 Analisi**:
-   - La richiesta includeva il payload PHP della shell, che è stato elaborato dal server, consentendo così l'accesso remoto.
-   - La chiave segreta `mysecretkey` ha fornito un ulteriore livello di autenticazione, assicurando che solo gli utenti autorizzati potessero interagire con la shell.
-
-4. **📸 Screenshot Intercettazione**:
-   - Inserire uno screenshot della schermata di BurpSuite con l'intercettazione della richiesta POST.
-   ![Intercettazione Upload](./Upload.png)
