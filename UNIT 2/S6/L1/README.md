@@ -135,17 +135,7 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
 ### **📸 Shell in azione**
 ![Shell in azione](./ShellPreview.png)
 
-### **📸 Intercettazioni BurpSuite**
-![Intercettazione BurpSuite](./BurpSuite.png)
-
 ---
-
-## **📌 Conclusione**
-La shell PHP caricata consente un controllo remoto completo della macchina Metasploitable. L'esperimento dimostra come vulnerabilità come l'upload di file non protetti possano esporre una macchina a rischi significativi. Attraverso questa shell è stato possibile eseguire comandi, navigare nel file system e interagire con strumenti di sistema senza restrizioni.
-
----
-
-
 
 ### **4️⃣ Intercettazioni con BurpSuite**
 
@@ -166,6 +156,10 @@ La shell PHP caricata consente un controllo remoto completo della macchina Metas
      ...
      ```
 
+     
+### **📸 Intercettazioni BurpSuite**
+![Intercettazione BurpSuite](./BurpSuite.png)
+
    - Dall'intercettazione, è evidente che il file caricato è uno script PHP malevolo, ovvero una shell remota progettata per ottenere il controllo della macchina target. Questo dimostra come un'implementazione scorretta della gestione dei file caricati possa esporre il sistema a gravi rischi di compromissione.
 
    - La shell, una volta caricata, è stata localizzata nella directory specificata:  
@@ -180,3 +174,10 @@ La shell PHP caricata consente un controllo remoto completo della macchina Metas
 4. **📸 Screenshot Intercettazione**:
    - Inserire uno screenshot della schermata di BurpSuite con l'intercettazione della richiesta POST.
    ![Intercettazione Upload](./Upload.png)
+
+---
+
+## **📌 Conclusione**
+La shell PHP caricata consente un controllo remoto completo della macchina Metasploitable. L'esperimento dimostra come vulnerabilità come l'upload di file non protetti possano esporre una macchina a rischi significativi. Attraverso questa shell è stato possibile eseguire comandi, navigare nel file system e interagire con strumenti di sistema senza restrizioni.
+
+---
