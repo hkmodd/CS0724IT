@@ -46,7 +46,7 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
      ```
      http://192.168.60.2/dvwa
      ```
-   - Il livello di sicurezza è stato impostato su **Low** per consentire l'upload della shell.
+   - Il livello di sicurezza è stato impostato inizialmente su **Low** per consentire l'upload della shell.
 
 ---
 
@@ -169,6 +169,22 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
 ### **📸 Shell in azione**
 ![Shell in azione](./ShellPreview.png)
 
+### **5️⃣ Bypass della Sicurezza High su DVWA**
+
+1. **🔧 Configurazione della Sicurezza High**:
+   - La sicurezza della DVWA è stata in seguito configurata su **High**, implementando restrizioni "più rigide" per il caricamento dei file.
+
+2. **🔎 Metodo di Elusione**:
+   - Nonostante la configurazione avanzata, è stato possibile caricare la shell `shell.php` rinominata in `.jpg`. Questo ha eluso il sistema di controllo che permette l'upload di file `.jpg` solo se:
+     - Il file è lungo almeno **100000 byte**.
+   - La shell è stata scritta in modo tale da rispettare la lunghezza minima richiesta, aggirando efficacemente le restrizioni.
+
+3. **📤 Dettagli Tecnici**:
+   - Il file è stato caricato tramite la sezione **File Upload**, ed è stato possibile eseguirlo come script PHP nonostante l'estensione `.jpg`.
+
+4. **📸 Screenshot dell'Intercettazione**:
+   - Inserire uno screenshot che mostra l'upload con successo e l'intercettazione dell'azione in BurpSuite.
+
 ### **📸 Intercettazioni BurpSuite**
 ![Intercettazione BurpSuite](./BurpSuite.png)
 
@@ -178,6 +194,10 @@ Questo progetto dimostra come una shell PHP possa essere utilizzata per acquisir
 La shell PHP caricata consente un controllo remoto completo della macchina Metasploitable. L'esperimento dimostra come vulnerabilità come l'upload di file non protetti possano esporre una macchina a rischi significativi. Attraverso questa shell è stato possibile eseguire comandi, navigare nel file system e interagire con strumenti di sistema senza restrizioni. Ma ci mostra inoltre che con BurpSuite è stato possibile intercettare questa azione di upload, per identificarla e prevenirla.
 
 ---
+
+
+
+
 
 
 
