@@ -115,7 +115,7 @@
    - Utilizzando AJAX, l'interfaccia aggiorna dinamicamente il terminale senza necessità di ricaricare la pagina.
 
 4. **Interazione con strumenti avanzati**:
-   - La shell supporta strumenti terminali (`nano`, `vi`, `tree`, ecc.), fornendo un accesso completo e interattivo.
+   - La shell supporta strumenti terminali ad esempio `nano` fornendo un accesso completo e interattivo.
 
 ---
 
