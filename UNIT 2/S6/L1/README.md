@@ -206,7 +206,7 @@ Questo esercizio evidenzia la fragilità di molte applicazioni web vulnerabili e
 
 ---
 
-**🚀 Conclusione generale**: L'attività non solo ha permesso di comprendere i rischi legati a vulnerabilità comuni, ma ha fornito una solida base per sviluppare competenze nell'uso di strumenti essenziali come BurpSuite e nell'analisi delle vulnerabilità, fondamentali per un ethical hacker.
+# <h1 align="center">**🚀 Conclusione generale**: L'attività non solo ha permesso di comprendere i rischi legati a vulnerabilità comuni, ma ha fornito una solida base per sviluppare competenze nell'uso di strumenti essenziali come BurpSuite e nell'analisi delle vulnerabilità, fondamentali per un ethical hacker.</h1>
 
 
 
