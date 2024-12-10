@@ -155,7 +155,7 @@
 
 ---
 
-# **📌 Conclusioni**
+# <h1 align="center">📌 Conclusioni</h1>
 
 ## **1️⃣ Importanza della Configurazione dell'Ambiente**
 L'esperimento ha evidenziato l'importanza di configurare correttamente e testare gli ambienti prima di effettuare attività pratiche di exploit. La comunicazione stabile tra Kali e Metasploitable, unita alla configurazione adeguata di strumenti come DVWA e BurpSuite, è stata cruciale per il successo delle attività.
