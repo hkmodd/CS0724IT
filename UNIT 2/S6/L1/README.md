@@ -1,6 +1,6 @@
 
 # 📝 Consegna S6/L1
-## <h1 align="center">Exploit File Upload</h1>
+## <h1 align="center">👾 Exploit File Upload ⬆️</h1>
 ## **🎯 Obiettivo**: Creare e utilizzare una shell PHP per ottenere il controllo remoto completo della macchina Metasploitable, intercettare poi le richieste mediante BurpSuite, familiarizzare con gli ambienti e i tool.
 
 ---
