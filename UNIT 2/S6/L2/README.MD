@@ -19,7 +19,7 @@ Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Si
 - Entrambe le macchine (Kali Linux e DVWA) sono state configurate sulla stessa rete per consentire la comunicazione.
 - Verificata la connettività con il comando:
   ```bash
-  ping <IP-DVWA>
+  ping 192.168.60.2
   ```
 
 ---
@@ -35,6 +35,8 @@ Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Si
      ```html
      <script>alert('XSS')</script>
      ```
+![XSSHTMLvulnerable](./XSSHTMLvulnerable.png)
+
    - Confermato l'esecuzione del codice JavaScript.
 
 3. **Payload per rubare i cookie**:
@@ -46,7 +48,7 @@ Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Si
      - `security=low; PHPSESSID=<session_id>`
 
 📂 Screenshot correlati:
-- `XSSHTMLvulnerable.png`
+- ``
 - `CookieAttuali.png`
 
 ---
