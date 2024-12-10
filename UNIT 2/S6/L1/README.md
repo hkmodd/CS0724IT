@@ -77,7 +77,7 @@
 
 ---
 
-## <h1 align="center">4️⃣ Utilizzo della Shell</h1>
+## <h1 align="center">4️⃣ Utilizzo della Shell "sofisticata" ;)</h1>
 1. **⚡ Esecuzione comandi remoti**:
    - Eseguiti comandi come:
      - `ls` - Per elencare file e directory.
