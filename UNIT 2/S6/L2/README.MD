@@ -1,21 +1,12 @@
-# 🛡️ Consegna S6/L2: Sfruttamento delle Vulnerabilità XSS e SQL Injection
+# 📋 Consegna S6/L2: 
+# 🛡️ Sfruttamento delle Vulnerabilità XSS e SQL Injection
 
 ## 📋 Descrizione
 Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Site Scripting)** e **SQL Injection (non blind)** utilizzando **Damn Vulnerable Web Application (DVWA)**. Sono stati seguiti tutti i passaggi necessari per configurare l'ambiente e dimostrare con successo entrambe le vulnerabilità.
 
 ---
 
-## ⚙️ Ambiente Creato
-- **Sistema operativo host:** Windows con VirtualBox.
-- **VM Attaccante:** Kali Linux.
-- **VM Vulnerabile:** DVWA configurato su una macchina con stack LAMP.
-- **Livello di sicurezza DVWA:** `low`.
-
----
-
-## 🛠️ Passaggi Seguiti
-
-### 1. Configurazione dell'Ambiente
+## 1. Configurazione dell'Ambiente
 - Entrambe le macchine (Kali Linux e DVWA) sono state configurate sulla stessa rete per consentire la comunicazione.
 - Verificata la connettività con il comando:
   ```bash
@@ -24,8 +15,8 @@ Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Si
 
 ---
 
-### 2. Dimostrazione della Vulnerabilità XSS
-#### **Obiettivo: Rubare i cookie della sessione**
+## 2. Dimostrazione della Vulnerabilità XSS
+### **Obiettivo: Rubare i cookie della sessione**
 
 1. **Accesso alla sezione XSS riflesso**:
    - Aperto il menu di DVWA, selezionata la sezione **XSS (Reflected)**.
@@ -44,17 +35,15 @@ Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Si
      ```html
      <script>alert(document.cookie)</script>
      ```
+![CookieAttuali](./CookieAttuali.png)
+
    - Visualizzati i cookie correnti della sessione:
      - `security=low; PHPSESSID=<session_id>`
 
-📂 Screenshot correlati:
-- ``
-- `CookieAttuali.png`
-
 ---
 
-### 3. Dimostrazione della Vulnerabilità SQL Injection
-#### **Obiettivo: Estrarre dati sensibili dalla tabella `users`**
+## 3. Dimostrazione della Vulnerabilità SQL Injection
+### **Obiettivo: Estrarre dati sensibili dalla tabella `users`**
 
 1. **Accesso alla sezione SQL Injection**:
    - Aperto il menu di DVWA, selezionata la sezione **SQL Injection**.
@@ -88,10 +77,7 @@ Questo progetto dimostra lo sfruttamento delle vulnerabilità di **XSS (Cross-Si
        - User: `admin`
        - Password (hash): `5f4dcc3b5aa765d61d8327deb882cf99`
 
-📂 Screenshot correlati:
-- `BypassSQLsemprevera.png`
-- `testPayload.png`
-- `Estrasuserpassword.png`
+![Estrazuserpassword](./Estrazuserpassword.png)
 
 ---
 
