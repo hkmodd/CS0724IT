@@ -29,7 +29,7 @@ Il programma è diviso in due sezioni principali:
 
 ### **1. Scansione delle Porte**
 1. L'utente inserisce l'IP target.
-2. Il programma esegue una scansione delle porte su tutte le 65.535 porte TCP.
+2. Il programma esegue una rapida scansione delle porte.
 3. Le porte aperte vengono visualizzate in un elenco.
 4. L'utente può selezionare una porta dall'elenco per l'attacco.
 
