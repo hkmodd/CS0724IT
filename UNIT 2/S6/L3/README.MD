@@ -90,7 +90,7 @@ Se la porta scelta non ha un servizio in ascolto:
 ![Attack](./AttaccoCompletato.png)
 
 4. **Monitorare il Target**
-   - Usando 'sudo tcpdump -i eth0 udp port 23' monitoriamo e verifichiamo che l'attacco stia funzionando sul target Metasploitable, risultato screenshot:
+   - Usando `sudo tcpdump -i eth0 udp port 23` monitoriamo e verifichiamo che l'attacco stia funzionando sul target Metasploitable, risultato screenshot:
 
 ![Proof](./CatturaTrafficoMetasploitable.png)
 ---
