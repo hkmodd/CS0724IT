@@ -41,7 +41,7 @@ Il programma è diviso in due sezioni principali:
    - Numero di pacchetti da inviare.
 2. Il programma invia pacchetti verso il target usando un socket UDP.
 
-![Attack](./AttaccoCompletato.png)
+![Attack](./Attacco.png)
 
 ---
 
