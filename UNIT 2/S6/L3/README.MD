@@ -1,4 +1,5 @@
-# Consegna S6/L3 - Attacchi DDoS: Relazione Completa
+# 📝 Consegna S6/L3 
+# Attacchi DDoS 🎯
 
 ## 💡 **Introduzione**
 Gli attacchi DDoS (Distributed Denial of Service) sono azioni mirate a sovraccaricare un sistema, rendendo i servizi indisponibili per gli utenti legittimi. Questo esercizio simula un attacco **UDP Flood**, dove pacchetti UDP vengono inviati in massa verso una macchina target.
