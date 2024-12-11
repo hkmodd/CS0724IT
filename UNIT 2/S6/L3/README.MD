@@ -41,57 +41,23 @@ Il programma è diviso in due sezioni principali:
    - Numero di pacchetti da inviare.
 2. Il programma invia pacchetti verso il target usando un socket UDP.
 
+![Attack](./AttaccoCompletato.png)
+
 ---
 
 ## 🖥️ **Come Testare il Programma**
 
 ### **Ambiente Consigliato**
-Per garantire un utilizzo sicuro, consigliamo di eseguire i test in un ambiente controllato, come:
-- Una macchina virtuale con **Metasploitable**.
-- Una macchina virtuale con **Windows XP**.
+Per garantire un utilizzo sicuro, consigliamo di eseguire i test in un ambiente controllato, come una macchina virtuale con **Metasploitable**.
 
 ### **Verifica del Traffico UDP**
 Per assicurarsi che i pacchetti arrivino al target:
-1. Usa strumenti di monitoraggio del traffico come `tcpdump` o `Wireshark`:
+1. Usa strumenti di monitoraggio del traffico come `tcpdump`:
    ```bash
    sudo tcpdump -i eth0 udp port <PORTA>
    ```
 2. Controlla che i pacchetti UDP siano visibili nel traffico catturato.
 
-### **Servizio in Ascolto**
-Se la porta scelta non ha un servizio in ascolto:
-- Configura un server UDP temporaneo:
-  ```bash
-  nc -u -l -p <PORTA>
-  ```
-- Verifica la ricezione dei pacchetti.
-
----
-
-## 📝 **Esecuzione del Programma**
-
-1. **Avviare il Programma**
-   - Assicurati di avere Python installato.
-   - Esegui lo script:
-     ```bash
-     python3 UDPDDoS.py
-     ```
-
-2. **Scansionare le Porte**
-   - Inserisci l'IP del target.
-   - Clicca su "Scansiona Porte".
-   - Visualizza l'elenco delle porte aperte.
-
-3. **Configurare l'Attacco**
-   - Seleziona una porta dall'elenco e importala.
-   - Configura dimensione e numero dei pacchetti.
-   - Clicca su "Avvia UDP Flood".
-
-![Attack](./AttaccoCompletato.png)
-
-4. **Monitorare il Target**
-   - Usando `sudo tcpdump -i eth0 udp port 23` monitoriamo e verifichiamo che l'attacco stia funzionando sul target Metasploitable, risultato screenshot:
-
 ![Proof](./CatturaTrafficoMetasploitable.png)
----
 
+---
