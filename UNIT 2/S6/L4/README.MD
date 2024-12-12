@@ -83,6 +83,57 @@ Le password in chiaro sono:
 
 ---
 
+## **Extra: Analisi e Cracking di Hash Bcrypt**
+
+Come esercizio aggiuntivo, abbiamo analizzato e craccato tre hash bcrypt forniti. Ecco i passaggi seguiti:
+
+### **1. Identificazione degli Hash**
+Abbiamo identificato che gli hash erano di tipo bcrypt grazie al loro formato `$2b$`:
+```bash
+echo "$2b$05$Ojs/dMUOU12yjrD6OEHJb.cB1zE9CPNg.mPR8BE11f0DIyPaVf436" | hashid
+```
+Risultato:
+```plaintext
+[+] bcrypt $2*$, Blowfish (Unix)
+```
+
+### **2. Cracking degli Hash con Hashcat**
+Abbiamo utilizzato **Hashcat** per tentare di decifrare gli hash. I passaggi sono stati:
+
+1. Salvare gli hash in un file chiamato `bcrypt_hashes.txt`:
+   ```plaintext
+   pippo:$2b$05$Ojs/dMUOU12yjrD6OEHJb.cB1zE9CPNg.mPR8BE11f0DIyPaVf436
+   user:$2b$05$7O7caKmIpPBZxM.RV1lnie/S8jiAjE4C/S6neVAN0ObgJ7tE4dW3.
+   user2:$2b$05$j5vV5M6CMYvUWO9dULw9be29O7RArl9lGIe7ijxf2/47vHwl1YVQq
+   ```
+
+2. Utilizzare il dizionario `rockyou.txt` per tentare il cracking:
+   ```bash
+   hashcat -m 3200 bcrypt_hashes.txt /usr/share/wordlists/rockyou.txt
+   ```
+
+### **Risultati**
+Hashcat è riuscito a decifrare tutte le password in circa un minuto:
+```plaintext
+$2b$05$7O7caKmIpPBZxM.RV1lnie/S8jiAjE4C/S6neVAN0ObgJ7tE4dW3.:shadow
+$2b$05$j5vV5M6CMYvUWO9dULw9be29O7RArl9lGIe7ijxf2/47vHwl1YVQq:darksoul
+$2b$05$Ojs/dMUOU12yjrD6OEHJb.cB1zE9CPNg.mPR8BE11f0DIyPaVf436:mena
+```
+
+### **Conclusioni sull'Extra**
+L'esercizio ha dimostrato l'efficacia di Hashcat nel decifrare hash bcrypt quando viene fornito un dizionario appropriato. È importante notare che bcrypt è progettato per essere resistente al cracking e che il successo dipende dalla forza delle password e dalla qualità del dizionario.
+
+---
+
+## **Conclusioni Generali**
+
+L'intero esercizio ha permesso di:
+1. Recuperare le password hashate dal database DVWA sfruttando una vulnerabilità SQL Injection tramite SQLMap.
+2. Verificare che gli hash estratti fossero di tipo MD5 e bcrypt utilizzando tool di identificazione.
+3. Recuperare le password in chiaro direttamente dai risultati di SQLMap e Hashcat.
+
+Questi passaggi evidenziano l'importanza della sicurezza dei database e l'impatto delle vulnerabilità legate all'uso di algoritmi di hashing e password deboli.
+
 ## **Conclusioni**
 
 L'esercizio ha permesso di:
