@@ -79,6 +79,8 @@ Le password in chiaro sono:
 
 ![Success!](./HashCracked.png)
 
+![Final](./Final.png)
+
 ---
 
 ## **Conclusioni**
