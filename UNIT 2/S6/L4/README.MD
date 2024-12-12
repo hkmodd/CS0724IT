@@ -59,7 +59,10 @@ Risultato:
 ```plaintext
 Analyzing '5f4dcc3b5aa765d61d8327deb882cf99'
 [+] MD5
+[+] Altri algoritmi compatibili: MD2, MD4, Double MD5, ecc.
 ```
+
+Sebbene l'hash possa essere compatibile con altri algoritmi, nel contesto di DVWA e degli utilizzi tipici, possiamo confermare con sicurezza che si tratta di MD5.
 
 ---
 
@@ -74,7 +77,7 @@ Le password in chiaro sono:
 - `pablo`: `letmein`
 - `smithy`: `password`
 
-![Hashcrack](./HashCracked.png)
+![Success!](./HashCracked.png)
 
 ---
 
