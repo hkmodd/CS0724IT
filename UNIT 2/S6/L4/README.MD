@@ -77,6 +77,8 @@ Le password in chiaro sono:
 - `pablo`: `letmein`
 - `smithy`: `password`
 
+![Success!](./HashCracked.png)
+
 ---
 
 ## **Conclusioni**
