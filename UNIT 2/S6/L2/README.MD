@@ -1,4 +1,4 @@
-# 📋 Consegna S6/L2: 
+# 📝 Consegna S6/L2: 
 # 🛡️ Sfruttamento delle Vulnerabilità XSS e SQL Injection
 
 ## 📋 Descrizione
