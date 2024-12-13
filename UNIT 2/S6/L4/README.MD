@@ -1,4 +1,4 @@
-# **Consegna S6/L4**
+# **📝 Consegna S6/L4**
 # **Password Cracking - Recupero delle Password in Chiaro**
 
 ## **Obiettivo dell'Esercizio**
