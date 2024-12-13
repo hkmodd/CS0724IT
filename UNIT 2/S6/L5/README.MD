@@ -85,9 +85,8 @@ Abbiamo utilizzato **Hydra** per effettuare il brute force sul servizio SSH:
 
 ### **4. Risoluzione degli Errori Riscontrati**
 
-Durante il test iniziale con wordlist più grandi, abbiamo riscontrato errori dovuti a:
-- **Troppi tentativi simultanei**: Risolto riducendo i thread con `-t 1`.
-- **Protezione del server SSH contro brute force**: Modificato il file di configurazione con `MaxStartups`.
+Durante il test iniziale con wordlist più grandi, abbiamo riscontrato errori dovuti a **Troppi tentativi simultanei**: 
+- Risolto riducendo i thread con `-t 1`.
 
 ---
 
