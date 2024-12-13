@@ -93,13 +93,11 @@ Durante il test iniziale con wordlist più grandi, abbiamo riscontrato errori do
 ## **Conclusioni e Considerazioni**
 
 L'esercizio ha dimostrato:
-1. L'efficacia degli attacchi brute force con dizionari mirati.
-2. La necessità di proteggere i servizi di rete configurando correttamente il file di configurazione e implementando sistemi di rilevamento come `fail2ban`.
+- L'efficacia degli attacchi brute force con dizionari mirati.
 
 ### **Miglioramenti Suggeriti per la Sicurezza**
 - **Usare chiavi SSH** invece delle password.
 - **Limitare i tentativi di login** e disabilitare utenti inutilizzati.
-- **Configurare fail2ban** per bloccare tentativi ripetuti.
 
 ---
 
