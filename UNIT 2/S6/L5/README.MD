@@ -1,5 +1,5 @@
 # 📐 Progetto S6/L5 📐
-# 🛡️ Brute Force SSH e FTP con Hydra
+# 🛡️ Attacco di dizionario su SSH e FTP con Hydra
 
 ## **Obiettivo dell'Esercizio**
 
@@ -64,7 +64,7 @@ Abbiamo creato due file di wordlist per simulare un attacco mirato:
   echo -e "test_user\nadmin\nroot\nuser1\nguest\noperator\nsupport\nmanager\ndeveloper\nservice\nbackup\ntester\naccount\nsuperuser\nsysadmin" > usernames.txt
   ```
 
-### **3. Utilizzo di Hydra per il Brute Force su SSH**
+### **3. Utilizzo di Hydra su SSH**
 
 Abbiamo utilizzato **Hydra** per effettuare il brute force sul servizio SSH:
 
@@ -118,7 +118,7 @@ Abbiamo utilizzato **Hydra** per effettuare il brute force sul servizio SSH:
    - Nome utente: `ftp_user`
    - Password: `ftp_pass`
 
-### **5. Utilizzo di Hydra per il Brute Force su FTP**
+### **5. Utilizzo di Hydra su FTP**
 
 1. **Creazione delle wordlist personalizzate**:
    - File dei nomi utente:
@@ -151,7 +151,7 @@ Abbiamo utilizzato **Hydra** per effettuare il brute force sul servizio SSH:
 ## **Conclusioni e Considerazioni**
 
 L'esercizio ha dimostrato:
-1. 💡 L'efficacia degli attacchi brute force con dizionari mirati.
+1. 💡 L'efficacia degli attacchi con dizionari mirati.
 2. 🔐 La necessità di proteggere i servizi di rete configurando correttamente il file di configurazione e implementando sistemi di rilevamento come `fail2ban`.
 
 ### **Miglioramenti Suggeriti per la Sicurezza**
