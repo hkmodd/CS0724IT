@@ -81,6 +81,8 @@ Abbiamo utilizzato **Hydra** per effettuare il brute force sul servizio SSH:
      - Nome utente: `test_user`
      - Password: `testpass`
 
+![SSH](./SSHcredfound.png)
+
 ### **4. Configurazione del Servizio FTP**
 
 1. **Installazione del server FTP**:
@@ -140,6 +142,8 @@ Abbiamo utilizzato **Hydra** per effettuare il brute force sul servizio SSH:
    - ✅ Hydra ha identificato con successo la combinazione:
      - Nome utente: `ftp_user`
      - Password: `ftp_pass`
+
+![FTP](./FTPcredfound.png)
 
 ---
 
