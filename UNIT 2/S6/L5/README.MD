@@ -1,4 +1,5 @@
-# Progetto S6/L5: Brute Force SSH e FTP con Hydra
+# 📐 Progetto S6/L5 📐
+# 🛡️ Brute Force SSH e FTP con Hydra
 
 ## **Obiettivo dell'Esercizio**
 
