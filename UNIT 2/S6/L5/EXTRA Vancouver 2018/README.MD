@@ -1,4 +1,5 @@
-# 🛡️ EXTRA Vancouver 2018 Exploitation report
+# EXTRA S6/L5
+# 🛡️Vancouver 2018 Exploitation report
 
 ## 📋 **Descrizione Generale**
 Questa relazione descrive i passi eseguiti durante l'analisi e l'attacco alla macchina virtuale (VM) fornita dal professore. Ho ottenuto accesso root tramite un approccio metodico utilizzando diverse tecniche di enumerazione e attacco.
