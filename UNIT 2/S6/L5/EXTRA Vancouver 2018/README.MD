@@ -1,4 +1,4 @@
-# 🛡️ Relazione sul Progetto di Penetration Testing
+# 🛡️ EXTRA Vancouver 2018 Exploitation report
 
 ## 📋 **Descrizione Generale**
 Questa relazione descrive i passi eseguiti durante l'analisi e l'attacco alla macchina virtuale (VM) fornita dal professore. Ho ottenuto accesso root tramite un approccio metodico utilizzando diverse tecniche di enumerazione e attacco.
@@ -41,7 +41,15 @@ Questa relazione descrive i passi eseguiti durante l'analisi e l'attacco alla ma
   ```bash
   gobuster dir -u http://192.168.1.170 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,html,txt -t 50
   ```
-- **Risultato**: La scansione ha rivelato la presenza della directory **/backup_wordpress**, confermando un'installazione WordPress.
+- **Risultato**: La scansione ha rilevato la presenza del file **robots.txt**:
+  ```
+  /robots.txt           (Status: 200) [Size: 43]
+  ```
+- Ho scaricato il file **robots.txt** per esaminarlo:
+  ```bash
+  curl http://192.168.1.170/robots.txt
+  ```
+- Il contenuto di **robots.txt** ha rivelato la directory nascosta **/backup_wordpress**.
 - Ho visitato l'indirizzo `http://192.168.1.170/backup_wordpress` per esaminare il sito.
 - Per ulteriore conferma, ho lanciato una scansione mirata con **WPScan**:
   ```bash
@@ -102,8 +110,9 @@ Ho ottenuto accesso completo alla macchina target partendo da una fase di **enum
 1. Identificazione dei servizi attivi con Nmap.
 2. Accesso anonimo FTP e raccolta di informazioni.
 3. Scoperta e exploit su WordPress con **WPScan** e caricamento di una **reverse shell**.
-4. Scansione delle directory con **Gobuster** per individuare percorsi nascosti.
-5. Attacco SSH con **Hydra** utilizzando la potenza bruta del mio hardware.
-6. Escalation di privilegi per ottenere **root access**.
+4. Scansione delle directory con **Gobuster** e individuazione del file **robots.txt**.
+5. Identificazione della directory **/backup_wordpress** nascosta.
+6. Attacco SSH con **Hydra** utilizzando la potenza bruta del mio hardware.
+7. Escalation di privilegi per ottenere **root access**.
 
 🚀 **Missione completata con successo!**
