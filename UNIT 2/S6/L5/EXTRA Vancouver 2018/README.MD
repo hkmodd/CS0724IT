@@ -1,120 +1,131 @@
 # EXTRA S6/L5
-# 🛡️Vancouver 2018 Exploitation report
+# 🛡️ Vancouver 2018 Exploitation Report
 
 ## 📋 **Descrizione Generale**
-Questa relazione descrive i passi eseguiti durante l'analisi e l'attacco alla macchina virtuale (VM) fornita dal professore. Ho ottenuto accesso root tramite un approccio metodico utilizzando diverse tecniche di enumerazione e attacco.
+Questa relazione documenta le fasi eseguite per analizzare e sfruttare le vulnerabilità della macchina virtuale (VM) fornita dal professore. L'obiettivo principale era ottenere accesso root utilizzando un approccio sistematico, combinando tecniche di enumerazione e sfruttamento delle vulnerabilità.
 
 ---
 
 ## ⚙️ **Configurazione dell'Ambiente**
-1. **Importazione della VM**: 
-   - Ho importato l'OVA fornitami dal professore.
-   - La VM è stata avviata correttamente su VirtualBox/VMware.
+1. **Importazione della VM**:
+   - La VM è stata importata utilizzando il file OVA fornito dal professore.
+   - L'ambiente è stato configurato e avviato correttamente su VirtualBox/VMware.
 
-2. **Scansione dell'indirizzo IP**:
-   - Per identificare l'IP della VM assegnato dal router di casa, ho utilizzato **Nmap**:
+2. **Identificazione dell'indirizzo IP**:
+   - Per individuare l'indirizzo IP della VM assegnato dal router locale, è stata eseguita una scansione di rete con **Nmap**:
      ```bash
      nmap -sn 192.168.1.0/24
      ```
-   - L'IP rilevato della VM target è **192.168.1.170**.
+   - L'indirizzo IP della macchina target rilevato è stato **192.168.1.170**.
 
 ---
 
 ## 🔍 **Fase di Scansione e Enumerazione**
 ### 1️⃣ **Scansione delle Porte**
-- Ho eseguito una scansione con Nmap per identificare i servizi attivi:
+- Una scansione approfondita con **Nmap** ha rivelato i servizi attivi:
   ```bash
   nmap -sV -p- 192.168.1.170
   ```
-- **Risultato**: Porta **FTP** attiva.
+- **Risultato**: Sono state identificate porte attive, in particolare il servizio **FTP**.
 
 ### 2️⃣ **Accesso FTP Anonimo**
-- Dopo aver rilevato il servizio FTP, ho provato un accesso anonimo:
+- L'accesso anonimo è stato testato con successo:
   ```bash
   ftp 192.168.1.170
   ```
-- L'accesso è stato consentito come utente anonimo.
-- Nella directory `public`, ho trovato il file **users.txt.bk**, contenente una lista di nomi utente: `anne`, `john`, e altri.
+- All'interno della directory `public`, è stato individuato il file **users.txt.bk**, contenente una lista di nomi utente:
+  ```
+  anne
+  john
+  ...
+  ```
 
-### 3️⃣ **Scoperta di WordPress**
-- Ho notato durante la scansione Nmap che la porta **80** era aperta e ospitava un servizio web HTTP.
-- Utilizzando **Gobuster**, ho eseguito una scansione più aggressiva per individuare directory nascoste:
+### 3️⃣ **Scoperta del Servizio Web WordPress**
+- Durante la scansione Nmap, la porta **80** risultava attiva, ospitando un servizio web HTTP.
+- Una scansione delle directory con **Gobuster** ha rivelato percorsi nascosti:
   ```bash
   gobuster dir -u http://192.168.1.170 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,html,txt -t 50
   ```
-- **Risultato**: La scansione ha rilevato la presenza del file **robots.txt**:
+- **Risultato**: è stato individuato il file **robots.txt**:
   ```
   /robots.txt           (Status: 200) [Size: 43]
   ```
-- Ho scaricato il file **robots.txt** per esaminarlo:
+- Analizzando il contenuto di **robots.txt**, è stata scoperta la directory nascosta **/backup_wordpress**:
   ```bash
   curl http://192.168.1.170/robots.txt
   ```
-- Il contenuto di **robots.txt** ha rivelato la directory nascosta **/backup_wordpress**.
-- Ho visitato l'indirizzo `http://192.168.1.170/backup_wordpress` per esaminare il sito.
-- Per ulteriore conferma, ho lanciato una scansione mirata con **WPScan**:
+
+- Visitando l'indirizzo `http://192.168.1.170/backup_wordpress`, è stato confermato il sito WordPress.
+- Una scansione più mirata con **WPScan** ha permesso di enumerare gli utenti e testare password comuni:
   ```bash
   wpscan --url http://192.168.1.170/backup_wordpress --api-token Tc1sdQWKLxFRktkneIXAx6CiY5a98HdnyhYaBr34058 --enumerate u --passwords /usr/share/wordlists/rockyou.txt
   ```
-- **Risultato**: Ho trovato la combinazione:
+- **Risultato**: è stata trovata la combinazione:
   - **Username**: `john`
   - **Password**: `enigma`
 
-- Utilizzando queste credenziali, mi sono loggato al pannello amministrativo di WordPress.
-- Ho caricato un **plugin malevolo** contenente una **reverse shell PHP**, ottenendo una connessione backdoor al sistema.
-- Tuttavia, mi sono ritrovato limitato all'utente **www-data**, con privilegi bassi.
+- Accedendo al pannello amministrativo di WordPress con le credenziali trovate, è stato caricato un **plugin malevolo** contenente una **reverse shell PHP**, consentendo l'accesso al sistema come utente **www-data** (privilegi bassi).
 
 ---
 
-## 🔐 **Tentativi di Accesso ai Servizi**
+## 🔐 **Fase di Sfruttamento dei Servizi**
 ### 4️⃣ **Attacco Dizionario con Hydra su SSH** 🚀
-- Dalla lista di utenti recuperata dal file `users.txt.bk`, ho deciso di testare ciascun nome utente per verificare quale avesse credenziali valide per accedere tramite SSH, utilizzando **Hydra**.
-- Per ciascun utente nella lista, ho effettuato un attacco di dizionario utilizzando il file `rockyou.txt`, eseguendo il test iterativamente.
-
-**Comando utilizzato**:
-```bash
-hydra -l <username> -P /usr/share/wordlists/rockyou.txt -t 64 -V ssh://192.168.1.170
-```
-
-- **Risultato**: Ho trovato la combinazione:
+- Utilizzando i nomi utente recuperati dal file `users.txt.bk`, è stato eseguito un attacco di dizionario mirato per accedere al servizio SSH con **Hydra**.
+- Il test è stato eseguito iterativamente per ciascun nome utente, utilizzando il file di password `rockyou.txt`:
+  ```bash
+  hydra -l <username> -P /usr/share/wordlists/rockyou.txt -t 64 -V ssh://192.168.1.170
+  ```
+- **Risultato**: Sono state individuate le seguenti credenziali valide:
   - **Username**: `anne`
   - **Password**: `princess`
 
 ---
 
 ## 🏆 **Accesso Root**
-1. Dopo aver ottenuto le credenziali, ho eseguito il login SSH:
+### Fase Finale: Escalation di Privilegi
+1. Login SSH eseguito con successo:
    ```bash
    ssh anne@192.168.1.170
    ```
-2. Ho verificato se l'utente aveva privilegi sudo:
+2. Verifica della possibilità di eseguire comandi come root:
    ```bash
    sudo su
    ```
-3. Inserendo nuovamente la password, sono diventato **root**.
+3. Inserendo la password dell'utente `anne`, è stato ottenuto accesso completo come **root**.
 
-### 📌 **Verifica Utente Root**
-Per confermare l'accesso root, ho utilizzato i seguenti comandi:
-```bash
-whoami
-id
-```
-- **Output**: `root` ✅
+### 📌 **Conferma dei Privilegi Root**
+- Per verificare l'accesso root, sono stati eseguiti i seguenti comandi:
+  ```bash
+  whoami
+  id
+  ```
+- **Output**:
+  ```
+  root
+  ```
+  Accesso root confermato con successo. ✅
 
 ---
 
 ## 🎯 **Conclusione**
-Ho ottenuto accesso completo alla macchina target partendo da una fase di **enumerazione** fino all'ottenimento dei privilegi **root**. La metodologia seguita è stata:
+L'attacco è stato completato con successo. Le fasi principali sono state:
 
-1. Identificazione dei servizi attivi con Nmap.
-2. Accesso anonimo FTP e raccolta di informazioni.
-3. Scansione delle directory con **Gobuster** e individuazione del file **robots.txt**.
-4. Identificazione della directory **/backup_wordpress** nascosta.
-5. Login al pannello WordPress con credenziali **john/enigma** trovate tramite **WPScan**.
-6. Caricamento di una **reverse shell** tramite un plugin malevolo.
-7. Test mirato di accesso SSH tramite Hydra, utilizzando la lista utenti ottenuta e scoprendo le credenziali valide per `anne`.
-8. Escalation di privilegi per ottenere **root access**.
+1. **Scansione e enumerazione** dei servizi attivi (FTP, HTTP).
+2. **Accesso anonimo** al servizio FTP e raccolta di informazioni utili (file `users.txt.bk`).
+3. Individuazione di una directory nascosta attraverso l'analisi di **robots.txt** e scansioni mirate con **Gobuster**.
+4. Utilizzo di **WPScan** per enumerare gli utenti di WordPress e scoprire credenziali valide.
+5. Caricamento di una **reverse shell** tramite plugin WordPress per ottenere un accesso iniziale al sistema.
+6. Esecuzione di un attacco dizionario con **Hydra** per identificare credenziali valide per SSH.
+7. Escalation dei privilegi con **sudo** per ottenere accesso root.
+
+### 📊 **Lezioni Apprese e Miglioramenti**
+- La presenza di credenziali deboli e configurazioni errate ha reso possibile l'intero attacco.
+- Migliorare la sicurezza richiede:
+  - Disabilitare l'accesso anonimo FTP.
+  - Proteggere il file `robots.txt` e directory sensibili.
+  - Implementare policy di password più robuste e aggiornamenti regolari dei sistemi.
 
 ![Success](./RootSuccess.png)
 
 # 🚀 **Missione completata con successo!**
+
