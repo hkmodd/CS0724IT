@@ -40,17 +40,22 @@ Questa relazione descrive i passi eseguiti durante l'analisi e l'attacco alla ma
 
 ## 🔐 **Tentativi di Accesso ai Servizi**
 ### 3️⃣ **Enumerazione con WordPress**
-- Utilizzando **WPScan**, abbiamo eseguito un'analisi del sito WordPress rilevando una **vulnerabilità del software** che ci ha permesso di individuare le credenziali di accesso:
+- Utilizzando **WPScan**, ho scoperta la presenza di un installazione WordPress e dunque procedendo con un'analisi approfondita aggiungendo il token a WPScan rilevò una **vulnerabilità del software** che ci ha permesso di individuare le credenziali di accesso:
   ```bash
   wpscan --url http://192.168.1.170/backup_wordpress --enumerate u --passwords /usr/share/wordlists/rockyou.txt
   ```
-- Dopo aver ottenuto le credenziali di accesso al pannello amministrativo, ci siamo loggati su WordPress login.php con `john` e `enigma`
-- Abbiamo caricato un **plugin malevolo** contenente una **reverse shell PHP**, ottenendo una connessione backdoor al sistema sfruttabile da Kali mediante `nc`.
+- **Risultato**:
+  - **Username**: `john`
+  - **Password**: `enigma`
+
+- Dopo aver ottenuto le credenziali di accesso al pannello amministrativo di WordPress, ho effettuato il login senza difficoltà. :)
+- Provai a caricare un **plugin malevolo** contenente una **reverse shell PHP**, ottenendo una connessione backdoor al sistema sfruttabile da Kali mediante `nc` su porta `5555`.
 - Tuttavia, ci siamo ritrovati limitati all'utente **www-data**, con privilegi bassi, vicolo cieco. :(
 
+# **Cambio approccio**
 ### 4️⃣ **Attacco Dizionario con Hydra su SSH** 🚀
-Cambiando strada, ho deciso di effettuare un attacco mirato di dizionario con **Hydra** sul servizio SSH sfruttando dei nomi suggeriti dal file prelevato tramite FTP `users.txt.bk` utilizzando il file `rockyou.txt`.
-Arrivati all'username `anne` ottengo riscontro.
+Dopo aver sbattuto la testa ore, decido di cambiare il mio approccio e effettuo dunque un attacco mirato di dizionario con **Hydra** sul servizio SSH sfruttando dei nomi suggeriti dal file prelevato tramite FTP `users.txt.bk` utilizzando il file `rockyou.txt`.
+Arrivati all'username `anne`, ottengo riscontro.
 
 **Comando utilizzato**:
 ```bash
