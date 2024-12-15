@@ -80,8 +80,6 @@ hydra -l <username> -P /usr/share/wordlists/rockyou.txt -t 64 -V ssh://192.168.1
   - **Username**: `anne`
   - **Password**: `princess`
 
-# SUCCESSO!
-
 ---
 
 ## 🏆 **Accesso Root**
@@ -103,8 +101,6 @@ id
 ```
 - **Output**: `root` ✅
 
-![Success](./RootSuccess.png)
-
 ---
 
 ## 🎯 **Conclusione**
@@ -119,4 +115,6 @@ Ho ottenuto accesso completo alla macchina target partendo da una fase di **enum
 7. Test mirato di accesso SSH tramite Hydra, utilizzando la lista utenti ottenuta e scoprendo le credenziali valide per `anne`.
 8. Escalation di privilegi per ottenere **root access**.
 
-🚀 **Missione completata con successo!**
+![Success](./RootSuccess.png)
+
+# 🚀 **Missione completata con successo!**
