@@ -37,15 +37,15 @@ Questa relazione descrive i passi eseguiti durante l'analisi e l'attacco alla ma
 
 ### 3️⃣ **Scoperta di WordPress**
 - Ho notato durante la scansione Nmap che la porta **80** era aperta e ospitava un servizio web HTTP.
-- Utilizzando **Gobuster**, ho scansionato le directory del server per individuare percorsi nascosti:
+- Utilizzando **Gobuster**, ho eseguito una scansione più aggressiva per individuare directory nascoste:
   ```bash
-  gobuster dir -u http://192.168.1.170 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+  gobuster dir -u http://192.168.1.170 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,html,txt -t 50
   ```
-- **Risultato**: La scansione ha rivelato la presenza della directory **/wordpress**, confermando un'installazione WordPress.
-- Ho visitato l'indirizzo `http://192.168.1.170/wordpress` per esaminare il sito.
+- **Risultato**: La scansione ha rivelato la presenza della directory **/backup_wordpress**, confermando un'installazione WordPress.
+- Ho visitato l'indirizzo `http://192.168.1.170/backup_wordpress` per esaminare il sito.
 - Per ulteriore conferma, ho lanciato una scansione mirata con **WPScan**:
   ```bash
-  wpscan --url http://192.168.1.170/wordpress --api-token Tc1sdQWKLxFRktkneIXAx6CiY5a98HdnyhYaBr34058
+  wpscan --url http://192.168.1.170/backup_wordpress --api-token Tc1sdQWKLxFRktkneIXAx6CiY5a98HdnyhYaBr34058
   ```
 - Il risultato ha confermato la presenza di un'installazione WordPress vulnerabile.
 
@@ -55,7 +55,7 @@ Questa relazione descrive i passi eseguiti durante l'analisi e l'attacco alla ma
 ### 4️⃣ **Enumerazione con WordPress**
 - Utilizzando **WPScan**, ho eseguito un'analisi del sito WordPress rilevando una **vulnerabilità del software** che mi ha permesso di individuare le credenziali di accesso:
   ```bash
-  wpscan --url http://192.168.1.170/wordpress --enumerate u --passwords /usr/share/wordlists/rockyou.txt --api-token Tc1sdQWKLxFRktkneIXAx6CiY5a98HdnyhYaBr34058
+  wpscan --url http://192.168.1.170/backup_wordpress --enumerate u --passwords /usr/share/wordlists/rockyou.txt --api-token Tc1sdQWKLxFRktkneIXAx6CiY5a98HdnyhYaBr34058
   ```
 - Dopo aver ottenuto le credenziali di accesso al pannello amministrativo, mi sono loggato su WordPress.
 - Ho caricato un **plugin malevolo** contenente una **reverse shell PHP**, ottenendo una connessione backdoor al sistema.
