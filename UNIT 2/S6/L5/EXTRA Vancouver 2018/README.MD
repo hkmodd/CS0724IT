@@ -34,7 +34,7 @@ Questa relazione descrive i passi eseguiti durante l'analisi e l'attacco alla ma
   ftp 192.168.1.170
   ```
 - L'accesso è stato consentito come utente anonimo.
-- Nella directory `public`, ho trovato il file **users.txt.bk**, contenente una lista di nomi utente.
+- Nella directory `public`, ho trovato il file **users.txt.bk**, contenente una lista di nomi utente: `anne`, `john`, e altri.
 
 ### 3️⃣ **Scoperta di WordPress**
 - Ho notato durante la scansione Nmap che la porta **80** era aperta e ospitava un servizio web HTTP.
@@ -54,33 +54,33 @@ Questa relazione descrive i passi eseguiti durante l'analisi e l'attacco alla ma
 - Ho visitato l'indirizzo `http://192.168.1.170/backup_wordpress` per esaminare il sito.
 - Per ulteriore conferma, ho lanciato una scansione mirata con **WPScan**:
   ```bash
-  wpscan --url http://192.168.1.170/backup_wordpress --api-token Tc1sdQWKLxFRktkneIXAx6CiY5a98HdnyhYaBr34058
+  wpscan --url http://192.168.1.170/backup_wordpress --api-token Tc1sdQWKLxFRktkneIXAx6CiY5a98HdnyhYaBr34058 --enumerate u --passwords /usr/share/wordlists/rockyou.txt
   ```
-- Il risultato ha confermato la presenza di un'installazione WordPress vulnerabile.
+- **Risultato**: Ho trovato la combinazione:
+  - **Username**: `john`
+  - **Password**: `enigma`
+
+- Utilizzando queste credenziali, mi sono loggato al pannello amministrativo di WordPress.
+- Ho caricato un **plugin malevolo** contenente una **reverse shell PHP**, ottenendo una connessione backdoor al sistema.
+- Tuttavia, mi sono ritrovato limitato all'utente **www-data**, con privilegi bassi.
 
 ---
 
 ## 🔐 **Tentativi di Accesso ai Servizi**
-### 4️⃣ **Enumerazione con WordPress**
-- Utilizzando **WPScan**, ho eseguito un'analisi del sito WordPress rilevando una **vulnerabilità del software** che mi ha permesso di individuare le credenziali di accesso:
-  ```bash
-  wpscan --url http://192.168.1.170/backup_wordpress --enumerate u --passwords /usr/share/wordlists/rockyou.txt --api-token Tc1sdQWKLxFRktkneIXAx6CiY5a98HdnyhYaBr34058
-  ```
-- Dopo aver ottenuto le credenziali di accesso al pannello amministrativo, mi sono loggato su WordPress.
-- Ho caricato un **plugin malevolo** contenente una **reverse shell PHP**, ottenendo una connessione backdoor al sistema.
-- Tuttavia, mi sono ritrovato limitato all'utente **www-data**, con privilegi bassi. 
-
-### 5️⃣ **Attacco Dizionario con Hydra su SSH** 🚀
-Per bypassare le limitazioni, ho deciso di effettuare un attacco di dizionario con **Hydra** sul servizio SSH, utilizzando il file `rockyou.txt`.
+### 4️⃣ **Attacco Dizionario con Hydra su SSH** 🚀
+- Dalla lista di utenti recuperata dal file `users.txt.bk`, ho deciso di testare ciascun nome utente per verificare quale avesse credenziali valide per accedere tramite SSH, utilizzando **Hydra**.
+- Per ciascun utente nella lista, ho effettuato un attacco di dizionario utilizzando il file `rockyou.txt`, eseguendo il test iterativamente.
 
 **Comando utilizzato**:
 ```bash
-hydra -l anne -P /usr/share/wordlists/rockyou.txt -t 64 -V ssh://192.168.1.170
+hydra -l <username> -P /usr/share/wordlists/rockyou.txt -t 64 -V ssh://192.168.1.170
 ```
 
 - **Risultato**: Ho trovato la combinazione:
   - **Username**: `anne`
   - **Password**: `princess`
+
+# SUCCESSO!
 
 ---
 
@@ -103,6 +103,8 @@ id
 ```
 - **Output**: `root` ✅
 
+![Success](./RootSuccess.png)
+
 ---
 
 ## 🎯 **Conclusione**
@@ -110,10 +112,11 @@ Ho ottenuto accesso completo alla macchina target partendo da una fase di **enum
 
 1. Identificazione dei servizi attivi con Nmap.
 2. Accesso anonimo FTP e raccolta di informazioni.
-3. Scoperta e exploit su WordPress con **WPScan** e caricamento di una **reverse shell**.
-4. Scansione delle directory con **Gobuster** e individuazione del file **robots.txt**.
-5. Identificazione della directory **/backup_wordpress** nascosta.
-6. Attacco SSH con **Hydra** utilizzando la potenza bruta del mio hardware.
-7. Escalation di privilegi per ottenere **root access**.
+3. Scansione delle directory con **Gobuster** e individuazione del file **robots.txt**.
+4. Identificazione della directory **/backup_wordpress** nascosta.
+5. Login al pannello WordPress con credenziali **john/enigma** trovate tramite **WPScan**.
+6. Caricamento di una **reverse shell** tramite un plugin malevolo.
+7. Test mirato di accesso SSH tramite Hydra, utilizzando la lista utenti ottenuta e scoprendo le credenziali valide per `anne`.
+8. Escalation di privilegi per ottenere **root access**.
 
 🚀 **Missione completata con successo!**
