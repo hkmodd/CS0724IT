@@ -87,18 +87,5 @@ Grazie a questa implementazione, è possibile:
 
 ---
 
-## 🛠️ Comandi e strumenti utilizzati
-
-1. **Nmap** per la scansione delle porte:
-   ```bash
-   nmap -sV -p- 192.168.50.3
-   ```
-
-2. **Socket programming** per attivare la backdoor e interagire con la shell.
-
-3. **Tkinter** per creare un'interfaccia grafica semplice e intuitiva.
-
----
-
 ## ✅ Mission Success 🚀
 Questa implementazione offre un'alternativa leggera e manuale a Metasploit, dimostrando comprensione approfondita del funzionamento degli exploit.
