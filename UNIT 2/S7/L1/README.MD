@@ -17,16 +17,11 @@ L'obiettivo di questa esercitazione è stato **ottenere una shell come utente ro
 
 ### Verifica della connettività
 Per assicurarci che le macchine siano nella stessa rete interna:
-- **Kali ➞ Metasploitable**
+**Kali ➞ Metasploitable**
    ```bash
    ping 192.168.50.3
    ```
    **Output atteso**: Risposta da `192.168.50.3` con successo.
-
-- **Metasploitable ➞ Kali** (facoltativo):
-   ```bash
-   ping 192.168.50.2
-   ```
 
 ## Scansione iniziale con Nmap 🔍
 Una volta verificata la connettività, abbiamo eseguito una scansione rapida su Metasploitable per individuare i servizi attivi:
@@ -41,7 +36,7 @@ La scansione ha evidenziato la presenza del servizio FTP:
 
 ## Sfruttamento della vulnerabilità con Metasploit 🫠
 ### Caricamento dell'exploit
-Utilizzando **Metasploit**, abbiamo selezionato l'exploit specifico per la vulnerabilità di `vsftpd 2.3.4`:
+Utilizzando **Metasploit** con comando `msfconsole` abbiamo selezionato l'exploit specifico per la vulnerabilità di `vsftpd 2.3.4`:
 
 ```bash
 use exploit/unix/ftp/vsftpd_234_backdoor
