@@ -1,4 +1,5 @@
-# Consegna S7/L1 - La fase di exploit: Gli attacchi alle Reti ⚛️
+# 📝 Consegna S7/L1
+# La fase di exploit: Gli attacchi alle Reti ⚛️
 
 ## Obiettivo 
 L'obiettivo di questa esercitazione è stato **ottenere una shell come utente root** sulla macchina target **Metasploitable-Linux** sfruttando una vulnerabilità nel servizio FTP `vsftpd 2.3.4`.
