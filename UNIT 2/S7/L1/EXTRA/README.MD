@@ -67,6 +67,8 @@ Inserisci l'indirizzo IP del target: [__________________________]
 [ Esegui Exploit ]
 ```
 
+![Success](./extrapython.png)
+
 ## Risultati finali
 
 Grazie a questa implementazione, è possibile:
@@ -75,13 +77,6 @@ Grazie a questa implementazione, è possibile:
 3. Interagire con il target in modo intuitivo attraverso una shell interattiva.
 4. Utilizzare una GUI semplice e funzionale per scegliere l'indirizzo IP target.
 
-## Sicurezza
-
-Questa esercitazione dimostra l'importanza di:
-- **Aggiornare software obsoleti** per prevenire vulnerabilità note.
-- Isolare i servizi non sicuri da reti accessibili.
-
----
 
 ## Comandi e strumenti utilizzati
 
