@@ -1,11 +1,13 @@
-# Extra S7/L1 
-# Implementazione manuale dell'exploit vsftpd 2.3.4
 
-## Obiettivo
+# 🚀 Extra S7/L1 - Implementazione manuale dell'exploit vsftpd 2.3.4
+
+## 🎯 Obiettivo
 
 Durante questa esercitazione, abbiamo analizzato il codice dell'exploit **Metasploit** per la vulnerabilità in `vsftpd 2.3.4`, comprendendone il funzionamento e implementando un **script Python** che replica il comportamento dell'exploit. Questo ci ha permesso di ottenere una **shell interattiva** completamente funzionale, migliorata con una **interfaccia grafica (GUI)** per selezionare l'indirizzo IP del target da attaccare.
 
-## Analisi del codice Metasploit
+---
+
+## 🛠️ Analisi del codice Metasploit
 
 Il codice dell'exploit Metasploit esegue i seguenti passaggi principali:
 1. **Connessione alla porta FTP (21)** del server vulnerabile e ricezione del banner.
@@ -16,7 +18,9 @@ Il codice dell'exploit Metasploit esegue i seguenti passaggi principali:
 
 Abbiamo replicato questi passaggi in Python.
 
-## Implementazione manuale dello script Python
+---
+
+## 🧑‍💻 Implementazione manuale dello script Python
 
 Lo script Python **vsftpd_exploit.py** riproduce il funzionamento dell'exploit di Metasploit:
 1. **Attivazione della backdoor**:
@@ -43,7 +47,9 @@ root@192.168.50.3 # whoami
 root
 ```
 
-## Estensione con GUI
+---
+
+## 🖥️ Estensione con GUI
 
 Per rendere il programma più user-friendly, abbiamo integrato una **interfaccia grafica (GUI)** utilizzando **Tkinter**. La GUI consente di:
 1. **Inserire l'indirizzo IP del target.**
@@ -69,7 +75,9 @@ Inserisci l'indirizzo IP del target: [__________________________]
 
 ![Success](./extrapython.png)
 
-## Risultati finali
+---
+
+## 📊 Risultati finali
 
 Grazie a questa implementazione, è possibile:
 1. Sfruttare manualmente la vulnerabilità di `vsftpd 2.3.4` senza dipendere da Metasploit.
@@ -77,8 +85,9 @@ Grazie a questa implementazione, è possibile:
 3. Interagire con il target in modo intuitivo attraverso una shell interattiva.
 4. Utilizzare una GUI semplice e funzionale per scegliere l'indirizzo IP target.
 
+---
 
-## Comandi e strumenti utilizzati
+## 🛠️ Comandi e strumenti utilizzati
 
 1. **Nmap** per la scansione delle porte:
    ```bash
@@ -89,5 +98,7 @@ Grazie a questa implementazione, è possibile:
 
 3. **Tkinter** per creare un'interfaccia grafica semplice e intuitiva.
 
-## Mission Success 🚀
+---
+
+## ✅ Mission Success 🚀
 Questa implementazione offre un'alternativa leggera e manuale a Metasploit, dimostrando comprensione approfondita del funzionamento degli exploit.
