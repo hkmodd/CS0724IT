@@ -181,4 +181,4 @@ L'utilizzo dell'exploit PwnKit ci ha permesso di ottenere privilegi **root** par
 
 ---
 
-#🚀 **Missione completata con successo!**
+# 🚀 **Missione completata con successo!**
