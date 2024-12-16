@@ -181,14 +181,4 @@ L'utilizzo dell'exploit PwnKit ci ha permesso di ottenere privilegi **root** par
 
 ---
 
-## 🎯 **Conclusione**
-Abbiamo ottenuto accesso completo alla macchina target partendo da una fase di **enumerazione** fino all'ottenimento dei privilegi **root**. La metodologia seguita è stata:
-
-1. Identificazione dei servizi attivi con Nmap.
-2. Accesso anonimo FTP e raccolta di informazioni.
-3. Scoperta e accesso a WordPress per ottenere una **reverse shell**.
-4. Trasferimento ed esecuzione dell'exploit **PwnKit** per ottenere root access.
-
----
-
-🚀 **Missione completata con successo!**
+#🚀 **Missione completata con successo!**
