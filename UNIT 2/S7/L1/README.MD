@@ -54,6 +54,7 @@ Command shell session opened
 whoami
 root
 ```
+![SuccessFTPExploit](./ShellFTPSuccess.png)
 
 ## Risultato finale 💪
 L'obiettivo è stato raggiunto con successo:
@@ -84,7 +85,5 @@ L'obiettivo è stato raggiunto con successo:
    ```bash
    whoami
    ```
-
-![SuccessFTPExploit](./ShellFTPSuccess.png)
 
 ## Mission Success 🏆🚀
