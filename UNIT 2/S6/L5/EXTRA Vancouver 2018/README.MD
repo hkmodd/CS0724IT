@@ -65,6 +65,7 @@ Questa relazione documenta le fasi eseguite per analizzare e sfruttare le vulner
   - **Password**: `enigma`
 
 - Accedendo al pannello amministrativo di WordPress con le credenziali trovate, è stato caricato un **plugin malevolo** contenente una **reverse shell PHP**, consentendo l'accesso al sistema come utente **www-data** (privilegi bassi).
+# CI SARA MAI UTILE?
 
 ---
 
