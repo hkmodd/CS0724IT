@@ -51,7 +51,9 @@ Dopo lunghi minuti di attesa, ecco la combinazione perfetta:
 - **Username**: `john`
 - **Password**: `enigma`
 
-Con queste credenziali, ho avuto accesso al pannello di WordPress. Qui ho caricato un **plugin malevolo** contenente una reverse shell. Finalmente, **www-data** era mio. Ma con un utente di basso livello, cosa potevo fare? Dannazione...
+Con queste credenziali, ho avuto accesso al pannello di WordPress. 
+### Qui ho caricato un **plugin malevolo** contenente una reverse shell. Finalmente, **www-data** era mio. 
+Ma con un utente di basso livello, cosa potevo fare? Dannazione...
 
 ---
 
