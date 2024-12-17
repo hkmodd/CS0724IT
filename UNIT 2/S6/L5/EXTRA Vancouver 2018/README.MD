@@ -79,7 +79,9 @@ A questo punto, la sorpresa: `anne` aveva i privilegi di **sudo** abilitati. Con
 Avevo ottenuto l'accesso **root** senza dover fare altro. Ma, ironia della sorte, non ho voluto fare **assolutamente nulla** con questo accesso root. 
 Ho chiuso l'accesso SSH e sono tornato alla mia reverse shell caricata tramite  WordPress dove ero user di basso privilegio.
 
-## 🏆 **Escalation dei Privilegi Alternativa**
+---
+
+# 🏆 **Escalation dei Privilegi Alternativa**
 
 E' stato qui che ho deciso di intraprendere nuove strade SENZA AUTENTICAZIONE che mi permettessero di raggiungere l'obiettivo, informandomi dunque sulle vulnerabilità della macchina target decisi di affrontare **PwnKit**. Ho sbattuto la testa nel tentativo di **compilare l'exploit** direttamente sulla macchina target e anche da Kali con le dipendenze necessarie teoricamente corrette. Dopo svariati errori e tentativi falliti, ho abbandonato l'idea della compilazione e sono passato alla soluzione più pratica: usare l'exploit **precompilato**.
 
