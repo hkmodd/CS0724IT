@@ -134,7 +134,7 @@ L'attacco è stato completato con successo. Le fasi principali sono state:
 Ecco il tuo **README.MD** aggiornato con il metodo utilizzato per ottenere l'accesso root tramite **PwnKit** (32-bit), con **server Python** e **wget**.
 
 ---
-
+# xxX__EXTRA Dell'EXTRA__Xxx
 # 📌 CATTIVERIA PURA #1 **Uso dell'Exploit [PwnKit](https://github.com/ly4k/PwnKit) (CVE-2021-4034)**
 Per ottenere l'escalation di privilegi fino a **root**, abbiamo sfruttato la vulnerabilità **CVE-2021-4034** (PwnKit) utilizzando un exploit precompilato a 32-bit.
 
