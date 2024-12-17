@@ -57,7 +57,7 @@ Con queste credenziali, ho avuto accesso al pannello di WordPress. Qui ho carica
 
 ## 🔒 **Cracking dell'SSH Tramite Hydra**
 La shell **www-data** sembrava un vicolo cieco.
-Prima di arrendermi in realtà con tutto quanto dalla frustrazione, ho deciso di provare un attacco **Hydra** sul servizio SSH usando la lista di utenti recuperati con poche speranze, finché mi imbatto in anne.
+Prima di arrendermi in realtà con tutto quanto dalla frustrazione, ho deciso di provare un attacco **Hydra** sul servizio SSH usando la lista di utenti recuperati con poche speranze, finché mi imbatto in anne, capendo che fosse l'unica accessibile con password in ssh.
 Utilizzando un bel comando hydra ottimizzato per mandare molte richieste:
 
 ```bash
