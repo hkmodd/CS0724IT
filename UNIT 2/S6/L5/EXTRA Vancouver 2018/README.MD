@@ -42,7 +42,7 @@ Inizialmente, con **Gobuster** non ero riuscito a individuare nulla di interessa
 
 Una volta scoperta questa directory, ho iniziato a mettere le mani nel servizio WordPress.
 
-Per enumerare gli utenti e testare combinazioni di password comuni, ho lanciato **WPScan**:
+Per enumerare gli utenti e testare combinazioni di password comuni, ho lanciato **WPScan** con il mio token (inserirò un comando più generico senza token):
    ```bash
    wpscan --url http://192.168.1.170/backup_wordpress --enumerate u --passwords rockyou.txt
    ```
