@@ -1,4 +1,3 @@
-# EXTRA S6/L5
 # 🛡️ Vancouver 2018 Exploitation Report
 
 ## 📋 **Descrizione Generale**
