@@ -38,7 +38,7 @@ Lo script Python **vsftpd_exploit.py** riproduce il funzionamento dell'exploit d
 
 ---
 
-## 📊 Risultati finali
+## ✅ Mission Success 🚀
 
 Grazie a questa implementazione, è possibile:
 1. Sfruttare manualmente la vulnerabilità di `vsftpd 2.3.4` senza dipendere da Metasploit.
@@ -48,5 +48,3 @@ Grazie a questa implementazione, è possibile:
 
 ---
 
-## ✅ Mission Success 🚀
-Questa implementazione offre un'alternativa leggera e manuale a Metasploit, dimostrando comprensione approfondita del funzionamento degli exploit.
