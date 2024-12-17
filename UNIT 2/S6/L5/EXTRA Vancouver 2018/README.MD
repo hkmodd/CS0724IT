@@ -51,12 +51,12 @@ Dopo lunghi minuti di attesa, ecco la combinazione perfetta:
 - **Username**: `john`
 - **Password**: `enigma`
 
-Con queste credenziali, ho avuto accesso al pannello di WordPress. Qui ho caricato un **plugin malevolo** contenente una reverse shell. Finalmente, **www-data** era mio. Ma con un utente di basso livello, cosa potevo fare?
+Con queste credenziali, ho avuto accesso al pannello di WordPress. Qui ho caricato un **plugin malevolo** contenente una reverse shell. Finalmente, **www-data** era mio. Ma con un utente di basso livello, cosa potevo fare? Dannazione...
 
 ---
 
 ## 🔒 **Cracking dell'SSH Tramite Hydra**
-La shell **www-data** sembrava una strada chiusa. (Ma più tardi eheh ci arriveremo) 
+La shell **www-data** sembrava un vicolo cieco.
 Prima di arrendermi in realtà con tutto quanto dalla frustrazione, ho deciso di provare un attacco **Hydra** sul servizio SSH usando la lista di utenti recuperati con poche speranze, finché mi imbatto in anne.
 
 ```bash
