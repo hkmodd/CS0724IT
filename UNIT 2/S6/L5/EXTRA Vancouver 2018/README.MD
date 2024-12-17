@@ -56,14 +56,14 @@ Con queste credenziali, ho avuto accesso al pannello di WordPress. Qui ho carica
 ---
 
 ## 🔒 **Accesso Completo Tramite SSH**
-La shell **www-data** sembrava una strada chiusa. E invece no. Prima di arrendermi, ho deciso di provare un attacco **Hydra** sul servizio SSH usando la lista di utenti recuperati.
+La shell **www-data** sembrava una strada chiusa. (Ma più tardi eheh ci arriveremo) 
+Prima di arrendermi in realtà con tutto quanto dalla frustrazione, ho deciso di provare un attacco **Hydra** sul servizio SSH usando la lista di utenti recuperati con poche speranze, finché mi imbatto in anne.
 
 ```bash
 hydra -l anne -P /usr/share/wordlists/rockyou.txt ssh://192.168.1.170
 ```
 
-Dopo molteplici tentativi, ho trovato questa combinazione:
-- **Username**: `anne`
+**EUREKA**:
 - **Password**: `princess`
 
 Con queste credenziali, ho effettuato il login SSH:
