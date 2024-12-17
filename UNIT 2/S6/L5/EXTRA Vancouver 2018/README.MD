@@ -134,7 +134,7 @@ Ecco il tuo **README.MD** aggiornato con il metodo utilizzato per ottenere l'acc
 
 ---
 
-# 4️⃣ CATTIVERIA PURA **Uso dell'Exploit PwnKit (CVE-2021-4034)**
+# 📌 CATTIVERIA PURA #1 **Uso dell'Exploit [PwnKit](https://github.com/ly4k/PwnKit) (CVE-2021-4034)**
 Per ottenere l'escalation di privilegi fino a **root**, abbiamo sfruttato la vulnerabilità **CVE-2021-4034** (PwnKit) utilizzando un exploit precompilato a 32-bit.
 
 **Passaggi Seguiti**:
@@ -185,7 +185,7 @@ L'utilizzo dell'exploit PwnKit ci ha permesso di ottenere privilegi **root** par
 
 ---
 
-# 📌Privilege Escalation tramite Cron Job e Backdoor SetUID
+# 📌CATTIVERIA PURA #2 **Privilege Escalation tramite Cron Job e Backdoor SetUID**
 
 ### **Descrizione del problema**
 Scoperto un altro approccio con cron job configurato in `/etc/crontab` esegue lo script `/usr/local/bin/cleanup` come utente **root**. Tuttavia, lo script ha permessi **world-writable** (`rwxrwxrwx`), permettendo a chiunque di modificarlo.
