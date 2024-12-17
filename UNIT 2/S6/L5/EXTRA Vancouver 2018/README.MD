@@ -115,9 +115,9 @@ Dopo aver scaricato il precompilato 32 bit:
 ---
 
 ### 2️⃣ **Cron Job Exploit: L'Ultimo Colpo**
-Per non farmi mancare nulla, ho individuato un cron job che eseguiva lo script **`/usr/local/bin/cleanup`** come **root**, ma con permessi **world-writable**. 
+Per non farmi mancare nulla, già di mio sospettavo di cron jobs vulnerabili, dunque in seguito a indagine mirata ho individuato un cron job che eseguiva lo script **`/usr/local/bin/cleanup`** come **root**, ma con permessi **world-writable**. 
 
-Ho pensato: "Questa è una porta spalancata!".
+Ho pensato: "Wow, è stato lì tutto questo cazzo di tempo" e "It was him, it was him since the beginning".
 
 1. Ho modificato lo script per creare una **backdoor**:
    ```bash
@@ -146,7 +146,8 @@ Quattro giorni di lavoro, frustrazioni, caffè e ore perse a guardare uno scherm
 - **Verificare sempre i privilegi utente**. A volte la soluzione è più semplice di quanto sembri.
 - **La pratica batte la teoria**. Saper aggirare problemi come compilazioni fallite è parte del gioco.
 
-Questo lavoro è stato una vera battaglia contro la macchina, ma alla fine ho vinto. 
+
+Questo lavoro è stato una vera battaglia contro la macchina, ma alla fine ho vinto e mi sono divertito un mondo!
 
 ![Success](./RootSuccess.png)
 
