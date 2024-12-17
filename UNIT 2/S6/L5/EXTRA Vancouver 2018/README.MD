@@ -84,12 +84,12 @@ Ho chiuso l'accesso SSH e sono tornato alla mia reverse shell caricata tramite  
 
 # 🏆 **Escalation dei Privilegi Alternativa**
 
+### 1️⃣ **Kernel Exploit - PwnKit (CVE-2021-4034)**
+
+Avevo sentito parlare di **PwnKit**. Era il momento di metterlo alla prova. 
 E' stato qui che ho deciso di intraprendere nuove strade **SENZA AUTENTICAZIONE** che mi permettessero di raggiungere l'obiettivo, informandomi dunque sulle vulnerabilità della macchina target decisi di affrontare **PwnKit**. Ho sbattuto la testa nel tentativo di **compilare l'exploit** direttamente sulla macchina target e anche da Kali con le dipendenze necessarie teoricamente corrette. Dopo svariati errori e tentativi falliti, ho abbandonato l'idea della compilazione e sono passato alla soluzione più pratica: usare l'exploit **precompilato**.
 
----
 
-### 1️⃣ **Kernel Exploit - PwnKit (CVE-2021-4034)**
-Avevo sentito parlare di **PwnKit**. Era il momento di metterlo alla prova. 
 Dopo aver scaricato il precompilato 32 bit:
 
 1. Ho avviato un server HTTP sulla mia macchina Kali:
