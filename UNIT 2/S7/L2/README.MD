@@ -122,12 +122,3 @@ Questa esercitazione ha dimostrato come:
 
 La simulazione è un esempio concreto di **analisi, sfruttamento e consolidamento** dell'accesso a un sistema compromesso, evidenziando l'importanza di proteggere i servizi esposti. 
 
----
-
-## 👨‍💻 Autore
-**Sebastiano | Consegna S7/L2**
-
----
-
-## ⚠️ Note
-Questo documento è a scopo puramente educativo e dimostrativo per la sicurezza informatica. Ogni utilizzo improprio è severamente vietato. 🚨
