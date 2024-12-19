@@ -55,8 +55,6 @@ Prima di iniziare l'attacco, ho verificato che il servizio Icecast fosse attivo 
    ```
    - **Risultato:** Sessione Meterpreter aperta con successo!
 
-   ![Sessione Meterpreter](./MeterpreterWin10.png)
-
 ## 🎯 **Obiettivi raggiunti**
 
 1. **Identificazione dell'indirizzo IP**
