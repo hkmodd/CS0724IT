@@ -20,10 +20,9 @@ Il quiz finale è stato un momento coinvolgente e pratico, permettendoci di appl
 ## 🏆 **Certificazione**
 Al termine del quiz, abbiamo raggiunto il punteggio massimo, ottenendo così il certificato di completamento del corso.
 
-![Certificazione](./darkWebOperations.png)
+![Certificazione](./DarkWebOperations.png)
 
 ## 🤔 **Riflessioni**
 - Il corso è stato un'ottima introduzione pratica al mondo della sicurezza informatica e delle operazioni sul dark web.
 - L'esercitazione finale è stata particolarmente interessante per via della combinazione tra teoria e pratica, stimolando il ragionamento critico e l'uso di strumenti di decodifica.
 
-![Certification](./GELMETTISEBASTIANO.pdf)
