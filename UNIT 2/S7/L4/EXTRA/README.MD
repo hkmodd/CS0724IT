@@ -1,5 +1,7 @@
 # Certificazione "Introduction to Dark Web Operations"
 
+![Certification](./Certification.png)
+
 ## 🖥️ **Iscrizione e Corso**
 - Ci siamo iscritti al portale **Security Blue Team** creando un account con la nostra email. Una volta registrati, abbiamo selezionato il corso gratuito "Introduction to Dark Web Operations".
 - Il corso comprendeva **17 moduli teorici**, ognuno corredato da informazioni pratiche sull'utilizzo del dark web e sulle tecniche di investigazione. 
