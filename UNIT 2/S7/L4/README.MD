@@ -73,24 +73,16 @@ Prima di iniziare l'attacco, ho verificato che il servizio Icecast fosse attivo 
 
    ![Screenshot Desktop](./MeterpreterWin10.png)
 
-## 🤔 **Riflessioni personali**
+## 🚀 **Conclusioni**
 
+La combinazione di analisi, configurazione accurata e utilizzo degli strumenti giusti ha reso possibile il successo dell'attacco. 
+Questo esercizio dimostra quanto sia cruciale mantenere aggiornati i sistemi per prevenire vulnerabilità note. Come aspirante Ethical Hacker, continuo a rafforzare le mie competenze per identificare e mitigare tali rischi.
 Questo esercizio mi ha permesso di comprendere meglio:
 
 - 🕵️‍♂️ L'importanza della ricognizione e della preparazione prima di eseguire un exploit.
 - 🔒 Le implicazioni di sicurezza di servizi non aggiornati come Icecast.
 - 🛡️ La necessità di un approccio etico nell'uso di strumenti potenti come Metasploit.
 
-La combinazione di analisi, configurazione accurata e utilizzo degli strumenti giusti ha reso possibile il successo dell'attacco. 
-
-## 📂 **Struttura del progetto**
-
-- `README.md`: Questo file, documentazione dell'esercizio.
-- `MeterpreterWin10.png`: Screenshot catturato tramite Meterpreter.
-
-## 🚀 **Conclusioni**
-
-Questo esercizio dimostra quanto sia cruciale mantenere aggiornati i sistemi per prevenire vulnerabilità note. Come aspirante Ethical Hacker, continuo a rafforzare le mie competenze per identificare e mitigare tali rischi.
 
 ---
 **Autore:** Sebastiano  
