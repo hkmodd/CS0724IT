@@ -1,8 +1,5 @@
 # Certificazione "Introduction to Dark Web Operations"
 
-## 📜 **Introduzione**
-Questa breve relazione descrive il processo che ci ha portato a ottenere la certificazione "Introduction to Dark Web Operations" su Security Blue Team. Il corso ci ha fornito una panoramica sulla clear, deep e dark web, mettendo in pratica strumenti e tecniche utilizzati nel mondo reale da analisti di sicurezza, forze dell'ordine e professionisti della privacy.
-
 ## 🖥️ **Iscrizione e Corso**
 - Ci siamo iscritti al portale **Security Blue Team** creando un account con la nostra email. Una volta registrati, abbiamo selezionato il corso gratuito "Introduction to Dark Web Operations".
 - Il corso comprendeva **17 moduli teorici**, ognuno corredato da informazioni pratiche sull'utilizzo del dark web e sulle tecniche di investigazione. 
@@ -23,12 +20,10 @@ Il quiz finale è stato un momento coinvolgente e pratico, permettendoci di appl
 ## 🏆 **Certificazione**
 Al termine del quiz, abbiamo raggiunto il punteggio massimo, ottenendo così il certificato di completamento del corso.
 
-![Certificazione](./dark_web_cert.png)
+![Certificazione](./darkWebOperations.png)
 
 ## 🤔 **Riflessioni**
 - Il corso è stato un'ottima introduzione pratica al mondo della sicurezza informatica e delle operazioni sul dark web.
 - L'esercitazione finale è stata particolarmente interessante per via della combinazione tra teoria e pratica, stimolando il ragionamento critico e l'uso di strumenti di decodifica.
 
----
-**Autore:** Sebastiano  
-**Data:** 19 dicembre 2024
+![Certification](./GELMETTISEBASTIANO.pdf)
