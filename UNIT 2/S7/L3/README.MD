@@ -1,4 +1,5 @@
-# Consegna S7/L3: Ottenere una Shell Root con Exploit PostgreSQL
+# 📝 Consegna S7/L3
+# Ottenere una Shell Root con Exploit PostgreSQL
 
 ## 📝 **Descrizione del progetto**
 In questa esercitazione abbiamo utilizzato l'exploit **PostgreSQL Payload** di Metasploit per ottenere una shell con privilegi limitati su un sistema vulnerabile (**Metasploitable 2**). Successivamente, abbiamo sfruttato il binario `nmap` con **bit SUID** attivo per eseguire manualmente un'escalation di privilegi ed ottenere **root** sul sistema.
