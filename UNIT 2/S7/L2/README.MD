@@ -1,4 +1,5 @@
-# Consegna S7/L2 | Hacking con Metasploit
+# 📝 Consegna S7/L2
+# Hacking con Metasploit
 
 ## 🎯 Obiettivo
 L'obiettivo di questa esercitazione è stato esplorare e applicare tecniche di **ethical hacking** utilizzando **Metasploit Framework** per:
