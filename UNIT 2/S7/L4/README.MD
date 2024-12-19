@@ -83,8 +83,3 @@ Questo esercizio mi ha permesso di comprendere meglio:
 - 🕵️‍♂️ L'importanza della ricognizione e della preparazione prima di eseguire un exploit.
 - 🔒 Le implicazioni di sicurezza di servizi non aggiornati come Icecast.
 - 🛡️ La necessità di un approccio etico nell'uso di strumenti potenti come Metasploit.
-
-
----
-**Autore:** Sebastiano  
-**Data:** 19 dicembre 2024
