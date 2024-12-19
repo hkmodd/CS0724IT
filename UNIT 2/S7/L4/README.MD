@@ -1,4 +1,5 @@
-# Consegna S7/L4: Utilizzo di Metasploit per sfruttare Icecast su Windows 10
+# 📝 Consegna S7/L4
+# Utilizzo di Metasploit per sfruttare Icecast su Windows 10
 
 ## 📝 **Introduzione**
 Questa relazione documenta l'uso di Metasploit per ottenere una sessione **Meterpreter** su un sistema Windows 10 vulnerabile con Icecast in esecuzione. L'obiettivo era sfruttare una vulnerabilità nota di Icecast per:
