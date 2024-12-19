@@ -22,7 +22,7 @@ Un network di traffico di droga nel Regno Unito è stato smantellato grazie alla
 ## 🔍 **Passaggi Eseguiti**
 
 ### 1. Accesso al sito
-![Pagina di Login](./DarkWebOperations.png)
+
 - **Link fornito:** `5xdv6dqxv2bsbmlgttsq3ma3nw6ffa2zhqbl7o4w46p32wsqulzrtsqd.onion`
 - Ho scaricato il browser Tor e utilizzato una VPN per garantire l'anonimato.
 - Visitando il link, sono stato accolto da una pagina di login. Utilizzando la console del browser, ho eseguito il comando:
@@ -54,7 +54,7 @@ Un network di traffico di droga nel Regno Unito è stato smantellato grazie alla
 ## 🏆 **Certificazione**
 - Dopo aver completato la challenge, ho raggiunto il punteggio massimo e ottenuto il certificato di completamento.
 
-![Certificazione](./Certification.png)
+![End](./DarkWebOperations.png)
 
 ## 🤔 **Riflessioni**
 - Questo corso è stato un'eccellente introduzione pratica alla sicurezza informatica e alle investigazioni digitali nel dark web.
