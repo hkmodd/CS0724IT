@@ -73,6 +73,8 @@ Prima di iniziare l'attacco, ho verificato che il servizio Icecast fosse attivo 
 
    ![Screenshot Desktop](./MeterpreterWin10.png)
 
+![Win10screen](./CAnQgnFm.jpeg)
+
 ## 🚀 **Conclusioni**
 
 La combinazione di analisi, configurazione accurata e utilizzo degli strumenti giusti ha reso possibile il successo dell'attacco. 
