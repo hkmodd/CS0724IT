@@ -1,4 +1,5 @@
-# Progetto S7/L5 - Altri utilizzi vari di Metasploit 🚀
+# 📐 Progetto S7/L5 📐
+# Altri utilizzi vari di Metasploit 🚀
 
 ## 📋 Descrizione
 Questo progetto esplora l'uso avanzato di **Metasploit Framework**, concentrandosi su:
