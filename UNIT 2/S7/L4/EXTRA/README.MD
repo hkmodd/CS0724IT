@@ -22,7 +22,7 @@ Un network di traffico di droga nel Regno Unito è stato smantellato grazie alla
 ## 🔍 **Passaggi Eseguiti**
 
 ### 1. Accesso al sito
-![Pagina di Login](./DarkWebOperations.png)
+
 - **Link fornito:** `5xdv6dqxv2bsbmlgttsq3ma3nw6ffa2zhqbl7o4w46p32wsqulzrtsqd.onion`
 - Ho scaricato il browser Tor e utilizzato una VPN per garantire l'anonimato.
 - Visitando il link, sono stato accolto da una pagina di login. Utilizzando la console del browser, ho eseguito il comando:
@@ -54,22 +54,14 @@ Un network di traffico di droga nel Regno Unito è stato smantellato grazie alla
 ## 🏆 **Certificazione**
 - Dopo aver completato la challenge, ho raggiunto il punteggio massimo e ottenuto il certificato di completamento.
 
-![Certificazione](./Certification.png)
+![End](./DarkWebOperations.png)
 
 ## 🤔 **Riflessioni**
 - Questo corso è stato un'eccellente introduzione pratica alla sicurezza informatica e alle investigazioni digitali nel dark web.
 - La challenge finale ha combinato teoria e pratica, stimolando il ragionamento critico e l'uso di strumenti di analisi e decodifica.
-
-## 📈 **Competenze Acquisite**
 - **Navigazione Sicura nel Dark Web:** Uso di browser TOR e VPN.
 - **Analisi di Dati Codificati:** Decodifica di contenuti Base64 ed esadecimali.
 - **Tecniche di Investigazione Digitale:** Identificazione e tracciamento di attività illecite.
 
-## 📎 **Risorse Utili**
-- [Tor Project](https://www.torproject.org/): per accedere al dark web in modo sicuro.
-- [Decoder Base64](https://www.base64decode.net/): per decodificare stringhe Base64.
-- [Strumenti OSINT](https://osintframework.com/): per raccogliere informazioni pubbliche utili alle investigazioni.
-
-## 📝 **Note Personali**
-- Consiglio vivamente questo corso a chiunque voglia migliorare le proprie competenze in cybersecurity e investigazioni digitali.
-- L’approccio pratico del corso è stato fondamentale per comprendere le sfide reali della sicurezza informatica.
+## Consiglio vivamente questo corso a chiunque voglia migliorare le proprie competenze in cybersecurity e investigazioni digitali.
+## L’approccio pratico del corso è stato fondamentale per comprendere le sfide reali della sicurezza informatica.
