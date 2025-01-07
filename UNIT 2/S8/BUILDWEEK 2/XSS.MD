@@ -54,6 +54,7 @@ Iniettare uno script malevolo nella web application DVWA per inviare i cookie de
      ```
      PHPSESSID=abcdef1234567890; security=low
      ```
+![XSSLow](./XSSLow.png)
 
 ---
 
