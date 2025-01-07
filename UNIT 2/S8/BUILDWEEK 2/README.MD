@@ -599,6 +599,7 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
    ```cmd
    systeminfo
    ```
+[1](./Screenshots/Meterpreterwindows1.png)
 
 #### **4.2 Recupero delle impostazioni di rete**
 1. Tornare a Meterpreter ed eseguire:
@@ -606,12 +607,14 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
    ipconfig
    ```
    - Annotare le configurazioni di rete.
+[2](./Screenshots/MeterpreterwindowsReti.png)
 
 #### **4.3 Controllo delle webcam**
 1. Questo comando non è supportato dalla sessione `java/meterpreter`. Per verificare, utilizzare la shell di Windows:
    ```cmd
    wmic path win32_pnpentity get name | findstr /i "camera"
    ```
+[3](./Screenshots/MeterpreterwindowsWebcam.png)
 
 #### **4.4 Cattura di uno screenshot**
 1. Aprire **PowerShell** dalla shell di Windows:
