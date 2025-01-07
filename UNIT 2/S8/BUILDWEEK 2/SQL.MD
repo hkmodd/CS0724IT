@@ -71,8 +71,6 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 4. **Decifra la password hash**:
    - Decifra l'hash `0d107d09f5bbe40cade3de5c71e9e9b7` utilizzando uno strumento come [Crackstation](https://crackstation.net) per ottenere la password: `letmein`.
 
-![John](./JohnMD5crack.png)
-
 ---
 
 ## **Strumenti Utili**
@@ -90,6 +88,7 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
      ```bash
      john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
      ```
+![John](./JohnMD5crack.png)
 
 ---
 
