@@ -45,6 +45,8 @@ Estrarre i dati dell'utente **Pablo**, inclusa la sua password hash MD5.
 ### **Obiettivo**
 Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payload in formato hexadecimal.
 
+![SQLMedium](./SQLmedium.png)
+
 ### **Passaggi**
 
 1. **Vai alla pagina di SQL Injection**:
@@ -65,6 +67,12 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 
 4. **Decifra la password hash**:
    - Decifra l'hash `0d107d09f5bbe40cade3de5c71e9e9b7` utilizzando uno strumento come [Crackstation](https://crackstation.net) per ottenere la password: `letmein`.
+
+![John](./JohnMD5crack.png)
+
+![PabloLow](./EstraggoPablo.png)
+
+![PabloMedium](./EstraggoPabloMedium.png)
 
 ---
 
