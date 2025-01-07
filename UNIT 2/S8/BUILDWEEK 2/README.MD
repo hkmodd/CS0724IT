@@ -498,7 +498,7 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 ---
 ---
 
-# 🛡️ Traccia Giorno 5: Exploit di Windows 10 con Metasploit
+# 🛡️ TRACCIA GIORNO 5: Exploit di Windows 10 con Metasploit
 
 ## 📋 Descrizione
 Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per ottenere una sessione Meterpreter. L'obiettivo di questa traccia è:
