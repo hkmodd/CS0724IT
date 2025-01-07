@@ -19,6 +19,8 @@ Questa guida fornisce istruzioni passo-passo per eseguire una SQL Injection sull
 ### **Obiettivo**
 Estrarre i dati dell'utente **Pablo**, inclusa la sua password hash MD5.
 
+![PabloLow](./EstraggoPablo.png)
+
 ### **Passaggi**
 
 1. **Vai alla pagina di SQL Injection**:
@@ -57,7 +59,8 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
    ```sql
    0x27 UNION SELECT user, password FROM dvwa.users WHERE user=0x5061626c6f -- 
    ```
-   
+![PabloMedium](./EstraggoPabloMedium.png)
+
    - `0x27` è il formato hexadecimal per l'apostrofo (`'`).
    - `0x5061626c6f` è il formato hexadecimal per `Pablo`.
 
@@ -69,10 +72,6 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
    - Decifra l'hash `0d107d09f5bbe40cade3de5c71e9e9b7` utilizzando uno strumento come [Crackstation](https://crackstation.net) per ottenere la password: `letmein`.
 
 ![John](./JohnMD5crack.png)
-
-![PabloLow](./EstraggoPablo.png)
-
-![PabloMedium](./EstraggoPabloMedium.png)
 
 ---
 
