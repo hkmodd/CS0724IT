@@ -2,7 +2,6 @@
 
 ---
 ---
----
 
 # 🛠 **TRACCIA GIORNO 1: SQL Injection su DVWA (Low e Medium)**
 
@@ -100,7 +99,6 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 
 Seguendo questa guida, abbiamo dimostrato come eseguire una SQL Injection su DVWA per estrarre i dati dell'utente **Pablo** e decifrare la sua password MD5 `letmein`. Questi test sottolineano l'importanza di proteggere le applicazioni web da vulnerabilità di SQL Injection.
 
----
 ---
 ---
 
@@ -234,7 +232,6 @@ Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Pe
 
 Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! 🚀
 
----
 ---
 ---
 
@@ -397,7 +394,7 @@ Segmentation fault (core dumped)
 
 ---
 ---
----
+
 # 🛡️ TRACCIA GIORNO 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable
 
 ## 📋 Descrizione
@@ -497,6 +494,7 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 - 🔎 Il **Vulnerability Scanning** ha evidenziato una vulnerabilità critica nel servizio Samba sulla porta **445 TCP**.
 - 💥 La vulnerabilità è stata sfruttata con successo utilizzando l'exploit **exploit/multi/samba/usermap_script** di Metasploit.
 - 🖥️ È stato ottenuto accesso alla macchina compromessa e confermato l'indirizzo IP tramite il comando `ifconfig`.
+
 ---
 ---
----
+
