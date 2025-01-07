@@ -1,4 +1,5 @@
-# Progetto S7/L5 - Altri utilizzi vari di Metasploit 🚀
+# 📐 Progetto S7/L5 📐
+# Java RMI exploit --> recupero informazioni rete e tabella di routing 🚀
 
 ## 📋 Descrizione
 Questo progetto esplora l'uso avanzato di **Metasploit Framework**, concentrandosi su:
