@@ -93,6 +93,8 @@ Aggirare i filtri di input e sfruttare la vulnerabilità XSS per ottenere i cook
      PHPSESSID=abcdef1234567890; security=medium
      ```
 
+![XSSMedium](./XSSMedium.png)
+
 ---
 
 ## **Spiegazione dei Payload**
