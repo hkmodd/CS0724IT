@@ -1,7 +1,6 @@
-# 🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**  
+# 🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**
 
-## TRACCIA GIORNO 1
-## **Guida: SQL Injection su DVWA (Low e Medium)**
+## 🛠 **TRACCIA GIORNO 1: SQL Injection su DVWA (Low e Medium)**
 
 Questa guida fornisce istruzioni passo-passo per eseguire una SQL Injection sulla piattaforma **DVWA (Damn Vulnerable Web Application)**. L'obiettivo è estrarre i dati sensibili dell'utente **Pablo** in modalità **Low** e **Medium**, e decifrare la sua password hash **MD5**.
 
@@ -17,14 +16,14 @@ Questa guida fornisce istruzioni passo-passo per eseguire una SQL Injection sull
 
 ---
 
-## **Parte 1: SQL Injection in Modalità Low**
+## 🔍 **Parte 1: SQL Injection in Modalità Low**
 
-### **Obiettivo**
+### 🎯 **Obiettivo**
 Estrarre i dati dell'utente **Pablo**, inclusa la sua password hash MD5.
 
 ![PabloLow](./EstraggoPablo.png)
 
-### **Passaggi**
+### 📝 **Passaggi**
 
 1. **Vai alla pagina di SQL Injection**:
    - URL: `http://<IP_DVWA>/dvwa/vulnerabilities/sqli/`
@@ -45,14 +44,14 @@ Estrarre i dati dell'utente **Pablo**, inclusa la sua password hash MD5.
 
 ---
 
-## **Parte 2: SQL Injection in Modalità Medium**
+## 🔍 **Parte 2: SQL Injection in Modalità Medium**
 
-### **Obiettivo**
+### 🎯 **Obiettivo**
 Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payload in formato hexadecimal.
 
 ![SQLMedium](./SQLmedium.png)
 
-### **Passaggi**
+### 📝 **Passaggi**
 
 1. **Vai alla pagina di SQL Injection**:
    - URL: `http://<IP_DVWA>/dvwa/vulnerabilities/sqli/`
@@ -76,7 +75,7 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 
 ---
 
-## **Strumenti Utili**
+## 🛠 **Strumenti Utili**
 
 1. **Siti per decifrare hash MD5**:
    - [Crackstation](https://crackstation.net)
@@ -99,13 +98,9 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 
 Seguendo questa guida, abbiamo dimostrato come eseguire una SQL Injection su DVWA per estrarre i dati dell'utente **Pablo** e decifrare la sua password MD5 `letmein`. Questi test sottolineano l'importanza di proteggere le applicazioni web da vulnerabilità di SQL Injection.
 
-Se hai bisogno di ulteriore supporto o chiarimenti, non esitare a contattarci!
-
 ---
 
-# TRACCIA GIORNO 2
-
-## **Guida: Exploit XSS Persistente su DVWA (Low e Medium)**
+## 🛡 **TRACCIA GIORNO 2: Exploit XSS Persistente su DVWA (Low e Medium)**
 
 Questa guida illustra come sfruttare una vulnerabilità di **Cross-Site Scripting (XSS) Persistente** sulla piattaforma **DVWA (Damn Vulnerable Web Application)** in modalità **Low** e **Medium**. L'obiettivo è simulare il furto di cookie di sessione inviandoli a un server sotto il nostro controllo.
 
@@ -122,12 +117,12 @@ Questa guida illustra come sfruttare una vulnerabilità di **Cross-Site Scriptin
 
 ---
 
-## **Parte 1: XSS Persistente in Modalità Low**
+## 🔍 **Parte 1: XSS Persistente in Modalità Low**
 
-### **Obiettivo**
+### 🎯 **Obiettivo**
 Iniettare uno script malevolo nella web application DVWA per inviare i cookie della sessione al nostro server di ascolto.
 
-### **Passaggi**
+### 📝 **Passaggi**
 
 1. **Configura il Server di Ascolto su Kali Linux**:
    - Avvia Netcat per ricevere i cookie sulla porta 4444:
@@ -165,12 +160,12 @@ Iniettare uno script malevolo nella web application DVWA per inviare i cookie de
 
 ---
 
-## **Parte 2: XSS Persistente in Modalità Medium**
+## 🔍 **Parte 2: XSS Persistente in Modalità Medium**
 
-### **Obiettivo**
+### 🎯 **Obiettivo**
 Aggirare i filtri di input e sfruttare la vulnerabilità XSS per ottenere i cookie della sessione.
 
-### **Passaggi**
+### 📝 **Passaggi**
 
 1. **Configura il Server di Ascolto su Kali Linux**:
    - Utilizza lo stesso comando di Netcat:
@@ -204,7 +199,7 @@ Aggirare i filtri di input e sfruttare la vulnerabilità XSS per ottenere i cook
 
 ---
 
-## **Spiegazione dei Payload**
+## 📌 **Spiegazione dei Payload**
 
 ### **Payload in Modalità Low**
 - `<script>`: Inietta uno script JavaScript nella pagina vulnerabile.
@@ -218,7 +213,7 @@ Aggirare i filtri di input e sfruttare la vulnerabilità XSS per ottenere i cook
 
 ---
 
-## **Considerazioni di Sicurezza**
+## 🛡 **Considerazioni di Sicurezza**
 
 Per proteggere le applicazioni da attacchi XSS:
 
@@ -231,8 +226,8 @@ Per proteggere le applicazioni da attacchi XSS:
 
 ---
 
-## **Conclusione**
+## 🚀 **Conclusione**
 
-Abbiamo dimostrato come sfruttare una vulnerabilità XSS Persistente su DVWA in modalità **Low** e **Medium** per rubare cookie di sessione. Questa guida evidenzia l'importanza di implementare misure di sicurezza per prevenire attacchi XSS.
+Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Persistente** su DVWA per estrarre dati sensibili e rubare cookie di sessione. Questa guida sottolinea l'importanza di implementare misure di sicurezza per prevenire tali attacchi.
 
 Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! 🚀
