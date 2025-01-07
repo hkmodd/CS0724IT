@@ -394,7 +394,7 @@ Segmentation fault (core dumped)
 
 ---
 
-# 🛡️ Traccia Giorno 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable
+# 🛡️ TRACCIA GIORNO 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable
 
 ## 📋 Descrizione
 Sulla macchina **Metasploitable** sono stati individuati diversi servizi in ascolto potenzialmente vulnerabili. Lo scopo di questa traccia è:
@@ -443,13 +443,13 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
      search samba
      ```
    - Trovato: **exploit/multi/samba/usermap_script** (indice: 15).
-   - ![Screenshot della ricerca](SearchSambaMetaspl.png)
+   - ![Screenshot della ricerca](./Screenshots/SearchSambaMetaspl.png)
 3. **Selezione dell'exploit**:
    - Comando:
      ```bash
      use 15
      ```
-   - ![Screenshot della selezione dell'exploit](SambaUse15.png)
+   - ![Screenshot della selezione dell'exploit](./Screenshots/SambaUse15.png)
 4. **Configurazione dei parametri dell'exploit**:
    - Impostazione dell'IP della macchina vittima:
      ```bash
@@ -474,7 +474,7 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
      exploit
      ```
    - L'exploit ha avuto successo, fornendo una shell sulla macchina vittima.
-   - ![Screenshot del Meterpreter attivo](MeterpreterSambaMetaspl.png)
+   - ![Screenshot del Meterpreter attivo](./Screenshots/MeterpreterSambaMetaspl.png)
 
 ---
 
