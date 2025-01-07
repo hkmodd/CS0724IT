@@ -1,10 +1,11 @@
 # 🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**
+
 ---
+---
+
 # 🛠 **TRACCIA GIORNO 1: SQL Injection su DVWA (Low e Medium)**
 
 Questa guida fornisce istruzioni passo-passo per eseguire una SQL Injection sulla piattaforma **DVWA (Damn Vulnerable Web Application)**. L'obiettivo è estrarre i dati sensibili dell'utente **Pablo** in modalità **Low** e **Medium**, e decifrare la sua password hash **MD5**.
-
----
 
 ## **Requisiti**
 
@@ -99,12 +100,11 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 Seguendo questa guida, abbiamo dimostrato come eseguire una SQL Injection su DVWA per estrarre i dati dell'utente **Pablo** e decifrare la sua password MD5 `letmein`. Questi test sottolineano l'importanza di proteggere le applicazioni web da vulnerabilità di SQL Injection.
 
 ---
+---
 
 # 🛡 **TRACCIA GIORNO 2: Exploit XSS Persistente su DVWA (Low e Medium)**
 
 Questa guida illustra come sfruttare una vulnerabilità di **Cross-Site Scripting (XSS) Persistente** sulla piattaforma **DVWA (Damn Vulnerable Web Application)** in modalità **Low** e **Medium**. L'obiettivo è simulare il furto di cookie di sessione inviandoli a un server sotto il nostro controllo.
-
----
 
 ## **Requisiti**
 
@@ -233,6 +233,8 @@ Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Pe
 Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! 🚀
 
 ---
+---
+
 # **🛠 TRACCIA GIORNO 3: Programma in C**
 
 
@@ -390,11 +392,10 @@ Segmentation fault (core dumped)
 
 💡 Con queste modifiche, il programma dimostra sia il comportamento corretto che una simulazione di errore di Buffer Overflow. Questo lo rende utile per chi vuole comprendere meglio i concetti di sicurezza e debugging in C.
 
-⚠️ **Nota:** La modalità con errore provoca un comportamento indefinito. Usala solo in ambienti di test controllati!
-
+---
 ---
 
-# 🛡️ Traccia Giorno 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable
+# 🛡️ TRACCIA GIORNO 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable
 
 ## 📋 Descrizione
 Sulla macchina **Metasploitable** sono stati individuati diversi servizi in ascolto potenzialmente vulnerabili. Lo scopo di questa traccia è:
@@ -443,13 +444,13 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
      search samba
      ```
    - Trovato: **exploit/multi/samba/usermap_script** (indice: 15).
-   - ![Screenshot della ricerca](SearchSambaMetaspl.png)
+   - ![Screenshot della ricerca](./Screenshots/SearchSambaMetaspl.png)
 3. **Selezione dell'exploit**:
    - Comando:
      ```bash
      use 15
      ```
-   - ![Screenshot della selezione dell'exploit](SambaUse15.png)
+   - ![Screenshot della selezione dell'exploit](./Screenshots/SambaUse15.png)
 4. **Configurazione dei parametri dell'exploit**:
    - Impostazione dell'IP della macchina vittima:
      ```bash
@@ -474,7 +475,7 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
      exploit
      ```
    - L'exploit ha avuto successo, fornendo una shell sulla macchina vittima.
-   - ![Screenshot del Meterpreter attivo](MeterpreterSambaMetaspl.png)
+   - ![Screenshot del Meterpreter attivo](./Screenshots/MeterpreterSambaMetaspl.png)
 
 ---
 
@@ -493,3 +494,7 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 - 🔎 Il **Vulnerability Scanning** ha evidenziato una vulnerabilità critica nel servizio Samba sulla porta **445 TCP**.
 - 💥 La vulnerabilità è stata sfruttata con successo utilizzando l'exploit **exploit/multi/samba/usermap_script** di Metasploit.
 - 🖥️ È stato ottenuto accesso alla macchina compromessa e confermato l'indirizzo IP tramite il comando `ifconfig`.
+
+---
+---
+
