@@ -233,7 +233,7 @@ Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Pe
 Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! 🚀
 
 ---
-# **🛠 Traccia Giorno 3: Programma in C**
+# **🛠 TRACCIA GIORNO 3: Programma in C**
 
 
 ## **Descrizione del funzionamento originale**
