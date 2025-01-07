@@ -387,7 +387,6 @@ Segmentation fault (core dumped)
 
 💡 Con queste modifiche, il programma dimostra sia il comportamento corretto che una simulazione di errore di Buffer Overflow. Questo lo rende utile per chi vuole comprendere meglio i concetti di sicurezza e debugging in C.
 
-⚠️ **Nota:** La modalità con errore provoca un comportamento indefinito. Usala solo in ambienti di test controllati!
 ---
 ---
 ---
