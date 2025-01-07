@@ -102,8 +102,6 @@ Seguendo questa guida, abbiamo dimostrato come eseguire una SQL Injection su DVW
 
 Questa guida illustra come sfruttare una vulnerabilità di **Cross-Site Scripting (XSS) Persistente** sulla piattaforma **DVWA (Damn Vulnerable Web Application)** in modalità **Low** e **Medium**. L'obiettivo è simulare il furto di cookie di sessione inviandoli a un server sotto il nostro controllo.
 
----
-
 ## **Requisiti**
 
 1. **DVWA Installato** e configurato.
