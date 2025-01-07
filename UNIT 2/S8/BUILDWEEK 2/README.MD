@@ -233,9 +233,10 @@ Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Pe
 Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! 🚀
 
 ---
-# **Traccia 3**
+# **🛠 Traccia Giorno 3: Programma in C**
 
-## **Descrizione del programma originale**
+
+## **Descrizione del funzionamento originale**
 
 💻 Il programma originale in linguaggio C permette di eseguire queste semplici operazioni:
 
