@@ -97,9 +97,9 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 ## **Conclusione**
 
 Seguendo questa guida, abbiamo dimostrato come eseguire una SQL Injection su DVWA per estrarre i dati dell'utente **Pablo** e decifrare la sua password MD5 `letmein`. Questi test sottolineano l'importanza di proteggere le applicazioni web da vulnerabilità di SQL Injection.
-
 ---
-
+---
+---
 # 🛡 **TRACCIA GIORNO 2: Exploit XSS Persistente su DVWA (Low e Medium)**
 
 Questa guida illustra come sfruttare una vulnerabilità di **Cross-Site Scripting (XSS) Persistente** sulla piattaforma **DVWA (Damn Vulnerable Web Application)** in modalità **Low** e **Medium**. L'obiettivo è simulare il furto di cookie di sessione inviandoli a un server sotto il nostro controllo.
@@ -231,7 +231,8 @@ Per proteggere le applicazioni da attacchi XSS:
 Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Persistente** su DVWA per estrarre dati sensibili e rubare cookie di sessione. Questa guida sottolinea l'importanza di implementare misure di sicurezza per prevenire tali attacchi.
 
 Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! 🚀
-
+---
+---
 ---
 # **🛠 TRACCIA GIORNO 3: Programma in C**
 
@@ -391,9 +392,9 @@ Segmentation fault (core dumped)
 💡 Con queste modifiche, il programma dimostra sia il comportamento corretto che una simulazione di errore di Buffer Overflow. Questo lo rende utile per chi vuole comprendere meglio i concetti di sicurezza e debugging in C.
 
 ⚠️ **Nota:** La modalità con errore provoca un comportamento indefinito. Usala solo in ambienti di test controllati!
-
 ---
-
+---
+---
 # 🛡️ TRACCIA GIORNO 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable
 
 ## 📋 Descrizione
@@ -493,3 +494,6 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 - 🔎 Il **Vulnerability Scanning** ha evidenziato una vulnerabilità critica nel servizio Samba sulla porta **445 TCP**.
 - 💥 La vulnerabilità è stata sfruttata con successo utilizzando l'exploit **exploit/multi/samba/usermap_script** di Metasploit.
 - 🖥️ È stato ottenuto accesso alla macchina compromessa e confermato l'indirizzo IP tramite il comando `ifconfig`.
+---
+---
+---
