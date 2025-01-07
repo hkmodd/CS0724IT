@@ -1,5 +1,6 @@
-# BUILDWEEK 2
-# TRACCIA GIORNO 1
+# 🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**  
+
+## TRACCIA GIORNO 1
 ## **Guida: SQL Injection su DVWA (Low e Medium)**
 
 Questa guida fornisce istruzioni passo-passo per eseguire una SQL Injection sulla piattaforma **DVWA (Damn Vulnerable Web Application)**. L'obiettivo è estrarre i dati sensibili dell'utente **Pablo** in modalità **Low** e **Medium**, e decifrare la sua password hash **MD5**.
