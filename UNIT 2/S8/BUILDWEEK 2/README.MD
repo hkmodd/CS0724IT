@@ -231,3 +231,166 @@ Per proteggere le applicazioni da attacchi XSS:
 Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Persistente** su DVWA per estrarre dati sensibili e rubare cookie di sessione. Questa guida sottolinea l'importanza di implementare misure di sicurezza per prevenire tali attacchi.
 
 Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! 🚀
+
+---
+
+# **Traccia 3**
+
+## **Descrizione del programma originale**
+
+Il programma originale è scritto in linguaggio C e permette di eseguire le seguenti operazioni:
+
+1. **Input di 10 numeri interi**:
+   - L'utente inserisce 10 numeri che vengono salvati in un array chiamato `vector`.
+
+2. **Visualizzazione del vettore**:
+   - Dopo l'inserimento, il programma stampa i numeri nella sequenza in cui sono stati forniti dall'utente.
+
+3. **Ordinamento Bubble Sort**:
+   - I numeri vengono ordinati in ordine crescente utilizzando l'algoritmo di ordinamento Bubble Sort.
+
+4. **Visualizzazione del vettore ordinato**:
+   - Dopo l'ordinamento, il programma stampa i numeri ordinati.
+
+### **Flusso del programma originale**
+1. Dichiarazione di un array di dimensione 10 (`vector[10]`).
+2. Ciclo `for` per acquisire input numerico dall'utente.
+3. Visualizzazione del vettore originale tramite un altro ciclo `for`.
+4. Ordinamento del vettore utilizzando due cicli annidati (`Bubble Sort`).
+5. Visualizzazione del vettore ordinato.
+
+### **Esempio di output originale**
+```
+Inserire 10 numeri interi:
+[1]: 5
+[2]: 3
+[3]: 7
+[4]: 9
+[5]: 2
+[6]: 8
+[7]: 4
+[8]: 1
+[9]: 6
+[10]: 10
+
+Il vettore inserito è:
+[1]: 5
+[2]: 3
+[3]: 7
+...
+
+Il vettore ordinato è:
+[1]: 1
+[2]: 2
+[3]: 3
+...
+```
+
+---
+
+## **Modifiche apportate al programma**
+
+Il programma è stato modificato per introdurre due modalità operative selezionabili dall'utente tramite un **menù interattivo**:
+
+1. **Modalità corretta (Programma originale):**
+   - Mantiene il comportamento originale del programma.
+   - Consente all'utente di inserire 10 numeri, visualizzarli e ordinarli.
+
+2. **Modalità con errore (Simulazione di Buffer Overflow):**
+   - L'utente può inserire 15 numeri, scrivendo volutamente oltre i limiti del vettore (`vector[10]`), provocando un **errore di segmentazione**.
+   - Viene stampato un messaggio di errore personalizzato **"Buffer Overflow Rilevato"** prima del crash.
+
+---
+
+## **Passaggi seguiti per implementare la modifica**
+
+### **1. Aggiunta di un menù interattivo**
+- È stato implementato un menù che consente all'utente di scegliere tra:
+  - **Opzione 1:** Modalità corretta (programmazione originale).
+  - **Opzione 2:** Modalità con errore (simulazione di buffer overflow).
+
+### **2. Gestione dell'input dell'utente**
+- È stato introdotto un controllo per validare l'input del menù:
+  ```c
+  if (scanf("%d", &scelta) != 1 || (scelta != 1 && scelta != 2)) {
+      printf("Errore: Selezione non valida. Inserire 1 o 2.\n");
+      return 1;
+  }
+  ```
+
+### **3. Modalità con errore**
+- Modificato il ciclo di inserimento per permettere la scrittura oltre i limiti dell'array:
+  ```c
+  for (i = 0; i < 15; i++) {
+      if (i >= 10) {
+          printf("\n[!] ERRORE CRITICO: BUFFER OVERFLOW RILEVATO! (Scrittura oltre i limiti)\n");
+      }
+      scanf("%d", &vector[i]); // Scrive oltre i limiti
+  }
+  ```
+
+### **4. Preservazione della modalità corretta**
+- La funzionalità originale è stata mantenuta intatta, compreso l'algoritmo di ordinamento Bubble Sort.
+
+---
+
+## **Come eseguire il programma**
+
+1. Compilare il programma utilizzando GCC:
+   ```bash
+   gcc programma.c -o programma
+   ```
+2. Eseguire il programma:
+   ```bash
+   ./programma
+   ```
+3. Selezionare l'opzione desiderata:
+   - **1:** Per la modalità corretta.
+   - **2:** Per provocare l'errore.
+
+---
+
+## **Esempio di output**
+
+### **Modalità corretta**
+```
+Hai selezionato il programma corretto.
+Inserire 10 numeri interi:
+[1]: 5
+[2]: 3
+...
+
+Il vettore inserito è:
+[1]: 5
+[2]: 3
+...
+
+Il vettore ordinato è:
+[1]: 3
+[2]: 5
+...
+```
+
+### **Modalità con errore**
+```
+Hai selezionato il programma con errore (buffer overflow).
+Inserire 15 numeri interi:
+[1]: 5
+[2]: 3
+[3]: 7
+...
+
+[11]:
+[!] ERRORE CRITICO: BUFFER OVERFLOW RILEVATO! (Scrittura oltre i limiti)
+Segmentation fault (core dumped)
+```
+
+---
+
+## **Conclusioni**
+
+Le modifiche introdotte dimostrano il comportamento originale del programma e simulano un caso di **buffer overflow**, utile per scopi didattici. La gestione del menù consente una chiara separazione tra modalità corretta e modalità con errore.
+
+⚠️ **Nota:** La modalità con errore provoca un comportamento indefinito ed è destinata esclusivamente a scopi di test in ambienti controllati.
+
+
