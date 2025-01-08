@@ -17,8 +17,6 @@ Questa guida fornisce istruzioni passo-passo per eseguire una SQL Injection sull
    - **Low** per la prima parte.
    - **Medium** per la seconda parte.
 
----
-
 ## 🔍 **Parte 1: SQL Injection in Modalità Low**
 
 ### 🎯 **Obiettivo**
@@ -45,7 +43,6 @@ Estrarre i dati dell'utente **Pablo**, inclusa la sua password hash MD5.
    - L'hash `0d107d09f5bbe40cade3de5c71e9e9b7` corrisponde alla password `letmein`.
    - Puoi utilizzare uno strumento online come [https://crackstation.net](https://crackstation.net) per decifrare l'hash.
 
----
 
 ## 🔍 **Parte 2: SQL Injection in Modalità Medium**
 
@@ -76,7 +73,6 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 4. **Decifra la password hash**:
    - Decifra l'hash `0d107d09f5bbe40cade3de5c71e9e9b7` utilizzando uno strumento come [Crackstation](https://crackstation.net) per ottenere la password: `letmein`.
 
----
 
 ## 🛠 **Strumenti Utili**
 
@@ -94,8 +90,6 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
      john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
      ```
 ![John](./Screenshots/JohnMD5crack.png)
-
----
 
 ## **Conclusione**
 
@@ -116,8 +110,6 @@ Questa guida illustra come sfruttare una vulnerabilità di **Cross-Site Scriptin
 4. Indirizzi IP:
    - **Kali Linux**: `192.168.50.165`
    - **Metasploitable**: `192.168.50.3`
-
----
 
 ## 🔍 **Parte 1: XSS Persistente in Modalità Low**
 
@@ -160,7 +152,6 @@ Iniettare uno script malevolo nella web application DVWA per inviare i cookie de
      ```
 ![XSSLow](./Screenshots/XSSLow.png)
 
----
 
 ## 🔍 **Parte 2: XSS Persistente in Modalità Medium**
 
@@ -199,8 +190,6 @@ Aggirare i filtri di input e sfruttare la vulnerabilità XSS per ottenere i cook
 
 ![XSSMedium](./Screenshots/XSSMedium.png)
 
----
-
 ## 📌 **Spiegazione dei Payload**
 
 ### **Payload in Modalità Low**
@@ -213,8 +202,6 @@ Aggirare i filtri di input e sfruttare la vulnerabilità XSS per ottenere i cook
 - `onerror`: Contiene lo script malevolo per inviare i cookie.
 - `fetch`: Come sopra, invia i cookie al server.
 
----
-
 ## 🛡 **Considerazioni di Sicurezza**
 
 Per proteggere le applicazioni da attacchi XSS:
@@ -226,13 +213,9 @@ Per proteggere le applicazioni da attacchi XSS:
 3. **Content Security Policy (CSP)**:
    - Configura una CSP per limitare l'esecuzione di script non autorizzati.
 
----
-
 ## 🚀 **Conclusione**
 
 Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Persistente** su DVWA per estrarre dati sensibili e rubare cookie di sessione. Questa guida sottolinea l'importanza di implementare misure di sicurezza per prevenire tali attacchi.
-
-Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! 🚀
 
 ---
 ---
@@ -242,9 +225,6 @@ Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! �
 ## 📜 Triggerare un Segmentation Fault: Spiegazione e Logica 💻
 
 In questo progetto, abbiamo esplorato come **forzare un segmentation fault** in un programma C, partendo da un programma originale funzionale. Abbiamo aggiunto modifiche per simulare errori critici e comprenderne le cause.
-
----
-
 
 ### 💻 Il programma originale
 
@@ -261,8 +241,6 @@ Il programma originale in linguaggio C permette di eseguire queste operazioni:
 
 4️⃣ **Visualizzare i numeri ordinati**:  
    Alla fine, il programma mostra i numeri in ordine crescente.
-
----
 
 ### 📝 Come funziona?
 
@@ -300,8 +278,6 @@ Il vettore ordinato è:
 ...
 ```
 
----
-
 ## ✨ Modifiche apportate al programma
 
 Abbiamo aggiunto una nuova modalità al programma per simulare errori:
@@ -330,8 +306,6 @@ La modalità con errore provoca intenzionalmente un segmentation fault accedendo
 
 Questi scenari garantiscono che il programma termini con un segmentation fault.
 
----
-
 ## 🧪 Risultati attesi
 
 ### **Modalità classica**
@@ -356,29 +330,6 @@ Il vettore ordinato è:
 Tentativo di accesso a un puntatore nullo:
 Segmentation fault (core dumped)
 ```
-
----
-
-## 📂 Come eseguire il programma?
-
-1. **Compilazione**:  
-   Usa GCC per compilare il programma:
-   ```bash
-   gcc programma.c -o programma
-   ```
-
-2. **Esecuzione**:  
-   Lancia il programma con:
-   ```bash
-   ./programma
-   ```
-
-3. **Seleziona una modalità**:  
-   Scegli tra:
-   - 1: Modalità classica.
-   - 2: Modalità con errore.
-
----
 
 ## 🔑 Logica dietro il segmentation fault
 
@@ -407,15 +358,11 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 2. ⚙️ Sfruttare la vulnerabilità del servizio Samba attivo sulla porta **445 TCP** utilizzando **Metasploit**.
 3. ✅ Verificare l'accesso alla macchina compromessa eseguendo il comando `ifconfig` per ottenere l'indirizzo IP della macchina vittima.
 
----
-
 ## 🔧 Requisiti
 - **IP Kali Linux**: `192.168.50.165`
 - **IP Metasploitable**: `192.168.50.3`
 - **Porta di ascolto del payload**: `5555`
 - **Tool utilizzati**: Nessus, MSFConsole (Metasploit)
-
----
 
 ## 🛠️ Passaggi Eseguiti
 
@@ -434,8 +381,6 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
    - La scansione ha identificato una vulnerabilità critica sul servizio Samba in ascolto sulla porta **445 TCP**.
 5. **Report allegato**:
    - I dettagli della scansione sono disponibili nel file `nessus_scan_report.html`.
-
----
 
 ### 2. 💻 Attacco alla Macchina Metasploitable con Metasploit
 1. **Avvio di MSFConsole**:
@@ -492,8 +437,6 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 2. **Risultato**:
    - Confermato l'indirizzo IP della macchina vittima: `192.168.50.3`.
 
----
-
 ## ✅ Conclusioni
 - 🔎 Il **Vulnerability Scanning** ha evidenziato una vulnerabilità critica nel servizio Samba sulla porta **445 TCP**.
 - 💥 La vulnerabilità è stata sfruttata con successo utilizzando l'exploit **exploit/multi/samba/usermap_script** di Metasploit.
@@ -515,15 +458,11 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
    - Controllare la presenza di webcam.
    - Catturare uno screenshot del desktop.
 
----
-
 ## 🔧 Requisiti
 - **IP Kali Linux**: `192.168.50.165`
 - **IP Windows 10**: `192.168.50.3`
 - **Porta di ascolto (LPORT)**: `7777`
 - **Tool utilizzati**: Nessus, MSFConsole, PowerShell
-
----
 
 ## 🛠️ Passaggi Eseguiti
 
@@ -532,8 +471,6 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
 2. Aprire `Gestione Servizi` (`services.msc`).
 3. Avviare il servizio **Apache Tomcat** (se non è già attivo).
 4. Verificare che il servizio sia in ascolto sulla porta **8080**.
-
----
 
 ### **2. Scansione delle Vulnerabilità con Nessus**
 1. Avviare il servizio Nessus su Kali Linux:
@@ -545,8 +482,6 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
    - Tipo: **Basic Network Scan**.
    - Target: `192.168.50.3`.
 4. Avviare la scansione e identificare le vulnerabilità relative al servizio **Tomcat**.
-
----
 
 ### **3. Exploit con Metasploit**
 
@@ -584,8 +519,6 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
    ```bash
    exploit
    ```
-
----
 
 ### **4. Raccolta delle Evidenze sulla Macchina Compromessa**
 
@@ -633,8 +566,6 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
    ```bash
    download C:\Windows\Temp\screenshot.png
    ```
-
----
 
 ## 🛠️ Conclusioni
 - Il servizio **Apache Tomcat** è stato sfruttato con successo per ottenere una sessione Meterpreter.
