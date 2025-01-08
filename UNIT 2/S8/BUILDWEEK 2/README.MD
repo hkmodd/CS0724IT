@@ -237,7 +237,7 @@ Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! �
 
 # 🛠 TRACCIA GIORNO 3: Programma in C
 
-##📜 Triggerare un Segmentation Fault: Spiegazione e Logica 💻
+## 📜 Triggerare un Segmentation Fault: Spiegazione e Logica 💻
 
 In questo progetto, abbiamo esplorato come **forzare un segmentation fault** in un programma C, partendo da un programma originale funzionale. Abbiamo aggiunto modifiche per simulare errori critici e comprenderne le cause.
 
