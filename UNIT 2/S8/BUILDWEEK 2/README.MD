@@ -1,4 +1,4 @@
-# <h1 align="center">🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**</h1>
+# 🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**
 
 - ## Portami alla [CTF1](./CTF1.MD)
 - ## Portami alla [CTF2](./CTF2.MD)
@@ -226,7 +226,7 @@ Per proteggere le applicazioni da attacchi XSS:
 
 Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Persistente** su DVWA per estrarre dati sensibili e rubare cookie di sessione. Questa guida sottolinea l'importanza di implementare misure di sicurezza per prevenire tali attacchi.
 
-<h1 align="center">[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)</h1>
+[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
 
 ---
 ---
@@ -356,7 +356,7 @@ Segmentation fault (core dumped)
 ## ⚠️ Conclusioni
 Con queste modifiche, il programma dimostra sia il funzionamento corretto che un errore simulato. Questo progetto aiuta a comprendere meglio i concetti di sicurezza e debugging nei programmi C. 🎯
 
-<h1 align="center">[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)</h1>
+[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
 
 ---
 ---
@@ -453,7 +453,7 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 - 💥 La vulnerabilità è stata sfruttata con successo utilizzando l'exploit **exploit/multi/samba/usermap_script** di Metasploit.
 - 🖥️ È stato ottenuto accesso alla macchina compromessa e confermato l'indirizzo IP tramite il comando `ifconfig`.
 
-<h1 align="center">[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)</h1>
+[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
 
 ---
 ---
@@ -589,4 +589,4 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
   - Screenshot del desktop.
 
 ---
-# <h1 align="center">FINE DOCUMENTO, [Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)</h1>
+# FINE DOCUMENTO, [torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
