@@ -4,6 +4,10 @@
 - ## Portami alla [CTF2](./CTF2.MD)
 - ## Portami alla [CTF3](./CTF3.MD)
 - [TRACCIA GIORNO 1: SQL Injection su DVWA](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
+- [TRACCIA GIORNO 2: Exploit XSS Persistente su DVWA](#-traccia-giorno-2-exploit-xss-persistente-su-dvwa-low-e-medium)
+- [TRACCIA GIORNO 3: SQL Injection su DVWA](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
+- [TRACCIA GIORNO 4: SQL Injection su DVWA](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
+- [TRACCIA GIORNO 5: SQL Injection su DVWA](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
 
 ---
 ---
