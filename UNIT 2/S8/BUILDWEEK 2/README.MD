@@ -235,33 +235,43 @@ Se hai bisogno di ulteriori chiarimenti o supporto, non esitare a contattarci! �
 ---
 ---
 
-# **🛠 TRACCIA GIORNO 3: Programma in C**
+# 🛠 TRACCIA GIORNO 3: Programma in C
+
+##📜 Triggerare un Segmentation Fault: Spiegazione e Logica 💻
+
+In questo progetto, abbiamo esplorato come **forzare un segmentation fault** in un programma C, partendo da un programma originale funzionale. Abbiamo aggiunto modifiche per simulare errori critici e comprenderne le cause.
+
+---
 
 
-## **Descrizione del funzionamento originale**
+### 💻 Il programma originale
 
-💻 Il programma originale in linguaggio C permette di eseguire queste semplici operazioni:
+Il programma originale in linguaggio C permette di eseguire queste operazioni:
 
-1️⃣ **Inserire 10 numeri interi**:
-   - L'utente inserisce 10 numeri che vengono salvati in un array chiamato `vector`.
+1️⃣ **Inserire 10 numeri interi**:  
+   L'utente inserisce 10 numeri che vengono salvati in un array chiamato `vector`.
 
-2️⃣ **Visualizzare i numeri inseriti**:
-   - Dopo l'inserimento, il programma mostra i numeri forniti dall'utente.
+2️⃣ **Visualizzare i numeri inseriti**:  
+   Dopo l'inserimento, il programma mostra i numeri forniti dall'utente.
 
-3️⃣ **Ordinare i numeri**:
-   - I numeri vengono ordinati in ordine crescente con un algoritmo chiamato **Bubble Sort**.
+3️⃣ **Ordinare i numeri**:  
+   I numeri vengono ordinati in ordine crescente con un algoritmo chiamato Bubble Sort.
 
-4️⃣ **Visualizzare i numeri ordinati**:
-   - Alla fine, il programma mostra i numeri in ordine crescente.
+4️⃣ **Visualizzare i numeri ordinati**:  
+   Alla fine, il programma mostra i numeri in ordine crescente.
 
-### **Come funziona?**
-1. 📝 Crea uno spazio (array) per 10 numeri.
-2. 🎤 Chiede all'utente di inserire 10 numeri.
-3. 👀 Mostra i numeri inseriti.
-4. 🔄 Li ordina dal più piccolo al più grande.
-5. ✅ Mostra i numeri ordinati.
+---
 
-### **Esempio di risultato originale**
+### 📝 Come funziona?
+
+- **🛠️ Crea uno spazio (array)** per 10 numeri.
+- **🎤 Chiede all'utente** di inserire 10 numeri.
+- **👀 Mostra i numeri** inseriti.
+- **🔄 Li ordina** dal più piccolo al più grande.
+- **✅ Mostra i numeri ordinati.**
+
+**Esempio di risultato originale:**
+
 ```
 Inserire 10 numeri interi:
 [1]: 5
@@ -290,107 +300,99 @@ Il vettore ordinato è:
 
 ---
 
-## **Modifiche apportate al programma**
+## ✨ Modifiche apportate al programma
 
-✨ Abbiamo migliorato il programma per offrire due modalità:
+Abbiamo aggiunto una nuova modalità al programma per simulare errori:
 
-1️⃣ **Modalità classica**:
-   - Funziona esattamente come l'originale: inserisci 10 numeri, li ordina e li mostra.
+### **1️⃣ Modalità classica**
+Il programma funziona come descritto sopra: inserisci 10 numeri, li ordina e li mostra.
 
-2️⃣ **Modalità con errore simulato**:
-   - Ti permette di inserire 15 numeri, andando oltre i limiti del programma e simulando un **errore di Buffer Overflow**.
-   - Prima del crash, viene mostrato un messaggio di errore personalizzato: **"Buffer Overflow Rilevato"**. ⚠️
+### **2️⃣ Modalità con errore simulato**
+La modalità con errore provoca intenzionalmente un segmentation fault accedendo a memoria non valida. Questa modifica serve a comprendere meglio come si verificano gli errori di accesso alla memoria.
 
----
+#### **Come abbiamo simulato il segmentation fault?**
 
-## **Come lo abbiamo migliorato?**
-
-### **1. Aggiunto un menù interattivo**
-🛠️ L'utente può scegliere tra:
-   - **Opzione 1:** Modalità classica.
-   - **Opzione 2:** Simulazione di errore.
-
-### **2. Controlli per l'input**
-🔒 Abbiamo aggiunto controlli per evitare selezioni errate:
-```c
-if (scanf("%d", &scelta) != 1 || (scelta != 1 && scelta != 2)) {
-    printf("Errore: Selezione non valida. Inserire 1 o 2.\n");
-    return 1;
-}
-```
-
-### **3. Simulazione dell'errore**
-💥 Il programma ora permette di andare oltre i limiti dell'array, simulando un errore critico:
-```c
-for (i = 0; i < 15; i++) {
-    if (i >= 10) {
-        printf("\n[!] ERRORE CRITICO: BUFFER OVERFLOW RILEVATO! (Scrittura oltre i limiti)\n");
-    }
-    scanf("%d", &vector[i]);
-}
-```
-
-### **4. Mantenuta la modalità originale**
-✅ La funzionalità originale è stata conservata, compreso l'ordinamento Bubble Sort.
-
----
-
-## **Come eseguire il programma?**
-
-1. 🔧 Compila il programma usando GCC:
-   ```bash
-   gcc programma.c -o programma
+1. **Accesso a un puntatore nullo**:  
+   Un puntatore nullo (`NULL`) è stato dereferenziato, generando un segmentation fault:
+   ```c
+   int *ptr = NULL;
+   printf("Valore in *ptr: %d\n", *ptr);
    ```
-2. ▶️ Esegui il programma:
-   ```bash
-   ./programma
+
+2. **Accesso a memoria non allocata**:  
+   Modificando un puntatore per puntare a un indirizzo arbitrario:
+   ```c
+   ptr = (int *)0xDEADBEEF;
+   printf("Valore in *ptr: %d\n", *ptr);
    ```
-3. Scegli una modalità dal menù:
-   - **1:** Modalità classica.
-   - **2:** Simulazione di errore.
+
+Questi scenari garantiscono che il programma termini con un segmentation fault.
 
 ---
 
-## **Esempi di output**
+## 🧪 Risultati attesi
 
 ### **Modalità classica**
 ```
-Hai selezionato il programma corretto.
 Inserire 10 numeri interi:
-[1]: 5
-[2]: 3
+[1]: 1
+[2]: 2
+[3]: 3
 ...
-
 Il vettore inserito è:
-[1]: 5
-[2]: 3
+[1]: 1
+[2]: 2
 ...
-
 Il vettore ordinato è:
-[1]: 3
-[2]: 5
+[1]: 1
+[2]: 2
 ...
 ```
 
 ### **Modalità con errore**
 ```
-Hai selezionato il programma con errore (buffer overflow).
-Inserire 15 numeri interi:
-[1]: 5
-[2]: 3
-[3]: 7
-...
-
-[11]:
-[!] ERRORE CRITICO: BUFFER OVERFLOW RILEVATO! (Scrittura oltre i limiti)
+Tentativo di accesso a un puntatore nullo:
 Segmentation fault (core dumped)
 ```
 
 ---
 
-## **Conclusioni**
+## 📂 Come eseguire il programma?
 
-💡 Con queste modifiche, il programma dimostra sia il comportamento corretto che una simulazione di errore di Buffer Overflow. Questo lo rende utile per chi vuole comprendere meglio i concetti di sicurezza e debugging in C.
+1. **Compilazione**:  
+   Usa GCC per compilare il programma:
+   ```bash
+   gcc programma.c -o programma
+   ```
+
+2. **Esecuzione**:  
+   Lancia il programma con:
+   ```bash
+   ./programma
+   ```
+
+3. **Seleziona una modalità**:  
+   Scegli tra:
+   - 1: Modalità classica.
+   - 2: Modalità con errore.
+
+---
+
+## 🔑 Logica dietro il segmentation fault
+
+1. **Il sistema operativo protegge la memoria**:  
+   Solo le aree allocate possono essere utilizzate dal programma.
+   
+2. **Accesso non valido**:  
+   Tentare di accedere a memoria non allocata provoca il fault.
+
+3. **Puntatori errati**:  
+   Puntatori non inizializzati o modificati sono una delle cause principali.
+
+---
+
+## ⚠️ Conclusioni
+Con queste modifiche, il programma dimostra sia il funzionamento corretto che un errore simulato. Questo progetto aiuta a comprendere meglio i concetti di sicurezza e debugging nei programmi C. 🎯
 
 ---
 ---
