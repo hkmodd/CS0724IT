@@ -1,6 +1,9 @@
 # 🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**
 
-## Portami alla [CTF1](./CTF1.MD)
+- ## Portami alla [CTF1](./CTF1.MD)
+- ## Portami alla [CTF2](./CTF2.MD)
+- ## Portami alla [CTF3](./CTF3.MD)
+- [🛠 TRACCIA GIORNO 1: SQL Injection su DVWA (Low e Medium)](#🛠-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
 
 ---
 ---
