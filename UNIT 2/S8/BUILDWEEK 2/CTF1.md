@@ -53,6 +53,8 @@ $password = "abygurl69";
 
 ---
 
+![FTP1](./Screenshots/CTF1FTP.png)
+
 ## 🔑 Accesso alla macchina
 
 1. Con le credenziali trovate, siamo riusciti ad accedere al server FTP. ✅
@@ -67,11 +69,15 @@ $password = "abygurl69";
 
 ### Procedura di exploit:
 - **Trasferimento del file:** Il file `45010.c` è stato caricato nella directory dell'utente `jangow01` tramite FTP.
+![FTP2](./Screenshots/CTF1FTP2.png)
+
 - **Compilazione:** Accedendo localmente alla macchina, abbiamo compilato il file con:
   ```bash
   gcc 45010.c -o exploit
   ```
 - **Esecuzione:** L'esecuzione dell'exploit ci ha permesso di ottenere una **shell root**. 🎉
+
+![FTP3](./Screenshots/CTF1ROOT.png)
 
 ---
 
