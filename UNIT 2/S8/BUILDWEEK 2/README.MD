@@ -342,8 +342,6 @@ Segmentation fault (core dumped)
 3. **Puntatori errati**:  
    Puntatori non inizializzati o modificati sono una delle cause principali.
 
----
-
 ## ⚠️ Conclusioni
 Con queste modifiche, il programma dimostra sia il funzionamento corretto che un errore simulato. Questo progetto aiuta a comprendere meglio i concetti di sicurezza e debugging nei programmi C. 🎯
 
