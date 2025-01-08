@@ -581,4 +581,4 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
   - Screenshot del desktop.
 
 ---
-# FINE DOCUMENTO
+# FINE DOCUMENTO, [Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
