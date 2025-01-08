@@ -572,3 +572,6 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
   - Configurazioni di rete.
   - Stato delle webcam.
   - Screenshot del desktop.
+
+---
+# FINE DOCUMENTO
