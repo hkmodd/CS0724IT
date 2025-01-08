@@ -102,6 +102,8 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 
 Seguendo questa guida, abbiamo dimostrato come eseguire una SQL Injection su DVWA per estrarre i dati dell'utente **Pablo** e decifrare la sua password MD5 `letmein`. Questi test sottolineano l'importanza di proteggere le applicazioni web da vulnerabilità di SQL Injection.
 
+[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
+
 ---
 ---
 
@@ -223,6 +225,8 @@ Per proteggere le applicazioni da attacchi XSS:
 ## 🚀 **Conclusione**
 
 Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Persistente** su DVWA per estrarre dati sensibili e rubare cookie di sessione. Questa guida sottolinea l'importanza di implementare misure di sicurezza per prevenire tali attacchi.
+
+[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
 
 ---
 ---
@@ -352,6 +356,8 @@ Segmentation fault (core dumped)
 ## ⚠️ Conclusioni
 Con queste modifiche, il programma dimostra sia il funzionamento corretto che un errore simulato. Questo progetto aiuta a comprendere meglio i concetti di sicurezza e debugging nei programmi C. 🎯
 
+[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
+
 ---
 ---
 
@@ -446,6 +452,8 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 - 🔎 Il **Vulnerability Scanning** ha evidenziato una vulnerabilità critica nel servizio Samba sulla porta **445 TCP**.
 - 💥 La vulnerabilità è stata sfruttata con successo utilizzando l'exploit **exploit/multi/samba/usermap_script** di Metasploit.
 - 🖥️ È stato ottenuto accesso alla macchina compromessa e confermato l'indirizzo IP tramite il comando `ifconfig`.
+
+[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
 
 ---
 ---
