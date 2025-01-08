@@ -102,7 +102,7 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 
 Seguendo questa guida, abbiamo dimostrato come eseguire una SQL Injection su DVWA per estrarre i dati dell'utente **Pablo** e decifrare la sua password MD5 `letmein`. Questi test sottolineano l'importanza di proteggere le applicazioni web da vulnerabilità di SQL Injection.
 
-<h1 align="center">[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)</h1>
+[Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
 
 ---
 ---
