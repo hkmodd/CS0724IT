@@ -3,9 +3,7 @@
 ---
 ---
 
-# [CTF1][./CTF1.MD]
-# [CTF2][./CTF2.MD]
-# [CTF3][./CTF3.MD]
+[CTF1](./CTF1.MD)
 
 ---
 ---
