@@ -5,7 +5,7 @@
 
 ## 🗂️ Indice
 
-- ### [🚀 Introduzione](#-introduzione)
+- ### [🚀 Inizio](#-introduzione)
 
 - ### 📝 Tracce
   - [📌 1: SQL Injection su DVWA (Low e Medium)](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
