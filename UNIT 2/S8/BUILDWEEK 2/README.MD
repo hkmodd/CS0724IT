@@ -5,7 +5,7 @@
 
 ## 🗂️ Indice
 
-- ### [🚀 Introduzione](#
+- ### [🚀 Introduzione](#-introduzione]
 
 - ### 📝 Tracce
   - [📌 1: SQL Injection su DVWA (Low e Medium)](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
@@ -22,7 +22,7 @@
 ---
 ---
 
-## **Introduzione 🚀**
+# **🚀 Introduzione**
 
 Durante questa **Build Week**, il team **CyberCerberus**, guidato da **Sebastiano Gelmetti** come Team Leader, ha affrontato un programma intensivo mirato all’acquisizione di competenze avanzate in attacco e difesa informatica. Abbiamo affrontato le seguenti sfide:
 
