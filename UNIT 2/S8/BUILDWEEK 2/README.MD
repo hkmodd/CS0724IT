@@ -5,7 +5,9 @@
 
 ## 🗂️ Indice
 
-- ### 🚀 Tracce
+- ### [🚀 Introduzione](#
+
+- ### 📝 Tracce
   - [📌 1: SQL Injection su DVWA (Low e Medium)](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
   - [📌 2: Exploit XSS Persistente su DVWA (Low e Medium)](#-traccia-giorno-2-exploit-xss-persistente-su-dvwa-low-e-medium)
   - [📌 3: Programma in C](#-traccia-giorno-3-programma-in-c)
@@ -20,58 +22,47 @@
 ---
 ---
 
-Introduzione 🚀
+## **Introduzione 🚀**
 
-Durante questa Build Week, il team CyberCerberus, guidato da Sebastiano Gelmetti come Team Leader, ha affrontato un programma intensivo mirato all’acquisizione di competenze avanzate in attacco e difesa informatica. Abbiamo affrontato le seguenti sfide:
+Durante questa **Build Week**, il team **CyberCerberus**, guidato da **Sebastiano Gelmetti** come Team Leader, ha affrontato un programma intensivo mirato all’acquisizione di competenze avanzate in attacco e difesa informatica. Abbiamo affrontato le seguenti sfide:
 
-SQL Injection 🔍
+- SQL Injection 🔍
+- Exploit XSS Persistente 💻
+- Sviluppo e debugging di programmi in C ⚙️
+- Sfruttamento di vulnerabilità su macchine virtuali con Metasploit 🗭️
+- Risoluzione di 3 CTF 🕵️
 
-Exploit XSS Persistente 💻
+### **👤 Composizione del team:**
 
-Sviluppo e debugging di programmi in C ⚙️
+- **Sebastiano Gelmetti** – *Team Leader* ⭐
+- **Federica Cardinali**
+- **Rinat Rustamov**
+- **Manuel Izzo**
+- **Andrea Calcagno**
+- **Francesco Rossi**
+- **Luca Nietrzeba**
+- **Antonio Podda**
+- **Alessandro Ragnino**
 
-Sfruttamento di vulnerabilità su macchine virtuali con Metasploit 🗭️
-
-Risoluzione di 3 CTF 🕵️
-
-👤 Composizione del team:
-
-Sebastiano Gelmetti – Team Leader ⭐
-
-Federica Cardinali
-
-Rinat Rustamov
-
-Manuel Izzo
-
-Andrea Calcagno
-
-Francesco Rossi
-
-Luca Nietrzeba
-
-Antonio Podda
-
-Alessandro Ragnino
-
-🎯 Obiettivi principali:
+### **🎯 Obiettivi principali:**
 
 Avanzare nell’analisi delle vulnerabilità e nell’applicazione di exploit reali, concentrandoci su:
 
-Simulazioni di attacchi su piattaforme vulnerabili come DVWA e Metasploitable.
-
-Uso di tool avanzati per il vulnerability assessment.
-
-Creazione e modifica di programmi in linguaggio C per simulare errori critici.
+- Simulazioni di attacchi su piattaforme vulnerabili come DVWA e Metasploitable.
+- Uso di tool avanzati per il vulnerability assessment.
+- Creazione e modifica di programmi in linguaggio C per simulare errori critici.
 
 Per garantire l’allineamento del team e la condivisione delle competenze, abbiamo adottato un approccio collaborativo, lavorando tutti insieme su ogni attività.
 
-Cronologia delle attività 🕒
+---
 
-🔄 Metodologia
+## **Cronologia delle attività 🕒**
 
-Abbiamo deciso di concentrare tutte le attività relative alle 5 tracce durante la giornata di martedì 08/01/2025, lasciando spazio nei giorni successivi per dedicarsi esclusivamente alle 3 CTF. Questo approccio ci ha permesso di approfondire le tematiche trattate e garantire un avanzamento sinergico del team.
+### **🔄 Metodologia**
 
+Abbiamo deciso di concentrare tutte le attività relative alle **5 tracce** durante la giornata di martedì 08/01/2025, lasciando spazio nei giorni successivi per dedicarsi esclusivamente alle **3 CTF**. Questo approccio ci ha permesso di approfondire le tematiche trattate e garantire un avanzamento sinergico del team.
+
+---
 ---
 ---
 # 🛠 **TRACCIA GIORNO 1: SQL Injection su DVWA (Low e Medium)**
