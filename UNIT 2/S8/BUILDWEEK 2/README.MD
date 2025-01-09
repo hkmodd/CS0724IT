@@ -1,6 +1,6 @@
 # 🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**
 
-**🗓 Periodo:** 08/01/2025 - 11/01/2025 
+**🗓 Periodo:** 08/01/2025 - 11/01/2025
 **👥 Team:** **CyberCerberus**  
 
 ## 🗂️ Indice
@@ -20,6 +20,60 @@
 ---
 ---
 
+Introduzione 🚀
+
+Durante questa Build Week, il team CyberCerberus, guidato da Sebastiano Gelmetti come Team Leader, ha affrontato un programma intensivo mirato all’acquisizione di competenze avanzate in attacco e difesa informatica. Abbiamo affrontato le seguenti sfide:
+
+SQL Injection 🔍
+
+Exploit XSS Persistente 💻
+
+Sviluppo e debugging di programmi in C ⚙️
+
+Sfruttamento di vulnerabilità su macchine virtuali con Metasploit 🗭️
+
+Risoluzione di 3 CTF 🕵️
+
+👤 Composizione del team:
+
+Sebastiano Gelmetti – Team Leader ⭐
+
+Federica Cardinali
+
+Rinat Rustamov
+
+Manuel Izzo
+
+Andrea Calcagno
+
+Francesco Rossi
+
+Luca Nietrzeba
+
+Antonio Podda
+
+Alessandro Ragnino
+
+🎯 Obiettivi principali:
+
+Avanzare nell’analisi delle vulnerabilità e nell’applicazione di exploit reali, concentrandoci su:
+
+Simulazioni di attacchi su piattaforme vulnerabili come DVWA e Metasploitable.
+
+Uso di tool avanzati per il vulnerability assessment.
+
+Creazione e modifica di programmi in linguaggio C per simulare errori critici.
+
+Per garantire l’allineamento del team e la condivisione delle competenze, abbiamo adottato un approccio collaborativo, lavorando tutti insieme su ogni attività.
+
+Cronologia delle attività 🕒
+
+🔄 Metodologia
+
+Abbiamo deciso di concentrare tutte le attività relative alle 5 tracce durante la giornata di martedì 08/01/2025, lasciando spazio nei giorni successivi per dedicarsi esclusivamente alle 3 CTF. Questo approccio ci ha permesso di approfondire le tematiche trattate e garantire un avanzamento sinergico del team.
+
+---
+---
 # 🛠 **TRACCIA GIORNO 1: SQL Injection su DVWA (Low e Medium)**
 
 Questa guida fornisce istruzioni passo-passo per eseguire una SQL Injection sulla piattaforma **DVWA (Damn Vulnerable Web Application)**. L'obiettivo è estrarre i dati sensibili dell'utente **Pablo** in modalità **Low** e **Medium**, e decifrare la sua password hash **MD5**.
@@ -597,4 +651,50 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
   - Screenshot del desktop.
 
 ---
+---
+
+🎉 Risultati Ottenuti e Conclusioni 🎉
+
+🔍 SQL Injection su DVWA:
+
+Estrazione delle credenziali dell’utente Pablo in modalità Low e Medium.
+
+Decodifica dell’hash MD5 della password (letmein).
+
+💻 Exploit XSS Persistente su DVWA:
+
+Creazione di payload avanzati per l’invio di cookie di sessione.
+
+Successo nella raccolta dei cookie in entrambe le modalità.
+
+⚙️ Sviluppo in C:
+
+Simulazione di segmentation fault per migliorare la comprensione degli errori di memoria.
+
+Debugging e analisi approfondita del programma.
+
+🗭️ Sfruttamento di Metasploitable:
+
+Identificazione e sfruttamento di vulnerabilità critiche sul servizio Samba.
+
+Accesso alla macchina e verifica delle configurazioni di rete.
+
+🗭 Exploit su Windows 10:
+
+Sfruttamento del servizio Apache Tomcat per ottenere una sessione Meterpreter.
+
+Raccolta di evidenze (screenshot, configurazioni di rete, verifica hardware).
+
+🕵️ Risultati delle CTF:
+
+Risoluzione completa di tutte le challenge.
+
+Documentazione delle tecniche e strategie adottate.
+
+---
+
+Siamo entusiasti dei progressi fatti e pronti a proseguire il nostro viaggio nel mondo della Cybersecurity! Grazie per l’attenzione. 🙌
+
+Sebastiano GelmettiTeam Leader & Supervisor, CyberCerberus ⭐
+
 ## FINE DOCUMENTO, [torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
