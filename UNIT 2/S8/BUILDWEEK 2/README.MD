@@ -1,15 +1,18 @@
 # 🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**
 
+**🗓 Periodo:** 08/01/2025 - 11/01/2025 
+**👥 Team:** **CyberCerberus**  
+
 ## 🗂️ Indice
 
 - ### 🚀 Tracce
-  - [📌 Giorno 1: SQL Injection su DVWA (Low e Medium)](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
-  - [📌 Giorno 2: Exploit XSS Persistente su DVWA (Low e Medium)](#-traccia-giorno-2-exploit-xss-persistente-su-dvwa-low-e-medium)
-  - [📌 Giorno 3: Programma in C](#-traccia-giorno-3-programma-in-c)
-  - [📌 Giorno 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable](#%EF%B8%8F-traccia-giorno-4-sfruttamento-di-vulnerabilità-sulla-macchina-metasploitable)
-  - [📌 Giorno 5: Exploit di Windows 10 con Metasploit](#%EF%B8%8F-traccia-giorno-5-exploit-di-windows-10-con-metasploit)
+  - [📌 1: SQL Injection su DVWA (Low e Medium)](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
+  - [📌 2: Exploit XSS Persistente su DVWA (Low e Medium)](#-traccia-giorno-2-exploit-xss-persistente-su-dvwa-low-e-medium)
+  - [📌 3: Programma in C](#-traccia-giorno-3-programma-in-c)
+  - [📌 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable](#%EF%B8%8F-traccia-giorno-4-sfruttamento-di-vulnerabilità-sulla-macchina-metasploitable)
+  - [📌 5: Exploit di Windows 10 con Metasploit](#%EF%B8%8F-traccia-giorno-5-exploit-di-windows-10-con-metasploit)
 
-- ### 🕵️‍♂️ CTF Challenges
+- ### 🕵️‍♂️ CTF Challenges Bonus
   - [🧩 CTF1](./CTF1.MD)
   - [🧩 CTF2](./CTF2.MD)
   - [🧩 CTF3](./CTF3.MD)
