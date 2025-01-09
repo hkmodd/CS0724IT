@@ -644,48 +644,57 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
 ---
 ---
 
-🎉 Risultati Ottenuti e Conclusioni 🎉
+## **Risultati Ottenuti 🎉**
 
-🔍 SQL Injection su DVWA:
+### **🔍 SQL Injection su DVWA:**
 
-Estrazione delle credenziali dell’utente Pablo in modalità Low e Medium.
+1. Estrazione delle credenziali dell’utente Pablo in modalità Low e Medium.
+2. Decodifica dell’hash MD5 della password (`letmein`).
 
-Decodifica dell’hash MD5 della password (letmein).
+### **💻 Exploit XSS Persistente su DVWA:**
 
-💻 Exploit XSS Persistente su DVWA:
+1. Creazione di payload avanzati per l’invio di cookie di sessione.
+2. Successo nella raccolta dei cookie in entrambe le modalità.
 
-Creazione di payload avanzati per l’invio di cookie di sessione.
+### **⚙️ Sviluppo in C:**
 
-Successo nella raccolta dei cookie in entrambe le modalità.
+1. Simulazione di segmentation fault per migliorare la comprensione degli errori di memoria.
+2. Debugging e analisi approfondita del programma.
 
-⚙️ Sviluppo in C:
+### **🗭️ Sfruttamento di Metasploitable:**
 
-Simulazione di segmentation fault per migliorare la comprensione degli errori di memoria.
+1. Identificazione e sfruttamento di vulnerabilità critiche sul servizio Samba.
+2. Accesso alla macchina e verifica delle configurazioni di rete.
 
-Debugging e analisi approfondita del programma.
+### **🗭 Exploit su Windows 10:**
 
-🗭️ Sfruttamento di Metasploitable:
+1. Sfruttamento del servizio Apache Tomcat per ottenere una sessione Meterpreter.
+2. Raccolta di evidenze (screenshot, configurazioni di rete, verifica hardware).
 
-Identificazione e sfruttamento di vulnerabilità critiche sul servizio Samba.
+### **🕵️ Risultati delle CTF:**
 
-Accesso alla macchina e verifica delle configurazioni di rete.
-
-🗭 Exploit su Windows 10:
-
-Sfruttamento del servizio Apache Tomcat per ottenere una sessione Meterpreter.
-
-Raccolta di evidenze (screenshot, configurazioni di rete, verifica hardware).
-
-🕵️ Risultati delle CTF:
-
-Risoluzione completa di tutte le challenge.
-
-Documentazione delle tecniche e strategie adottate.
+1. Risoluzione completa di tutte le challenge.
+2. Documentazione delle tecniche e strategie adottate.
 
 ---
 
+## **Conclusioni e Prospettive Future 🔮**
+
+Il team **CyberCerberus** ha dimostrato competenze avanzate nell’analisi e sfruttamento di vulnerabilità, producendo risultati concreti tra cui:
+
+- Guide operative dettagliate per SQL Injection, XSS e exploit su Metasploit.
+- Programmi in linguaggio C per simulazioni avanzate.
+- Risoluzione di tutte le CTF assegnate.
+
+### **Passi futuri:**
+
+- Approfondimento delle tecniche di difesa contro attacchi SQL Injection e XSS.
+- Estensione delle attività di exploit su altre piattaforme vulnerabili.
+- Ottimizzazione delle pratiche di debugging e sviluppo in C.
+
 Siamo entusiasti dei progressi fatti e pronti a proseguire il nostro viaggio nel mondo della Cybersecurity! Grazie per l’attenzione. 🙌
 
-Sebastiano GelmettiTeam Leader & Supervisor, CyberCerberus ⭐
+**Sebastiano Gelmetti***Team Leader & Supervisor, CyberCerberus* ⭐
+
 
 ## FINE DOCUMENTO, [torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
