@@ -694,8 +694,8 @@ Il team **CyberCerberus** ha dimostrato competenze avanzate nell’analisi e sfr
 
 Siamo entusiasti dei progressi fatti e pronti a proseguire il nostro viaggio nel mondo della Cybersecurity! Grazie per l’attenzione. 🙌
 
-**Sebastiano Gelmetti***
-Team Leader & Supervisor, CyberCerberus* ⭐
+**Sebastiano Gelmetti**
+Team Leader & Supervisor, **CyberCerberus** ⭐
 
 
 ## FINE DOCUMENTO, [torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
