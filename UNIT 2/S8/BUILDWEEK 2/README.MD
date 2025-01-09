@@ -19,6 +19,7 @@
   - [🧩 CTF2](./CTF2.MD)
   - [🧩 CTF3](./CTF3.MD)
 
+- ### [🚀 Conclusioni](#-conclusioni-e-prospettive-future)
 ---
 ---
 
@@ -644,41 +645,7 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
 ---
 ---
 
-# **Risultati Ottenuti 🎉**
-
-## **🔍 SQL Injection su DVWA:**
-
-1. Estrazione delle credenziali dell’utente Pablo in modalità Low e Medium.
-2. Decodifica dell’hash MD5 della password (`letmein`).
-
-## **💻 Exploit XSS Persistente su DVWA:**
-
-1. Creazione di payload avanzati per l’invio di cookie di sessione.
-2. Successo nella raccolta dei cookie in entrambe le modalità.
-
-## **⚙️ Sviluppo in C:**
-
-1. Simulazione di segmentation fault per migliorare la comprensione degli errori di memoria.
-2. Debugging e analisi approfondita del programma.
-
-## **🗭️ Sfruttamento di Metasploitable:**
-
-1. Identificazione e sfruttamento di vulnerabilità critiche sul servizio Samba.
-2. Accesso alla macchina e verifica delle configurazioni di rete.
-
-## **🗭 Exploit su Windows 10:**
-
-1. Sfruttamento del servizio Apache Tomcat per ottenere una sessione Meterpreter.
-2. Raccolta di evidenze (screenshot, configurazioni di rete, verifica hardware).
-
-## **🕵️ Risultati delle CTF:**
-
-1. Risoluzione completa di tutte le challenge.
-2. Documentazione delle tecniche e strategie adottate.
-
----
-
-# **Conclusioni e Prospettive Future 🔮**
+# **🔮 Conclusioni e Prospettive Future**
 
 Il team **CyberCerberus** ha dimostrato competenze avanzate nell’analisi e sfruttamento di vulnerabilità, producendo risultati concreti tra cui:
 
