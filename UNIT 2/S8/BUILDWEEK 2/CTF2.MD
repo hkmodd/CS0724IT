@@ -1,4 +1,4 @@
-# 🛡️ Empire LupinOne Walkthrough - TeamCyberCerberus
+# 🛡️ CyberCerberus: Seconda CTF Bonus - BuildWeek2
 
 Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo documento rappresenta il lavoro collaborativo del **TeamCyberCerberus**, che ha unito le proprie competenze per completare con successo il challenge. 💻
 
