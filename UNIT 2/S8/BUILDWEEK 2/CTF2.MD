@@ -2,6 +2,8 @@
 
 Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo documento rappresenta il lavoro collaborativo del **TeamCyberCerberus**, che ha unito le proprie competenze per completare con successo il challenge. 💻
 
+# [🏠 HOME](./README.MD)
+
 ---
 
 ## 🔍 **Pentesting Methodology**
@@ -115,3 +117,5 @@ Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo docu
 Il CTF **Empire LupinOne** è stato completato con successo grazie alla sinergia del **TeamCyberCerberus**! 🔓 Questo walkthrough evidenzia l'importanza di strumenti come **nmap**, **FFUF**, **linpeas**, e tecniche di privilege escalation come **pip** e Python library hijacking. 💻
 
 Grazie per aver seguito questa guida e per il supporto al nostro team! 💪
+
+# [🏠 HOME](./README.MD)
