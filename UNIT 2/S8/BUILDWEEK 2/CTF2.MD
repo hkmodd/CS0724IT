@@ -49,6 +49,7 @@ Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo docu
   ffuf -u http://192.168.1.7/~secret/.FUZZ -e .py,.java,.php,.dart,.rar,.zip,.txt,.html -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 200 -c -ic -fc 403
   ```
 - File trovato: `.mysecret.txt`.
+- Durante l'analisi di `/~secret`, abbiamo trovato un riferimento al nome utente `icex64`, che ci ha fornito un indizio cruciale per accedere successivamente al sistema.
 
 #### 🪦 Decodifica della chiave RSA
 - Contenuto del file `.mysecret.txt`:
