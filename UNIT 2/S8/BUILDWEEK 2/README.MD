@@ -17,7 +17,6 @@
 - ### 🕵️‍♂️ CTF Challenges Bonus
   - [🧩 CTF1](./CTF1.MD)
   - [🧩 CTF2](./CTF2.MD)
-  - [🧩 CTF3](./CTF3.MD)
 
 - ### [🚀 Conclusioni](#-conclusioni-e-prospettive-future)
 ---
@@ -655,7 +654,7 @@ Il team **CyberCerberus** ha dimostrato competenze avanzate nell’analisi e sfr
 
 - Guide operative dettagliate per SQL Injection, XSS e exploit su Metasploit.
 - Programmi in linguaggio C per simulazioni avanzate.
-- Risoluzione di tutte le CTF assegnate.
+- Risoluzione di 2 CTF assegnate.
 
 ## **Passi futuri:**
 
