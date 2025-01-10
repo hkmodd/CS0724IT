@@ -1,17 +1,71 @@
 # 🌐 S8 Build Week 2: **REPORT OPERATIVO – CYBERCERBERUS**
 
-- ## Portami alla [CTF1](./CTF1.MD)
-- ## Portami alla [CTF2](./CTF2.MD)
-- ## Portami alla [CTF3](./CTF3.MD)
-- [TRACCIA GIORNO 1: SQL Injection su DVWA](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
-- [TRACCIA GIORNO 2: Exploit XSS Persistente su DVWA](#-traccia-giorno-2-exploit-xss-persistente-su-dvwa-low-e-medium)
-- [TRACCIA GIORNO 3: Programma in C](#-traccia-giorno-3-programma-in-c)
-- [TRACCIA GIORNO 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable](#%EF%B8%8F-traccia-giorno-4-sfruttamento-di-vulnerabilità-sulla-macchina-metasploitable)
-- [TRACCIA GIORNO 5: Exploit di Windows 10 con Metasploit](#%EF%B8%8F-traccia-giorno-5-exploit-di-windows-10-con-metasploit)
+**🗓 Periodo:** 08/01/2025 - 11/01/2025
+**👥 Team:** **CyberCerberus**  
 
+## 🗂️ Indice
+
+- ### [🚀 Inizio](#-introduzione)
+
+- ### 📝 Tracce
+  - [📌 1: SQL Injection su DVWA (Low e Medium)](#-traccia-giorno-1-sql-injection-su-dvwa-low-e-medium)
+  - [📌 2: Exploit XSS Persistente su DVWA (Low e Medium)](#-traccia-giorno-2-exploit-xss-persistente-su-dvwa-low-e-medium)
+  - [📌 3: Programma in C](#-traccia-giorno-3-programma-in-c)
+  - [📌 4: Sfruttamento di Vulnerabilità sulla Macchina Metasploitable](#%EF%B8%8F-traccia-giorno-4-sfruttamento-di-vulnerabilità-sulla-macchina-metasploitable)
+  - [📌 5: Exploit di Windows 10 con Metasploit](#%EF%B8%8F-traccia-giorno-5-exploit-di-windows-10-con-metasploit)
+
+- ### 🕵️‍♂️ CTF Challenges Bonus
+  - [🧩 CTF1](./CTF1.MD)
+  - [🧩 CTF2](./CTF2.MD)
+  - [🧩 CTF3](./CTF3.MD)
+
+- ### [🚀 Conclusioni](#-conclusioni-e-prospettive-future)
 ---
 ---
 
+# **🚀 Introduzione**
+
+Durante questa **Build Week**, il team **CyberCerberus**, guidato da **Sebastiano Gelmetti** come Team Leader, ha affrontato un programma intensivo mirato all’acquisizione di competenze avanzate in attacco e difesa informatica. Abbiamo affrontato le seguenti sfide:
+
+- SQL Injection 🔍
+- Exploit XSS Persistente 💻
+- Sviluppo e debugging di programmi in C ⚙️
+- Sfruttamento di vulnerabilità su macchine virtuali con Metasploit 🗭️
+- Risoluzione di 3 CTF 🕵️
+
+### **👤 Composizione del team:**
+
+- **Sebastiano Gelmetti** – *Team Leader* ⭐
+- **Federica Cardinali**
+- **Rinat Rustamov**
+- **Manuel Izzo**
+- **Andrea Calcagno**
+- **Francesco Rossi**
+- **Luca Nietrzeba**
+- **Antonio Podda**
+- **Alessandro Ragnino**
+
+### **🎯 Obiettivi principali:**
+
+Avanzare nell’analisi delle vulnerabilità e nell’applicazione di exploit reali, concentrandoci su:
+
+- Simulazioni di attacchi su piattaforme vulnerabili come DVWA e Metasploitable.
+- Uso di tool avanzati per il vulnerability assessment.
+- Creazione e modifica di programmi in linguaggio C per simulare errori critici.
+
+Per garantire l’allineamento del team e la condivisione delle competenze, abbiamo adottato un approccio collaborativo, lavorando tutti insieme su ogni attività.
+
+---
+
+## **Cronologia delle attività 🕒**
+
+### **🔄 Metodologia**
+
+Abbiamo deciso di concentrare tutte le attività relative alle **5 tracce** durante la giornata di martedì 08/01/2025, lasciando spazio nei giorni successivi per dedicarsi esclusivamente alle **3 CTF**. Questo approccio ci ha permesso di approfondire le tematiche trattate e garantire un avanzamento sinergico del team.
+
+---
+---
+---
 # 🛠 **TRACCIA GIORNO 1: SQL Injection su DVWA (Low e Medium)**
 
 Questa guida fornisce istruzioni passo-passo per eseguire una SQL Injection sulla piattaforma **DVWA (Damn Vulnerable Web Application)**. L'obiettivo è estrarre i dati sensibili dell'utente **Pablo** in modalità **Low** e **Medium**, e decifrare la sua password hash **MD5**.
@@ -101,6 +155,8 @@ Superare i controlli di filtraggio e ottenere i dati di Pablo utilizzando payloa
 ## **Conclusione**
 
 Seguendo questa guida, abbiamo dimostrato come eseguire una SQL Injection su DVWA per estrarre i dati dell'utente **Pablo** e decifrare la sua password MD5 `letmein`. Questi test sottolineano l'importanza di proteggere le applicazioni web da vulnerabilità di SQL Injection.
+
+## [Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
 
 ---
 ---
@@ -223,6 +279,8 @@ Per proteggere le applicazioni da attacchi XSS:
 ## 🚀 **Conclusione**
 
 Abbiamo dimostrato come sfruttare vulnerabilità di **SQL Injection** e **XSS Persistente** su DVWA per estrarre dati sensibili e rubare cookie di sessione. Questa guida sottolinea l'importanza di implementare misure di sicurezza per prevenire tali attacchi.
+
+## [Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
 
 ---
 ---
@@ -352,6 +410,8 @@ Segmentation fault (core dumped)
 ## ⚠️ Conclusioni
 Con queste modifiche, il programma dimostra sia il funzionamento corretto che un errore simulato. Questo progetto aiuta a comprendere meglio i concetti di sicurezza e debugging nei programmi C. 🎯
 
+## [Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
+
 ---
 ---
 
@@ -446,6 +506,8 @@ Sulla macchina **Metasploitable** sono stati individuati diversi servizi in asco
 - 🔎 Il **Vulnerability Scanning** ha evidenziato una vulnerabilità critica nel servizio Samba sulla porta **445 TCP**.
 - 💥 La vulnerabilità è stata sfruttata con successo utilizzando l'exploit **exploit/multi/samba/usermap_script** di Metasploit.
 - 🖥️ È stato ottenuto accesso alla macchina compromessa e confermato l'indirizzo IP tramite il comando `ifconfig`.
+
+## [Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
 
 ---
 ---
@@ -581,4 +643,26 @@ Sulla macchina **Windows 10** ci sono servizi che possono essere sfruttati per o
   - Screenshot del desktop.
 
 ---
-# FINE DOCUMENTO, [Torna in cima](#-s8-build-week-2-report-operativo--cybercerberus)
+---
+
+# **🔮 Conclusioni e Prospettive Future**
+
+Il team **CyberCerberus** ha dimostrato competenze avanzate nell’analisi e sfruttamento di vulnerabilità, producendo risultati concreti tra cui:
+
+- Guide operative dettagliate per SQL Injection, XSS e exploit su Metasploit.
+- Programmi in linguaggio C per simulazioni avanzate.
+- Risoluzione di tutte le CTF assegnate.
+
+## **Passi futuri:**
+
+- Approfondimento delle tecniche di difesa contro attacchi SQL Injection e XSS.
+- Estensione delle attività di exploit su altre piattaforme vulnerabili.
+- Ottimizzazione delle pratiche di debugging e sviluppo in C.
+
+Siamo entusiasti dei progressi fatti e pronti a proseguire il nostro viaggio nel mondo della Cybersecurity! Grazie per l’attenzione. 🙌
+
+**Sebastiano Gelmetti**
+Team Leader & Supervisor, **CyberCerberus** ⭐
+
+
+## FINE DOCUMENTO, [torna in cima](#-s8-build-week-2-report-operativo--cybercerberus).
