@@ -2,7 +2,7 @@
 
 Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo documento rappresenta il lavoro collaborativo del **TeamCyberCerberus**, che ha unito le proprie competenze per completare con successo il challenge. 💻
 
-# [🏠 HOME](./README.MD)
+## [🏠 HOME](./README.MD)
 
 ---
 
@@ -118,4 +118,4 @@ Il CTF **Empire LupinOne** è stato completato con successo grazie alla sinergia
 
 Grazie per aver seguito questa guida e per il supporto al nostro team! 💪
 
-# [🏠 HOME](./README.MD)
+## [🏠 HOME](./README.MD)
