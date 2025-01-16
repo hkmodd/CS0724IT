@@ -72,7 +72,7 @@ I risultati per tutti gli scenari sono stati organizzati in un foglio di calcolo
 - Il valore calcolato di **SLE**.
 - Il valore calcolato di **ALE**.
 
-Puoi scaricare il foglio di calcolo qui: [Pratica S9 L3 - Analisi Disastro](Pratica_S9_L3_Analisi_Disastro.xlsx).
+Puoi scaricare il foglio di calcolo qui: [Pratica S9 L3 - Analisi Disastro](S9L3_analisi.xlsx).
 
 ---
 
