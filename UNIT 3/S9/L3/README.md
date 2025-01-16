@@ -64,6 +64,8 @@ Determinare la perdita economica annuale associata a ciascun disastro sugli asse
 
 ---
 
+![Screenshot](./Screenshot.png)
+
 ## 📂 **Risultati Finali**
 
 I risultati per tutti gli scenari sono stati organizzati in un foglio di calcolo. Ogni riga rappresenta:
