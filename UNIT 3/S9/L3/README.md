@@ -74,19 +74,3 @@ I risultati per tutti gli scenari sono stati organizzati in un foglio di calcolo
 
 Puoi scaricare il foglio di calcolo qui: [Pratica S9 L3 - Analisi Disastro](S9L3_analisi.xlsx).
 
----
-
-## 🛠️ **Strumenti Utilizzati**
-- **Python**: per calcolare e organizzare i risultati.
-- **Pandas**: per elaborare i dati e salvare il foglio di calcolo.
-- **Excel**: per una presentazione chiara e strutturata.
-
----
-
-## 🚨 **Nota Importante**
-Questa analisi è a scopo didattico. I dati, le formule e i risultati possono essere personalizzati per scenari reali. Utilizzare con responsabilità.
-
----
-
-🔒 **Autore**: Sebastiano  
-📅 **Data**: Gennaio 2025  
