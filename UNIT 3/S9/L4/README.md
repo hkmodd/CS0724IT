@@ -81,11 +81,3 @@ Esegui attività per generare eventi specifici:
   - Integra i log con strumenti come **Splunk** o **ELK Stack** per una revisione su larga scala.
 
 ---
-
-## 🚨 **Nota Importante**
-Questa pratica è a scopo didattico e i log devono essere gestiti in conformità con le leggi sulla privacy e la sicurezza dei dati.
-
----
-
-🔒 **Autore**: Sebastiano  
-📅 **Data**: Gennaio 2025  
