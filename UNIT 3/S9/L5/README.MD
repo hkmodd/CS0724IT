@@ -1,4 +1,5 @@
-# 🛡️ Progetto S9/L5: Identificazione e Analisi degli IOC
+# 📐 Progetto S9/L5 📐
+# 🛡️ Identificazione e Analisi degli IOC
 
 ## 📋 Descrizione
 Questo progetto consiste nell'analisi di una cattura di rete per:
@@ -113,6 +114,3 @@ In base agli IOC sopra descritti, i seguenti vettori di attacco sono stati ipoti
   - Isolamento dei dispositivi, aggiornamento della sicurezza e monitoraggio continuo.
 
 ---
-
-## 🤝 Contributi
-Creato per il Progetto S9/L5 da Sebastiano, con il supporto di strumenti di analisi avanzata. 💻🔍
