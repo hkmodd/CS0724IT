@@ -46,7 +46,7 @@ Utilizzando **Wireshark**, abbiamo analizzato il traffico di rete e ricavato pat
   - Questo dispositivo interno invia traffico sospetto a `192.168.200.100`.
   - Potenziale indicazione di **compromissione interna** o malware.
 
-- **Utilizzo di porte non standard (es. 4444):**
+- **Utilizzo di porte non standard:**
   - La porta `4444` è spesso utilizzata da exploit o server di comando e controllo (C2).
 
 - **Pattern di traffico ripetitivo:**
