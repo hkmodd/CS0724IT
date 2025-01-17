@@ -1,4 +1,5 @@
-# 🛡️ Progetto S9/L5: Identificazione e Analisi degli IOC
+# 📐 Progetto S9/L5 📐
+# 🛡️ Identificazione e Analisi degli IOC
 
 ## 📋 Descrizione
 Questo progetto consiste nell'analisi di una cattura di rete per:
