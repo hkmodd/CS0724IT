@@ -14,10 +14,10 @@ Utilizzando **Wireshark**, abbiamo analizzato il traffico di rete e ricavato pat
 ## 🛠️ Procedura
 
 ### 1️⃣ Preparazione dell'Ambiente
-1. **Installare Wireshark** su un sistema Kali Linux o equivalente.
+1. **Avviare Wireshark**
 2. **Caricare il file di cattura** nella directory di lavoro e aprirlo con Wireshark:
    ```bash
-   wireshark <file>.pcap
+   wireshark Cattura_U3_W1_L5.pcap
    ```
 3. Familiarizzarsi con i filtri base di Wireshark per isolare traffico specifico:
    - Traffico TCP:
