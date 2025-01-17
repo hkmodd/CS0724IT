@@ -61,7 +61,7 @@ In base agli IOC sopra descritti, i seguenti vettori di attacco sono stati ipoti
    - Gli `RST, ACK` frequenti suggeriscono che un attore malevolo stia cercando porte aperte per identificare servizi vulnerabili.
 
 2. **Exploitation tramite porte non standard:**
-   - L'uso della porta `4444` potrebbe indicare l'esecuzione di payload malevoli attraverso strumenti come Metasploit.
+   - L'uso della porta come ad esempio la `4444` potrebbe indicare l'esecuzione di payload malevoli attraverso strumenti come Metasploit.
 
 3. **Command & Control (C2):**
    - Traffico ripetitivo verso un indirizzo interno compromesso potrebbe essere una comunicazione verso un server remoto di controllo.
