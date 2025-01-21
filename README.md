@@ -42,7 +42,7 @@ Updated regularly with my progress, insights, and milestones in the bootcamp jou
 
 - **GitHub**: [hkmodd](https://github.com/hkmodd)  
 - **LinkedIn**: [Sebastiano’s Profile](https://www.linkedin.com/in/gelmetti-sebastiano/)  
-- **Email**: [sebastiano.gelmetti@yahoo.it](mailto:sebastiano.gelmetti@yahoo.it)
+- **WorkEmail**: [sebastiano.gelmetti@gmail.com](mailto:sebastiano.gelmetti@gmail.com)
 
 ---
 
