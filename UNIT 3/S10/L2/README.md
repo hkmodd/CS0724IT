@@ -11,8 +11,8 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
 ### 1️⃣ Creazione del file e della directory
 - È stato creato un file denominato `file_test.txt` e una directory chiamata `directory_test` usando i comandi:
   ```bash
-  echo "Testo di prova" > file_test.txt
-  touch directory_test/nuovo_file.txt
+  touch file_text.txt
+  mkdir directory_test
   ```
 - 🔍 **Screenshot**:
 
