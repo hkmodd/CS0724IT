@@ -30,11 +30,11 @@ Updated regularly with my progress, insights, and milestones in the bootcamp jou
 
 ---
 
-### 💻 **Tech Stack**
+### 💻 **Examples of utilized Tech Stack**
 
-- **Languages**: Python, Bash, C  
-- **Tools**: Metasploit, Kali Linux, Wireshark  
-- **Platforms**: VMware, QEMU, VirtualBox
+- **Languages like**: Python, Bash, C ..
+- **Tools**: Metasploit, Kali Linux, Wireshark, Flare-VM..
+- **Platforms**: VMware, QEMU, VirtualBox, Linux/GNU, Windows Server ..
 
 ---
 
@@ -42,7 +42,7 @@ Updated regularly with my progress, insights, and milestones in the bootcamp jou
 
 - **GitHub**: [hkmodd](https://github.com/hkmodd)  
 - **LinkedIn**: [Sebastiano’s Profile](https://www.linkedin.com/in/gelmetti-sebastiano/)  
-- **Email**: [sebastiano.gelmetti@yahoo.it](mailto:sebastiano.gelmetti@yahoo.it)
+- **WorkEmail**: [sebastiano.gelmetti@gmail.com](mailto:sebastiano.gelmetti@gmail.com)
 
 ---
 

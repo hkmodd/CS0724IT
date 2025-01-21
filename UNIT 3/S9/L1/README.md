@@ -1,5 +1,5 @@
-
-# Pratica S9/L1 - **Creazione di un Payload Offuscato** 🚀
+# 📝 Consegna S9/L1
+# **Creazione di un Payload Offuscato** 🚀
 
 Questo progetto documenta la creazione di un payload `Meterpreter` irriconoscibile da VirusTotal, mantenendone la funzionalità e garantendo l'esecuzione su un ambiente Windows, come **FlareVM**. Il processo include tecniche avanzate di offuscamento, encoding personalizzato e il trasferimento sicuro tra ambienti virtualizzati.
 

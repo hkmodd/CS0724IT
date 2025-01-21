@@ -1,3 +1,4 @@
+# 📝 Consegna S10/L2
 # 📂 Gestione dei Permessi in Linux
 
 ## 📝 Introduzione
@@ -10,10 +11,12 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
 ### 1️⃣ Creazione del file e della directory
 - È stato creato un file denominato `file_test.txt` e una directory chiamata `directory_test` usando i comandi:
   ```bash
-  echo "Testo di prova" > file_test.txt
-  touch directory_test/nuovo_file.txt
+  touch file_text.txt
+  mkdir directory_test
   ```
-- 🔍 **Screenshot**: [Creazione file e directory](./Screen/Screen1.png)
+- 🔍 **Screenshot**:
+
+![Creazione file e directory](./Screen/Screen1.png)
 
 ---
 
@@ -31,7 +34,9 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
     chmod g+rx directory_test
     chmod o-r directory_test
     ```
-- 🔍 **Screenshot**: [Modifica dei permessi](./Screen/Screen2.png)
+- 🔍 **Screenshot**:
+
+![Modifica dei permessi](./Screen/Screen3.png)
 
 ---
 
@@ -45,8 +50,6 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
     ```bash
     touch directory_test/nuovo_file.txt
     ```
-- 🔍 **Screenshot**: [Test dei permessi](./Screen/Screen3.png)
-
 ---
 
 ## 📊 Analisi dei risultati
@@ -67,4 +70,3 @@ L'esercizio ha permesso di:
 - ✅ Verificare il corretto funzionamento dei permessi su file e directory.
 - ✅ Applicare una configurazione sicura limitando i permessi agli utenti non autorizzati.
 
-Grazie per aver letto questa guida! 😊 Se hai domande o suggerimenti, non esitare a contattarmi.
