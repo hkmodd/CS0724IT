@@ -1,5 +1,5 @@
-
-# Pratica S9/L4 - **Gestione e Analisi dei Log di Sicurezza** 🛡️🖥️
+# 📝 Consegna S9/L4
+# **Gestione e Analisi dei Log di Sicurezza** 🛡️🖥️
 
 In questa pratica, ci concentriamo sulla configurazione, gestione e analisi dei file di log di sicurezza di Windows utilizzando il **Visualizzatore Eventi**. L'obiettivo è identificare eventi critici come tentativi di accesso, modifiche ai privilegi e attività sospette.
 
