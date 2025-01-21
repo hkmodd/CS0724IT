@@ -14,10 +14,10 @@ Utilizzando **Wireshark**, abbiamo analizzato il traffico di rete e ricavato pat
 ## 🛠️ Procedura
 
 ### 1️⃣ Preparazione dell'Ambiente
-1. **Installare Wireshark** su un sistema Kali Linux o equivalente.
+1. **Avviare Wireshark**
 2. **Caricare il file di cattura** nella directory di lavoro e aprirlo con Wireshark:
    ```bash
-   wireshark <file>.pcap
+   wireshark Cattura_U3_W1_L5.pcap
    ```
 3. Familiarizzarsi con i filtri base di Wireshark per isolare traffico specifico:
    - Traffico TCP:
@@ -46,7 +46,7 @@ Utilizzando **Wireshark**, abbiamo analizzato il traffico di rete e ricavato pat
   - Questo dispositivo interno invia traffico sospetto a `192.168.200.100`.
   - Potenziale indicazione di **compromissione interna** o malware.
 
-- **Utilizzo di porte non standard (es. 4444):**
+- **Utilizzo di porte non standard:**
   - La porta `4444` è spesso utilizzata da exploit o server di comando e controllo (C2).
 
 - **Pattern di traffico ripetitivo:**
@@ -61,7 +61,7 @@ In base agli IOC sopra descritti, i seguenti vettori di attacco sono stati ipoti
    - Gli `RST, ACK` frequenti suggeriscono che un attore malevolo stia cercando porte aperte per identificare servizi vulnerabili.
 
 2. **Exploitation tramite porte non standard:**
-   - L'uso della porta `4444` potrebbe indicare l'esecuzione di payload malevoli attraverso strumenti come Metasploit.
+   - L'uso della porta come ad esempio la `4444` potrebbe indicare l'esecuzione di payload malevoli attraverso strumenti come Metasploit.
 
 3. **Command & Control (C2):**
    - Traffico ripetitivo verso un indirizzo interno compromesso potrebbe essere una comunicazione verso un server remoto di controllo.
