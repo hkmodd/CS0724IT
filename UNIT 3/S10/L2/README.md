@@ -50,10 +50,6 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
     ```bash
     touch directory_test/nuovo_file.txt
     ```
-- 🔍 **Screenshot**:
-
-![Test dei permessi](./Screen/Screen2.png)
-
 ---
 
 ## 📊 Analisi dei risultati
