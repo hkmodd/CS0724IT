@@ -1,5 +1,5 @@
-
-# Pratica S9/L3 - **Business Continuity & Disaster Recovery** 💼🌍
+# 📝 Consegna S9/L3 
+# **Business Continuity & Disaster Recovery** 💼🌍
 
 In questa pratica, abbiamo analizzato l'impatto economico di vari disastri su asset critici di una compagnia, calcolando i valori di **Single Loss Expectancy (SLE)** e **Annualized Loss Expectancy (ALE)** per ogni scenario.
 
