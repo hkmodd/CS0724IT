@@ -13,7 +13,7 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
   echo "Testo di prova" > file_test.txt
   touch directory_test/nuovo_file.txt
   ```
-- 🔍 **Screenshot**: [Creazione file e directory](./Screen/Screen1.png)
+- 🔍 **Screenshot**: ![Creazione file e directory](./Screen/Screen1.png)
 
 ---
 
@@ -31,7 +31,7 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
     chmod g+rx directory_test
     chmod o-r directory_test
     ```
-- 🔍 **Screenshot**: [Modifica dei permessi](./Screen/Screen2.png)
+- 🔍 **Screenshot**: ![Modifica dei permessi](./Screen/Screen2.png)
 
 ---
 
@@ -45,7 +45,7 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
     ```bash
     touch directory_test/nuovo_file.txt
     ```
-- 🔍 **Screenshot**: [Test dei permessi](./Screen/Screen3.png)
+- 🔍 **Screenshot**: ![Test dei permessi](./Screen/Screen3.png)
 
 ---
 
