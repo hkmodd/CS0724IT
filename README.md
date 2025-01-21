@@ -30,11 +30,11 @@ Updated regularly with my progress, insights, and milestones in the bootcamp jou
 
 ---
 
-### 💻 **Tech Stack**
+### 💻 **Examples of utilized Tech Stack**
 
-- **Languages**: Python, Bash, C  
-- **Tools**: Metasploit, Kali Linux, Wireshark  
-- **Platforms**: VMware, QEMU, VirtualBox
+- **Languages like**: Python, Bash, C ..
+- **Tools**: Metasploit, Kali Linux, Wireshark, Flare-VM..
+- **Platforms**: VMware, QEMU, VirtualBox, Linux/GNU, Windows Server ..
 
 ---
 
