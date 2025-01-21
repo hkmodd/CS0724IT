@@ -36,7 +36,7 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
     ```
 - 🔍 **Screenshot**:
 
-![Modifica dei permessi](./Screen/Screen2.png)
+![Modifica dei permessi](./Screen/Screen3.png)
 
 ---
 
@@ -52,7 +52,7 @@ In questo esercizio abbiamo configurato e gestito i permessi di lettura, scrittu
     ```
 - 🔍 **Screenshot**:
 
-![Test dei permessi](./Screen/Screen3.png)
+![Test dei permessi](./Screen/Screen2.png)
 
 ---
 
