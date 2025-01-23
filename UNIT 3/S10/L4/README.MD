@@ -1,4 +1,5 @@
-# Pratica S10 L4: Backup, Cloud e RAID
+# 📝 Consegna S10/L4
+# ☁️ Backup, Cloud e RAID
 
 ## Introduzione 🌐
 In questo progetto, ho approfondito i concetti di **Backup**, **Cloud Computing** e **RAID**, fondamentali per la protezione e l'affidabilità dei dati aziendali. Ho svolto le attività richieste, fornendo esempi pratici e seguendo le migliori pratiche del settore. 💪
