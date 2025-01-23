@@ -65,5 +65,3 @@ Per esplorare i servizi cloud, ho seguito questi passaggi per creare un account 
 ## Conclusione 🚀
 
 Con questo progetto ho approfondito i concetti chiave di Backup, Cloud e RAID, apprendendo le migliori pratiche per proteggere e ottimizzare i dati aziendali. Il cloud si conferma una risorsa strategica per sicurezza e scalabilità, mentre il backup e il RAID restano fondamentali per garantire affidabilità e prestazioni. 💡
-
-Se ci sono altre richieste o suggerimenti, resto a disposizione per ulteriori implementazioni! 😉
