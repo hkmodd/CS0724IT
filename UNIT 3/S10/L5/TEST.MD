@@ -23,13 +23,15 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 
 #### Passaggio 2: Creazione di Organizational Units (OU)
 ![Screenshot 2](./Screen/2.png)
+![Screenshot 3](./Screen/3.png)
 
 - Nella struttura **Epicode.local**, ho creato due OU:
   - **Amministrazione**
   - **Utenti Standard**
 
 #### Passaggio 3: Creazione degli Utenti
-![Screenshot 3](./Screen/3.png)
+![Screenshot 4](./Screen/4.png)
+![Screenshot 4.5](./Screen/4.5.png)
 
 - All'interno di ogni OU, ho aggiunto utenti pertinenti:
   - **Amministrazione**:
@@ -38,10 +40,6 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
   - **Utenti Standard**:
     - *Utente1* 👤
     - *Utente2* 👤
-
-![Screenshot 4](./Screen/4.png)
-
-![Screenshot 4.5](./Screen/4.5.png)
 
 #### Passaggio 4: Creazione dei Gruppi
 ![Screenshot 5](./Screen/5.png)
