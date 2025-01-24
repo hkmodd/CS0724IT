@@ -17,20 +17,19 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 ### 1. Creazione delle OU, Utenti e Gruppi
 
 #### Passaggio 1: Accesso a Active Directory Users and Computers
-![Screenshot 4](./Screen/4.png)
+![Screenshot 1](./Screen/1.png)
+
 
 - Dal **Server Manager**, clicca su **Tools** > **Active Directory Users and Computers**.
 
 #### Passaggio 2: Creazione di Organizational Units (OU)
-![Screenshot 2](./Screen/2.png)
 
 - Nella struttura **Epicode.local**, ho creato due OU:
   - **Amministrazione**
   - **Utenti Standard**
 
 #### Passaggio 3: Creazione degli Utenti
-![Screenshot 3](./Screen/3.png)
-![Screenshot 4.5](./Screen/4.5.png)
+![Screenshot 2](./Screen/2.png)
 
 - All'interno di ogni OU, ho aggiunto utenti pertinenti:
   - **Amministrazione**:
@@ -41,12 +40,13 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
     - *Utente2* 👤
 
 #### Passaggio 4: Creazione dei Gruppi
-![Screenshot 1](./Screen/1.png)
+![Screenshot 3](./Screen/3.png)
 
 - Ho creato i seguenti gruppi, associati ai relativi utenti per zona:
   - **IT_Admins** (in *Amministrazione*).
   - **UtentiStandard** (in *Utenti Standard*).
-
+![Screenshot 4](./Screen/4.png)
+![Screenshot 4.5](./Screen/4.5.png)
 ---
 
 ### 2. Configurazione delle Cartelle e dei Permessi
@@ -56,23 +56,23 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 - **Path**: `C:\ADMIN`
 - **Permessi**:
   - ✅ Accesso completo (Full Control) per **IT_Admins**.
+![Screenshot 5](./Screen/5.png)
   - ❌ Nessun accesso per **UtentiStandard**.
-
 ![Screenshot 6](./Screen/6.png)
+
+
+#### Cartella **Pubblica** 🌐
+![Screenshot 7](./Screen/7.png)
 
 - Ho verificato che utenti come *Sergio Vanni* possano accedere e modificare i file.
 - Gli utenti standard ricevono un errore di accesso negato:
-
-![Screenshot 7](./Screen/7.png)
-
-#### Cartella **Pubblica** 🌐
 
 - **Path**: `C:\Pubblica`
 - **Permessi**:
   - ✅ Accessibile da tutti i gruppi.
   - ❌ Modifica vietata per **UtentiStandard** (permessi in sola lettura).
 
-![Screenshot 5](./Screen/5.png)
+![Screenshot 8](./Screen/8.png)
 
 - Ho verificato che gli utenti standard possano aprire ma non modificare i file.
 
@@ -88,8 +88,6 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 - Ho verificato che solo gli amministratori possano accedere in rete.
 
 #### Passaggio 2: Condivisione della Cartella **Pubblica** 🌐
-
-![Screenshot 8](./Screen/8.png)
 
 - Ho condiviso la cartella **Pubblica**, garantendo l'accesso completo solo agli amministratori e limitando le modifiche per gli utenti standard.
 
