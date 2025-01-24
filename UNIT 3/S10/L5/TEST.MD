@@ -29,6 +29,7 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
   - **Utenti Standard**
 
 #### Passaggio 3: Creazione degli Utenti
+
 ![Screenshot 2](./Screen/2.png)
 
 - All'interno di ogni OU, ho aggiunto utenti pertinenti:
@@ -40,11 +41,13 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
     - *Utente2* 👤
 
 #### Passaggio 4: Creazione dei Gruppi
+
 ![Screenshot 3](./Screen/3.png)
 
 - Ho creato i seguenti gruppi, associati ai relativi utenti per zona:
   - **IT_Admins** (in *Amministrazione*).
   - **UtentiStandard** (in *Utenti Standard*).
+
 ![Screenshot 4](./Screen/4.png)
 ![Screenshot 4.5](./Screen/4.5.png)
 ---
@@ -56,12 +59,15 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 - **Path**: `C:\ADMIN`
 - **Permessi**:
   - ✅ Accesso completo (Full Control) per **IT_Admins**.
+
 ![Screenshot 5](./Screen/5.png)
+
   - ❌ Nessun accesso per **UtentiStandard**.
+
 ![Screenshot 6](./Screen/6.png)
 
-
 #### Cartella **Pubblica** 🌐
+
 ![Screenshot 7](./Screen/7.png)
 
 - Ho verificato che utenti come *Sergio Vanni* possano accedere e modificare i file.
@@ -112,5 +118,3 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 Il progetto si è concluso con successo. 💪🎉
 
 Abbiamo creato un ambiente sicuro e ben organizzato su Windows Server 2022, rispettando le best practice di gestione utenti e risorse. Questo walkthrough è una guida utile per chiunque voglia replicare un setup simile.
-
-Grazie per l'attenzione! 😊
