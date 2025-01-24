@@ -17,20 +17,19 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 ### 1. Creazione delle OU, Utenti e Gruppi
 
 #### Passaggio 1: Accesso a Active Directory Users and Computers
-![Screenshot 1](./Screen/1.png)
+![Screenshot 4](./Screen/4.png)
 
 - Dal **Server Manager**, clicca su **Tools** > **Active Directory Users and Computers**.
 
 #### Passaggio 2: Creazione di Organizational Units (OU)
 ![Screenshot 2](./Screen/2.png)
-![Screenshot 3](./Screen/3.png)
 
 - Nella struttura **Epicode.local**, ho creato due OU:
   - **Amministrazione**
   - **Utenti Standard**
 
 #### Passaggio 3: Creazione degli Utenti
-![Screenshot 4](./Screen/4.png)
+![Screenshot 3](./Screen/3.png)
 ![Screenshot 4.5](./Screen/4.5.png)
 
 - All'interno di ogni OU, ho aggiunto utenti pertinenti:
@@ -42,7 +41,7 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
     - *Utente2* 👤
 
 #### Passaggio 4: Creazione dei Gruppi
-![Screenshot 5](./Screen/5.png)
+![Screenshot 1](./Screen/1.png)
 
 - Ho creato i seguenti gruppi, associati ai relativi utenti per zona:
   - **IT_Admins** (in *Amministrazione*).
@@ -73,7 +72,7 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
   - ✅ Accessibile da tutti i gruppi.
   - ❌ Modifica vietata per **UtentiStandard** (permessi in sola lettura).
 
-![Screenshot 8](./Screen/8.png)
+![Screenshot 5](./Screen/5.png)
 
 - Ho verificato che gli utenti standard possano aprire ma non modificare i file.
 
@@ -89,6 +88,8 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 - Ho verificato che solo gli amministratori possano accedere in rete.
 
 #### Passaggio 2: Condivisione della Cartella **Pubblica** 🌐
+
+![Screenshot 8](./Screen/8.png)
 
 - Ho condiviso la cartella **Pubblica**, garantendo l'accesso completo solo agli amministratori e limitando le modifiche per gli utenti standard.
 
