@@ -45,7 +45,7 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 #### Passaggio 4: Creazione dei Gruppi
 ![Screenshot 3](./Screen/3.png)
 
-- Ho creato i seguenti gruppi:
+- Ho creato i seguenti gruppi, associati ai relativi utenti per zona.:
   - **IT_Admins** (in *Amministrazione*).
   - **UtentiStandard** (in *Utenti Standard*).
 
