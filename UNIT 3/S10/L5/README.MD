@@ -1,4 +1,5 @@
-# Progetto S10/L5: Creazione e Gestione di Gruppi e Permessi su Windows Server
+# 📐 Progetto S10/L5 📐
+# Creazione e Gestione di Gruppi e Permessi su Windows Server
 
 ## Introduzione
 In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per gestire utenti, gruppi e risorse condivise. L'obiettivo è stato quello di:
