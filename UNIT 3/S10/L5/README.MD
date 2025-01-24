@@ -10,8 +10,6 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
    - **ADMIN**: accessibile solo agli amministratori.
 3. Verificare che i permessi funzionino correttamente.
 
-Questo README funge da walkthrough completo del progetto, con tutti i passaggi eseguiti. 📝✨
-
 ---
 
 ## Struttura del Progetto
@@ -19,14 +17,24 @@ Questo README funge da walkthrough completo del progetto, con tutti i passaggi e
 ### 1. Creazione delle OU, Utenti e Gruppi
 
 #### Passaggio 1: Accesso a Active Directory Users and Computers
-- Dal **Server Manager**, clicca su **Tools** > **Active Directory Users and Computers** (vedi [screenshot 1.png](./1.png)).
+![Screenshot 1](./Screen/1.png)
+
+- Dal **Server Manager**, clicca su **Tools** > **Active Directory Users and Computers**.
 
 #### Passaggio 2: Creazione di Organizational Units (OU)
+![Screenshot 2](./Screen/2.png)
+
+![Screenshot 3](./Screen/3.png)
+
 - Nella struttura **Epicode.local**, ho creato due OU:
-  - **Amministrazione** (vedi [screenshot 2.png](./2.png))
-  - **Utenti Standard** (vedi [screenshot 3.png](./3.png))
+  - **Amministrazione**
+  - **Utenti Standard**
 
 #### Passaggio 3: Creazione degli Utenti
+![Screenshot 4](./Screen/4.png)
+
+![Screenshot 4.5](./Screen/4.5.png)
+
 - All'interno di ogni OU, ho aggiunto utenti pertinenti:
   - **Amministrazione**:
     - *Sergio Vanni*
@@ -35,39 +43,46 @@ Questo README funge da walkthrough completo del progetto, con tutti i passaggi e
     - *Utente1*
     - *Utente2*
 
-Vedi [screenshot 4.png](./4.png) e [screenshot 4.5.png](./4.5.png) per i dettagli della creazione.
-
 #### Passaggio 4: Creazione dei Gruppi
+![Screenshot 5](./Screen/5.png)
+
 - Ho creato i seguenti gruppi:
   - **IT_Admins** (in *Amministrazione*).
   - **UtentiStandard** (in *Utenti Standard*).
-- Vedi [screenshot 5.png](./5.png) per la procedura.
 
 ---
 
 ### 2. Configurazione delle Cartelle e dei Permessi
 
 #### Cartella **ADMIN**
+![Screenshot 6](./Screen/6.png)
+
+![Screenshot 7](./Screen/7.png)
+
 - **Path**: `C:\ADMIN`
 - **Permessi**:
   - Accesso completo (Full Control) per **IT_Admins**.
   - Nessun accesso per **UtentiStandard**.
-- Ho verificato che utenti come *Sergio Vanni* possano accedere e modificare i file (vedi [screenshot 6.png](./6.png)).
-- Gli utenti standard ricevono un errore di accesso negato (vedi [screenshot 7.png](./7.png)).
+- Ho verificato che utenti come *Sergio Vanni* possano accedere e modificare i file.
+- Gli utenti standard ricevono un errore di accesso negato.
 
 #### Cartella **Pubblica**
+![Screenshot 8](./Screen/8.png)
+
 - **Path**: `C:\Pubblica`
 - **Permessi**:
   - Accessibile da tutti i gruppi.
   - Modifica vietata per **UtentiStandard** (permessi in sola lettura).
-- Ho verificato che gli utenti standard possano aprire ma non modificare i file, come mostrato in [screenshot 8.png](./8.png).
+- Ho verificato che gli utenti standard possano aprire ma non modificare i file.
 
 ---
 
 ### 3. Condivisione delle Cartelle in Rete
 
 #### Passaggio 1: Condivisione della Cartella **ADMIN**
-- Ho condiviso la cartella **ADMIN** con il gruppo **IT_Admins** attraverso le **proprietà di condivisione avanzata** (vedi [screenshot 5.5.png](./5.5.png)).
+![Screenshot 5.5](./Screen/5.5.png)
+
+- Ho condiviso la cartella **ADMIN** con il gruppo **IT_Admins** attraverso le **proprietà di condivisione avanzata**.
 - Ho verificato che solo gli amministratori possano accedere in rete.
 
 #### Passaggio 2: Condivisione della Cartella **Pubblica**
@@ -92,5 +107,3 @@ Vedi [screenshot 4.png](./4.png) e [screenshot 4.5.png](./4.5.png) per i dettagl
 Il progetto si è concluso con successo. 💪🎉
 
 Abbiamo creato un ambiente sicuro e ben organizzato su Windows Server 2022, rispettando le best practice di gestione utenti e risorse. Questo walkthrough è una guida utile per chiunque voglia replicare un setup simile.
-
-Se ci sono domande o dubbi, non esitare a contattarmi! 😉
