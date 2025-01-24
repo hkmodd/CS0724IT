@@ -22,18 +22,14 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 - Dal **Server Manager**, clicca su **Tools** > **Active Directory Users and Computers**.
 
 #### Passaggio 2: Creazione di Organizational Units (OU)
-![Screenshot 2](./Screen/2.png)
-
-![Screenshot 3](./Screen/3.png)
-
 - Nella struttura **Epicode.local**, ho creato due OU:
   - **Amministrazione**
   - **Utenti Standard**
 
 #### Passaggio 3: Creazione degli Utenti
-![Screenshot 4](./Screen/4.png)
+![Screenshot 2](./Screen/2.png)
 
-![Screenshot 4.5](./Screen/4.5.png)
+![Screenshot 3](./Screen/3.png)
 
 - All'interno di ogni OU, ho aggiunto utenti pertinenti:
   - **Amministrazione**:
@@ -43,8 +39,12 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
     - *Utente1*
     - *Utente2*
 
+![Screenshot 4](./Screen/4.png)
+
+![Screenshot 4.5](./Screen/4.5.png)
+
+
 #### Passaggio 4: Creazione dei Gruppi
-![Screenshot 5](./Screen/5.png)
 
 - Ho creato i seguenti gruppi:
   - **IT_Admins** (in *Amministrazione*).
@@ -55,6 +55,8 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 ### 2. Configurazione delle Cartelle e dei Permessi
 
 #### Cartella **ADMIN**
+![Screenshot 5](./Screen/5.png)
+
 ![Screenshot 6](./Screen/6.png)
 
 ![Screenshot 7](./Screen/7.png)
