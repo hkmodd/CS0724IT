@@ -55,11 +55,6 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 ### 2. Configurazione delle Cartelle e dei Permessi
 
 #### Cartella **ADMIN**
-![Screenshot 5](./Screen/5.png)
-
-![Screenshot 6](./Screen/6.png)
-
-![Screenshot 7](./Screen/7.png)
 
 - **Path**: `C:\ADMIN`
 - **Permessi**:
@@ -69,20 +64,19 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 - Gli utenti standard ricevono un errore di accesso negato.
 
 #### Cartella **Pubblica**
-![Screenshot 8](./Screen/8.png)
-
 - **Path**: `C:\Pubblica`
 - **Permessi**:
   - Accessibile da tutti i gruppi.
   - Modifica vietata per **UtentiStandard** (permessi in sola lettura).
 - Ho verificato che gli utenti standard possano aprire ma non modificare i file.
 
+![Screenshot 5.5](./Screen/5.5.png)
 ---
 
 ### 3. Condivisione delle Cartelle in Rete
 
 #### Passaggio 1: Condivisione della Cartella **ADMIN**
-![Screenshot 5.5](./Screen/5.5.png)
+
 
 - Ho condiviso la cartella **ADMIN** con il gruppo **IT_Admins** attraverso le **proprietà di condivisione avanzata**.
 - Ho verificato che solo gli amministratori possano accedere in rete.
@@ -101,6 +95,15 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 #### Test Utenti **UtentiStandard**
 - Accesso limitato a **Pubblica** (solo lettura).
 - Impossibilità di accedere a **ADMIN** (errore di rete confermato).
+
+![Screenshot 5](./Screen/5.png)
+
+![Screenshot 6](./Screen/6.png)
+
+![Screenshot 7](./Screen/7.png)
+
+![Screenshot 8](./Screen/8.png)
+
 
 ---
 
