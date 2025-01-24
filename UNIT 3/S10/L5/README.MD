@@ -29,8 +29,6 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 #### Passaggio 3: Creazione degli Utenti
 ![Screenshot 2](./Screen/2.png)
 
-![Screenshot 3](./Screen/3.png)
-
 - All'interno di ogni OU, ho aggiunto utenti pertinenti:
   - **Amministrazione**:
     - *Sergio Vanni*
@@ -45,6 +43,7 @@ In questo progetto, abbiamo configurato un ambiente **Windows Server 2022** per 
 
 
 #### Passaggio 4: Creazione dei Gruppi
+![Screenshot 3](./Screen/3.png)
 
 - Ho creato i seguenti gruppi:
   - **IT_Admins** (in *Amministrazione*).
