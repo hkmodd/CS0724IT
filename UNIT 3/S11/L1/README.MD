@@ -1,11 +1,11 @@
 # 📝 Consegna S11/L1
 # 🌐 Remediation e Mitigazione
 
-Benvenuto! Questo documento ti guiderà attraverso il processo di remediation e mitigazione per affrontare le minacce di **Phishing** e **DoS (Denial of Service)**. 🚀
-
----
-
 ## Introduzione
+
+Benvenuto! Questo documento ha lo scopo di guidarti attraverso il processo di remediation e mitigazione delle minacce legate al **phishing** e agli attacchi **DoS (Denial of Service)**. L’obiettivo è fornirti un quadro chiaro e dettagliato su come affrontare efficacemente queste problematiche, proteggendo i sistemi aziendali da potenziali rischi. 
+
+Nel contesto della sicurezza informatica, affrontare minacce le sopracitate richiede un approccio combinato. Da un lato, è necessario implementare misure di **remediation**. Dall’altro, è fondamentale adottare strategie di **mitigazione**.
 
 L'obiettivo di questa esercitazione è analizzare e risolvere le minacce seguendo due approcci fondamentali:
 - **Remediation**: Risolvere completamente le vulnerabilità con azioni mirate e approfondite.
@@ -16,20 +16,15 @@ L'obiettivo di questa esercitazione è analizzare e risolvere le minacce seguend
 ## **Parte 1: Minaccia di Phishing**
 
 ### 📌 **Cos'è il phishing?**
-La minaccia del phishing rappresenta una delle tecniche di attacco più diffuse e insidiose. Attraverso email fraudolente, siti web fasulli o tecniche di social engineering, gli attaccanti cercano di ingannare gli utenti per ottenere informazioni sensibili o indurre azioni dannose.
-
-Spesso, queste email imitano comunicazioni ufficiali di enti affidabili, come banche o colleghi.
+Il phishing è una delle tecniche di attacco più diffuse e subdole. Attraverso email fraudolente, siti web contraffatti e tecniche di social engineering, gli attaccanti mirano a sottrarre informazioni sensibili o a indurre azioni dannose. Queste comunicazioni, spesso mascherate da enti affidabili come banche o colleghi, possono compromettere seriamente la sicurezza aziendale.
 
 ### 🔍 **Analisi del rischio**
 #### **Impatto potenziale**:
-- **Compromissione di account aziendali**: accesso non autorizzato a risorse e sistemi critiche/i.
-- **Diffusione di malware**: ransomware o spyware che rappresentano una seria minaccia per l'azienda.
-- **Danni reputazionali**: perdita di fiducia da parte di clienti e partner.
+- **Compromissione di account aziendali**: gli attaccanti possono ottenere accesso non autorizzato a risorse critiche.
+- **Diffusione di malware**: ransomware o spyware possono compromettere ulteriormente l’infrastruttura.
+- **Danni reputazionali**: una violazione di sicurezza può minare la fiducia dei clienti e dei partner.
 
-#### **Risorse a rischio**:
-- Account email aziendali.
-- Database contenenti dati sensibili.
-- Credenziali di accesso ai sistemi gestionali e finanziari.
+Le **risorse più a rischio** includono account email aziendali, database con dati sensibili e credenziali di accesso a sistemi gestionali o finanziari.
 
 ### 🛠 **Piano di remediation**
 
@@ -73,7 +68,7 @@ Un attacco DoS mira a rendere indisponibili i servizi di un'azienda sovraccarica
 - Saturazione della larghezza di banda.
 - Esaurimento delle risorse hardware come CPU e RAM.
 
-In caso di attacco DDoS, una botnet distribuita amplifica l'effetto, rendendo più difficile la mitigazione.
+Quando l’attacco è distribuito (DDoS), una botnet amplifica l’effetto, rendendo più difficile la mitigazione.
 
 ### 🔍 **Analisi del rischio**
 
