@@ -8,7 +8,7 @@
 ---
 
 ## 📌 **Indice**
-1. [🔧 Requisiti](#🔧-requisiti)
+1. [🔧 Requisiti](#-requisiti)
 2. [🏗 Laboratorio 1 - Installazione delle macchine virtuali](#🏗-laboratorio-1---installazione-delle-macchine-virtuali)
 3. [🖥 Laboratorio 2 - Analisi di processi e registro di Windows](#🖥-laboratorio-2---analisi-di-processi-e-registro-di-windows)
    - [📥 Installazione degli strumenti](#📥-installazione-degli-strumenti)
