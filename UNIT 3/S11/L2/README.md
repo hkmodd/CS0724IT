@@ -88,9 +88,9 @@
 ---
 
 ## 📚 **Risorse utili**
-🔗 **VirtualBox Guide:** [https://www.virtualbox.org/manual/](https://www.virtualbox.org/manual/)  
-🔗 **SysInternals Documentation:** [https://docs.microsoft.com/en-us/sysinternals/](https://docs.microsoft.com/en-us/sysinternals/)  
-🔗 **Registro di Windows - Guida Microsoft:** [https://docs.microsoft.com/en-us/windows/](https://docs.microsoft.com/en-us/windows/)  
+🔗  [**VirtualBox Guide**](https://www.virtualbox.org/manual/)  
+🔗  [**SysInternals Documentation**](https://docs.microsoft.com/en-us/sysinternals/)  
+🔗  [**Registro di Windows - Guida Microsoft**](https://docs.microsoft.com/en-us/windows/)  
 
 ---
 
