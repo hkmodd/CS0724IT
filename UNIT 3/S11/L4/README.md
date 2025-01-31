@@ -1,6 +1,6 @@
-# 📝 Consegna S11/L3
-
-# 🛡️ Analisi del Traffico DNS con Wireshark
+# 📝 Consegna S11/L4
+# 🔥 Cisco CyberOps - 3
+## 🛡️ Analisi del Traffico DNS con Wireshark
 
 ## 📌 Introduzione
 Questo documento descrive dettagliatamente l'analisi del traffico **DNS** utilizzando **Wireshark**, con un focus sulle query e sulle risposte DNS. L'obiettivo è comprendere come i dispositivi comunicano con i server DNS per risolvere i nomi di dominio e identificare eventuali vulnerabilità nel protocollo.
