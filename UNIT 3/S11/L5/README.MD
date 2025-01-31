@@ -1,6 +1,6 @@
 
-# 📐 Progetto S10/L5 📐
-#  Cyber Security & Ethical Hacking 🚀
+# 📐 Progetto S11/L5 📐
+# Analisi avanzate | Cybersecurity 🚀
 ## 📌 Descrizione del Progetto
 Questo progetto raccoglie e documenta le attività svolte nei laboratori di **Cyber Security & Ethical Hacking** incentrati su Windows PowerShell, Wireshark, Nmap e attacchi a database MySQL.
 
