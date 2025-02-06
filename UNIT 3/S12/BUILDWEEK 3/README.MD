@@ -3,23 +3,6 @@
 **🗓 Periodo:** 03/02/2025 - 07/02/2025  
 **👥 Team:** **CyberCerberus**
 
-## 🗂️ Indice
-
-- ### [🚀 Inizio](#-introduzione)
-
-- ### 📝 Tracce
-  - [📌 1: Malware Analysis](#-traccia-1-malware-analysis)
-  - [📌 2: Anyrun](#-traccia-2-anyrun)
-  - [📌 3: Navigating Linux Filesystem](#-traccia-3-navigating-linux-filesystem)
-  - [📌 4: Extract an Exec from a PCAP](#-traccia-4-extract-an-exec-from-a-pcap)
-  - [📌 5: Bonus 1 - Un altro link Anyrun](#-bonus-1-un-altro-link-anyrun)
-  - [📌 6: Bonus 2 - Interpret HTTP and DNS Data to Isolate Threat Actor](#-bonus-2-interpret-http-and-dns-data-to-isolate-threat-actor)
-  - [📌 7: Bonus 3 - Isolate Compromised Host Using 5-Tuple](#-bonus-3-isolate-compromised-host-using-5-tuple)
-  - [📌 8: Extra 1 - Malware Mydoom](#-extra-1-malware-mydoom)
-  - [📌 9: Extra 2 - Sviluppo Exploit - Buffer Overflow](#-extra-2-sviluppo-exploit-buffer-overflow)
-
-- ### [🚀 Conclusioni](#-conclusioni-e-prospettive-future)
-
 ---
 
 # **🚀 Introduzione**
