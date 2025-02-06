@@ -1,6 +1,6 @@
 # 🌐 Build Week 3: **REPORT OPERATIVO – CYBERCERBERUS**
 
-**🗓 Periodo:** XX/XX/2025 - XX/XX/2025  
+**🗓 Periodo:** 03/02/2025 - 07/02/2025  
 **👥 Team:** **CyberCerberus**
 
 ## 🗂️ Indice
