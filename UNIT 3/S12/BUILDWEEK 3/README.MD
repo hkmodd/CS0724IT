@@ -1,11 +1,106 @@
-# CyberCerberus - Build Week 3
+# 🌐 Build Week 3: **REPORT OPERATIVO – CYBERCERBERUS**
 
-## Introduzione
-Benvenuti nel repository della Build Week 3 del team **CyberCerberus**. In questo documento descriviamo il lavoro svolto dal team, le metodologie adottate e le conclusioni tratte dalle analisi effettuate.
+**🗓 Periodo:** 03/02/2025 - 07/02/2025  
+**👥 Team:** **CyberCerberus**
 
 ---
 
-## Attività Svolte
+# **🚀 Introduzione**
+
+Durante questa **Build Week**, il team **CyberCerberus** ha affrontato un programma avanzato di Cybersecurity, completando diverse attività relative all’analisi malware, alla forensics analysis e alla simulazione di attacchi e difese su ambienti controllati.
+
+L'obiettivo principale era mettere in pratica competenze avanzate nell’identificazione e mitigazione delle minacce informatiche attraverso:
+- Analisi di malware tramite static e dynamic analysis 🦠
+- Studio delle minacce con Anyrun e strumenti avanzati 🔍
+- Investigazioni forensi su filesystem Linux 📂
+- Packet analysis per estrazione di eseguibili da PCAP 📡
+- Exploit di vulnerabilità critiche come buffer overflow 🔥
+
+Il team ha lavorato in maniera sinergica, documentando ogni attività con un approccio metodologico rigoroso e con l’adozione delle best practices del settore.
+
+---
+
+## **🔍 TRACCIA 1: Malware Analysis**
+
+- **Obiettivo:** Analizzare il malware *AdwereCleaner.exe* per comprenderne comportamento ed evasione.
+- **Strumenti Utilizzati:**
+  - Any.run, IDA Pro, Wireshark
+  - Static/Dynamic Analysis
+- **Output:** Report dettagliato con IOC e mitigazioni.
+
+---
+
+## **🔍 TRACCIA 2: Anyrun**
+
+- **Obiettivo:** Analizzare minacce tramite Any.run e proporre azioni di remediation.
+- **Link Analizzati:**
+  - [Threat Analysis 1](https://app.any.run/tasks/371957e1-d960-4b8a-8c68-241ff918517d/)
+  - [Threat Analysis 2](https://app.any.run/tasks/f1f20828-2222-46fb-a886-09f77581e67b/)
+- **Output:** Report dettagliati e proposte di mitigazione.
+
+---
+
+## **📂 TRACCIA 3: Navigating Linux Filesystem**
+
+- **Obiettivo:** Comprendere la gestione dei filesystem Linux e i permessi utente.
+- **Strumenti Utilizzati:**
+  - Terminale Linux, comandi `ls`, `chmod`, `chown`
+- **Output:** Report sulle configurazioni di sicurezza dei permessi.
+
+---
+
+## **📡 TRACCIA 4: Extract an Exec from a PCAP**
+
+- **Obiettivo:** Estrarre un file eseguibile da un dump PCAP.
+- **Strumenti Utilizzati:**
+  - Wireshark, Foremost, Tshark
+- **Output:** File estratto e analizzato con report dettagliato.
+
+---
+
+## **📌 BONUS 1: Un altro link Anyrun**
+
+- **Obiettivo:** Approfondire una nuova minaccia tramite Any.run.
+- **Link Analizzato:** [Threat Analysis Bonus](https://app.any.run/tasks/9a158718-43fe-45ce-85b3-66203dbc2281/)
+
+---
+
+## **🔍 BONUS 2: Interpret HTTP and DNS Data to Isolate Threat Actor**
+
+- **Obiettivo:** Analisi di SQL Injection e DNS Exfiltration con Security Onion.
+- **Strumenti Utilizzati:**
+  - Suricata, Zeek, Elastic Stack
+
+---
+
+## **🔍 BONUS 3: Isolate Compromised Host Using 5-Tuple**
+
+- **Obiettivo:** Investigare un exploit con Security Onion.
+- **Strumenti Utilizzati:**
+  - Security Onion, Kibana, Suricata
+
+---
+
+## **🦠 EXTRA 1: Malware Mydoom**
+
+- **Obiettivo:** Analizzare il worm Mydoom e individuare pattern di detection.
+- **Strumenti Utilizzati:**
+  - Reverse Engineering, IDA Pro
+
+---
+
+## **🔥 EXTRA 2: Sviluppo Exploit - Buffer Overflow**
+
+- **Obiettivo:** Dimostrare uno scenario di exploit tramite buffer overflow.
+- **Passaggi:**
+  1. Setup di un'applicazione vulnerabile
+  2. Debug con GDB
+  3. Creazione di un payload exploitativo
+- **Output:** Report dettagliato con codice exploit e mitigazioni.
+
+---
+
+## Più nel dettaglio:
 
 ### 1. **Analisi Malware**
 - Il team ha scaricato e analizzato il malware **AdwereCleaner.exe** reperito al seguente link:
@@ -69,10 +164,17 @@ Benvenuti nel repository della Build Week 3 del team **CyberCerberus**. In quest
 
 ---
 
-## Conclusioni
-Il team **CyberCerberus** ha completato con successo tutte le attività assegnate, producendo report dettagliati e implementando metodologie avanzate di analisi e mitigazione delle minacce. Ogni attività è stata documentata in modo professionale, con l'obiettivo di dimostrare competenze avanzate in **Cyber Security & Ethical Hacking**.
+# **🚀 Conclusioni e Prospettive Future**
+
+Il team **CyberCerberus** ha portato a termine tutte le tracce assegnate, dimostrando elevate competenze tecniche nell’analisi di vulnerabilità e nella gestione delle minacce informatiche. 
+
+Le prossime attività saranno incentrate su:
+- **Approfondimento delle tecniche di attacco avanzate** (ROP, Heap Overflow)
+- **Utilizzo di nuove piattaforme di penetration testing** (Hack The Box, TryHackMe)
+- **Sviluppo di strumenti custom per automatizzare l’analisi delle minacce**
+
+Siamo pronti a nuove sfide! 🚀🔥
+
+**Team CyberCerberus** - Epicode Cyber Security Program 2025
 
 ---
-
-## Autori
-Team **CyberCerberus** - Epicode Cyber Security Program 2025
