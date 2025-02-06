@@ -117,22 +117,7 @@ Il team ha lavorato in maniera sinergica, documentando ogni attività con un app
 
 ---
 
-# **🚀 Conclusioni e Prospettive Future**
-
-Il team **CyberCerberus** ha portato a termine tutte le tracce assegnate, dimostrando elevate competenze tecniche nell’analisi di vulnerabilità e nella gestione delle minacce informatiche. 
-
-Le prossime attività saranno incentrate su:
-- **Approfondimento delle tecniche di attacco avanzate** (ROP, Heap Overflow)
-- **Utilizzo di nuove piattaforme di penetration testing** (Hack The Box, TryHackMe)
-- **Sviluppo di strumenti custom per automatizzare l’analisi delle minacce**
-
-Siamo pronti a nuove sfide! 🚀🔥
-
-**Team CyberCerberus** - Epicode Cyber Security Program 2025
-
----
-
-## Attività Svolte
+## Più nel dettaglio:
 
 ### 1. **Analisi Malware**
 - Il team ha scaricato e analizzato il malware **AdwereCleaner.exe** reperito al seguente link:
@@ -193,5 +178,20 @@ Siamo pronti a nuove sfide! 🚀🔥
   3. Sviluppo di un exploit custom in Python
   4. Test e verifica della compromissione del sistema
   5. Redazione di un report dettagliato con mitigazioni proposte
+
+---
+
+# **🚀 Conclusioni e Prospettive Future**
+
+Il team **CyberCerberus** ha portato a termine tutte le tracce assegnate, dimostrando elevate competenze tecniche nell’analisi di vulnerabilità e nella gestione delle minacce informatiche. 
+
+Le prossime attività saranno incentrate su:
+- **Approfondimento delle tecniche di attacco avanzate** (ROP, Heap Overflow)
+- **Utilizzo di nuove piattaforme di penetration testing** (Hack The Box, TryHackMe)
+- **Sviluppo di strumenti custom per automatizzare l’analisi delle minacce**
+
+Siamo pronti a nuove sfide! 🚀🔥
+
+**Team CyberCerberus** - Epicode Cyber Security Program 2025
 
 ---
